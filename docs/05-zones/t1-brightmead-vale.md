@@ -58,7 +58,7 @@ XP uses the [standard table](../02-systems/progression.md#3-quest-xp). **[MC1]**
 |---|---|---|---|---|---|---|
 | BM-01 | A Warden's Welcome | 1 | (auto) → Warden Farrow | Speak to the Warden | 40 | — |
 | BM-02 | Wolves at the Fold | 1 | Warden Farrow | Kill 8 Vale Wolf Pups | 80 | 25c · choose 1: *Larkhill Cloth Mitts* (cloth hands, ilvl 3) · *Larkhill Hide Gloves* (leather hands, ilvl 3) · *Larkhill Ringed Gauntlets* (mail hands, ilvl 3) |
-| BM-03 | A Summons from Your Trainer | 1 | Warden Farrow | Speak to your class trainer | 40 | the first trainable ability is free (trainer cost waived once) |
+| BM-03 | A Summons from Your Trainer | 2 | Warden Farrow (from level 2) | Speak to your class trainer | 40 | the first trainable ability is free (trainer cost waived once) |
 | BM-04 | Thieves Below | 2 | Quartermaster Hobb | Kill 8 Burrowkin Diggers | 130 | 50c · 5 *Larkhill Brown Bread* (food, restores 61 health over 18 s) |
 | BM-05 | Candle Count | 2 | Quartermaster Hobb | Collect 8 Tallow Candles | 130 | 50c · *Hobb's Spare Pouch* (6-slot bag) |
 | BM-06 | Bristles and Bacon | 2 | Cook Marta | Collect 6 Boar Haunches | 130 | 25c · *Recipe: Roasted Boar Haunch* (Cooking 1) · 5 *Roasted Boar Haunch* |

@@ -149,17 +149,15 @@ Talent points at cap 30: **21** (enough for one tier-5 "signature" talent). See 
 
 ## 9. Ability training
 
-New ability ranks are bought from class trainers at the even levels where the class tables give a rank. Abilities at level 1 are known from the start and cost nothing. **The first trainer rank of every class is at level 4**: no class table has a rank at level 2, so the curve's level-2 price is not charged to any launch class. Cost curve (per rank): L2 10c · L4 1s · L6 2s · L8 5s · L10 8s · L12 12s · L14 20s · L16 30s · L18 50s · L20 60s · L22 80s · L24 1g · L26 1g 20s · L28 1g 40s · L30 1g 60s. A character who trains everything spends ≈ 14g by 30, which is roughly half of expected income — the classic "can I afford my spells?" tension is intentional.
+New ability ranks are bought from class trainers at the even levels where the class tables give a rank. Abilities at level 1 are known from the start and cost nothing: Attack, one special attack and, for a class that heals, one basic heal (Fighter: Strike, and Battle Stance to stand in; Cleric: Oath of Radiance and Mending Light; Druid: Thornlash and Mend), each at rank 1 and nothing else (decided 2026-11-24). **The first trainer rank of every class is at level 2**, at the curve's level-2 price: Battle Cry (Fighter), Litany of Resolve (Cleric), Gift of the Grove (Druid), each rank 1. Cost curve (per rank): L2 10c · L4 1s · L6 2s · L8 5s · L10 8s · L12 12s · L14 20s · L16 30s · L18 50s · L20 60s · L22 80s · L24 1g · L26 1g 20s · L28 1g 40s · L30 1g 60s. A character who trains everything spends ≈ 14g by 30, which is roughly half of expected income — the classic "can I afford my spells?" tension is intentional.
 
 | Rule | Detail |
 |---|---|
 | Previous rank | A rank can be bought only when the rank before it of the same ability is known. Abilities known from the start count, so the second rank of a level-1 ability needs nothing bought first |
 | Level | A rank is refused below its level ("level too low") and shown as unavailable |
 | Whose trainer | A class trainer teaches only its own class; another class is refused, not shown an empty list |
-| First rank free | The starting-zone quest that sends a new character to its trainer makes the next rank bought cost nothing, once; a refused purchase does not use it up |
+| First rank free | The starting-zone quest that sends a new character to its trainer makes the next rank bought cost nothing, once; a refused purchase does not use it up. The quest is offered only from level 2, when the class's level-2 rank can be bought, so that rank is the one a new character gets free |
 | Class-quest abilities | The first rank is granted by the quest and costs nothing ([Class Framework §6](../03-classes/class-framework.md#6-class-quests)) |
-
-Open: with no rank before level 4, either the cost curve should start at level 4 or each class should be given a rank at level 2; the owner has not decided, and until then the curve and the class tables stand as written.
 
 ## 10. Death
 

@@ -25,14 +25,14 @@ Format and global rules are in the [index](00-quest-text-index.md). This zone mi
 **Notes:** White items, armor only.
 
 ### EC-03 · A Summons from Your Trainer
-*Level 1 · Requires EC-01 · Warden Stonebraid → class trainer*
+*Level 2 · Requires EC-01 and level 2 · Warden Stonebraid → class trainer*
 
 **Offer:** Your trainer has been asking after you. Fighters go to Battlemaster Ironvow at the ring, clerics to Hearthpriest Coalbright at the hearth-shrine, druids to Stonesinger Mosshelm by the standing stone. Go and be taught something before the mountain teaches it to you harder.
 **Tracker:** Speak to your class trainer
 **Progress:** —
 **Complete:** So the Warden let you out of her sight. Good. Stand there. No, there. The first thing I teach is free. Everything after that you pay for, in coin or in bruises.
 **Rewards:** 40 XP · the first trainable ability is free (trainer cost waived once)
-**Notes:** Turn-in NPC by class: Battlemaster Kol Ironvow (Fighter), Hearthpriest Magna Coalbright (Cleric), Stonesinger Yrsa Mosshelm (Druid).
+**Notes:** Offered only from level 2, when the first trainer rank can be bought (Battle Cry, Litany of Resolve or Gift of the Grove, rank 1); that rank is the one the reward makes free. Turn-in NPC by class: Battlemaster Kol Ironvow (Fighter), Hearthpriest Magna Coalbright (Cleric), Stonesinger Yrsa Mosshelm (Druid).
 
 ### EC-04 · Gnashers in the Larder
 *Level 2 · Requires EC-02 · Provisioner Dagmar Saltbeard → Provisioner Saltbeard*

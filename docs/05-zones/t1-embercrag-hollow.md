@@ -56,7 +56,7 @@ Open: the Slagborn Firebrand's Slag Bolt does about 12 damage a second, where a 
 |---|---|---|---|---|---|---|
 | EC-01 | A Cold Welcome | 1 | (auto) → Warden Stonebraid | Speak to the Warden | 40 | — |
 | EC-02 | Culling the Cubs | 1 | Warden Stonebraid | Kill 8 Rime Wolf Cubs | 80 | 25c · choose 1: *Coldhearth Wool Mitts* (cloth hands, ilvl 3) · *Coldhearth Hide Gloves* (leather hands, ilvl 3) · *Coldhearth Ringed Gauntlets* (mail hands, ilvl 3) |
-| EC-03 | A Summons from Your Trainer | 1 | Warden Stonebraid | Speak to your class trainer | 40 | the first trainable ability is free (trainer cost waived once) |
+| EC-03 | A Summons from Your Trainer | 2 | Warden Stonebraid (from level 2) | Speak to your class trainer | 40 | the first trainable ability is free (trainer cost waived once) |
 | EC-04 | Gnashers in the Larder | 2 | Provisioner Saltbeard | Kill 8 Gravelkin Scrabblers | 130 | 50c · 5 *Coldhearth Black Bread* (food, restores 61 health over 18 s) |
 | EC-05 | Ram Chops for the Camp | 2 | Provisioner Saltbeard | Collect 6 Ram Flanks | 130 | 25c · *Recipe: Seared Ram Chop* (Cooking 1) · 5 *Seared Ram Chop* |
 | EC-06 | Pilfered Picks | 2 | Miner Ulf | Collect 8 Stolen Picks | 130 | 50c · *Ulf's Ore Pouch* (6-slot bag) |

@@ -26,7 +26,7 @@ Every quest from level 1 to 30, written out in full: the text the player reads, 
 | Line | Meaning |
 |---|---|
 | Heading | Quest ID and name. The ID is the content record id (`quest.bm_02`) |
-| Italic line | Quest level · prerequisite quests · giver → turn-in NPC |
+| Italic line | Quest level · prerequisite quests, and a minimum level where the quest states one ("and level 2") · giver → turn-in NPC |
 | **Offer** | Text shown when the quest is offered. Also the quest-log description |
 | **Tracker** | The objective lines shown in the tracker and quest log, with counts |
 | **Progress** | Text shown if the player talks to the turn-in NPC before finishing |
@@ -37,7 +37,7 @@ Every quest from level 1 to 30, written out in full: the text the player reads, 
 ## Global rules
 
 1. **Text tokens.** `<name>` = character name, `<class>` = class name. No text refers to the player's race; every quest reads the same for every race.
-2. **Minimum level.** A quest can be accepted from 3 levels below its quest level (minimum 1). Dungeon quests ([D]) from 2 below.
+2. **Minimum level.** A quest can be accepted from 3 levels below its quest level (minimum 1). Dungeon quests ([D]) from 2 below. A quest that needs a higher level than that states it after its prerequisites, as "and level N" ("Requires BM-01 and level 2"): it is then offered only from level N. BM-03 and EC-03 are the two that do.
 3. **Prerequisites.** "Requires" lists quests that must be *completed*. "—" means none. Chain variants that satisfy the same step are written "A or B".
 4. **Availability marker.** Givers show the quest marker only when level and prerequisites are met.
 5. **Quest-item drops.** Quest items drop only for players on the quest, and each group member on the quest gets their own roll. The rate is given per quest. Rates below 100% are tuned so the quest takes 1.3–1.6 kills per item.

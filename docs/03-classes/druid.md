@@ -8,11 +8,13 @@ Three ways to play: **Verdance** (pre-emptive heal-over-time healing), **Stormca
 
 ## 1. Abilities (levels 1–30)
 
+**Level 1 and level 2** (decided 2026-11-24). A new Druid knows Attack, Thornlash (rank 1), its special attack, and Mend (rank 1), its heal; it knows no other ability. Gift of the Grove (rank 1) is the first rank bought from the trainer, at level 2.
+
 | Lvl | Ability | School | Cost | Cast / CD | Effect | Ranks at |
 |---|---|---|---|---|---|---|
 | 1 | **Thornlash** | Nature | 20 → 100 | 1.5 → 2.0 s | 13–16 → 130–150 Nature damage, 30 yd | 1, 6, 14, 22, 30 |
 | 1 | **Mend** | Nature | 25 → 265 | 1.5 → 3.0 s | Heal 40 → 520 | 1, 8, 14, 20, 26 |
-| 1 | **Gift of the Grove** | Nature | 20 → 100 | instant | 30 min: +25 → +150 armor; from rank 2 also +2 → +6 all attributes and +5 → +10 all resistances | 1, 10, 20, 30 |
+| 2 | **Gift of the Grove** | Nature | 20 → 100 | instant | 30 min: +25 → +150 armor; from rank 2 also +2 → +6 all attributes and +5 → +10 all resistances | 2, 10, 20, 30 |
 | 4 | **Starbrand** | Arcane | 25 → 150 | instant | 9–12 → 85–100 Arcane damage plus 12 → 150 over 9 → 12 s | 4, 10, 16, 22, 28 |
 | 4 | **Renewal** | Nature | 25 → 160 | instant | Heal 32 → 300 over 12 s (4 ticks) | 4, 10, 16, 22, 28 |
 | 6 | **Briarskin** | Nature | 35 → 105 | instant | 10 min on a friendly target: melee attackers take 3 → 12 Nature damage | 6, 14, 24 |

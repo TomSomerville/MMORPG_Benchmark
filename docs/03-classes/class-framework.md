@@ -44,6 +44,14 @@ Class contribution added to racial base at level 1, and average gain per level:
 ## 4. Abilities
 
 - Learned from class trainers at even levels (cost table in [Progression](../02-systems/progression.md#9-ability-training)); a few come from **class quests**.
+- **Level 1 and level 2** (decided 2026-11-24). A new character knows very little: Attack, one special attack and, if the class heals, one basic heal, each at rank 1. Every class has at least one ability to buy from its trainer at level 2, and the starting-zone quest that sends a character to its trainer is offered only from level 2. Passives are not counted.
+
+| Class | Known at level 1 (with Attack) | First trainer purchase, level 2 |
+|---|---|---|
+| Fighter | Strike (rank 1); Battle Stance, the stance rage comes from, which is not an ability the player presses | Battle Cry (rank 1) |
+| Cleric | Oath of Radiance (rank 1), the special attack; Mending Light (rank 1), the heal | Litany of Resolve (rank 1) |
+| Druid | Thornlash (rank 1), the special attack; Mend (rank 1), the heal | Gift of the Grove (rank 1) |
+
 - Most abilities have **ranks**; a new rank roughly every 6–8 levels. Lower ranks stay castable.
 - Each ability is a **spell record**: school, cost, cast time, cooldown, GCD flag, range, target rules, a list of effects (damage, heal, apply aura, summon, teleport, dispel, threat…), an optional aura (periodic damage/heal, stat mod, control, proc trigger), required stance/weapon, and visuals. See [Data Model](../08-tech/data-model.md).
 - In the class files, the value shown is **rank 1 at learn level → highest rank available by 30**, before spell power/attack power.

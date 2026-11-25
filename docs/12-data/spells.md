@@ -12,8 +12,8 @@ Generated from the ability tables in the class documents using the rules in the 
 | SPL-FIG-01-r2 | Strike | 2 | 8 | 5s | Physical | 15 rage | next swing | melee | no | — | Weapon damage +32; extra threat |
 | SPL-FIG-01-r3 | Strike | 3 | 16 | 30s | Physical | 15 rage | next swing | melee | no | — | Weapon damage +56; extra threat |
 | SPL-FIG-01-r4 | Strike | 4 | 24 | 1g | Physical | 15 rage | next swing | melee | no | — | Weapon damage +80; extra threat |
-| SPL-FIG-02-r1 | Battle Cry | 1 | 1 | free | Physical | 10 | — | 20 yd | yes | — | Party within 20 yd: +15 attack power, 2 min |
-| SPL-FIG-02-r2 | Battle Cry | 2 | 12 | 12s | Physical | 10 | — | 20 yd | yes | — | Party within 20 yd: +52 attack power, 2 min |
+| SPL-FIG-02-r1 | Battle Cry | 1 | 2 | 10c | Physical | 10 | — | 20 yd | yes | — | Party within 20 yd: +15 attack power, 2 min |
+| SPL-FIG-02-r2 | Battle Cry | 2 | 12 | 12s | Physical | 10 | — | 20 yd | yes | — | Party within 20 yd: +50 attack power, 2 min |
 | SPL-FIG-02-r3 | Battle Cry | 3 | 22 | 80s | Physical | 10 | — | 20 yd | yes | — | Party within 20 yd: +85 attack power, 2 min |
 | SPL-FIG-03-r1 | Charge | 1 | 4 | 1s | Physical | 0 (gains 9 rage) | 15 s | 25 yd | yes | — | [Battle] Rush an enemy 8–25 yd away, out of combat only; stun 1 s |
 | SPL-FIG-03-r2 | Charge | 2 | 26 | 1g 20s | Physical | 0 (gains 12 rage) | 15 s | 25 yd | yes | — | [Battle] Rush an enemy 8–25 yd away, out of combat only; stun 1 s |
@@ -69,9 +69,9 @@ Generated from the ability tables in the class documents using the rules in the 
 | SPL-CLE-02-r3 | Mending Light | 3 | 14 | 20s | Holy | 143 | 2.5 s | 40 yd | yes | 55% | Heal 189 |
 | SPL-CLE-02-r4 | Mending Light | 4 | 22 | 80s | Holy | 209 | 2.5 s | 40 yd | yes | 71% | Heal 280 |
 | SPL-CLE-02-r5 | Mending Light | 5 | 30 | 1g 60s | Holy | 275 | 2.5 s | 40 yd | yes | 71% | Heal 370 |
-| SPL-CLE-03-r1 | Litany of Resolve | 1 | 1 | free | Holy | — | aura | self | no | — | Party armor +55 |
-| SPL-CLE-03-r2 | Litany of Resolve | 2 | 10 | 8s | Holy | — | aura | self | no | — | Party armor +140 |
-| SPL-CLE-03-r3 | Litany of Resolve | 3 | 20 | 60s | Holy | — | aura | self | no | — | Party armor +235 |
+| SPL-CLE-03-r1 | Litany of Resolve | 1 | 2 | 10c | Holy | — | aura | self | no | — | Party armor +55 |
+| SPL-CLE-03-r2 | Litany of Resolve | 2 | 10 | 8s | Holy | — | aura | self | no | — | Party armor +134 |
+| SPL-CLE-03-r3 | Litany of Resolve | 3 | 20 | 60s | Holy | — | aura | self | no | — | Party armor +232 |
 | SPL-CLE-03-r4 | Litany of Resolve | 4 | 30 | 1g 60s | Holy | — | aura | self | no | — | Party armor +330 |
 | SPL-CLE-04 | Verdict | 1 | 4 | 1s | Holy | 5% base mana | instant / 10 s | 30 yd | yes | — | Consumes Oath for its Verdict effect |
 | SPL-CLE-05-r1 | Benediction of Might | 1 | 4 | 1s | Holy | 20 | instant | 30 yd | yes | — | +20 attack power, 5 min |
@@ -127,9 +127,9 @@ Generated from the ability tables in the class documents using the rules in the 
 | SPL-DRU-02-r3 | Mend | 3 | 14 | 20s | Nature | 150 | 2.5 s | 40 yd | yes | 55% | Heal 290 |
 | SPL-DRU-02-r4 | Mend | 4 | 20 | 60s | Nature | 207 | 2.5 s | 40 yd | yes | 71% | Heal 405 |
 | SPL-DRU-02-r5 | Mend | 5 | 26 | 1g 20s | Nature | 265 | 3.0 s | 40 yd | yes | 86% | Heal 520 |
-| SPL-DRU-03-r1 | Gift of the Grove | 1 | 1 | free | Nature | 20 | instant | 30 yd | yes | — | 30 min: +25 armor; from rank 2 also +2 all attributes and +5 all resistances |
-| SPL-DRU-03-r2 | Gift of the Grove | 2 | 10 | 8s | Nature | 45 | instant | 30 yd | yes | — | 30 min: +64 armor; from rank 2 also +3 all attributes and +7 all resistances |
-| SPL-DRU-03-r3 | Gift of the Grove | 3 | 20 | 60s | Nature | 72 | instant | 30 yd | yes | — | 30 min: +107 armor; from rank 2 also +5 all attributes and +8 all resistances |
+| SPL-DRU-03-r1 | Gift of the Grove | 1 | 2 | 10c | Nature | 20 | instant | 30 yd | yes | — | 30 min: +25 armor; from rank 2 also +2 all attributes and +5 all resistances |
+| SPL-DRU-03-r2 | Gift of the Grove | 2 | 10 | 8s | Nature | 43 | instant | 30 yd | yes | — | 30 min: +61 armor; from rank 2 also +3 all attributes and +6 all resistances |
+| SPL-DRU-03-r3 | Gift of the Grove | 3 | 20 | 60s | Nature | 71 | instant | 30 yd | yes | — | 30 min: +105 armor; from rank 2 also +5 all attributes and +8 all resistances |
 | SPL-DRU-03-r4 | Gift of the Grove | 4 | 30 | 1g 60s | Nature | 100 | instant | 30 yd | yes | — | 30 min: +150 armor; from rank 2 also +6 all attributes and +10 all resistances |
 | SPL-DRU-04-r1 | Starbrand | 1 | 4 | 1s | Arcane | 25 | instant | 30 yd | yes | 9% direct + 12% over time | 9–12 Arcane damage plus 12 over 9 s |
 | SPL-DRU-04-r2 | Starbrand | 2 | 10 | 8s | Arcane | 56 | instant | 30 yd | yes | 13% direct + 21% over time | 28–34 Arcane damage plus 46 over 10 s |

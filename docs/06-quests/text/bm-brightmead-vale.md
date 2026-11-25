@@ -25,14 +25,14 @@ Format and global rules are in the [index](00-quest-text-index.md).
 **Notes:** White items, armor only.
 
 ### BM-03 · A Summons from Your Trainer
-*Level 1 · Requires BM-01 · Warden Farrow → class trainer*
+*Level 2 · Requires BM-01 and level 2 · Warden Farrow → class trainer*
 
 **Offer:** One more thing. Your trainer sent word that they want to see you before you get yourself hurt. Fighters report to Sergeant Kern at the practice yard, clerics to Brother Aldwin at the shrine, druids to Hedgewarden Mirelle by the old oak. Don't keep them waiting.
 **Tracker:** Speak to your class trainer
 **Progress:** —
 **Complete:** There you are. The Warden says you can swing at a wolf pup without falling over. That's a start. Everything after that, you learn from me, and the first lesson costs you nothing.
 **Rewards:** 40 XP · the first trainable ability is free (trainer cost waived once)
-**Notes:** Turn-in NPC is chosen by class: Sergeant Tobias Kern (Fighter), Brother Aldwin (Cleric), Hedgewarden Mirelle (Druid). Completion text is shared.
+**Notes:** Offered only from level 2, when the first trainer rank can be bought (Battle Cry, Litany of Resolve or Gift of the Grove, rank 1); that rank is the one the reward makes free. Turn-in NPC is chosen by class: Sergeant Tobias Kern (Fighter), Brother Aldwin (Cleric), Hedgewarden Mirelle (Druid). Completion text is shared.
 
 ### BM-04 · Thieves Below
 *Level 2 · Requires BM-02 · Quartermaster Hobb → Quartermaster Hobb*

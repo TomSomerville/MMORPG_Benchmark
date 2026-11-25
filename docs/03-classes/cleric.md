@@ -18,11 +18,13 @@
 
 Mana costs given as rank 1 → rank at 30.
 
+**Level 1 and level 2** (decided 2026-11-24). A new Cleric knows Attack, Oath of Radiance (rank 1), which is its special attack (it empowers swings; Verdict stays at level 4), and Mending Light (rank 1), its heal; it knows no other ability. Litany of Resolve (rank 1) is the first rank bought from the trainer, at level 2.
+
 | Lvl | Ability | Cost | Cast / CD | Effect | Ranks at |
 |---|---|---|---|---|---|
 | 1 | **Oath of Radiance** | 20 → 90 | instant | 30 s: each swing deals +3 → +22 Holy damage (scaled by weapon speed). **Verdict:** 12 → 70 Holy damage | 1, 10, 18, 26 |
 | 1 | **Mending Light** | 35 → 275 | 2.5 s | Heal 42 → 370 | 1, 6, 14, 22, 30 |
-| 1 | **Litany of Resolve** | — | aura | Party armor +55 → +330 | 1, 10, 20, 30 |
+| 2 | **Litany of Resolve** | — | aura | Party armor +55 → +330 | 2, 10, 20, 30 |
 | 4 | **Verdict** | 5% base mana | instant / 10 s | Consumes Oath for its Verdict effect | — |
 | 4 | **Benediction of Might** | 20 → 60 | instant | +20 → +85 attack power, 5 min | 4, 12, 22 |
 | 6 | **Dawnstrike** | 4% base mana | instant / 6 s | Weapon damage +8 → +45 as Holy-infused physical; refreshes all active Verdict debuffs on the target | 6, 14, 22, 30 |

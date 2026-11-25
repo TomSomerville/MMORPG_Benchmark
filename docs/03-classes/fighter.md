@@ -18,10 +18,12 @@ Only one stance at a time. The stance abilities share one 1 s cooldown and are o
 
 Damage values are *rank 1 → rank at 30*. "Next swing" abilities replace the next auto-attack.
 
+**Level 1 and level 2** (decided 2026-11-24). A new Fighter knows Attack and Strike (rank 1) and stands in Battle Stance, which is where rage comes from and is not an ability the player presses; it knows no other ability. Battle Cry (rank 1) is the first rank bought from the trainer, at level 2.
+
 | Lvl | Ability | Cost | Cooldown | Stance | Effect | Ranks at |
 |---|---|---|---|---|---|---|
 | 1 | **Strike** | 15 rage | next swing | any | Weapon damage +11 → +80; extra threat | 1, 8, 16, 24 |
-| 1 | **Battle Cry** | 10 | — | any | Party within 20 yd: +15 → +85 attack power, 2 min | 1, 12, 22 |
+| 2 | **Battle Cry** | 10 | — | any | Party within 20 yd: +15 → +85 attack power, 2 min | 2, 12, 22 |
 | 4 | **Charge** | 0 (gains 9 → 12 rage) | 15 s | Battle | Rush an enemy 8–25 yd away, out of combat only; stun 1 s | 4, 26 |
 | 4 | **Rend** | 10 | — | Battle, Guard | Bleed: 15 → 98 over 9 → 15 s | 4, 10, 20, 30 |
 | 6 | **Thunderous Stomp** | 20 | 4 s | Battle | 10 → 55 damage to up to 4 enemies within 8 yd; their attack speed −10% for 10 → 22 s | 6, 18, 28 |
