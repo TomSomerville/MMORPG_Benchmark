@@ -16,7 +16,7 @@ How the game is built. This is a plan, not code. The engine choice in §1 was **
 
 **Build-level specifications:** [Repository Layout](repo-and-conventions.md) · [Content Schemas](content-schemas.md) · [Database Schema](database-schema.md) · [Network Protocol](network-protocol.md) · [UI Specification](ui-specification.md) · [Milestone Task Lists](milestone-tasks.md). Where those pages are more specific than this one, they are the rule.
 
-**Supporting stack:** PostgreSQL (persistent data) · Redis (sessions, presence, cross-process messaging; introduced at milestone M13 when the server is split into several processes; until then one process uses an in-process bus behind the same interface) · content authored as YAML/JSON files in the repository and compiled to a binary pack · Recast/Detour navmesh (DotRecast) · reliable-UDP transport (ENet or LiteNetLib) · Docker for server deployment · GitHub Actions for build/test.
+**Supporting stack:** PostgreSQL (persistent data) · Redis (sessions, presence, cross-process messaging; introduced at milestone M13 when the server is split into several processes; until then one process uses an in-process bus behind the same interface) · content authored as YAML/JSON files in the repository and compiled to a binary pack · a walk grid per zone, baked by the world generator, in place of a navigation mesh library ([Terrain and Cutouts §1.1](terrain-and-cutouts.md#11-the-walk-grid)) · reliable-UDP transport (LiteNetLib) · Docker for server deployment · GitHub Actions for build/test.
 
 ## 2. Guiding principles
 
@@ -139,11 +139,11 @@ Decided 2026-11-12: **there are no layers, shards or phases of the open world.**
 | Tick rate | 20 Hz world tick (50 ms). Spell/aura timers in milliseconds; periodic effects scheduled, not polled |
 | Entities | Component-based: Transform, Movement, Stats, Health/Resource, Auras, Threat, AI, Inventory, QuestLog, Loot, Interactable |
 | Interest management | Uniform grid (cells ≈ 50 m). A client receives updates for entities in its cell and neighbours (≈ 100–150 m view); far objects of interest (group members, world boss) by subscription |
-| Movement | Client-predicted with server validation (max speed, no-clip, fall, teleport checks); server sends corrections. Other players interpolated ~100 ms behind |
+| Movement | Client-predicted with server validation; the server sends corrections. Speed is held by an allowance that builds with time (allowed speed × elapsed × tolerance, at most one second's worth) and is spent by each move, so packets bunched by the network are not corrected. A claimed position must have a floor on the zone's walk grid within 2 yards of its height unless the character is jumping or falling; a jump of more than 12 yards in one packet is a strike. Server and client stand on the same walk grid through the same code. Other players interpolated ~100 ms behind |
 | Combat | Fully server-side. Client shows cast bars and GCD optimistically and rolls back on server refusal |
 | Spell engine | Spells = data: a list of **effects** (damage, heal, apply aura, dispel, summon, teleport, threat, resource…) and **auras** (periodic, stat modifiers, control, proc triggers, absorbs). ~40 effect types and ~60 aura types cover every ability in the class docs |
 | AI | State machine + ability priority lists; boss encounters as data timelines with script hooks |
-| Pathfinding | Navmesh per map; path requests budgeted per tick; straight-line steering when line of sight is clear |
+| Pathfinding | One walk grid per zone: one-metre cells holding floor heights, layer 0 the open ground and a layer for each interior, shared by server, client and the generator's checks. A mover heads straight for its goal when the way can be walked; otherwise the zone finds a path by A* over the grid, with corners cut wherever a body 0.7 m wide can walk straight. The zone keeps one route per creature, found again when the goal has moved 3 yards or after 2 seconds. With no way at all the creature's unreachable timer runs and it evades. Distance between units adds what their heights differ by beyond 2.5 yards |
 | Instances | World Service allocates an instance host slot; group members are transferred with their state; idle instances are frozen then destroyed |
 | Time | Server-authoritative game clock (day/night, respawns, lockouts) |
 
@@ -161,7 +161,7 @@ Decided 2026-11-12: **there are no layers, shards or phases of the open world.**
 | Layer | Contents |
 |---|---|
 | Network | Connection, message codec, entity replication |
-| World | Terrain streaming (chunked heightmap + splat textures, with a **hole mask** so caves and dungeon entrances can be cut into the ground: see [Terrain and Cutouts](terrain-and-cutouts.md)), static props, sky/weather, day-night, water |
+| World | Terrain streaming (chunked heightmap + splat textures, chunks at four detail levels joined by skirts, with a **hole mask** so caves and dungeon entrances can be cut into the ground: see [Terrain and Cutouts](terrain-and-cutouts.md)), static props, sky/weather, day-night, water. The ground a character stands on is the zone's walk grid, the same one the server uses; no physics collision is built per chunk |
 | Entities | Character controller, animation state machines (locomotion, cast, attack, hit, death, emotes), nameplates, spell visual effects |
 | Gameplay UI | All windows in [UI & Controls](../02-systems/ui-and-controls.md), built from data-described frames |
 | Audio | Music by sub-area, ambience, combat and UI sounds |
@@ -174,8 +174,8 @@ Decided 2026-11-12: **there are no layers, shards or phases of the open world.**
 | Content | Authored as | Tool |
 |---|---|---|
 | Spells, items, creatures, quests, loot, recipes, talents, factions, races, classes | YAML files in `content/` | Text editor + a **validator** that checks references, level ranges, budgets and broken chains |
-| Zones | Heightmap + splat maps + prop placements | Godot editor with a custom zone plugin (terrain sculpt, spawn points, patrol paths, sub-area volumes, nodes) |
-| Navmesh | Baked from zone collision | Build step |
+| Zones | Layout tables (`layout.yaml`), from which the world generator builds the heightmap, splat maps, hole mask, walk grid, prop placements, sub-areas and spawns | The world generator (`worldgen`), and the Godot editor with a custom zone plugin for fixes: sculpt, paint, props and cutouts, saved as `overrides.yaml` and `cutouts.yaml` and replayed by the generator at every rebuild |
+| Walk grid | Baked by the world generator from heights, holes, interiors and what it places | Part of `worldgen` |
 | Encounters | YAML timeline + optional script | Text + in-game encounter debugger |
 | Balance | Spreadsheet-like views generated from YAML (stat budgets, XP per zone, gold flow) | Reports from the validator |
 | Localisation | String tables keyed by id | Export/import |

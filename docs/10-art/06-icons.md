@@ -2,7 +2,52 @@
 
 [← Art Master To-Do](00-art-master-todo.md) · Prev: [UI](05-ui.md) · Next: [Named Item Index](07-named-item-index.md)
 
-Every square icon in the game. Authored at 128 × 128, shipped at 64 × 64. One icon per row entry unless a count is given. ☐ = not started.
+Every square icon in the game. Drawn at 512 × 512, kept at 128 × 128, shown at 64 × 64. One icon per row entry unless a count is given. ☐ = not started.
+
+## The icon style
+
+Icons have their own style, called **classic painted**, approved by the owner on 2026-11-23 on a reference set of 36 icons. It stands apart from the rest of the [Art Direction](10-art-direction.md): icons are not drawn from the master palette and are not pulled toward it. The icon pipeline ([P02](../14-asset-pipeline/01-image-pipelines.md)) draws every icon by the rules below.
+
+### The look
+
+An icon is a tiny hand-painted picture: rough, opaque brush strokes and very high contrast, so that its shape still reads at 64 pixels.
+
+| Rule | Detail |
+|---|---|
+| Full-bleed | The painting fills the whole square from edge to edge. The subject is an extreme close-up, cropped so tightly that the edges of the picture cut it off. There is no empty background |
+| One hue per kind | The whole picture is washed in one strong colour, set by what kind of thing the icon stands for (table below), so a bar of icons can be read by colour |
+| A glowing light | Every icon has a bright glowing light inside the picture, white-hot at its centre |
+| Dark corners | The picture darkens toward its four corners |
+| One background | Where a picture does not reach an edge, the gap is a uniform near-black, `#141418`, the same for every icon. No icon has a background colour of its own |
+| Nothing but the picture | No frame, tile, border, writing or numbers. The interface draws the slot and its edge. An icon that comes out with a pale border, or sitting on a tile, is drawn again |
+| No palette lock | The picture is kept as painted and only made smaller: no pull toward the master palette, no added brush grain, no composited frame |
+| What it shows | An ability shows the thing it does, as a small painted scene, not an emblem or a symbol. An item shows the item itself, close up |
+| How a subject is described | By what the thing is made of and its period (a wooden staff, an iron-bound chest), or a modern object is drawn. A name is never given in quotation marks, or it is written into the picture |
+| Sizes | Drawn at 512 pixels, kept at 128, shown at 64 |
+| Originality | No prompt names an existing game, studio or artist, and no existing icon is copied |
+
+### The twelve hues
+
+| Kind | Hue | Icons that take it |
+|---|---|---|
+| Physical | steel grey and blood red | Abilities with no magical school; the default for Fighter and general abilities |
+| Holy | blazing gold and white | Holy abilities; the default for Cleric abilities |
+| Nature | vivid emerald green | Nature abilities; the default for Druid abilities |
+| Fire | fiery orange and deep red | Fire abilities |
+| Frost | icy blue and white | Frost abilities |
+| Arcane | bright violet and magenta | Arcane abilities |
+| Shadow | deep purple and black | Shadow abilities |
+| Equipment | warm brown and dull steel | Armor, weapons, bags, mounts and every other item not named below |
+| Consumable | rich crimson and dark glass green | Potions, elixirs, flasks, bandages and scrolls |
+| Material | earthy brown and copper | Materials and trade goods (§6) |
+| Food | warm golden brown | Food, drink, cooking ingredients and the other consumables of §7 |
+| Quest | old gold and parchment | Quest items and the miscellany of §8 |
+
+An ability's school is read from its name and what it does; where neither says, it takes its class's default.
+
+### How the game finds an icon
+
+An ability's icon is found by name: its id is `ICO-<group>-<slug of the ability's name>`, the group being the row id below (`ICO-F1`, `ICO-D3`). The game looks in the character's own class's groups first, then the general groups. The ids in the tables below are therefore part of the game's data and stay as they are.
 
 ## 1. Fighter (27 abilities + 48 talents + 3 stances = 78)
 

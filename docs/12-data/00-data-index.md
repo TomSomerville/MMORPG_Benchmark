@@ -15,7 +15,7 @@ The build-level data that the design documents summarise: every creature's stat 
 | [item-rules.md](item-rules.md) | The rules that give every item its stats, armor, damage, vendor value, durability and repair cost, and the base names for random drops | Written by hand; the builder's item generator applies them |
 | [presentation-rules.md](presentation-rules.md) | Which model, skin, animation, effect, icon and sound each creature, NPC, ability and item uses, and how music and ambience play | Written by hand |
 | [spoken-lines.md](spoken-lines.md) | The voice script: NPC barks by voice, story lines, announcer calls, every boss's lines, the 12 Athenaeum books and street chatter | Written by hand |
-| [game-text.md](game-text.md) | System and error messages, interface labels, tutorial and loading tips, NPC stock phrases, the emote list, and the rules for any text not listed | Written by hand |
+| [game-text.md](game-text.md) | System and error messages, interface labels, tutorial and loading tips, NPC stock phrases, the emote list, and the rules for any text not listed | Written by hand; `tools content import text` reads its tables into the string table |
 
 The NPC rosters, vendor stock and trainer lists are in [NPCs](../11-npcs/00-npc-index.md). Quest text and rewards are in [Quest Text](../06-quests/text/00-quest-text-index.md).
 
@@ -37,7 +37,7 @@ These are the rules the generator applies. Changing a rule changes every creatur
 | Group boss (4–5 players) | ×8 health, ×2.2 damage; respawn 15 minutes; XP ×3 |
 | XP | 45 + 5 × level, before the level-difference rules in [Progression](../02-systems/progression.md) |
 | Respawn | 2.5 minutes in level 1–5 zones, 5 minutes elsewhere; dynamic respawn scales this down to as little as 15% in crowded areas (there are no layers) |
-| Aggro radius | 20 yards at equal level, ±1 per level of difference, minimum 5, maximum 45 |
+| Aggro radius | 20 yards at equal level, ±1 per level of difference, minimum 5, maximum 45. A creature all of whose places are indoors is written with `aggroRadiusMod: -8` (12 yards at equal level) |
 
 **Ability kinds.** Each ability named in a zone table is given a kind from its name and note, and its numbers from the kind:
 
@@ -47,13 +47,19 @@ These are the rules the generator applies. Changing a rule changes every creatur
 | Opener | 150% of a swing on the first hit; stealth openers are hidden until 8 yards |
 | Area attack | 80% of a swing to everything within 5 yards; cooldown 12 s; "on death" versions reach 8 yards |
 | Ranged or spell | Cast time × spell DPS, ±15%. Spell DPS is 2.2 × template DPS for casters, 1.3 × for others. Default cast 2.0 s, range 30 yards |
-| Damage over time | 4 × level + 6 over 12 s in 4 ticks; cooldown 15 s |
+| Damage over time | 4 × level + 6 over 12 s in 4 ticks; cooldown 15 s. Each tick is a whole number and carries its fraction to the next, so the ticks add up to the total exactly (46 over four ticks is 11, 12, 11, 12) |
 | Drain | 2 × level + 6 per 2 s for 6 s; heals the creature or burns mana |
-| Control, Root, Silence, Fear | Duration from the zone table (default 2–3 s); cooldown 20–30 s |
-| Slow | 40% for 6 s unless stated; 60% of a swing |
+| Control, Root, Silence, Fear | Duration from the zone table (default 2.5 s); cooldown 25 s unless stated. A Control is a melee blow that stuns |
+| Slow | 40% for 6 s unless stated; 60% of a swing; cooldown 12 s unless stated |
 | Heal | 12% of maximum health; 2.0 s cast, interruptible; cooldown 20 s; used below 50% health |
 | Buff | +25% damage for 10 s (enrages add +30% attack speed); cooldown 30 s or at the stated health |
-| Defensive, Debuff, Movement, Summon, Pull or charm, Trait | As stated in the zone table, with the default duration and cooldown shown in the row |
+| Enrage at a stated health | +25% damage and +30% attack speed, once per fight, when health falls to the stated share; it lasts 2 minutes |
+| Debuff | Armor or chance to hit reduced by the stated amount; lasts 15 s and cooldown 20 s unless stated; a caster throws it from 30 yards, any other creature must be in melee reach |
+| Defensive, Movement, Summon, Pull or charm, Trait | As stated in the zone table, with the default duration and cooldown shown in the row. A Summon is used once per fight unless a cooldown is given ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)) |
+
+A melee creature whose ranged attack has no cooldown uses it only beyond 8 yards and at most every 8 s ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)).
+
+**Named creatures.** A named quest target, rare or mini-boss with no ability rows of its own takes its abilities from its quest's notes ("casts X", "summons N Y at P% health") or from the zone document's line for it ("Slag Bolt, Kindle (self-enrage at 30%)"). An ability named there is the one of that name that another creature of the zone has, with that creature's numbers.
 
 **Loot.** Every creature's loot follows [Items & Loot §7](../02-systems/items-and-loot.md#7-loot-generation):
 
@@ -65,6 +71,8 @@ These are the rules the generator applies. Changing a rule changes every creatur
 | Elemental, Construct, Plant, Aberration | None | — | Family grey 60–65% |
 | Notable drops (from the zone table) | | | First listed 40%, others 25%, "rare" 3%; quest items at the rate in the quest text |
 | World table | | | Green 0.6%, blue 0.03%, epic 0.002% from level 25, recipe 0.5–2%, bag 0.5%, consumable 4% (elites: green 8%, blue 1%) |
+
+A family's grey junk that no document names is one item per family, with a vendor value of 3 copper per level of the creatures that carry it. A material that creatures of more than one zone drop (wolf meat, linen) is one item, written with the first zone that drops it; later zones' loot tables name the same item. A table is rolled once, at the creature's death, and belongs to the player who tapped it.
 
 ## 3. Spell rules
 

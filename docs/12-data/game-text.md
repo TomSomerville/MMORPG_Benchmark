@@ -8,8 +8,10 @@ Quest text and NPC greetings are written elsewhere. This page holds the rest of 
 
 | Rule | Detail |
 |---|---|
-| String table | Every piece of display text is a row in `content/strings/en.yaml` with an id. Code and content refer to ids, never to literal text |
-| Ids | `err.<Code>` for error codes · `sys.<area>.<event>` for system messages · `ui.<window>.<control>` for labels · `tip.<n>` and `load.<n>` · `emote.<name>.none` / `.target` / `.self` · `npc.stock.<role>.<n>` |
+| String table | Every piece of display text is a row with an id in the string table, the files under `content/strings/en/`. Code and content refer to ids, never to literal text |
+| This page is imported | The tables of §2 to §6 and §8 are read by `tools content import text`, which writes their rows to `content/strings/en/generated/game-text.yaml`; a test holds that file to this page, so a change here is made in the table and the import run again. Interface labels are written by hand in `content/strings/en/ui.yaml` |
+| Ids | `err.<Code>` for error codes, and `err.<Code>.plain` for its plain form · `sys.<area>.<event>` for system messages · `ui.<window>.<control>` for labels · `tip.<n>` and `load.<n>` · `emote.<name>.none` / `.target` / `.self` · `npc.stock.<role>.<n>`, the role in lower case with underscores (`npc.stock.vendor_greeting.1`) |
+| Plain forms | An error message with a placeholder for something the client is not always told (a level, a stance, a player's name) has a second form with no placeholder, `err.<Code>.plain`, written by hand beside the interface labels ("You must be in {stance}." and "You are in the wrong stance."). The client shows the full form when it has the word and the plain form when it has not. No message is ever shown with a placeholder in it |
 | Placeholders | In braces: `{name}`, `{item}`, `{count}`, `{money}`, `{level}`, `{zone}`, `{skill}`, `{target}`. `{key:<action>}` shows the key currently bound to that action, so tips stay right when keys are rebound |
 | Voice | Plain and short, second person ("You receive…"). No exclamation marks except level-up, a rare item and a boss kill. No jokes in errors |
 | Capitals | Sentence case. Names of items, spells, zones, classes and skills keep their capitals |

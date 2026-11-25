@@ -111,6 +111,8 @@ Each zone needs: a **terrain set** (6–8 tiling ground textures), a **sky and l
 | Z-EC-08 | ☐ | Coldgate (tunnel mouth to Hammerdeep), Bouldergate Pass |
 | Z-EC-09 | ☐ | Quest objects: sooty footprints (decal trail), Stolen Pick, Branded Ingot, the Ever-Ember |
 
+How the terrain set is laid on the ground: the zone's eight ground slots are filled from these seven textures. Deep snow is the base and is used again under the frostpines; frozen ground shows in wind-scoured patches; the packed snow path is roads and towns; ice is Rimewater Pond; exposed rock is cliffs. Interiors draw their walls and floor with the exposed rock slot, so the cave floor texture is not laid anywhere, and forge-warmed mud is held for a zone rule that paints it.
+
 ### Harrowfield
 | ID | Done | Asset |
 |---|---|---|

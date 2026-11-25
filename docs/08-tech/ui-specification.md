@@ -8,15 +8,16 @@ Layout, size and behaviour of every HUD element and window, the full default key
 
 | Rule | Detail |
 |---|---|
-| Reference resolution | 1920 × 1080. UI scale 0.64–1.15 in options; default fits the window height |
+| Reference resolution | 1920 × 1080. The interface is laid out at the reference and scaled to the window as one canvas, extra width or height adding space; the default window is 1280 × 720. UI scale 0.64–1.15 in options; default fits the window height |
+| Look | Stone and brass: dark grey stone panels with brass corner plates and studs, a brass-ringed round minimap, an action bar with pointed end caps, and open unit frames (§2). Panels, rings, bars and caps are drawn by the client in code from one style (`UiStyle`); no frame textures are loaded. **Open:** whether this code-drawn look is final or is replaced by generated frame art (pipeline P03) is the owner's choice; the owner has liked the direction and has not approved P03's assets |
 | Anchoring | Every element is anchored to a screen edge or corner, so wide and ultrawide screens only add space in the middle |
 | Movable frames | Player, target, party, cast bar, buffs, chat, minimap, quest tracker and extra action bars can be unlocked and dragged; positions are saved per character. "Reset layout" restores the defaults below |
 | Windows | Open at a default anchor; up to two side-by-side panels on the left (the second pushes right, classic behaviour); `Esc` closes the most recent. Windows that need an NPC close when the player moves more than 5 yards from it |
-| Data-described frames | Each frame is a Godot scene plus a small view-model; no gameplay logic in UI code. Frames subscribe to client state stores (`UnitStore`, `InventoryStore`, `QuestStore`, …) that the network layer updates |
+| Data-described frames | Each frame is a control with a small view-model; no gameplay logic in UI code. Frames read one client state store (`ClientState`: units, auras, casts, cooldowns, items, quests, combat log, floating text) that the network layer updates. Every control has a name, so the scripted client and the automation port can find it |
 | Fonts | Body 13 px, small 11 px, headings 16 px, numbers on bars 11 px with outline, floating combat text 20–32 px |
 | Colours | Item quality: grey 9D9D9D, white FFFFFF, green 1EFF00, blue 0070DD, purple A335EE, orange FF8000. Reaction: hostile red, neutral yellow, friendly green, player blue. Classes: Fighter C79C6E, Cleric F58CBA, Druid FF7D0A. Schools as in [UI & Controls §4](../02-systems/ui-and-controls.md#4-feedback-and-feel) |
 | Tooltips | Appear 0.2 s after hover, anchored bottom-right by default; item tooltips show a comparison with the equipped item when Shift is held |
-| Drag and drop | Items, spells and macros drag between bags, bars, the spellbook, trade, mail, bank and vendor windows. Dropping an item on the world asks to destroy it |
+| Moving items | Click, then click: a left click on a slot picks up what is there (its name follows the pointer) and a left click on another slot puts it down, moving, stacking or swapping. A right click wears an item from the bags, takes off one that is worn, uses food, drink or the hearthstone, and at an open vendor sells. Clicking the world with an item in hand asks to destroy it. The same click-then-click moves spells and macros onto bars and items into trade, mail and bank windows |
 | Confirmation prompts | For destroying an item, binding on equip, binding on pickup in a group, talent commit, abandoning a quest, buying a bank or guild tab, respec, deleting a character |
 | Error text | Red, centre-top, up to 3 lines, each fading after 3 s, with the error sound. Text comes from the protocol's `ResultCode` strings |
 
@@ -24,28 +25,28 @@ Layout, size and behaviour of every HUD element and window, the full default key
 
 | Element | Anchor | Position and size | Behaviour |
 |---|---|---|---|
-| Player frame | Top-left | 20, 20; 232 × 100 | Portrait 64 px, name, level, health bar and resource bar with numbers; icons: resting (zzz), in combat (crossed swords), leader crown, master looter, PvP flag. Right-click: menu (loot method, reset instances, leave group, dungeon difficulty reserved) |
-| Target frame | Top-left | 270, 20; 232 × 100 | Mirror of the player frame; border shows rank: silver dragon (rare), gold dragon (elite), skull (10+ levels above). Level coloured by difficulty. Up to 16 buffs then 16 debuffs beneath, 21 px each, own debuffs larger (26 px). Cast bar under the frame |
+| Player frame | Top-left | 20, 18; 320 × 96 | An open frame with no panel behind it: a round portrait 88 px across in a brass ring, with the level in a 30 px round badge at its lower right; beside it the name, a health bar (224 × 20) and a resource bar (216 × 16), slim and round-ended, with their numbers; a state line beneath (resting, in combat); icons: leader crown, master looter, PvP flag. Right-click: menu (loot method, reset instances, leave group, dungeon difficulty reserved) |
+| Target frame | Top-left | 364, 18; 320 × 96 | The same frame for the target. Its portrait ring shows standing, with the word at the right under the bars: a silver ring and "Rare"; a gold ring with studs and "Elite" (elite, group elite, dungeon trash), "Rare Elite", or "Boss" (mini-boss and every boss rank); a skull for a creature 10+ levels above. Level coloured by difficulty. Cast bar under the bars (216 × 16). Up to 16 buffs then 16 debuffs beneath, 21 px each, own debuffs larger (26 px) |
 | Target of target | Top-left | 510, 60; 120 × 45 | Name and health only |
 | Party frames ×4 | Top-left | 20, 150 downward; 180 × 56 each, 12 px gap | Portrait, name, health, resource, up to 4 dispellable debuffs coloured by type, fade to 55% beyond 40 yards, leader and looter icons, F1–F5 select |
 | Raid frames | Left | 20, 150; 8 groups of 5; 78 × 38 each | Name, class colour health bar, debuff type border, range fade; replace party frames in a raid |
 | Buff row | Top-right | Left of the minimap; 32 px icons, 2 rows of 10 | Duration below each; right-click cancels; debuffs in a row beneath with a coloured border by type; flashing in the last 10 s |
-| Minimap | Top-right | 20 from each edge; 170 px circle | Zone name above; clock, tracking, mail and group-finder buttons on the rim; zoom + and −; pings on click; shows party pins, quest giver and turn-in icons, town services, tracked nodes |
-| Quest tracker | Right | Below the minimap; 240 wide | Up to 5 watched quests: title and objective counts; a completed quest shows "(Complete)" in yellow; click opens the quest log |
-| Main action bar | Bottom-centre | Centred, 8 px above the XP bar; 12 slots of 40 px, 6 px gap | Page arrows (6 pages); keybind text top-right of each slot; cooldown sweep; red tint out of range; blue tint lacking resource; grey unusable; yellow border for next-swing abilities when queued |
+| Minimap | Top-right | 20 from each edge; 170 px circle in an 8 px brass ring | Zone name above; clock, tracking, mail and group-finder buttons on the rim; zoom + and −; pings on click; shows party pins, quest giver and turn-in icons, town services, tracked nodes |
+| Quest tracker | Right | Below the minimap; 240 wide | Up to 5 watched quests (by default the first five taken): title and objective counts, or the quest's tracker line where it has no objectives; a completed quest folds to its title and "(Complete)" in yellow; click opens the quest log |
+| Main action bar | Bottom-centre | Centred, above the XP bar; 12 square slots of 50 px, 5 px gap, in a stone bar 673 × 68 with a brass edge and a pointed cap at each end | The ability's icon fills its slot (its name is written there while it has no icon); page arrows (6 pages); keybind text top-right of each slot; cooldown sweep; red tint out of range; blue tint lacking resource; grey unusable; yellow border for next-swing abilities when queued |
 | Bottom-left and bottom-right bars | Bottom-centre | Above the main bar, left and right halves; 12 slots each | Optional (interface options) |
 | Right bars 1 and 2 | Right | Vertical, 12 slots each, 36 px | Optional |
 | Stance bar | Bottom-left of main bar | 3 slots of 32 px | Fighter stances; shows the active one lit |
 | Pet bar | Above stance bar | Reserved; hidden at launch | |
-| XP bar | Bottom | Full width of the action bar art; 12 px high | Purple = XP, blue = rested; rested notch; hover shows numbers. At level cap it becomes the watched reputation bar |
+| XP bar | Bottom | Under the action bar, 24 px narrower than it; 16 px high, notched | Purple = XP, blue = rested; rested notch; hover shows numbers. At level cap it becomes the watched reputation bar |
 | Micro-menu | Bottom-right of centre | 8 buttons of 28 × 36 | Character, spellbook, talents, quest log, social, world map, main menu, help |
 | Bag bar | Bottom-right | 5 slots of 36 px | Backpack plus 4 bags; free-slot count on the backpack |
-| Cast bar | Bottom-centre | 240 px above the main bar; 220 × 22 | Spell name, time; green flash on success, red on interrupt; a latency zone at the end |
-| Swing timer | Under the cast bar | 220 × 6 | Main hand; second thin bar for off hand |
+| Cast bar | Bottom-centre | Above the main bar; 240 × 22 | Spell name, time; green flash on success, red on interrupt; a latency zone at the end |
+| Swing timer | Under the cast bar | 220 × 7 | Main hand; second thin bar for off hand |
 | Mirror bars | Top-centre | 200 × 18 | Breath, fatigue, feign reserved |
-| Chat window | Bottom-left | 20, 20 from the bottom; 430 × 180 | Tabs: General, Combat Log; resizable; scroll with the wheel; click a name to whisper, shift-click to `/who` |
+| Chat window | Bottom-left | 20, 20 from the bottom; 430 × 196 | Tabs: General, Combat Log; resizable; scroll with the wheel; click a name to whisper, shift-click to `/who` |
 | Floating combat text | Around the character | — | Damage taken left, healing right, outgoing damage over the target; crits 150% size; scrolls up for 1.5 s |
-| Nameplates | Above units | 110 × 12 health, name above | `V` enemy, `Shift+V` friendly; cast bar beneath; tapped mobs grey; current target larger |
+| Nameplates | Above units | 110 × 12 health, name above | `V` enemy, `Shift+V` friendly; cast bar beneath; tapped mobs grey; current target larger. An NPC has no health bar and its role under its name; a world object only its name. Over a quest giver or ender: a gold `!` for a quest to take, a grey `!` for one too easy to matter, a gold `?` for one ready to hand in, a grey `?` for one in progress. A corpse with loot for the player carries a gold mark. **A nameplate is not drawn through the ground:** a unit on the other side of the ground from the player (in a tunnel under the player's feet, or on the surface above a player who is underground, with 2.5 m or more of land between and no opening cut) is given no nameplate, name or mark |
 | Zone banner | Top-centre | — | Zone and sub-area name for 3 s on entry, coloured by PvP tag |
 | Loot toast | Bottom-centre | Above the cast bar | "You receive: [item]" lines for 4 s |
 | Group loot roll frames | Centre-right | 4 stacked; 300 × 70 | Item, timer bar (60 s), Need, Greed, Pass |
@@ -65,7 +66,7 @@ Sizes are the panel size. "L1" and "L2" mean the first and second left-side pane
 | World map | M | Full screen overlay, 1024 × 768 centred | Continent view → click a zone; fog over undiscovered sub-areas; player arrow, party pins, corpse pin, discovered eyries; zone level range in the title; right-click zooms out. Stoneheart Deeps has three layer buttons (Upper, Great Cavern, Underworks) that follow the player's height |
 | Bags | B, Shift+B (all), F8–F12 each | Bottom-right, stacking leftward | Grid of 4 columns; slot count in the title; item quality border; cooldown sweep on usable items; right-click uses, equips, or sells at a vendor; shift-click splits a stack or links to chat |
 | Bank | at NPC | L1; 384 × 512 | 24 slots + 6 purchasable bag slots with prices; right-click moves between bank and bags |
-| Vendor | at NPC | L1; 384 × 512 | Tabs: Merchant (10 items per page, price, limited stock count, red if unusable), Buyback (12). Repair one, repair all with the cost, guild-bank repair when permitted. Dragging an item in sells it |
+| Vendor | at NPC | L1; 384 × 512 | Tabs: Merchant (10 items per page, price, limited stock count, red if unusable), Buyback (12). Repair one, repair all with the cost, guild-bank repair when permitted. A right click on an item in the bags sells it |
 | Trainer | at NPC | L1; 384 × 512 | Filter: available, unavailable, known. Row: icon, name, rank, cost; detail pane with tooltip and requirements; Train button. Class trainers in capitals add "Reset talents" with the current price |
 | Gossip and quest dialog | at NPC | L1; 384 × 512 | Greeting text, option list with icons (gossip, vendor, trainer, taxi, bind, bank, battlemaster), quest list with state icons. Quest pages: offer (text, objectives, rewards, Accept / Decline), progress (Continue greyed until complete), completion (reward choice highlighted, Complete Quest) |
 | Loot | at corpse | At the cursor; 180 × variable | Up to 4 items per page with quality colours; coin line; click to take; shift-right-click the corpse to auto-loot all |
@@ -192,20 +193,20 @@ Item, spell and quest names can be shift-clicked into chat as links that open a 
 
 ## 7. First-session tutorial tips
 
-One small panel each, shown once, with "Don't show tips" in options. Triggered by the event named.
+One small panel each (380 × 132, lower right above the bag bar), shown once per character, with "Don't show tips" in options and on the panel itself. A tip is shown when its trigger condition first holds; it closes when acknowledged or after 20 seconds, and the next one due waits its turn. Which tips a character has seen is part of its interface settings: the client keeps it in its user folder by character id until interface settings are saved on the server with frame positions (T-M11-05). The tip's text names keys as they are bound.
 
 | # | Trigger | Tip |
 |---|---|---|
-| 1 | First login | Moving and looking |
-| 2 | Near a quest giver with "!" | Talking to quest givers |
-| 3 | First quest accepted | The quest log and tracker |
-| 4 | First hostile targeted | Attacking and abilities |
-| 5 | First loot | Looting; shift-click to loot all |
-| 6 | First item equippable | Equipping; comparing with Shift |
-| 7 | First death | Releasing, running back, the spirit healer and its cost |
-| 8 | Level 2 | Class trainers and training costs |
-| 9 | Bags full | Selling to vendors |
-| 10 | First inn | Binding the hearthstone; rested XP |
+| 1 | First entering the world | Moving and looking |
+| 2 | Within 20 yards of a quest giver with a quest to give ("!") | Talking to quest givers |
+| 3 | A quest in the log | The quest log and tracker |
+| 4 | A hostile target selected | Attacking and abilities |
+| 5 | A loot window open | Looting; shift-click to loot all |
+| 6 | A wearable item in the bags | Equipping; comparing with Shift |
+| 7 | Dead | Releasing, running back, the spirit healer and its cost |
+| 8 | Gaining a level | Class trainers and training costs |
+| 9 | The bags-full error | Selling to vendors |
+| 10 | Resting (in an inn or other rest area) | Binding the hearthstone; rested XP |
 | 11 | Level 5 | Professions |
 | 12 | First eyrie | Flight paths |
 | 13 | Level 10 | Talent points |

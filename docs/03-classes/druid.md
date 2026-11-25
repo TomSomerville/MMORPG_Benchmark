@@ -30,6 +30,8 @@ Three ways to play: **Verdance** (pre-emptive heal-over-time healing), **Stormca
 | 28 | **Wellspring** | Nature | 5% base mana | instant / 6 min | Friendly target: mana regeneration +400% and regenerates while casting, 20 s | — |
 | 30 | **Stillwater** | Nature | 375 | 10 s channel / 5 min | Heals all party members within 30 yd for 98 every 2 s | 30 |
 
+**Rootgrasp and damage.** Each direct damaging hit on a rooted target has a 30% chance to break the root. Damage over time never breaks it, Rootgrasp's own included.
+
 ## 2. Role playstyles at 30
 
 - **Verdance (healer):** keep **Renewal** rolling on the tank and anyone taking damage, layer **Blossom** (signature) to three stacks on the tank, **Overgrowth** when a hit lands, **Mend** only for big holes. Healing is done *before* the damage: a Druid who is surprised is behind. Strong on the move and for sustained raid-wide damage, weak at burst single-target rescue (the Cleric's job). Wellspring for mana; Reawaken as the only combat resurrection in the game.

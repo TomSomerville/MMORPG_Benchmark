@@ -6,13 +6,19 @@ Every asset needed to put a player character on screen at any level from 1 to 30
 
 ## 1. Base bodies
 
-Two rigs (Human, Dwarf); male and female share a rig with different meshes. Each body is one mesh with swappable head, hair and facial-hair meshes and a layered skin texture.
+Two rigs (Human, Dwarf); male and female share a rig with different meshes. The four player bodies are the most important art in the game, because players look at them every minute; they and their animations are made before any other model.
+
+**How a body is made.** Each body is a generated model fitted to its rig's contract. A figure is painted in the game's style standing in an A-pose, an image-to-3D model makes a textured mesh of it, and the fitting step keeps that mesh: it is reduced to the triangle budget, given its own UV layout with its colour baked onto one 1024² texture, its joints are found from its outline, it is skinned, and it is carried to the contract's skeleton and rest pose so that every player clip plays on it. The result is **a single mesh with its own baked texture**. What the figure wears, its hair and its face are part of that mesh and that texture.
+
+The constructed body a fitted body replaces is kept beside it. A skin or outfit painted for the constructed body's layout fits that mesh and no other, so a character wearing one is drawn on the constructed body until the outfit has a dressed body of its own ([Creatures & NPCs §6](02-creatures-npcs.md#6-npc-outfits-on-player-rigs)).
+
+Open: whether the swappable head, hair and facial-hair pieces and the layered skin texture of §2 apply to fitted bodies is not decided; a fitted body is one mesh with one texture and has no route for them today.
 
 | ID | Done | Asset | Notes |
 |---|---|---|---|
 | CHR-001 | ☐ | Human rig (skeleton + skin weights template) | ~55 bones incl. fingers (mitten hands), cloak chain, weapon/shield/back sockets |
 | CHR-002 | ☐ | Dwarf rig | Same bone names as human for animation retargeting; own proportions |
-| CHR-003 | ☐ | Human male body mesh | 4–6k triangles, LOD1 at 50% |
+| CHR-003 | ☐ | Human male body mesh | 4–6k triangles, one 1024² texture; one mesh at every distance |
 | CHR-004 | ☐ | Human female body mesh | |
 | CHR-005 | ☐ | Dwarf male body mesh | |
 | CHR-006 | ☐ | Dwarf female body mesh | |
@@ -52,7 +58,9 @@ One set per rig (authored on Human, retargeted and hand-corrected on Dwarf): **2
 
 ## 4. How armor is built (the permutation rules)
 
-Armor never needs a model per item. Each equipped piece contributes one or more of:
+Armor never needs a model per item. Each equipped piece contributes one or more of the layers below. The texture layers are painted on one UV layout shared by all four bodies, which is the layout of the constructed bodies.
+
+Open: whether this shared-layout layered armor system, the palette lock and the repaint pass apply to fitted bodies is not decided; each fitted body has its own UV layout and its generator's colours, so the armor layers have no route onto it today.
 
 | Layer | Used by slots | Authored per | Fits |
 |---|---|---|---|

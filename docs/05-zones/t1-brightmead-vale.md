@@ -75,7 +75,7 @@ XP uses the [standard table](../02-systems/progression.md#3-quest-xp). **[MC1]**
 | BM-17 | Old Greymaw | 5 | Shepherd Dunn | Kill Old Greymaw (elite) | 525 | 3s · choose 1: *Greymaw Pelt Mantle* (leather shoulders, ilvl 10, +4 Agi +5 Sta) · *Wolfshead Buckler* (shield, ilvl 10, +2 Str +3 Sta) · *Shepherd's Crook-Charm* (held off-hand, ilvl 10, +3 Int +2 Spi) |
 | BM-18 | **[MC1]** Word to Harrowfield | 5 | Reeve Stokes | Carry Morrow's brand to Reeve Maren Holt in Harrow's Cross, or to Forest-Reeve Birch in Cooper's Hollow | 175 | 1s → continues at [HF-01](t2-harrowfield.md#quests) or [RW-01](t2-russetwood.md#quests) |
 
-**Totals:** 18 quests · ≈ 4,060 quest XP · ≈ 75 quest kills (≈ 4,600 kill XP) → player leaves at level 5½–6.
+**Totals:** 18 quests · ≈ 4,060 quest XP · ≈ 75 quest kills (≈ 4,600 kill XP) → player leaves at level 5½–6. Open: the zone bot run made about 281 kills and ended at level 7 (13,175 XP in all, 4,060 of it from quests), because a playthrough fights what stands between it and its objectives and kills more than once for items that drop by chance; either this estimate is raised to what a playthrough makes (about 280 kills, leaving at level 7) or the zone's creatures are thinned until the estimate holds.
 
 ## Gathering & professions
 

@@ -11,9 +11,14 @@ One pipeline per kind of audio, and one for fonts. Shared rules are on the [Asse
 | Text-to-music | ACE-Step 1.5 (MIT); then another permissively licensed music model that passes bring-up | P16 |
 | Text-to-sound | Stable Audio Open (check its licence: reports describe a revenue threshold and registration); then any permissively licensed text-to-audio model that passes bring-up | P17, P18 |
 | Text-to-speech | Kokoro (Apache 2.0; runs on CPU; no voice cloning); then Qwen3-TTS (Apache 2.0) using designed voices only | P19 |
-| Speech recognition | Whisper class model | Checks voice lines against the script |
-| Audio–text similarity | A CLAP class model | Checks that a sound matches its description |
-| Processing | `ffmpeg`, `sox`, EBU R128 loudness | Trim, fade, loop, normalise |
+| Speech recognition | Whisper base.en (MIT) | Checks voice lines against the script |
+| Audio–text similarity | CLAP (`laion/clap-htsat-fused`, Apache 2.0) | Checks that a sound matches its description |
+| Speech detection | Silero VAD (MIT) | Finds speech or vocals where there should be none |
+| Processing | `ffmpeg` and Python only (no `sox`): `ffmpeg`'s loudness filters for normalising, Python for trimming, fades and loops. Loudness is measured to ITU-R BS.1770 (EBU R128) by the forge's own code | Trim, fade, loop, normalise |
+
+The music and sound models run through the graph runner (ComfyUI) on a machine with the memory for them; the speech model and the three checkers are small and run on any of the machines.
+
+**How a sound is described to the gate.** The audio-text check compares a generated sound with **the few words that name it** ("a crow", "hammer on an anvil"), not with the row's technical notes on length, loudness or looping, which describe the file and not what is heard.
 
 **Fallback for all audio: synthesis.** The forge has a small synthesis library that makes sound from oscillators, noise, filters and envelopes, with no samples and no model: impacts, whooshes, magical tones, footsteps by surface, wind, rain, fire, and simple instrument voices (plucked string, bowed string, flute, horn, drum, choir pad) for music. It is plainer than generated audio, but it is always available and never infringes anything.
 
@@ -23,8 +28,9 @@ One pipeline per kind of audio, and one for fonts. Shared rules are on the [Asse
 |---|---|
 | Reads | The music table in the [Audio list](../10-art/09-audio.md): per track, its zone or event, mood, culture and length |
 | Template | "`<culture instruments>`, `<mood>`, `<tempo>`, instrumental, orchestral game music, no vocals" with the culture's instrument line from the audio list (humans: strings and woodwind; mountain dwarves: low brass and choir; hill dwarves: fiddle and pipes) and a fixed key and tempo range per zone so a zone's tracks belong together |
-| Steps | 1. Generate 3 takes per track at the target length plus 10 s. 2. Pick the take with the best audio–text similarity and no detected vocals (unless a choir is asked for). 3. Trim to length on a bar line. 4. Loops: find a loop point by self-similarity and crossfade 2 s; non-loops: fade the tail over 4 s. 5. Normalise to −18 LUFS integrated, true peak under −1 dB |
+| Steps | 1. Generate 3 takes per track at the target length plus 10 s. 2. Pick the take with the best audio–text similarity and no detected vocals (unless a choir is asked for). 3. Trim to length on a bar line. 4. Loops: find a loop point by self-similarity and crossfade 2 s; non-loops: fade the tail over 4 s. 5. Bring to −18 LUFS integrated, true peak under −1 dB. Generated music is brought **up to its loudness with its peaks rounded off** (a soft limit on the loudest moments); the whole piece is not turned down to make room for a few peaks |
 | Stings | Level-up, quest complete, death, discovery and boss stingers are generated at 3–8 s with the same instrument lines |
+| Approval | The owner approved P16's first results on 2026-11-23 ([Asset Forge §7a](00-asset-forge.md#7a-the-owners-approval)); it is made in number |
 | Checks | Length within 2 s of target; loudness in range; loop seam inaudible (spectral difference across the seam under threshold); no speech detected; similarity to its description above threshold; **not similar to any other accepted track beyond a threshold**, so zones do not share a melody by accident |
 | Fallback | Rule-based composition played by the synthesis library: a chord progression and melody generated from the mood (mode, tempo, density) and voiced with the culture's synthesised instruments |
 
@@ -35,7 +41,7 @@ One pipeline per kind of audio, and one for fonts. Shared rules are on the [Asse
 | Reads | The ambience tables in the Audio list; zone weather and sub-area descriptions |
 | Steps (beds) | 1. Generate 3 segments of 30–45 s from the bed's description ("wind through pine trees, distant ram bleating, no music"). 2. Layer and crossfade them into a 90 s stereo loop. 3. Loop-seam check. 4. Normalise to −28 LUFS |
 | Steps (spots) | Single sounds of 1–6 s (a crow, a hammer on an anvil, a creaking sign), 3 variations each, mono, trimmed to the sound with 10 ms fades |
-| Checks | No music and no speech detected; loop seam inaudible; loudness in range; matches the description |
+| Checks | No music and no speech detected; loop seam inaudible; loudness in range; matches the words that name it (shared tools) |
 
 ## P18 — Sound effects (about 1,500: player and combat, spells, creatures, bosses, interface)
 
@@ -44,14 +50,15 @@ One pipeline per kind of audio, and one for fonts. Shared rules are on the [Asse
 | Reads | Sections 4 to 9 of the Audio list; the effect list for spell sounds; animation contact frames from P15; cast times from the spell data |
 | Steps | 1. Generate from the row's description with the family's fragment (melee: "single dry impact, close, no reverb"; spell cast: "rising magical shimmer"; interface: "short soft click"). 2. Make 3–5 variations by seed. 3. Trim to the first transient with a 5 ms fade in; cut the tail at −60 dB. 4. **Fit to timing**: cast loops are cut to loop cleanly; impact sounds are aligned so the transient falls on the animation's contact frame; channelled spells get a loop and a release tail. 5. Normalise by family (combat −16 LUFS, interface −22 LUFS) |
 | Creature voices | Per rig: idle, aggro, attack ×2, hurt ×2, death. Generated from the creature's description, then pitch-shifted by size for the rig's skins (larger is lower) |
-| Checks | Length under the family's maximum (interface 0.5 s, impacts 1.5 s); starts within 10 ms of the file start; no clipping; no speech; variations differ from each other; matches the description |
+| Checks | Length under the family's maximum (interface 0.5 s, impacts 1.5 s); starts within 10 ms of the file start; no clipping; no speech; variations differ from each other; matches the words that name it (shared tools) |
 | Fallback | The synthesis library's generator for the family |
 
 ## P19 — Voice lines (about 250: NPC barks, boss lines, story lines, announcer)
 
 | | |
 |---|---|
-| Reads | **[Spoken Lines](../12-data/spoken-lines.md)**, which holds the words of every voiced line and the pronunciation list, and sets the count; the voice tables in the Audio list for the voice sets; the NPC rosters for who speaks |
+| Reads | **[Spoken Lines](../12-data/spoken-lines.md)**, which holds the words of every voiced line and the pronunciation list, and sets the count; the voice tables in the Audio list for the voice sets; the NPC rosters for who speaks. A voice row of the manifest carries the line's exact words, and its voice is chosen from who the row's title says is speaking |
+| Approval | The owner approved P19's first results on 2026-11-23 ([Asset Forge §7a](00-asset-forge.md#7a-the-owners-approval)); it is made in number |
 | Voices | The audio list's voice sets (by culture, sex and age band) are each a **designed synthetic voice**: a fixed blend of the speech model's stock voices plus pitch and rate settings, stored in `forge/pipelines/P19/voices.yaml`. **No voice is cloned from a recording of any person.** Bosses get their own blends with a processing chain (pitch, reverb, a doubled low octave for the Hollow King) |
 | Pronunciation | `forge/pipelines/P19/pronunciation.yaml` lists every proper name in the game with a phonetic spelling. It is applied to the text before synthesis so a name never sounds two ways |
 | Steps | 1. Apply the pronunciation list. 2. Synthesise with the speaker's voice. 3. Transcribe with the speech-recognition model and compare with the script; retry on a mismatch. 4. Trim silence, normalise to −20 LUFS, apply the speaker's processing chain |
@@ -63,6 +70,6 @@ One pipeline per kind of audio, and one for fonts. Shared rules are on the [Asse
 | | |
 |---|---|
 | Need | A title serif, a body sans and a number face, with Latin Extended coverage ([User Interface list](../10-art/05-ui.md)) |
-| Method | Fonts must be exact and legible at 11 pixels, which image generation does not deliver, so they are **constructed**: a forge script builds each typeface parametrically (stem weight, x-height, serif shape, contrast, width) from geometric strokes, in the manner of a parametric type design, and exports TrueType with FontForge. The parameters are chosen once to suit the style bible: a sturdy slab-serif title face, a humanist sans, and tabular numerals |
-| Checks | All required code points present; no overlapping contours; consistent side bearings; legible at 11, 13 and 16 pixels (rendered samples pass an optical character recognition check) |
+| Method | Fonts must be exact and legible at 11 pixels, which image generation does not deliver, so they are **constructed**: a forge script builds each typeface parametrically (stem weight, x-height, serif shape, contrast, width) from geometric strokes, in the manner of a parametric type design. The strokes of each glyph are joined into outlines with a geometry library (Shapely), so no contours overlap, and the typeface is exported as TrueType with fontTools; both are pure Python and run on any machine. The parameters are chosen once to suit the style bible: a sturdy slab-serif title face, a humanist sans, and tabular numerals |
+| Checks | All required code points present; no overlapping contours (checked geometrically); consistent side bearings; legible at 11, 13 and 16 pixels: A–Z, a–z and 0–9 are rendered at each size, every glyph must carry ink and **every pair of glyphs must differ**. An optical character recognition check may be added on a machine that has such a model |
 | Fallback | If the constructed fonts fail the legibility check, the game uses the engine's built-in default font, and this is the one place the game would ship a non-generated asset |

@@ -6,7 +6,7 @@
 
 ## 1. Stances
 
-Only one stance at a time; changing stance has a 1 s cooldown and drops rage to 0 (talent *Tactical Mastery* keeps some). The stance bar swaps the main action bar.
+Only one stance at a time. The stance abilities share one 1 s cooldown and are off the global cooldown; changing stance sets rage to 0 (talent *Tactical Mastery* keeps some). A Fighter starts in Battle Stance. The stance bar swaps the main action bar.
 
 | Stance | Learned | Effect | Unlocks |
 |---|---|---|---|
@@ -49,6 +49,8 @@ Damage values are *rank 1 → rank at 30*. "Next swing" abilities replace the ne
 | 30 | **Unbroken** | 0 | 30 s | Reckless | 10 s: immune to fear and incapacitate; taking damage generates extra rage | — |
 
 Passive: **Parry** (L8), **Block** (L1), **Dodge**. Ranged pulling: bows, crossbows, guns and thrown weapons use *Shoot/Throw* (no rage).
+
+Threat, where the table gives only a word: **Strike**'s extra threat is a fixed amount on top of the threat of its damage, 20 at rank 1 and 39 at rank 2. **Sunder**'s high threat is a fixed 100 for each use.
 
 ## 3. Role playstyles at 30
 

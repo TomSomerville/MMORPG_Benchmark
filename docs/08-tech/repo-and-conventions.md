@@ -2,7 +2,7 @@
 
 [← Master Plan](../../MASTER_PLAN.md) · Prev: [Technical Architecture](architecture.md) · Next: [Content Schemas](content-schemas.md)
 
-How the code is organised and the rules every file follows. This page is a specification; nothing here has been built yet. Where it fixes a choice that [Architecture](architecture.md) left open, the choice is listed in §1.
+How the code is organised and the rules every file follows. Where it fixes a choice that [Architecture](architecture.md) left open, the choice is listed in §1.
 
 ## 1. Choices fixed here
 
@@ -36,28 +36,37 @@ MMORPG/
     creatures/<zone>/  loot/<zone>/
     npcs/<zone>/  vendors/  trainers/
     quests/<zone>/
-    zones/<zone>/             zone.yaml, subareas.yaml, spawns.yaml, objects.yaml, nodes.yaml
+    zones/<zone>/             zone.yaml, layout.yaml (the generator's input), overrides.yaml and cutouts.yaml
+                              (the zone editor's), and the generator's output: terrain/ (height.r16,
+                              weights.png, holes.png, nav.bin), world.json, minimap/, report.md,
+                              generated/ (subareas, graveyards, cutouts, spawns)
     instances/  encounters/  battlegrounds/
     professions/  recipes/<profession>/
     travel/                   eyries.yaml, routes.yaml, ship.yaml
     reputations/
     strings/en/               display text keyed by id
+    */generated/              in any folder above: records written by a generator or importer, committed,
+                              never edited by hand
   src/
     Game.Shared/              ids, fixed-point math, time, BitWriter/BitReader, protocol messages
     Game.Rules/               every formula and the spell engine; no I/O, no engine types
     Game.Content/             YAML loader, record types, validator, pack compiler
+    Game.Sim/                 the combat simulator: duel runner, class priority lists, the player brain
     Game.Server/              the server executable
       Auth/ Gateway/ World/ Zone/ Social/ Persistence/ Gm/ Hosting/
-    Game.Bots/                headless client library and bot scripts
-    Game.Tools/               command-line tool: content, db, sim, import
+    Game.Bots/                headless client library and bot brains
+    Game.Tools/               command-line tool: content, db, sim, worldgen, itemgen, bots
   tools/
     worldgen/                 builds zones from layout tables (docs/13-world/10-world-construction)
     itemgen/                  writes item records by the item rules (docs/12-data/item-rules)
+    zoneimport/               writes a zone's creatures, NPCs and quests from its documents
   client/                     the Godot project
     project.godot
     Game.Client.csproj        references Game.Shared, Game.Rules, Game.Content
     scenes/ ui/ world/ entities/ audio/ net/
-    assets/                   imported art and audio (glTF, PNG, OGG)
+    addons/zone_editor/       the zone editor plugin
+    assets/                   art and audio loaded at run time by asset id (glTF, PNG, OGG): placeholders
+                              and delivered assets, not in git; asset-index.json and asset-status.json, in git
   tests/
     Game.Rules.Tests/ Game.Content.Tests/ Game.Protocol.Tests/
     Game.Server.Tests/ Game.Sim.Tests/ Game.Bots.Tests/
@@ -69,7 +78,7 @@ MMORPG/
   db/migrations/              0001_accounts.sql, 0002_characters.sql, ...
   forge/                      the Asset Forge: provisioning, service, pipelines, style bible, manifest
                               (see docs/14-asset-pipeline; runs on the separate asset machines)
-  assets-src/                 intermediate files synchronised back from the forge (not imported by Godot)
+  assets-src/                 intermediate files brought back from the forge (not loaded by the game; not in git)
   ops/                        docker-compose.yml (PostgreSQL), Dockerfile, CI workflow
   Directory.Build.props       target framework, nullable, warnings as errors
   MMORPG.sln
@@ -156,7 +165,10 @@ The client is run from the Godot editor, or exported with `godot --headless --ex
 |---|---|
 | `content validate` | Loads every YAML file and runs every validation rule in [Content Schemas §4](content-schemas.md#4-validation-rules) |
 | `content build` | Validates, then writes the packs to `build/content/` with a manifest hash |
-| `content import <kind>` | Transcribes a generated planning document into YAML: `creatures`, `spells`, `quests`, `npcs`, `items`. Used once per milestone to seed content |
+| `content import zone <code>` | Writes a zone's creatures, loot, creature spells, NPCs, quests, quest items and objects from its planning documents and its generated world, under `content/*/generated/` ([Content Schemas §3](content-schemas.md#3-where-each-planning-document-goes)) |
+| `content import text` | Writes the string table's errors, system messages, tips and emotes from [Game Text](../12-data/game-text.md) |
+| `worldgen <zone>` | Builds a zone from its layout tables and writes its terrain, walk grid, world file, generated records, minimap and report; refuses to write if a construction check fails |
+| `itemgen` | Writes every named item, the vendor whites and the world-drop bases by the Item Rules |
 | `db migrate` / `db reset` | Applies migrations; drops and recreates a local database |
 | `sim duel` / `sim rotation` | Runs the combat simulator and prints time to kill, damage per second, resource use |
 | `bots run` | Starts headless bots against a running server |
@@ -180,7 +192,7 @@ One file, `ops/server.json`, overridden by environment variables with the prefix
 
 ## 7. Version control and review
 
-During the unattended build the rules in [Build Procedure §3](build-procedure.md#3-order-and-commits) apply: work on `main`, one commit per task, no pull requests and no human review. What follows describes the conventions for people working on the repository afterwards.
+During the unattended build the rules in [Build Procedure §3](build-procedure.md#3-order-and-commits) apply: work on `main`, one commit per task, no pull requests and no human review of code (art is approved by the owner: [Build Procedure §5](build-procedure.md#the-owners-approval-of-art)). What follows describes the conventions for people working on the repository afterwards.
 
 | Rule | Detail |
 |---|---|
@@ -188,5 +200,7 @@ During the unattended build the rules in [Build Procedure §3](build-procedure.m
 | Commits | One logical change each; the message starts with the task id, for example `T-M1-07 threat table` |
 | Definition of done | The task's acceptance test exists and passes · `dotnet test` passes · `content validate` passes · no new warnings · the design document is updated in the same change if behaviour differs from it |
 | Documents first | If code and a design document disagree, the document is changed first, in its own commit, with the reason in the master plan change log |
-| Binary assets | Git LFS for everything under `client/assets` and `assets-src` |
+| Binary assets | `client/assets` and `assets-src` are not in git: both are ignored. Placeholders are rebuilt from the asset contracts and generated assets are delivered again from the forge, so a clean clone is filled by those two steps. Two files under `client/assets` are tracked: `asset-index.json` (asset id to file, kind, rig and clip; fixed by the contracts) and `asset-status.json` (each asset's state and hash). **Open:** whether generated assets are instead kept in the repository with Git LFS, so that a clone carries the art without a forge, is the owner's choice |
+| Generated world and content | Committed: a zone's terrain files, walk grid, `world.json`, minimap tiles and report, and every `generated/` record file. A test rebuilds each from its source and fails if the committed files differ, so they cannot go stale |
+| Owner's approvals | `forge/approvals.yaml` is committed; only the owner's word changes it |
 | Secrets | None in the repository. `ops/server.json` holds only local defaults |

@@ -50,6 +50,12 @@ Mana costs given as rank 1 → rank at 30.
 
 Passives: Block (1), Parry (8).
 
+Rules the table states briefly:
+
+- **Oath swing damage and weapon speed.** An Oath's extra Holy damage on a swing is the stated amount for a 2.0 s swing, multiplied by `weapon speed ÷ 2.0`: a 3.0 s weapon deals one and a half times the figure, a 1.6 s weapon four fifths of it.
+- **Oath of the Zealot.** Its 40% reduction applies to all the Cleric's physical damage while the Oath is up, so to Dawnstrike as well as to swings.
+- **Forbearance** is a debuff: the Cleric or ally who carries it cannot cancel it, and it runs its full minute.
+
 ## 3. Role playstyles at 30
 
 - **Aegis (tank):** Righteous Bulwark on; Litany of Resolve or Thorns. Pull with Verdict (Radiance) → Hallowed Ground under the pack → Shield of Dawn on cooldown (blocks deal Holy damage) → Dawnstrike/Oath/Verdict loop. Strongest AoE tank; weaker single-target burst threat than a Bulwark Fighter. Mana is the limit — getting hit and Benediction of Wisdom sustain it.

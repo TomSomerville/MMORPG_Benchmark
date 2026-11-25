@@ -22,6 +22,8 @@ Tab-target, global-cooldown combat in the classic style. All numbers are **balan
 
 Base crit 5% melee; base spell crit Cleric 3.5%, Druid 1.8%. Base dodge: Fighter 0%, Cleric 0.7%, Druid 0.9%.
 
+**Attributes by level.** An attribute at a level is the race's base, plus the class's level-1 contribution, plus `floor(growth × (level − 1))`, where growth is the class's average gain per level in the [Class Framework](../03-classes/class-framework.md). The fraction is dropped at each level, so gains are uneven from level to level and exact over many.
+
 ## 2. Derived stats
 
 | Stat | Rule |
@@ -31,12 +33,12 @@ Base crit 5% melee; base spell crit Cleric 3.5%, Druid 1.8%. Base dodge: Fighter
 | Armor | Physical damage reduction = `armor / (armor + 400 + 85 × attackerLevel)`, cap 75% |
 | Defense skill | 5 per level cap. Each point above attacker's weapon skill: +0.04% miss, dodge, parry, block and −0.04% chance to be crit |
 | Weapon skill | 5 per level cap, per weapon type; raised by use. Each point below target defense: −0.04% hit/crit (a classic system, kept by decision on 2026-11-12) |
-| Block | Blocks reduce the hit by block value (`shield value + Str / 20`) |
+| Block | Blocks reduce the hit by block value (`shield value + Str / 20`). A player carrying a shield blocks 5% of attacks from the front; talents and abilities add to that. Without a shield nothing is blocked |
 | Parry | Fighter and Cleric base 5%; parrying speeds the parrier's next swing by 40% |
 | Spell power | Added to spells by coefficient (§6) |
-| Resistances | Fire, Frost, Nature, Arcane, Shadow. Average reduction = `resist / (attackerLevel × 5) × 75%`, applied in 0/25/50/75/100% partial bands. Holy cannot be resisted |
-| Health regen | Out of combat only: Spirit-based (Fighter `Spi × 0.8 + 6` per 2 s); eating restores far more |
-| Mana regen | Per 2 s outside five-second rule: Cleric `Spi / 5 + 15`, Druid `Spi / 4.5 + 15`. **Five-second rule:** no Spirit regen for 5 s after spending mana. "mp5" on gear always applies |
+| Resistances | Fire, Frost, Nature, Arcane, Shadow. Average reduction = `resist / (attackerLevel × 5) × 75%`, applied in 0/25/50/75/100% partial bands: each hit takes one of the two bands either side of the average, weighted so that the mean is exact. Holy cannot be resisted |
+| Health regen | Out of combat only, the same for every class: `Spi × 0.8 + 6` per 2 s; eating restores far more |
+| Mana regen | Per 2 s outside five-second rule: Cleric `Spi / 5 + 15`, Druid `Spi / 4.5 + 15`. **Five-second rule:** no Spirit regen for 5 s after spending mana. "mp5" on gear always applies, paid on the same 2-second beat (two fifths of it each beat) |
 
 ## 3. Resources
 
@@ -52,16 +54,18 @@ Player attacking a same-level mob from the front, in order of priority:
 
 | Outcome | Base chance | Notes |
 |---|---|---|
-| Miss | 5% (24% dual-wielding) | +1% per level the target is above you (+2% from +3) |
+| Miss | 5% (24% dual-wielding) | +1% for each of the first two levels the target is above you and +2% for each level from the third (+3 levels is +4%, +4 is +6%); plus 0.04% per point of the target's defense over your weapon skill |
 | Dodge | 5% | Cannot dodge from behind is **not** applied to mobs; players cannot dodge/parry/block from behind |
 | Parry | 5% (humanoid mobs) | Front only |
-| Glancing blow | 10% + 10% per level above | White hits only; 70% damage at equal skill |
-| Block | 5% (shield mobs) | Front only |
+| Glancing blow | 10% + 10% per level above | Players' white hits against mobs only; a flat 70% damage |
+| Block | 5% (shield mobs; a player with a shield) | Front only |
 | Critical | crit% | ×2 damage |
-| Crushing blow | 0% | Mobs only, when ≥ 3 levels above the defender: 150% damage. Raid bosses are level 33, so tank defense matters |
+| Crushing blow | 0% | Mobs only, when ≥ 3 levels above the defender: the chance is 2% per point of the mob's weapon skill over the defender's defense, less 15; 150% damage. Raid bosses are level 33 (skill 165), so against the capped defense of 150 it is 15%, and it is gone at 158 defense: tank defense matters |
 | Ordinary hit | remainder | |
 
-Yellow (ability) attacks use a two-roll system: hit/avoid first, then crit.
+Yellow (ability) attacks use a two-roll system: hit/avoid first, then crit. Abilities never glance or crush, and a blocked ability cannot crit.
+
+Outcomes are filled in the table's order, and a later outcome gets only the room the earlier ones leave. A seated defender cannot dodge, parry or block, and the blow that lands is a critical hit ([Rules Reference §7](rules-reference.md#7-other-small-rules)).
 
 **Dual wield:** off-hand deals 50% damage; both hands suffer +19% miss on white swings. Abilities use main-hand hit chance.
 
@@ -118,11 +122,12 @@ Categories: stun, root, fear, incapacitate (breaks on damage), sleep, disarm, si
 |---|---|
 | Auto-attack | Toggle; swing timer per hand |
 | Entering combat | On dealing/taking damage or aggro; blocks eating, mounting and some abilities |
+| Changing gear | Weapons and shields may be changed in a fight; armor may not. The dead change nothing they wear |
 | Leaving combat | 5 s after no hostile unit has you on its threat list |
 | Aggro radius | 20 yd at equal level, ±1 yd per level difference, min 5, max 45 |
-| Social pull | Mobs of the same family within 10 yd assist |
+| Social pull | Mobs of the same family within 10 yd assist: the nearest two that are free ([NPC AI §2](npc-ai-and-world.md#2-ai-state-machine)) |
 | Leash / evade | Mob resets if pulled > 60 yd from spawn or cannot path: runs home, heals to full |
-| Fleeing | Humanoids flee at 15% health and may bring friends |
+| Fleeing | Humanoids flee at 15% health, at half their run speed for 8 s, and bring one friend back from within 30 yd |
 | Tapping | First damage tags the mob for XP/loot for that player or group |
 | Level difference | +3 or more: big miss/resist penalties, crushing blows. Skull level = more than 10 above |
 | Falling | Damage from 15 yd; lethal around 65 yd |

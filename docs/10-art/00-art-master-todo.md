@@ -22,7 +22,7 @@ The complete list of art the game needs before code begins: every texture, UI el
 
 | Kind of asset | Count | Where |
 |---|---|---|
-| Character and creature **rigs** | ≈ 64 (2 player + 62 creature/boss) | Lists 1, 2 |
+| Character and creature **rigs** | 67 rig contracts (2 player, 62 creature and boss, the horse mount, and the ship and mine-cart, whose moving parts need bones) | Lists 1, 2 |
 | **Animation clips** | ≈ 850 (204 player and mount, 650 creature) | Lists 1, 2 |
 | **3D models** — characters and creatures | 4 player bodies, 110 customisation pieces, ≈ 350 creature and NPC skins/outfits | Lists 1, 2 |
 | **3D models** — armor pieces | 44 helm fits, 46 shoulder fits, 28 robe skirts, ≈ 14 unique named helms/shoulders | List 1 |
@@ -55,7 +55,7 @@ The complete list of art the game needs before code begins: every texture, UI el
 | Weapons in hands | 15 weapon types × 3 tiers × colourways + uniques; main hand, off hand, two-hand, ranged, sheathed | Every weapon on every body |
 | Guild tabards | 40 emblems, 6 borders, 16 colours | ≈ 980,000 tabards |
 | Creatures | 62 rigs re-skinned | ≈ 350 creatures and NPCs |
-| NPC humanoids | ≈ 140 outfits on the 4 player bodies and customisation parts | Unlimited named and ambient NPCs |
+| NPC humanoids | ≈ 140 outfits on the 4 player bodies; an outfit is a dressed body for each body it is worn on (list 2 §6) | Every named and ambient NPC |
 | Spell effects | 7 school palettes × shared blocks + bespoke per ability | Every ability, rank and talent variant; ranks reuse the same effect |
 | Battleground teams | Red / blue / yellow dressing | 3 teams now, 3 allegiances later |
 | World states | Paired models (mill/burned mill, forge cold/lit, lantern dark/lit, beacon, graves, ward-pylons 4 states) | Every quest-driven change |
@@ -68,15 +68,15 @@ The complete list of art the game needs before code begins: every texture, UI el
 | Style | Stylised, low-poly, hand-painted; strong silhouettes; no photo textures. Defined in full, with measurable rules, in [Art Direction](10-art-direction.md) |
 | Model format | glTF 2.0 binary (.glb), metres, Y-up, one material per model where possible |
 | Texture format | PNG source, power-of-two; albedo + optional emissive mask; no normal maps on small props |
-| Player body | 4–6k triangles; 1024² skin atlas; LOD1 at 50% |
+| Player body | 4–6k triangles; one 1024² texture; one mesh drawn at every distance (no lower-detail level is made) |
 | Creature | 1.5–5k triangles; 512²–1024²; boss 8–12k and 2048² |
 | Weapon / shield | 300–800 triangles; 256² |
 | Helm / shoulder | 300–600 triangles each; shares the set's 512² |
 | Building | 2–8k triangles per whole building; kit pieces share trim-sheet atlases (2048² per kit) |
 | Prop | 50–600 triangles; shared 1024² prop atlases |
 | Terrain | 1024² tiling, 6–8 per zone, splat-blended |
-| Icons | 128² source, 64² shipped |
-| UI | Authored at 2× (for 4K), 9-slice where possible, packed into atlases |
+| Icons | Drawn at 512², kept at 128², shown at 64²; no frame in the picture ([Icons](06-icons.md#the-icon-style)) |
+| UI | Drawn in code by the client in the stone-and-brass look ([User Interface](05-ui.md#the-look)). Textures, where made: authored at 2× (for 4K), 9-slice where possible, packed into atlases |
 | Effects | Flipbook sheets ≤ 1024²; ≤ 150 particles per ordinary spell, ≤ 600 for boss effects |
 | Naming | `chr_`, `arm_`, `wpn_`, `cre_`, `npc_`, `env_`, `prop_`, `nat_`, `vfx_`, `ui_`, `ico_` + snake_case name + `_v01`; the ID from these lists goes in the asset's metadata |
 | Generation record | Every asset logged with the tool and model version, the prompt, the reference images, the seed where available, the date, and which gates it passed. No bought, licensed or CC0 packs. Before a tool is adopted, its terms are checked to confirm that output may be used commercially |
@@ -84,6 +84,10 @@ The complete list of art the game needs before code begins: every texture, UI el
 ## 5. Order of work
 
 **The order in which assets are generated is the order of the [Asset Manifest](../15-asset-manifest/00-manifest-index.md): one row per asset, in order of first appearance in the game.** The blocks below are kept as a summary of what each build milestone needs; where the two differ, the manifest's order is the one the forge follows. "Block A" now means the calibration set: the style bible plus the first row of every kind in the manifest.
+
+**Player models come first.** The four player bodies and their animations are the most important art in the game: players look at them every minute. They are made, fitted and put right before any other model work. After them comes everything the dwarf starting zone, Embercrag Hollow, shows: its creatures, its people, its buildings and props, its nature and ground. The rest follows in the manifest's order.
+
+Nothing is made in number until the owner has approved the style bible and the first results of the pipeline that makes it (§8).
 
 Ordered so that each block unlocks a build milestone in the [Roadmap](../08-tech/roadmap.md) and the earliest blocks are the smallest.
 
@@ -118,31 +122,38 @@ All counts are planning estimates meant for scoping and tracking. Counts given a
 
 ## 8. How the art is made
 
-Decided 2026-11-12: **every visual asset is AI-generated. No licensed, bought or CC0 asset packs are used.** The assets are produced by the **[Asset Forge](../14-asset-pipeline/00-asset-forge.md)**: two machines (a GMKtec EVO-X3 and an RTX 5070 Ti desktop) running twenty-one pipelines, one per kind of asset, built as the first step of the game build. **That specification is the authority on how each asset is made.** No person reviews assets during the build: every review gate named in the table below is carried out by the forge's automatic checks. The table is kept as a summary of what each kind of asset must achieve.
+Decided 2026-11-12: **every visual asset is AI-generated. No licensed, bought or CC0 asset packs are used.** The assets are produced by the **[Asset Forge](../14-asset-pipeline/00-asset-forge.md)**: twenty-one pipelines, one per kind of asset, run on the forge's asset machines and built as the first step of the game build. **That specification is the authority on how each asset is made.**
+
+**The owner approves the look before volume.** The owner approves the style bible, and then the first results of each pipeline, before that pipeline makes its assets in number. Until both approvals are given for a pipeline, only the style bible itself and the calibration set are made. Icons go by their own style ([Icons](06-icons.md#the-icon-style)), which the owner has approved, and not by the general style bible.
+
+Open: the style bible is not yet approved.
+
+Every review gate named in the table below is carried out, asset by asset, by the forge's automatic checks; those checks do not stand in for the owner's approval. The table is kept as a summary of what each kind of asset must achieve.
 
 ### Pipeline by asset type
 
 | Asset | Steps | Review gate before it is accepted |
 |---|---|---|
-| Style guide (block A) | Generate a large set of concept images; pick the look; fix the palette, line weight, proportions and material rules; produce one finished example of every asset type | The style bible passes the forge's checks against [Art Direction](10-art-direction.md) and is frozen. Everything after is judged against it |
+| Style guide (block A) | Generate a large set of concept images; pick the look; fix the palette, line weight, proportions and material rules; produce one finished example of every asset type | The style bible passes the forge's checks against [Art Direction](10-art-direction.md), is approved by the owner and is frozen. Everything after is judged against it |
 | Concept and reference sheets | For each rig, set, kit and creature family: front, side and back views generated from the style guide and the description in these lists | Matches the style guide; silhouette readable at game distance |
-| 3D models (characters, creatures, props, kit pieces, weapons) | Image-to-3D or text-to-3D generation from the reference sheet, then automatic and manual retopology to the triangle budget, UV unwrap to the shared layout, texture generation or projection, palette correction | Triangle count and texture size within the targets in §4; no holes or inverted faces; UVs on the shared layout; reads correctly beside an approved asset |
-| Rigs and skinning | Automatic rigging to one of the 64 standard skeletons, then weight clean-up | Deforms cleanly through a fixed test animation |
+| 3D models (characters, creatures, props, kit pieces, weapons) | Player bodies, creatures, dressed NPC bodies and props: image-to-3D from one picture painted in the style. The generated mesh is kept, reduced to the triangle budget and given its own UV layout with its colour baked onto it; a body or creature is then fitted to its rig, a prop inside its contract's box. Kit pieces and buildings are constructed by rule | Triangle count and texture size within the targets in §4; no holes or inverted faces; fits its contract (skeleton and rest pose, or box); reads correctly beside an approved asset |
+| Rigs and skinning | A generated body or creature is fitted to one of the 67 rig contracts: its own joints are found from its outline, skin weights are computed against them, and the mesh is carried to the contract's skeleton and rest pose | Deforms cleanly through a fixed test animation |
 | Animation | Generated motion (text-to-motion or video-to-motion) retargeted to the rig, then trimmed, looped and timed to the gameplay values (swing speeds, cast times) | Loops without a pop; contact frames land on the gameplay timing; feet do not slide |
 | Armor region textures and colourways | Generated once per set on the shared body layout; colourways produced by palette remap, not regeneration | Seams invisible on all 4 bodies |
 | Terrain and tiling textures | Generated tileable, then checked for repetition at 4 × 4 tiles | No visible seam or repeat |
-| Icons | Generated in batches from a fixed icon prompt template per category, on the standard frame | Readable at 32 px; no text or stray symbols; consistent lighting direction |
-| UI frames and paintings | Generated, then vectorised or cleaned for 9-slice use; paintings upscaled to target size | Slices tile; text areas clear |
+| Icons | Drawn one at a time by the classic painted icon style ([Icons](06-icons.md#the-icon-style)): a full-bleed, tightly cropped painting washed in the hue of its kind, with no frame | Readable at 64 px; no writing, border or tile; the hue of its kind; a glowing light and dark corners |
+| UI frames and paintings | The interface is drawn in code by the client in the stone-and-brass look; its texture set is generated, then cleaned for 9-slice use, only once the owner approves it. Paintings are generated and upscaled to target size | Slices tile; text areas clear |
 | Effects | Flipbook sheets generated per element (flame, leaf, spark, smoke), assembled into particle systems by hand | Reads at the school's colour; within the particle budget |
 
 ### Rules
 
 | Rule | Detail |
 |---|---|
-| One style | Every generation uses the style guide's reference images and palette. An asset that looks like a different game is regenerated, not blended in |
+| One style | Every generation uses the style guide's reference images and palette; icons use the icon style's rules and hues instead. An asset that looks like a different game is regenerated, not blended in |
+| Owner approval | The owner approves the style bible and each pipeline's first results before that pipeline makes its assets in number. Approval is given by the owner only; passing the automatic gates is not approval |
 | Regenerate before repairing | If an asset needs more than about an hour of hand repair, it is regenerated with a better reference |
 | No real people, brands or existing games | Prompts never name a living artist, a studio, a franchise or a real person, and outputs are checked for look-alikes of existing characters. This protects the game legally and keeps it original |
-| Acceptance | Each list's ☐ is ticked only after the asset has passed the forge's gates and the acceptance check in the game engine ([Placeholders and Swapping](../14-asset-pipeline/04-placeholders-and-swap.md)), not in the generator. No person approves assets during the build |
+| Acceptance | Each list's ☐ is ticked only after the asset has passed the forge's gates and the acceptance check in the game engine ([Placeholders and Swapping](../14-asset-pipeline/04-placeholders-and-swap.md)), not in the generator. The owner approves the style bible and each pipeline's first results, not each asset: once a pipeline is approved, its assets are accepted by the gates alone |
 | Hand work | Where a step above says "manual" or "by hand", the builder's scripts do it; nothing waits for an artist |
 | Records | The generation record in §4 is kept for every asset, so any asset can be reproduced or replaced |
 | Tool terms | A tool is used only if its terms allow commercial use of its output. The check is recorded once per tool and version |

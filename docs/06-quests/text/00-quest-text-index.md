@@ -41,8 +41,8 @@ Every quest from level 1 to 30, written out in full: the text the player reads, 
 3. **Prerequisites.** "Requires" lists quests that must be *completed*. "—" means none. Chain variants that satisfy the same step are written "A or B".
 4. **Availability marker.** Givers show the quest marker only when level and prerequisites are met.
 5. **Quest-item drops.** Quest items drop only for players on the quest, and each group member on the quest gets their own roll. The rate is given per quest. Rates below 100% are tuned so the quest takes 1.3–1.6 kills per item.
-6. **Kill credit.** Shared with the whole party within 60 yards. Raid groups get no quest credit except for raid quests.
-7. **World objects.** Clickable quest objects take a 2-second channel (interrupted by damage) unless a note says otherwise, and respawn after 30 seconds, per player where noted.
+6. **Kill credit.** A kill counts for the player who tapped the creature and for every living party member within 100 yards of it, the same distance as shared kill XP ([Progression §2](../../02-systems/progression.md#2-kill-xp)). Raid groups get no quest credit except for raid quests.
+7. **World objects.** A clickable quest object can be used only by a character who is on its quest. Using it is a 3-second channel, lost on moving or on being struck, unless a note says otherwise. Every quest object is per player: once a character has used one it is gone for that character alone and stays for everyone else, so there is no respawn timer and a crowd cannot empty a quest. A character's used objects are there again when the quest is taken again, abandoned or handed in. Where a note makes an object usable only after an earlier step (the Slag Crucible after Sootbeard's death, EC-16), the object cannot be used until that objective of its quest is complete.
 8. **Coin.** The coin stated in each entry is final. The baseline it was drawn from:
 
 | Quest level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
@@ -67,6 +67,7 @@ Every quest from level 1 to 30, written out in full: the text the player reads, 
 10. **Replay and abandon.** Abandoning a quest removes its quest items. Items granted at accept are re-granted when the quest is taken again.
 11. **Failure.** Escort and defend quests fail if the escorted NPC dies or the player goes beyond 80 yards; the quest can be abandoned and retaken at once.
 12. **Reputation.** Every quest grants reputation equal to 25% of its XP (minimum 10) with the reputation of its zone, as listed in [Reference Tables §2](../../12-data/reference-tables.md#2-reputation). Fixed reputation amounts written in a quest's rewards are added on top.
+13. **Tracker lines and objectives.** Each part of a Tracker line is one objective, with one exception: "Speak to" or "Report to" the NPC who ends the quest is the hand-in itself and makes no objective. A quest whose only line is that one has no objectives; its line is still shown in the tracker. Objectives may be done in any order: ordered objectives are not supported, so where a note says "in order" (the footprint triggers of EC-11) the order is not enforced. The one dependency there is belongs to world objects: an object can wait on an earlier objective of its quest (rule 7).
 
 ## Counts
 

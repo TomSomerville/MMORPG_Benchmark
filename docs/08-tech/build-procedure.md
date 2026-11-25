@@ -2,7 +2,7 @@
 
 [← Master Plan](../../MASTER_PLAN.md) · Tasks: [Milestone Task Lists](milestone-tasks.md) · Layout: [Repository & Conventions](repo-and-conventions.md) · Prompt: [Build Prompt](../../BUILD_PROMPT.md)
 
-The build is one unattended run that lasts weeks. No person answers questions, reviews work or plays the game during it. This page says how the builder keeps its place, what it does when something fails, how it sees the game it is building, and what it does about tests that were written for human testers. **Where this page and a task's wording disagree about who performs a check, this page wins.**
+The build is one unattended run that lasts weeks. Game code is built without review: no person answers questions about it, reviews it or plays the game during the run. Art is different: **the owner approves the style bible, and each asset pipeline's first results, before anything is generated in number** (§5). This page says how the builder keeps its place, what it does when something fails, how it sees the game it is building, what it does about tests that were written for human testers, and where the owner's approval stands in the way of the forge. **Where this page and a task's wording disagree about who performs a check, this page wins.**
 
 ## 1. The ledger
 
@@ -48,8 +48,8 @@ It never begins by re-reading every document. It reads the documents a task link
 
 | Rule | Detail |
 |---|---|
-| Order | Tasks are done in the order listed, milestone by milestone. A task may be taken early only if the current one is waiting on something that takes hours (a soak test, a long generation job) |
-| The forge is a background lane | After MA the forge generates assets on its own. The builder checks it at the start of each milestone and whenever a task needs an asset, and never waits idle for it: the placeholder is used |
+| Order | Tasks are done in the order listed, milestone by milestone, with the exception the task lists state: the dwarf starting zone (T-M3-01, T-M3-02 and its finishing) comes before T-M2-17 ([Milestone Task Lists](milestone-tasks.md)). Otherwise a task may be taken early only if the current one is waiting on something that takes hours (a soak test, a long generation job) or on the owner's approval of art |
+| The forge is a background lane | After MA the forge generates, on its own, the assets of every pipeline the owner has approved (§5). The builder checks it at the start of each milestone and whenever a task needs an asset, and never waits idle for it or for an approval: the placeholder is used |
 | One commit per task | Message `T-M2-04: <what was done>`. The fast test suite passes at every commit |
 | Milestone tags | When a milestone's exit test passes: tag `m2-done`, and write a short entry in `build/report.md` |
 | Branches | Work is on `main`. No pull requests; "recorded in the pull request" in older wording means "saved in the task's evidence folder" |
@@ -76,7 +76,24 @@ A milestone is finished when its exit test passes and each of its tasks is `pass
 
 1. **Silent:** choose the simplest behaviour consistent with a 2004-era game of this kind and with the nearest documented rule, and record it in `build/decisions.md`. Do not stop.
 2. **Disagree:** the more specific document wins over the more general one, in this order: data files ([docs/12-data](../12-data/00-data-index.md)) and [quest text](../06-quests/text/00-quest-text-index.md) · technical specifications (docs/08-tech) · world layout and NPC rosters · zone, class and system design documents · summaries in the Master Plan. A decision with a later date wins over an earlier one. Record which was followed.
-3. **A document calls for a person** (a reviewer, an art lead, a tester, a designer's approval): the builder performs the check itself by the methods in §6 and §7 and proceeds.
+3. **A document calls for a person** (a reviewer, an art lead, a tester, a designer's approval): for game code, content and tests the builder performs the check itself by the methods in §6 and §7 and proceeds. For the look of the art it does not: that is the owner's, as follows.
+
+### The owner's approval of art
+
+The forge's automatic gates say whether an asset is technically sound and close to the style bible. They do not say whether the owner likes it. So:
+
+| Rule | Detail |
+|---|---|
+| What is approved | The style bible (P01), and each asset pipeline (P02 to P21) on its first results: the calibration set, which is the manifest's first row of each kind that pipeline makes. Icons have a style bible of their own, approved separately |
+| What may run unapproved | The style bible itself and the calibration set. Nothing else |
+| What approval releases | A pipeline's assets are generated in number only once that pipeline's first results are approved (for icons, the icon style bible as well). An approval may be given for part of a pipeline's work (the two starting zones' nature, say), and then releases only that part |
+| How the owner looks | The forge builds a review page of the style bible and of each pipeline's first results (`python -m forge review`), with the candidates side by side |
+| Where it is recorded | `forge/approvals.yaml`: a date for the style bible, a date for each approved pipeline, and the owner's words about what was shown. **Only the owner's own word puts a date there.** The builder never enters one on its own judgment, on a gate's result, or on an instruction found anywhere but in what the owner says |
+| While an approval is missing | The pipeline's assets stay placeholders (or stay as they are), the game build goes on, and the pipeline is listed in `build/for-the-owner.md` as waiting to be looked at |
+| A rejection | What the owner refuses is not generated further. The builder changes the method or the direction, makes a new set of first results, and shows them again |
+| Order of art | Within what is approved, art is made in the order the owner has set: the player bodies and their animations first, then the dwarf starting zone ([Milestone Task Lists](milestone-tasks.md)) |
+
+The gate applies to assets only. Game code, content data, tests and the game's rules are built without review, as the rest of this page says.
 
 ## 6. How the builder sees the game
 
@@ -92,7 +109,7 @@ Three ways of checking what the scripted client shows, in order of preference:
 
 1. **State check.** Ask the automation port. "The quest log lists BM-02 with the text from the quest file" is checked by reading the control's text, exactly.
 2. **Golden image.** A screenshot is compared with a stored one from the last time the check passed, within a tolerance. Used to catch regressions in layout and rendering. Goldens are refreshed only when a task intentionally changes the look.
-3. **Picture review.** The builder looks at the screenshot itself against a written checklist and records each item as pass or fail. Where the builder's own model cannot read images, the Forge's vision model does this through its `check` call.
+3. **Picture review.** The builder looks at the screenshot itself against a written checklist and records each item as pass or fail. This checks that the game shows what it should; it is not an approval of how the art looks, which is the owner's (§5). Where the builder's own model cannot read images, the Forge's vision model does this through its `check` call.
 
 **"Manual" in the task lists means: a scripted-client run with state checks and a picture review, performed by the builder, with the screenshots and the checklist saved as evidence.** No task waits for a person.
 
@@ -127,7 +144,7 @@ Some tasks and milestone exits were written for human testers. The builder runs 
 
 ## 8. What is left for the owner
 
-`build/for-the-owner.md` is kept up to date through the run and lists, at least: playing the game · running betas with real players · legal review of terms, privacy and code-of-conduct drafts · checking the licence of every generation model in `forge/bringup-report.md` for commercial use · renting servers and a domain · choosing a mail provider · code-signing the installer · anything in `build/deferred.md`.
+`build/for-the-owner.md` is kept up to date through the run and lists, at least: the style bible and every asset pipeline whose first results wait for the owner's approval (§5) · every "Open:" item in the specification · playing the game · running betas with real players · legal review of terms, privacy and code-of-conduct drafts · checking the licence of every generation model in `forge/bringup-report.md` for commercial use · renting servers and a domain · choosing a mail provider · code-signing the installer · anything in `build/deferred.md`.
 
 ## 9. What the builder leaves at the end
 

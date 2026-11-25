@@ -27,28 +27,32 @@ Interpolate between rows. Casters: 80% HP, 40% melee DPS, spells make up the res
 | Behaviour | Rule |
 |---|---|
 | Idle movement | Stationary, random wander within radius, or waypoint patrol (data) |
-| Aggro | Proximity (radius by level difference), damage, assist call, or script |
+| Aggro | Proximity (radius by level difference) with line of sight, damage, assist call, or script. A creature all of whose spawn places are indoors notices at 12 yd at equal level instead of 20 (`aggroRadiusMod: -8`), so a cave or mine can be pulled one at a time |
+| Distance | Every distance a creature measures to another unit (notice, call for help, melee and spell range) is the distance over the ground plus whatever their heights differ by beyond 2.5 yd, so a creature in a gallery is not beside one on the hill above it |
 | Target selection | Highest threat (see [Combat](combat-and-stats.md#7-threat)) |
 | Ability use | Each ability has cooldown, range, conditions (health %, target casting, number of enemies) and a priority; the AI fires the highest-priority ready ability |
 | Movement in combat | Melee chase with pathfinding; casters hold at range and close when silenced/out of mana; ranged kiters optional |
-| Call for help | Social families assist within 10 yd; fleeing humanoids alert within 30 yd |
-| Flee | Humanoids at 15% HP run for 8 s |
-| Evade | Leash 60 yd, or target unreachable for 6 s → run home, immune, full heal |
-| Corpse | Lootable 2 min (owner only), then free-for-all 1 min, then despawn |
+| Thrown attacks | A creature that fights hand to hand and has a ranged attack with no cooldown of its own (Pick Throw, Throw Rock) uses it only on an enemy more than 8 yd away and at most once every 8 s; otherwise it closes to melee. Casters and ranged kinds are not limited this way |
+| Call for help | Social families assist within 10 yd: only the creature that was attacked calls, and the nearest two of its family that are not already fighting, fleeing or evading answer. A creature that came because it was called does not call in its turn. A fleeing humanoid brings back one of its family from within 30 yd when it returns |
+| Flee | Humanoids at 15% HP run from their target for 8 s at half their run speed (about 28 yd), once in a fight, then return to it. A creature that cannot step further (a wall) stops there |
+| Evade | Leash 60 yd, or target unreachable for 6 s → run home, immune, full heal, harmful effects removed, threat wiped, tap released. A creature that has not reached home after 20 s of evading is placed there |
+| Once per fight | An ability marked "once" (an enrage, a call for allies at a health threshold) is used at most once in a fight; the mark is cleared when the creature next engages |
+| Summoned creatures | Appear 2.5 yd to either side of the caller and take its threat list as it stands. They have no spawn point: one that is idle with nobody on its threat list is removed (not sooner than 3 s after appearing). Killed, they leave a corpse with their ordinary loot and give their ordinary XP |
+| Corpse | Lies 3 min: lootable 2 min (owner only), then free-for-all 1 min, then despawn. Looted from 5 yd. A creature killed with no tap (by a guard, by a fall) drops nothing |
 | Scripted encounters | Boss scripts are data-driven timelines + phase triggers (health %, timers, add deaths) with hooks for custom logic |
 
 ## 3. Spawning
 
 - **Spawn points** are placed by the world generator from the camp tables in the [World Layout](../13-world/00-world-layout.md), under the rules in [World Construction §6](../13-world/10-world-construction.md#6-spawn-points-patrols-and-nodes); each references a creature (or a weighted pool) and a respawn timer.
-- Respawn timers: normal outdoor 4–6 min (T1: 2–3 min); named quest targets 3–5 min; rares 2–8 h random; chests 5–15 min; world bosses 3–5 days random; dungeon mobs do not respawn until instance reset.
-- **Dynamic respawn:** the open world has no layers, so crowds are absorbed by faster respawns. Timers are 100% with up to 15 players in a sub-area and fall in a straight line to 15% at 150 or more; gathering nodes fall to 30%.
+- Respawn timers: normal outdoor 4–6 min (T1: 2–3 min); named quest targets 3–5 min; rares 2–8 h random; chests 5–15 min; world bosses 3–5 days random; dungeon mobs do not respawn until instance reset. A timer runs from the creature's death, not from when its corpse goes, so with a short timer the new creature and the old corpse can be seen together.
+- **Dynamic respawn:** the open world has no layers, so crowds are absorbed by faster respawns. Timers are 100% with up to 15 players in a sub-area and fall in a straight line to 15% at 150 or more; gathering nodes fall to 30%. The crowd is the players inside the rectangle of the sub-area the spawn point lies in; a point in no sub-area counts every player in the zone.
 - **Pools:** "one of these 4 points has the rare", "70% wolf / 30% bear".
 - **Gathering nodes** use the same system (see [Gathering](../04-professions/gathering.md)).
-- **Day/night** flags on spawn points.
+- **Day/night** flags on spawn points (`day`, `night` or any; hours in §8). A point out of season is looked at again every 30 s; at dawn and dusk an idle creature of the other half of the day is taken away.
 
 ## 4. Pathfinding and movement
 
-- Navmesh per zone (generated from terrain and collision), server-side path queries for mobs.
+- Walk grid per zone (one cell a metre, a layer per interior, baked by the world generator from terrain, props and buildings), server-side path queries for mobs. A creature's route to its target is found again when the target has moved 3 yd or after 2 s.
 - Mobs cannot be exploited by standing on unreachable ledges: unreachable target → evade.
 - Swimming mobs, flying mobs (ignore navmesh, hover height) and rooted/stationary turrets supported as movement types.
 - Player movement: client-predicted, server-validated (speed, teleport and fall checks). Detail in [Architecture](../08-tech/architecture.md).
@@ -83,7 +87,7 @@ Chests · gathering nodes · doors and levers · quest objects (sparkle when rel
 
 ## 8. Environment systems
 
-- **Day/night:** 4 h real-time cycle, lighting and ambient sound change; flagged spawns.
+- **Day/night:** 4 h real-time cycle on one game clock for everyone; night runs from 20:00 to 06:00 on that clock (100 real minutes), day the rest. Lighting and ambient sound change; flagged spawns.
 - **Weather:** per-zone weighted states with smooth transitions; cosmetic.
 - **Ambient audio:** per sub-area music and ambience tracks.
 - **Zone/sub-area triggers:** name banner, exploration credit, rest state, PvP tag, graveyard assignment.

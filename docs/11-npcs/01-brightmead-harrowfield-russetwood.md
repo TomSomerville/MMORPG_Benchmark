@@ -2,7 +2,7 @@
 
 [← NPC Index](00-npc-index.md) · Zones: [Brightmead Vale](../05-zones/t1-brightmead-vale.md) · [Harrowfield](../05-zones/t2-harrowfield.md) · [Russetwood](../05-zones/t2-russetwood.md) · Next: [Embercrag, Stonewake, Stoneheart](02-embercrag-stonewake-stoneheart.md)
 
-Column meanings and the `STK-` and `TRN-` lists are in the [index](00-npc-index.md). The Gives and Ends columns are filled by script.
+Column meanings and the `STK-` and `TRN-` lists are in the [index](00-npc-index.md). The Gives and Ends columns are filled by script. Open: the rosters carry no sex for an NPC; bodies follow the Presentation Rules (pronouns, else alternating), which gives some NPCs a body that does not match their name. A Sex column would settle it.
 
 ## Brightmead Vale
 

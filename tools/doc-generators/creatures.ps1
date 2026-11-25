@@ -117,7 +117,7 @@ foreach ($f in (Get-ChildItem (Join-Path $Root 'docs\05-zones') -Filter 't*.md' 
         if ($desc -match 'group 5|group 3' + $en + '5') { $rank = 'Group boss (elite)'; $hm = 8.0; $dm = 2.2; $resp = '15 min' }
         elseif ($desc -match 'group 3' -and $hm -lt 5) { $rank = 'Group elite'; $hm = 5.0; $dm = 2.0; $resp = '10 min' }
         $ty = 'Humanoid'
-        if (($desc + $nm) -match 'wolf|bear|boar|spider|lynx|jackal|ram\b|hyena|skitterer|Stonecrawler|fox|cat|Mirefang|Scarhide|Ironhide|Greymaw|Blindmaw|Bitterhorn|Mudtusk|Dustmaw|Whitepelt|Red Tom|Glimmerqueen|Gnawbone|Flint') { $ty = 'Beast' }
+        if (($desc + $nm) -match 'wolf|\bbear\b|boar|spider|lynx|jackal|\bram\b|hyena|skitterer|Stonecrawler|fox|cat|Mirefang|Scarhide|Ironhide|Greymaw|Blindmaw|Bitterhorn|Mudtusk|Dustmaw|Whitepelt|Red Tom|Glimmerqueen|Gnawbone|Flint') { $ty = 'Beast' }
         elseif (($desc + $nm) -match 'treant|Mossback') { $ty = 'Plant' } elseif (($desc + $nm) -match 'undead|Jack|Barrow-King|Ghost|Shade|Cadoc') { $ty = 'Undead' }
         elseif (($desc + $nm) -match 'construct|Wickerman|Rattlebones') { $ty = 'Construct' } elseif (($desc + $nm) -match 'aberration|Horror') { $ty = 'Aberration' }
         elseif (($desc + $nm) -match 'Hulk|Clinker|Vitrea|Gazer') { $ty = $(if ($nm -match 'Vitrea') { 'Beast' } else { 'Elemental' }) } elseif (($desc + $nm) -match 'harpy|Kaa|Gillkin|Gravelkin|Burrowkin|Kibbler|Grawl|Hag|Pondwife') { $ty = 'Humanoid' }

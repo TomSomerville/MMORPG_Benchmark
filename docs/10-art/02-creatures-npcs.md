@@ -4,6 +4,12 @@
 
 Every creature and NPC in levels 1–30, grouped by **rig** (skeleton). A rig is built and animated once; each creature that uses it is a **skin** (texture, sometimes with a mesh variant or scale). ☐ = not started.
 
+**How a creature is made.** A rig's base model is a generated model fitted to the rig's contract, the same way as a player body ([Characters §1](01-characters-armor-weapons.md#1-base-bodies)): a picture of the creature painted in the game's style, an image-to-3D mesh of it, then the fitting step, which keeps the generated mesh, reduces it to the triangle budget, bakes its colour onto its own 1024² texture and skins it to the contract skeleton in the contract's rest pose. The fitting reads the joints by body plan: two-legged figures (which may have a tail and no fingers), four-legged animals, and, more roughly, spiders and floating things. The result is a single mesh with its own baked texture.
+
+**How a skin is made.** Each variety on a fitted rig has its own skin row and its own texture, which is the fitted model's texture tinted for that variety (a darker grey for an old wolf, tan for a jackal, white for a snow cat). A named creature has its own row like any other variety. Mesh variants noted in a row (a mane, an egg sac, a crown) are not part of a tinted skin.
+
+Open: whether the palette lock and the repaint pass apply to fitted creature models and their tinted skins is not decided; they keep their generator's colours today.
+
 **Standard creature animation set (10 clips per rig):** Idle, Idle fidget, Walk, Run, Attack A, Attack B, Hit react, Death, Stunned, Special (named per rig). Casters add Cast and Channel. Extra clips are listed per rig.
 
 ## 1. Beasts
@@ -92,7 +98,13 @@ Other named bosses (Hale Morrow, Grolm Sootbeard, Edrik Vane, Dolga Blackmatch, 
 
 ## 6. NPC outfits on player rigs
 
-Enemy and friendly humanoids on the Human and Dwarf rigs. Each row is an outfit (body textures + optional helm/shoulder pieces) that works on male and female bodies. "Named" = a variant head/prop for the listed character.
+Enemy and friendly humanoids on the Human and Dwarf rigs. Each row is an outfit worn by male and female bodies. "Named" = a variant for the listed character, which has an outfit row of its own.
+
+**How an outfit is made.** An outfit is a **dressed body**: a whole generated model of a person wearing the outfit, made once for each body it is worn on and fitted to that body's rig like a player body. It is a single mesh with its own baked texture; the clothing, hair and face are part of the mesh, so an NPC in a dressed body takes its face and hair from the model and not from customisation pieces. A dressed body stands on the body's own skeleton and plays the player animation set. The game looks for a dressed body by outfit and body, and uses it whole in place of the body and an outfit texture. An outfit that has no dressed body for a body is a texture painted for the constructed body's layout (body-region textures plus any helm or shoulder piece) and is drawn on the constructed body.
+
+A humanoid enemy in a dwarven outfit stands on a dwarf body.
+
+Open: whether dressed bodies are the permanent method for NPCs or a measure for the starting zones is not decided; the Asset Manifest has no row kind for a dressed body.
 
 ### Human rig
 

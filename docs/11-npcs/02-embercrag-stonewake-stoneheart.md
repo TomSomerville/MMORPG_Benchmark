@@ -2,7 +2,7 @@
 
 [← NPC Index](00-npc-index.md) · Zones: [Embercrag Hollow](../05-zones/t1-embercrag-hollow.md) · [Stonewake Dale](../05-zones/t2-stonewake-dale.md) · [Stoneheart Deeps](../05-zones/t2-stoneheart-deeps.md) · Prev: [Brightmead, Harrowfield, Russetwood](01-brightmead-harrowfield-russetwood.md) · Next: [Thornwick](03-thornwick-marches.md)
 
-Column meanings and the `STK-` and `TRN-` lists are in the [index](00-npc-index.md). The Gives and Ends columns are filled by script.
+Column meanings and the `STK-` and `TRN-` lists are in the [index](00-npc-index.md). The Gives and Ends columns are filled by script. Open: the rosters carry no sex for an NPC; bodies follow the Presentation Rules (pronouns, else alternating), which gives some NPCs a body that does not match their name. A Sex column would settle it.
 
 ## Embercrag Hollow
 

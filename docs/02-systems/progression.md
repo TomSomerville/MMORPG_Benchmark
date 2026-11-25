@@ -38,6 +38,8 @@ Goal: **leveling pace extremely close to the 2004–2006 "classic" MMO standard.
 | Mob lower, not grey | `base × (1 − (charLvl − mobLvl) / ZD)` |
 | Mob grey | 0 |
 
+Kill XP is worked in exact arithmetic and a half rounds up: a level-13 creature gives a level-10 character 110 × 1.15 = 126.5, so 127.
+
 **ZD (zero-difference):** levels 1–7 → 5; 8–9 → 6; 10–11 → 7; 12–15 → 8; 16–19 → 9; 20–29 → 11; 30–39 → 12.
 
 **Grey level:** player level 1–5 → nothing is grey; 6–39 → `charLvl − floor(charLvl / 10) − 5` and below is grey.
@@ -46,8 +48,8 @@ Goal: **leveling pace extremely close to the 2004–2006 "classic" MMO standard.
 |---|---|
 | Elite mob | ×2 (in dungeons ×2.5) |
 | Rare mob | ×1 XP but guaranteed green+ drop |
-| Rested | ×2 on kill XP until the rested pool is used |
-| Mob tapped by another player | 0 XP, no loot |
+| Rested | ×2 on kill XP until the rested pool is used: the bonus is as much again as the kill gave, or what is left of the pool if that is less |
+| Mob tapped by another player | 0 XP, no loot. Kill XP and quest kill credit go to the player who tapped it and to that player's party members who are alive and within 100 yd |
 
 ### Group XP rules
 
@@ -93,7 +95,7 @@ Standard quest XP by quest level:
 
 | Source | Amount |
 |---|---|
-| Discovering a sub-area | `areaLevel × 15` XP (min 10), nothing if area is grey |
+| Discovering a sub-area | `areaLevel × 15` XP (min 10), nothing if area is grey. The area's level is its own, or its zone's lowest level if it has none. An area that is grey to the character is still recorded as discovered. The character must be alive |
 | Gathering, crafting | None (classic rule) |
 | Battleground win / loss | ½ standard quest XP for player level on win; ¼ on loss (kept small so PvP is not the fastest leveling route) |
 
@@ -105,6 +107,8 @@ Standard quest XP by quest level:
 | T2 5→10 | 20,000 | ~12,170 (60%) | ~12,500 | — | Over-provided so the elite quests are optional |
 | T3 10→20 | 139,600 | ~50,000 per zone (36%) | ~50,000 | ~40,000 | Gap filled by repeat Gallowmere Crypts runs, class quests, part of the *other* T3 zone |
 | T4 20→30 | 331,800 | ~95,000 per zone | ~95,000 per zone | — | Needs ≈ 2 of 3 zones + dungeon runs |
+
+Open: the Brightmead bot run made about 280 kills, not the 75 the quests ask for, and the bot runs of both starting zones left at level 7; the owner decides whether the T1 row's kill XP and exit level are raised to that or the zones' creatures are thinned until the row holds.
 
 Rule of thumb used when authoring zones: **≈40% quests, ≈35–40% kills made while questing, ≈20–25% dungeons/exploration/grind** — the classic split. Having two or three zones per tier is what removes forced grinding.
 
@@ -121,8 +125,9 @@ Rule of thumb used when authoring zones: **≈40% quests, ≈35–40% kills made
 
 ## 7. Rested XP
 
-- Accrues only when logged out or idle in an inn or capital: **5% of the current level's XP per 8 hours** (¼ rate elsewhere).
-- Cap: 150% of the current level's requirement.
+- Accrues at **5% of the current level's XP per 8 hours** in a rest area (an inn or capital). Online it builds only while the character is in a rest area. Logged out it builds by the wall clock since logout: at the full rate if the character logged out in a rest area, at ¼ of it elsewhere.
+- Cap: 150% of the current level's requirement. On gaining a level the pool is cut to the new level's cap.
+- Kept in fractions and saved in whole points.
 - Doubles kill XP only. Shown as a blue notch on the XP bar.
 
 ## 8. Level-gated unlocks
@@ -144,7 +149,17 @@ Talent points at cap 30: **21** (enough for one tier-5 "signature" talent). See 
 
 ## 9. Ability training
 
-New ability ranks are bought from class trainers every even level. Cost curve (per rank): L2 10c · L4 1s · L6 2s · L8 5s · L10 8s · L12 12s · L14 20s · L16 30s · L18 50s · L20 60s · L22 80s · L24 1g · L26 1g 20s · L28 1g 40s · L30 1g 60s. A character who trains everything spends ≈ 14g by 30, which is roughly half of expected income — the classic "can I afford my spells?" tension is intentional.
+New ability ranks are bought from class trainers at the even levels where the class tables give a rank. Abilities at level 1 are known from the start and cost nothing. **The first trainer rank of every class is at level 4**: no class table has a rank at level 2, so the curve's level-2 price is not charged to any launch class. Cost curve (per rank): L2 10c · L4 1s · L6 2s · L8 5s · L10 8s · L12 12s · L14 20s · L16 30s · L18 50s · L20 60s · L22 80s · L24 1g · L26 1g 20s · L28 1g 40s · L30 1g 60s. A character who trains everything spends ≈ 14g by 30, which is roughly half of expected income — the classic "can I afford my spells?" tension is intentional.
+
+| Rule | Detail |
+|---|---|
+| Previous rank | A rank can be bought only when the rank before it of the same ability is known. Abilities known from the start count, so the second rank of a level-1 ability needs nothing bought first |
+| Level | A rank is refused below its level ("level too low") and shown as unavailable |
+| Whose trainer | A class trainer teaches only its own class; another class is refused, not shown an empty list |
+| First rank free | The starting-zone quest that sends a new character to its trainer makes the next rank bought cost nothing, once; a refused purchase does not use it up |
+| Class-quest abilities | The first rank is granted by the quest and costs nothing ([Class Framework §6](../03-classes/class-framework.md#6-class-quests)) |
+
+Open: with no rank before level 4, either the cost curve should start at level 4 or each class should be given a rank at level 2; the owner has not decided, and until then the curve and the class tables stand as written.
 
 ## 10. Death
 

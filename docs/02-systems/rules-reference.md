@@ -2,7 +2,7 @@
 
 [← Master Plan](../../MASTER_PLAN.md) · Related: [Combat & Stats](combat-and-stats.md) · [Progression](progression.md) · [World & Travel](../01-world/world-and-travel.md) · [UI Specification](../08-tech/ui-specification.md)
 
-The system documents give the large rules. This page gives the small numbers a builder would otherwise have to guess: speeds, ranges, timers and skill gains. **Where another document states a value for the same thing, that document stands**; this page only fills gaps. Every value here is a field in the rules records (`movement`, `interaction`, `skills`) listed in [Content Schemas](../08-tech/content-schemas.md), so it can be tuned without code.
+The system documents give the large rules. This page gives the small numbers a builder would otherwise have to guess: speeds, ranges, timers and skill gains. **Where another document states a value for the same thing, that document stands**; this page only fills gaps. Every value here is a field in the rules records (`movement`, `interaction`, `timers`, `hearth`, `skills`) listed in [Content Schemas](../08-tech/content-schemas.md), so it can be tuned without code.
 
 ## 1. Movement
 
@@ -17,9 +17,11 @@ The system documents give the large rules. This page gives the small numbers a b
 | Jump | Rises 1.6 yd, in the air 0.8 s; movement direction cannot change in the air |
 | Step height | Steps up to 0.5 m are climbed without jumping |
 | Steep ground | Above 50° a character slides down and cannot stand |
-| Falling | No damage below 15 yd. From 15 yd, damage is a share of maximum health rising in a straight line to 100% at 65 yd. Landing in water at least 2 yd deep does no damage |
+| Falling | No damage below 15 yd. From 15 yd, damage is a share of maximum health rising in a straight line to 100% at 65 yd. Landing in water at least 2 yd deep does no damage. A fall is measured from the highest point reached in the air to the landing; a fall that takes all a character's health kills it by nobody's hand (no loot or XP for anyone) |
 | Mounted | Speeds in World & Travel. Dismount on taking damage from a player, entering combat by attacking, entering a building marked indoors, or swimming |
 | Speed effects | The strongest speed increase and the strongest slow both apply, multiplied together; others of each kind are ignored |
+
+Open: the walk grid that the server and the client stand on climbs steps of 0.25 m and applies its own slope limit, not the 0.5 m and 50° above; the owner decides whether the grid is brought to these values or these values to the grid.
 
 ## 2. Interaction ranges
 
@@ -40,8 +42,8 @@ The system documents give the large rules. This page gives the small numbers a b
 
 | Rule | Value |
 |---|---|
-| Away | Marked AFK after 5 minutes with no input |
-| Idle logout | Logged out after 30 minutes AFK. In a battleground, 2 minutes with no movement or action allows an AFK report |
+| Away | Marked AFK after 5 minutes with no input; any message from the player counts as input. Others see the mark |
+| Idle logout | Logged out after 30 minutes AFK, with the reason Timeout. In a battleground, 2 minutes with no movement or action allows an AFK report |
 | Release | A dead player may release at once, and is released automatically after 6 minutes. The wait before resurrecting after repeated deaths is in [Progression §10](progression.md#10-death) |
 | Player corpse | Stays until the player returns to life. Bones are left for 15 minutes as scenery |
 | Resurrection by another player | An offer lasts 60 s. Returning to life by spell restores the health and mana the spell states |
@@ -50,6 +52,8 @@ The system documents give the large rules. This page gives the small numbers a b
 | Summon offer (meeting stone) | 2 minutes to accept |
 | Instance exit when not in the group | Removed to the entrance after 60 s |
 | Cast queue | 400 ms (stated in Architecture) |
+| Hearthstone | A 10 s cast, lost on moving or being struck like any cast; 60-minute cooldown (stated in World & Travel). The bind point is where the innkeeper who set it stands |
+| Cooldowns through logout | A cooldown with more than 30 s left to run at logout is kept and goes on running by the wall clock; shorter ones are not kept |
 | Combat log | Keeps the last 2,000 lines |
 | Channel join | Joining or leaving a zone moves the player between that zone's General and LocalDefense automatically |
 
@@ -74,7 +78,7 @@ The four vendor tiers are defined in the [NPC Index, STK-FOOD](../11-npcs/00-npc
 | 15 | 552 health | 835 mana | 24 s |
 | 25 | 874 health | 1,080 mana | 27 s |
 
-The restoration is spread evenly over the time, stops on standing, moving or entering combat, and needs the character seated (eating seats the character). The "Well Fed" bonus from cooked food is given after 10 seconds of eating. Vendor prices are in the stock lists.
+The restoration is spread evenly over the time, on top of the character's own out-of-combat regeneration, stops on standing, moving or entering combat (what was not yet restored is lost), and needs the character seated (eating seats the character). Food and drink can be taken together. The "Well Fed" bonus from cooked food is given after 10 seconds of eating. Vendor prices are in the stock lists.
 
 ## 6. Camera and view
 
@@ -120,7 +124,7 @@ These are targets for the build to meet and measure with the `crowd` and `visual
 
 | Topic | Rule |
 |---|---|
-| Sitting | A seated character stands when attacked, and the first hit against a seated character is a critical hit |
+| Sitting | A seated character cannot dodge, parry or block; the first hit that lands on it is a critical hit, and it is on its feet at once. Sitting down is refused in combat |
 | Swimming and combat | Abilities work while swimming. Mounts cannot swim |
 | Water breathing | 60 s (stated), then 10% of health each 2 s; the bar refills at the surface in 5 s |
 | Eating, drinking, bandaging and mounting | Not in combat |
@@ -130,7 +134,7 @@ These are targets for the build to meet and measure with the `crowd` and `visual
 | Stacking in bags | Picking up an item fills an existing stack first, then the first empty slot in bag order |
 | Buyback | The last 12 items sold (stated in Economy), until logout |
 | Soulbound trade | None, except raid loot among those present for 2 hours (stated in Items & Loot) |
-| Level-up | Health and resource are restored to full |
+| Level-up | Health and resource are restored to full; the new level is saved at once |
 | Spell ranks and downranking | Every rank a character has learned stays in the spellbook and can be cast. A lower rank uses its own cost, cast time and base values. Its spell-power coefficient is multiplied by `(level at which the next rank is learned + 5) ÷ caster level`, never above 1; the highest rank known is never reduced |
 | Raid markers | The group leader and assistants can place one of 8 marker icons on a unit; each icon is on one unit at a time and is seen by the whole group |
 | Threat display | None at launch: no threat or damage meter is built in |

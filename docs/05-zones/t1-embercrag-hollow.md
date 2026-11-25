@@ -48,6 +48,8 @@ Warden Hilda Stonebraid (start) · Battlemaster Kol Ironvow (Fighter) · Hearthp
 **Rares:** *Whitepelt* (4 lynx, Tuskfall — *Whitepelt Wraps*, leather wrist) · *Grawl the Boulder-Eater* (5 elite Gravelkin, Warrens — quest target).
 **Mini-boss:** *Grolm Sootbeard* (5, Kiln Cave) — Slag Bolt, Kindle (self-enrage at 30%), 2 Lookout guards.
 
+Open: the Slagborn Firebrand's Slag Bolt does about 12 damage a second, where a creature of its level that fights by hand does about 5; the bolt is kept as written and the Firebrands outside Kiln Cave stand 30 m apart so that they are met one at a time, and whether to lower its damage, lengthen its cast or cut its mana instead is not decided.
+
 ## Quests
 
 | ID | Quest | Lvl | Giver | Objective | XP | Reward |
@@ -71,7 +73,7 @@ Warden Hilda Stonebraid (start) · Battlemaster Kol Ironvow (Fighter) · Hearthp
 | EC-17 | Grawl the Boulder-Eater | 5 | Miner Ulf | Kill Grawl (elite) | 525 | 3s · choose 1: *Boulder-Eater's Girdle* (mail waist, ilvl 10, +4 Str +5 Sta) · *Grawl's Molar* (held off-hand, ilvl 10, +3 Int +2 Spi) · *Warren-Delver's Mantle* (leather shoulders, ilvl 10, +4 Agi +5 Sta) |
 | EC-18 | **[MC1]** Word to Stonewake | 5 | Forgemaster Emberhand | Carry a Branded Ingot to Dale-Reeve Garrik Stonewake in Hopstead, or to Hallwarden Lampwright in Lanternhold | 175 | 1s → continues at [ST-01](t2-stonewake-dale.md#quests) or [SD-01](t2-stoneheart-deeps.md#quests) |
 
-**Totals:** 18 quests · ≈ 4,060 quest XP — identical structure and XP to Brightmead so neither race levels faster.
+**Totals:** 18 quests · ≈ 4,060 quest XP — identical structure and XP to Brightmead so neither race levels faster. Open: the zone bot run made 211 kills in 96 minutes, died 4 times and ended at level 7, where the design figure the two zones share is about 75 quest kills and leaving at level 5½–6; either that estimate is raised to what a playthrough makes or the zone's creatures are thinned until it holds.
 
 ## Gathering & professions
 

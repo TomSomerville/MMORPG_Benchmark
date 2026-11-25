@@ -2,7 +2,11 @@
 
 [← Art Master To-Do](00-art-master-todo.md) · Made by: [Asset Forge](../14-asset-pipeline/00-asset-forge.md)
 
-This page defines what the game looks like in rules a program can follow and check, and explains how roughly nine thousand separately generated assets are made to look like one game. It is the authority on style. The forge's style bible ([P01](../14-asset-pipeline/01-image-pipelines.md#p01--style-bible)) is generated *from* this page, not invented.
+This page defines what the game looks like in rules a program can follow and check, and explains how roughly nine thousand separately generated assets are made to look like one game. It is the authority on style. The forge's style bible ([P01](../14-asset-pipeline/01-image-pipelines.md#p01--style-bible)) is generated *from* this page, not invented. The owner approves the style bible, and then the first results of each pipeline, before anything is made in number.
+
+Open: the style bible is not yet approved, so §1 to §4 are the direction it is being made to and are not final.
+
+Open: the owner found the first style anchors, made without an image model, and the figures built from them unacceptable, and liked the image-model direction for buildings, weapons and environments; people and animals are to be redone as solid painted forms.
 
 ## 1. The look
 
@@ -16,9 +20,11 @@ It belongs to that family of games but is its own world. **No prompt, reference 
 |---|---|---|
 | 1 | **Shape first** | Proportions are exaggerated and outlines are simple. If a silhouette is unclear, the asset is wrong, whatever its texture looks like |
 | 2 | **Paint, not photograph** | Every surface is a painted colour texture with its light and shadow painted in. No photographic textures, no fine noise, no realistic material shading |
-| 3 | **One light, one palette** | All assets are painted as if lit softly from above, and all colours come from one master palette |
+| 3 | **One light, one palette** | All assets are painted as if lit softly from above, and all colours come from one master palette. Icons are the one exception (below) |
 | 4 | **Big, medium, small** | About 70% of any surface is large calm areas, 25% medium shapes, 5% small accents. Even detail everywhere reads as noise |
 | 5 | **Same grain everywhere** | Brush strokes, pixel density and edge sizes are the same scale on a boot, a barrel and a building, so things look like they were made by one hand |
+
+**Icons have their own style.** An icon is a tiny hand-painted picture that fills its square, cropped tight, washed in one strong hue for its kind (twelve hues), with a glowing light that is white-hot at its centre and dark corners. Icons are not drawn from the master palette, are not pulled toward it, and carry no frame. The rules and the hue table are in [Icons](06-icons.md#the-icon-style); the owner approved that style on 2026-11-23. Rules 3 and 5, the palette of §4 and the repaint pass of §6 do not apply to icons.
 
 ## 2. Shape rules
 
@@ -76,7 +82,7 @@ timber (pale, dark, charred) · plaster · thatch · slate and tile · cut stone
 
 ### Master palette
 
-Thirty-two colours in eight ramps of four values (shadow, base, light, highlight): warm stone · cool stone · wood · earth · foliage green · autumn orange-red · iron and steel blue-grey · accent gold. Every colour in every asset is drawn from, or pulled toward, these. The exact values are fixed when the style bible is generated and frozen from then on.
+Thirty-two colours in eight ramps of four values (shadow, base, light, highlight): warm stone · cool stone · wood · earth · foliage green · autumn orange-red · iron and steel blue-grey · accent gold. Every colour in every asset except an icon is drawn from, or pulled toward, these. The values are built by rule in a perceptual colour space, with shadows shifted toward blue-violet and lights toward yellow as §3 asks, and are fixed when the style bible is generated and frozen from then on.
 
 ### Cultures and enemies
 
@@ -119,24 +125,26 @@ Much of what makes separate assets look like one game happens in the engine, not
 
 ## 6. How the forge keeps nine thousand assets consistent
 
-A generator asked nine thousand separate times for "a stylised barrel" will give nine thousand slightly different styles. Consistency therefore **cannot come from prompts**. It comes from limiting how much of each asset the generator decides, and from putting everything through the same final steps. Ten mechanisms, strongest first:
+A generator asked nine thousand separate times for "a stylised barrel" will give nine thousand slightly different styles. Consistency therefore **cannot come from prompts**. It comes from limiting how much of each asset the generator decides, from holding every asset to a contract (a skeleton, a size, a triangle budget), and from putting everything through the same final steps. Ten mechanisms, strongest first:
 
 | # | Mechanism | What it does |
 |---|---|---|
 | 1 | **One shader, light, fog and grade** (§5) | Everything is drawn the same way, so differences between assets are reduced before any asset is made |
-| 2 | **Shapes from templates, not from the generator** | Buildings, terrain, trees and rocks are built by procedural generators that obey §2 exactly. Creatures and characters are generated only as a *target shape*, which is then wrapped by a template mesh with standard proportions and topology. The generator never has the last word on geometry |
-| 3 | **The shape pass** | After template fitting, a fixed script enforces §2 on every model: scale hands, feet, heads and weapon thickness to the stated ratios; reduce to the triangle budget; bevel hard edges; remove features thinner than 4 cm |
-| 4 | **The repaint pass** (the key step; see below) | **No texture is used as the generator made it.** Every texture on every asset goes through the same procedure that strips the generator's own lighting and colours and re-applies the game's |
+| 2 | **Shapes built by rule, or generated and held to a contract** | Buildings, kit pieces, terrain, trees and rocks are built by constructed generators that obey §2 exactly. Player bodies, creatures, dressed NPC bodies and props take their shape from an image-to-3D model, working from one picture painted in the game's style, and **the generated mesh is kept**. What holds it to the game is its contract: a body or creature is fitted to its rig's skeleton and rest pose, and a prop is fitted inside its contract's box. Nature for the two starting zones may also be generated and fitted inside its box |
+| 3 | **The shape pass** | On a constructed model a fixed script enforces §2: scale hands, feet, heads and weapon thickness to the stated ratios; reduce to the triangle budget; bevel hard edges; remove features thinner than 4 cm. A generated model is reduced to its triangle budget. A generated body or creature is then carried, bone by bone, from where its own joints are to where the contract's are, so its height and limb lengths are the contract's. A generated prop is scaled to fit inside its box and drawn out toward the box by no more than 30% on any axis; it must fill at least 45% of every side |
+| 4 | **The repaint pass** (see below) | Every constructed model's texture, every painted skin and armor region and every tiling texture goes through the same procedure, which strips the generator's own lighting and colours and re-applies the game's. A generated model keeps the colour its generator painted, baked onto the reduced mesh's own layout; a generated prop is then given painted light (lighter where it faces up, darker where it faces down or lies in a hollow) with its colours kept |
 | 5 | **A shared material library** | The two dozen materials in §3 are generated once. Buildings, props and much armor use those materials through trim sheets, so they share actual pixels instead of resembling each other |
 | 6 | **One pixel density** | UV layouts are scaled to the densities in §3, so nothing is blurrier or sharper than its neighbours |
 | 7 | **A trained style adapter** | After the style bible exists, the forge trains a small style adapter (a LoRA) for the image model on about 150 approved images, and uses it for every image it generates, with reference images as well. All generations use the same sampler, step count and guidance settings, fixed at bring-up. If adapter training does not run on this hardware, reference conditioning alone is used |
-| 8 | **Palette lock** | Every colour image is pulled toward the master palette, and each zone's and culture's assets toward its subset |
+| 8 | **Palette lock** | Every colour image except an icon is pulled toward the master palette, and each zone's and culture's assets toward its subset |
 | 9 | **Measured style gates** | Each asset is measured, not judged by description: see §7 |
-| 10 | **Calibration before volume** | Block A makes one of each asset type first. The gate thresholds are set from those, then frozen, and only then does the forge start the other nine thousand |
+| 10 | **Calibration and approval before volume** | Block A makes one of each asset type first. The gate thresholds are set from those and from a spread of probe assets, then frozen (§7). The owner then approves the style bible and, pipeline by pipeline, its first results; only an approved pipeline makes its assets in number |
+
+Open: whether the palette lock and the repaint pass apply to generated bodies and creatures fitted to a rig, which today keep their generator's colours, is not decided.
 
 ### The repaint pass
 
-Applied to every model's texture, every skin, every armor region and every tiling texture, identically:
+Applied to every constructed model's texture, every painted skin, every armor region and every tiling texture, identically:
 
 | Step | What happens | Why |
 |---|---|---|
@@ -148,11 +156,11 @@ Applied to every model's texture, every skin, every armor region and every tilin
 | 6. Paint grain | A painterly filter gives strokes at the standard 2–6 cm scale and removes anything finer than 1 cm. Where the style adapter is available, a low-strength pass through the image model with the adapter replaces the filter for a more hand-made result | Same grain everywhere |
 | 7. Check | The measured gates in §7 | |
 
-Because steps 2 to 6 are computed from geometry and the palette, and are identical for every asset, two assets that came from very different generations end with the same lighting, the same colours and the same grain. The generator contributes the *design* (where the stripes are, what the pattern is); the repaint pass contributes the *style*.
+Because steps 2 to 6 are computed from geometry and the palette, and are identical for every asset, two assets that came from very different generations end with the same lighting, the same colours and the same grain. The generator contributes the *design* (where the stripes are, what the pattern is); the repaint pass contributes the *style*. A generated model does not go through these steps (mechanism 4): its style comes from the picture it was modelled from, which is painted to this page's rules.
 
 ## 7. Measured style gates
 
-Checks the forge computes for every asset. Thresholds are set during block A calibration and then frozen.
+Checks the forge computes for every asset. Thresholds are set during calibration and then frozen. Block A holds one asset of each type, too few to set a band, so calibration measures block A together with a spread of probe assets of every class, generated and measured but not accepted: each upper limit is 35% above the largest value seen and each lower limit 60% of the smallest, capped so that deliberately bad test samples still fail. Passing the gates does not stand in for the owner's approval of a pipeline's first results.
 
 | Gate | Measure |
 |---|---|
@@ -171,14 +179,15 @@ Checks the forge computes for every asset. Thresholds are set during block A cal
 
 | Trusted to decide | Not trusted to decide |
 |---|---|
-| The design of a thing: what a creature's markings are, how a set of armor is cut, what a sword's guard looks like | Proportions |
-| Variety between assets of the same kind | Topology, triangle count, UV layout, pixel density |
-| Rough shape, as a target for template fitting | Final geometry of anything that must fit a grid or a skeleton |
-| | Lighting, colour palette, brush grain |
+| The design of a thing: what a creature's markings are, how a set of armor is cut, what a sword's guard looks like | The skeleton, the rest pose, and the height and limb lengths of anything animated: those are the rig contract's |
+| Variety between assets of the same kind | Triangle count and texture size: every model is reduced to its budget |
+| The shape and the painted surface of a body, a creature, a dressed NPC or a prop, from a picture in the game's style | The size of a prop: it is fitted inside its contract's box |
+| | The geometry of anything that must fit a grid: kit pieces and terrain are constructed |
+| | Lighting, colour palette and brush grain of constructed models, painted skins and tiling textures |
 
 ## 9. Limits
 
-- **This will look like a stylised, hand-painted game; it will not look hand-made by a senior art team.** The repaint pass gives consistency, and consistency is what makes a game look intentional, but computed painting is plainer than an artist's.
-- **Faces and hands are the weak point.** Generated characters fitted to templates keep clean proportions but lose expression. Player faces use the customisation pieces to compensate.
+- **This will look like a stylised, hand-painted game; it will not look hand-made by a senior art team.** The repaint pass gives consistency, and consistency is what makes a game look intentional, but computed painting is plainer than an artist's. Generated models are richer to look at and less alike, which is why they are held to contracts and shown to the owner before volume.
+- **Faces and hands are the weak point.** A generated body's face and hands are what its generator made, reduced to the triangle budget; a body fitted to its rig keeps the contract's proportions, and its face is part of its one painted texture.
 - **Unique hero pieces are the most likely to stand out**: raid bosses, tier armor, capital landmarks. They go through the same passes, but they are also the assets players look at longest.
-- **The thresholds are untested.** The gates in §7 are sound in principle; their numbers can only be set by calibration on real output, which is why block A exists.
+- **The thresholds are only as good as the calibration set.** The gates in §7 are sound in principle; their numbers come from calibration on real output, and they measure consistency, not whether the look is liked. That judgement is the owner's.

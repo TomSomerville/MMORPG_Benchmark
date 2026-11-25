@@ -84,7 +84,7 @@ Generated from the creature tables in the zone documents using the rules in the 
 | CRE-EC-11 | Slagborn Firebrand | 5 | Humanoid (caster) | 82 | 4–5 | 2 s | 98 | 285 | 2.5 min | 70 |
 | CRE-EC-12 | **Whitepelt** (Rare) | 4 | Beast | 130 | 9–13 | 2 s | 102 | — | 2–8 h | 65 |
 | CRE-EC-13 | **Grawl the Boulder-Eater** (Elite) | 5 | Humanoid | 306 | 17–23 | 2 s | 130 | — | 7 min | 140 |
-| CRE-EC-14 | **Grolm Sootbeard** (Mini-boss) | 5 | Beast | 204 | 12–16 | 2 s | 130 | — | 5 min | 210 |
+| CRE-EC-14 | **Grolm Sootbeard** (Mini-boss) | 5 | Humanoid | 204 | 12–16 | 2 s | 130 | — | 5 min | 210 |
 
 ### Abilities
 
@@ -224,7 +224,7 @@ Generated from the creature tables in the zone documents using the rules in the 
 | CRE-RW-15 | **Red Tom** (Rare) | 7 | Beast | 211 | 16–21 | 2 s | 238 | — | 2–8 h | 80 |
 | CRE-RW-16 | **Old Mossback** (Elite) | 9 | Plant | 536 | 36–49 | 2.4 s | 346 | — | 7 min | 180 |
 | CRE-RW-17 | **Garrick Snare, the Poacher-King** (Elite) | 10 | Humanoid | 594 | 34–46 | 2 s | 400 | — | 7 min | 190 |
-| CRE-RW-18 | **Kilnmaster Bertram Soot** (Chain boss (elite)) | 10 | Beast | 990 | 37–51 | 2 s | 400 | — | 5 min | 285 |
+| CRE-RW-18 | **Kilnmaster Bertram Soot** (Chain boss (elite)) | 10 | Humanoid | 990 | 37–51 | 2 s | 400 | — | 5 min | 285 |
 | CRE-RW-19 | **O** (Named) | d | o | 1725 | 102–138 | 2 s | 1750 | — | 5 min | 545 |
 | CRE-RW-20 | **8** (Named) |  |  | 40 | 2–3 | 2 s | -8 | — | 5 min | 45 |
 | CRE-RW-21 | **H** (Named) | u | m | 1725 | 102–138 | 2 s | 1750 | — | 5 min | 630 |

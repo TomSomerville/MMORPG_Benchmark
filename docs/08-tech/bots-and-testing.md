@@ -41,29 +41,35 @@ The Quester needs no hand-written script per quest. It reads the same content pa
 
 | Objective type | The bot goes to |
 |---|---|
-| `kill`, `subdue`, `castOn` | The nearest spawn record of that creature that is not already crowded by other bots |
+| `kill`, `subdue`, `castOn` | The nearest spawn record of that creature that is not already crowded by other bots. Of two quests of one level, the one with the weaker creatures is done first; of a quest's places, the nearest on foot by the walk grid |
 | `collect` | The source of the item: the spawns of a creature that drops it, the world object that holds it, or the vendor that sells it |
 | `interact`, `useItem` on an object | The nearest world object of that kind |
 | `useItem` on an area, `explore` | The centre of the sub-area or trigger volume |
 | `talk`, `deliver` | The NPC's position |
 | `escort`, `defend`, `event` | The NPC or object that starts it, then follows the escort or stays within 15 yd of the defended target |
 
+The bot walks by the zone's walk grid ([Terrain and Cutouts §1.1](terrain-and-cutouts.md#11-the-walk-grid)), as creatures do, and counts height in every distance: a creature in the mine under its feet is not beside it.
+
 This lookup is a shared library, the **objective locator**. Validation rule V30 requires that every objective of every quest resolves to at least one reachable position; a quest that fails cannot be completed by anyone, bot or player. The locator is a testing and validation tool only. **The game client never shows objective positions to players**: quest map markers and arrows are a cut feature ([Feature Inventory §4](../09-reference/wow-feature-inventory.md#4-questing)), and players find things by reading the quest text.
 
 ### What it does, in order of priority
 
-1. Dead: release, run to the corpse, resurrect. If the corpse cannot be reached in 5 minutes, use the spirit healer.
-2. In combat: fight by the class priority list. With two or more enemies and health under 25%, run toward the nearest hub.
-3. Health under 50% or mana under 30%, out of combat: eat or drink. With no food, wait.
-4. Bags full, or any equipped item under 20% durability, or no food: go to the nearest vendor; sell everything grey and every item it cannot use or that scores lower than what it wears; repair; buy 20 food and drink of its level.
-5. A new level with unlearned abilities and enough coin: go to the class trainer and learn them, most used first.
+1. Dead: release, run to the corpse, resurrect. If the corpse cannot be reached in 5 minutes, use the spirit healer. If it died again within 2 minutes of getting up (its body lies among what killed it), use the spirit healer at once. Alive again, it rests before anything else.
+2. In combat: fight by the class priority list. It runs toward the nearest hub (the nearest vendor) when two or more enemies that are still above half health are on it and its own health is under 40%, or under 25% with several on it of which one is above half health. An enemy that is nearly dead is finished, not run from. A bot with a party member beside it does not run.
+3. Health under 65%, out of combat: eat. With no food, wait. A pull is begun rested: at 75% or more, at 80% before an object that is guarded, and at 90% against a creature of its own level or above.
+4. Shopping. At most once in 4 minutes: something a vendor within reach sells that it would wear and can pay for, or a worn item under 20% durability, or no food. At most once in 10 minutes: a filling pack (14 or more things carried with 3 or more to sell, or 10 or more to sell). At once: a quest was refused because the pack had no room for what it hands over. It goes to the nearest vendor that sells food, or to one within 250 m that has something it would wear; with worn gear, to the nearest vendor **who repairs**. There it sells everything grey, every piece of equipment it cannot use or that scores lower than what it wears, and every trade material that no quest of the zone still to be done asks for; repairs; buys food of its level up to 20; and buys and puts on what is better than what it wears, the best first, keeping back the price of its next training. It does not buy a two-handed weapon.
+5. A new level with unlearned abilities and enough coin: go to the class trainer and learn them, lowest level first. A rank needs the rank before it. Training waits until the bot is back within 150 m of its trainer (it comes back to hand in), unless it has fallen two levels behind.
 6. A quest ready to hand in: hand it in. Choose the reward that scores highest for its class by the profiles in [Item Rules §4](../12-data/item-rules.md#4-stat-profiles), and equip it if it beats what is worn.
-7. Quests available at the current hub at its level + 2 or below: accept them, up to the log limit. It skips quests marked group or elite, and dungeon quests, unless it is running as a party.
-8. Otherwise: do the nearest objective of an accepted quest.
+7. Quests available in the zone at its level + 2 or below, nearest giver first: accept them, everything a giver offers in one visit, up to the log limit. It skips quests tagged elite, dungeon or raid unless it is running as a party. A quest refused for a full pack is retried once after a visit to the vendor (rule 4).
+8. Otherwise: do the nearest objective of an accepted quest, lowest quest level first.
 9. Nothing left at this hub: move to the next hub on the [Leveling Path](../05-zones/00-leveling-path.md) for its level and race. If it is under the next hub's level, kill creatures of its own level near the current hub until it is not.
 10. At levels 10, 20 and 30: do the class quest. At 10 and after: spend talent points down one tree, named in the bot's configuration.
 
-Pulling: one creature at a time, never a creature more than 2 levels above itself, never a pack unless in a party. A bot that makes no progress on an objective for 10 minutes abandons it, records why, and moves on; those records are the list of quests that need fixing.
+Pulling: one creature at a time, never a creature more than 2 levels above itself, never a pack unless in a party. The bot walks toward its target only until the target notices it, then fights it back where it came from, away from the creature's neighbours. A creature that is coming is waited for where the bot stands; one that stands off (it throws, casts, or has not noticed) is gone to. Whatever would notice the bot on its way to a place is dealt with first, and a creature is "in the way" only if it has a line of sight to the place, as the server asks before a creature notices anyone: what stands in a tunnel under the path is not in the way. A creature that turns to run is run after for 5 seconds, and beyond that only where nothing else would notice the bot; while it runs, whatever else is on the bot is fought first. A creature that cannot be brought to a fight is left alone for 2 minutes.
+
+Giving up: a bot that makes no progress on an objective for 10 minutes abandons the quest, records why, and moves on; those records are the list of quests that need fixing. Kills made on the way to the objective count as progress, up to 30 minutes on one count.
+
+**Elite and group quests** (tagged `elite`: the quest text suggests more than one player) are done last. The zone bot run first plays every other quest with one bot, then adds a second bot of the same level in a party with it and plays the elite quests together.
 
 ## 4. The load-test mix
 

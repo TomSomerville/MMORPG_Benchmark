@@ -35,7 +35,7 @@ Game channels:
 | Optional fields | A leading flags byte says which are present |
 | Version | `ProtocolVersion` (u16) and `ContentHash` (u64) are exchanged at login. A mismatch refuses the connection with a message telling the player to update |
 
-Opcode ranges: `0x00xx` connection · `0x01xx` login and characters · `0x02xx` entities and movement · `0x03xx` combat and spells · `0x04xx` inventory, loot, vendors · `0x05xx` quests and gossip · `0x06xx` chat and social · `0x07xx` groups and instances · `0x08xx` economy (trade, mail, auctions) · `0x09xx` professions · `0x0Axx` guilds · `0x0Bxx` PvP · `0x0Cxx` world and travel · `0x0Fxx` GM and debug. `C→S` messages use even opcodes within a range and `S→C` odd, so a misdirected packet is caught by one bit test.
+Opcode ranges: `0x00xx` connection · `0x01xx` login and characters · `0x02xx` entities and movement · `0x03xx` combat and spells · `0x04xx` inventory, loot, vendors · `0x05xx` quests and gossip · `0x06xx` chat and social · `0x07xx` groups and instances · `0x08xx` economy (trade, mail, auctions) · `0x09xx` professions · `0x0Axx` guilds · `0x0Bxx` PvP · `0x0Cxx` world and travel · `0x0Fxx` GM and debug. `C→S` messages use even opcodes within a range and `S→C` odd, so a misdirected packet is caught by one bit test. The messages of inns, the hearthstone, sitting and experience status (`BindHearth`, `UseHearthstone`, `SitStand`, `BindSet`, `XpStatus`) are numbered in `0x05xx` with the quest and gossip messages, and are listed in §5.3.
 
 ## 3. Connection sequence
 
@@ -65,10 +65,11 @@ Client                                Game server (UDP)
 
 Rules:
 
+- The initial state batch begins with an `EntityCreate` for the player's own character (its health, resource and level), then `InventoryFull` with `CharacterStats`, `SpellsKnown`, `QuestLogFull`, `XpStatus` and `ExploredAreas`; each later system adds its own message to the batch when it is built.
 - The ticket is single-use and expires 30 seconds after issue.
 - One game connection per account. A second login disconnects the first with `Disconnect(reason: LoggedInElsewhere)`.
 - `Ping` / `Pong` every 5 seconds give round-trip time and clock offset; the client shows latency from them. No packet for 30 seconds drops the connection.
-- **Logout:** `LogoutRequest` starts a 20-second timer (instant in an inn or capital). Moving or taking damage cancels it. On a dropped connection the character stays in the world for 20 seconds, or until out of combat if longer, up to 2 minutes.
+- **Logout:** `LogoutRequest` starts a 20-second timer (instant in an inn or capital) and is answered with `LogoutResult` (result code, seconds on the timer; 0 means logged out now). Moving or taking damage cancels it, as does `LogoutCancel`. On a dropped connection the character stays in the world for 20 seconds, or until out of combat if longer, up to 2 minutes.
 
 ## 4. Entities and movement
 
@@ -81,14 +82,16 @@ The server sends a client only what is in its interest set: entities in its grid
 | Message | Fields |
 |---|---|
 | `WorldEnter` | zoneId, instanceId, position, facing, serverTime, gameClock (minutes of day), weather state |
-| `EntityCreate` | entityId, kind (player, creature, npc, object, corpse, pet), contentId, position, facing, movement state, level, health, maxHealth, resourceType, resource, maxResource, flags (dead, inCombat, elite, tapped, lootable, questGiverState, pvp, sitting, stealthed), reaction to the receiver, displayed auras[], cast in progress (optional); players add: name, race, class, sex, appearance, visible equipment[19] (item content id + enchant visual), guild name, title, groupId |
+| `EntityCreate` | entityId, kind (player, creature, npc, object, corpse, pet), contentId, position, facing, movement state, level, health, maxHealth, resourceType, resource, maxResource, flags (dead, inCombat, elite, tapped, lootable, pvp, sitting, stealthed, ghost, resting, away), reaction to the receiver, questGiverState, displayed auras[], cast in progress (optional); players add: name, race, class, sex, appearance, visible equipment[19] (item content id + enchant visual), guild name, title, groupId |
 | `EntityDestroy` | entityId, reason |
 | `EntityUpdate` | entityId, fieldMask, then only the changed fields: health, maxHealth, resource, maxResource, level, flags, target, equipment slot, displayed aura changes, speed, scale, questGiverState |
 | `EntityMove` | entityId, serverTime, position, facing, movement flags (forward, back, strafeL, strafeR, turning, jumping, falling, swimming, walking), speed; creatures on paths send `EntityPath` instead: start time, speed, list of waypoints |
 | `EntityTeleport` | entityId, position, facing (snap, no interpolation) |
 | `EntityEmote` / `EntityAnim` | entityId, emote or one-shot animation id |
 
-Health and resource are sent as exact values for the player's own character and party members, and as a 0–255 fraction for everything else.
+Health and resource are sent as exact values for the player's own character and party members, and as a 0–255 fraction for everything else. In use: exact values (`i32`) are sent for every entity; the fraction is a bandwidth measure applied with the bandwidth checks of T-M12-02. **Open:** whether players may see the exact health of creatures and of players outside their party, as now, or only the fraction, is the owner's choice.
+
+The `resting` flag marks a character in a rest area and `away` one with no input for the idle time ([Rules Reference §3](../02-systems/rules-reference.md)); both are visible to others. A per-player world object that a character has already used is left out of that character's interest set: the character never receives its `EntityCreate`, and receives `EntityDestroy` when it uses it.
 
 ### 4.3 Player movement (C→S, channel 1)
 
@@ -98,10 +101,11 @@ Server validation, per packet:
 
 | Check | Rule | On failure |
 |---|---|---|
-| Speed | Distance since the last accepted packet ≤ allowed speed × elapsed × 1.15 + 0.5 yards | `MoveCorrection` to the last valid position |
-| Collision | The segment does not cross blocking geometry on the server navmesh; height within 2 yards of the walkable surface unless falling or jumping | `MoveCorrection` |
-| State | Not rooted, stunned, dead (unless ghost) or on a taxi | `MoveCorrection` |
-| Jump and fall | Fall damage computed server-side from the fall start height | Applied by the server |
+| Speed | Distance since the last accepted packet ≤ the character's movement allowance + 0.5 yards. The allowance builds with time, by allowed speed × elapsed × 1.15, up to at most one second's worth, and each accepted move spends its distance from it; packets bunched together by the network are therefore not mistaken for speeding | `MoveCorrection` to the last valid position |
+| Bounds | The position lies inside the zone | `MoveCorrection` |
+| Floor | The position has a floor on the zone's walk grid ([Terrain and Cutouts §1.1](terrain-and-cutouts.md#11-the-walk-grid)): not a cliff, a wall, deep water or a hole with nothing under it. Unless falling or jumping, its height is within 2 yards of that floor | `MoveCorrection` |
+| State | Not rooted, stunned, dead (unless ghost) or on a taxi: such a character may not move at all, not even inside the 0.5-yard slack | `MoveCorrection` |
+| Jump and fall | Fall damage computed server-side, from the highest point the character reported while in the air to where it landed | Applied by the server |
 | Teleport | Any jump over 12 yards in one packet | Correction, and a strike logged; 5 strikes in a minute disconnects |
 
 `MoveCorrection` (S→C): sequence acknowledged, position, facing, flags. The client replays its unacknowledged inputs from that point.
@@ -151,42 +155,59 @@ Field lists give the content of each message; "result" messages carry `ok` or an
 | C→S | `MoveItem` | from (container, slot), to (container, slot), count (split) |
 | C→S | `EquipItem` / `UnequipItem` · `DestroyItem` (instanceId, count) · `SortBags` | |
 | S→C | `MoneyChanged` | total |
+| S→C | `ItemError` | reason code, instanceId (0 if none): an inventory, vendor or trainer request was refused |
+| S→C | `CharacterStats` | the character's own numbers for its character window: the five attributes with gear, armor, attack power, spell power, healing power, weapon damage min and max, weapon speed, crit, dodge, parry and block percent, block value, defense. Sent on entering the world and whenever what is worn, or whether it is broken, changes |
+| S→C | `EquipmentChanged` | entityId, slot, itemId (0: nothing): what another player is seen to wear changed |
 | C→S | `LootOpen` | entityId (corpse, chest, node) |
-| S→C | `LootWindow` | sourceId, coin, items[]: lootSlot, itemId, count, quality, needsRoll, questItem |
+| S→C | `LootWindow` | sourceId, coin, items[]: lootSlot, itemId, count, questItem, suffix; with group loot (M7) also needsRoll. Quality is read from the item record |
 | C→S | `LootTake` (lootSlot) · `LootTakeMoney` · `LootClose` | |
+| S→C | `LootRemoved` | sourceId, lootSlot (255: the coin): something was taken from an open loot window |
+| S→C | `LootClosed` | sourceId: the window closes because it is empty, out of reach or gone |
 | S→C | `LootRollStart` | rollId, itemId, count, timeoutMs |
 | C→S | `LootRollChoice` | rollId, choice (need, greed, pass) |
 | S→C | `LootRollResult` | rollId, rolls[] (name, choice, value), winner |
 | C→S | `SetLootMethod` (method, threshold, master looter) · `MasterLootGive` (lootSlot, playerId) | |
 | C→S | `VendorOpen` (npcId) | |
-| S→C | `VendorList` | items[]: itemId, price, limited stock left, can afford and can use flags, buyback[] |
-| C→S | `VendorBuy` (itemId, count) · `VendorSell` (instanceId, count) · `VendorBuyback` (index) · `RepairItem` (instanceId or all, useGuildBank) | |
-| C→S | `TrainerOpen` (npcId) | |
-| S→C | `TrainerList` | entries[]: spellId or recipeId, cost, required level, required skill, state (available, unavailable, known) |
-| C→S | `TrainerBuy` (spellId) · `TalentLearn` (talentId) · `TalentReset` | |
-| C→S | `BankOpen` · `BankBuySlot` · `BindHearth` (npcId) | |
+| S→C | `VendorList` | npcId, repairs (bool), items[]: index, itemId, price of one lot, lot size, lots left (−1: no limit), can afford and can use flags; buyback[]: itemId, suffix, count, price. Sent when the window opens and after every change. Lines the character is not offered (a stock condition) are left out |
+| C→S | `VendorBuy` (itemId, count of lots) · `VendorSell` (instanceId, count; 0: the whole stack) · `VendorBuyback` (index) · `RepairItem` (instanceId or 0 for all, useGuildBank) · `VendorClose` | |
+| S→C | `VendorClosed` | npcId: the character walked away, or the vendor is gone |
+| C→S | `TrainerOpen` (npcId) | A class trainer of another class answers `WrongClass` |
+| S→C | `TrainerList` | npcId, nextIsFree (bool: the character's next rank costs nothing), entries[]: spellId or recipeId, cost, required level, required skill, state (available, unavailable, known). Sent when the window opens and after every purchase |
+| C→S | `TrainerBuy` (spellId) · `TrainerClose` · `TalentLearn` (talentId) · `TalentReset` | |
+| S→C | `TrainerClosed` | npcId: the character walked away |
+| S→C | `SpellsKnown` | spellIds[]: every spell the character knows, on entering the world. The client builds its spellbook and action bar from it |
+| S→C | `SpellLearned` | spellId |
+| C→S | `BankOpen` · `BankBuySlot` | |
 
 ### 5.3 Quests and gossip (0x05xx)
 
 | Direction | Message | Fields |
 |---|---|---|
 | C→S | `Interact` | entityId (the server decides: gossip, quest, vendor, loot, object use) |
-| S→C | `GossipMenu` | npcId, greeting string id, options[]: index, icon, string id; quests[]: questId, state (available, in progress, complete) |
-| C→S | `GossipSelect` (npcId, index) | |
-| S→C | `QuestOffer` | npcId, questId, level, XP, coin, reward lists, objectives (text comes from the client's string table) |
-| C→S | `QuestAccept` (npcId, questId) · `QuestAbandon` (questId) | |
-| S→C | `QuestAdded` | questId, progress[] |
-| S→C | `QuestProgress` | questId, objective index, count, required |
-| S→C | `QuestObjectivesComplete` · `QuestFailed` (reason) | questId |
-| S→C | `QuestTurnInWindow` | npcId, questId, canComplete, rewards |
-| C→S | `QuestComplete` | npcId, questId, chosen reward index |
-| S→C | `QuestCompleted` | questId, XP, coin, items[], reputation gains[], next quest offered |
+| S→C | `GossipMenu` | sourceId (an NPC or a world object), services (flags: vendor, repair, trainer, innkeeper), quests[]: questId, state (available, available low level, in progress, complete). The greeting and every other text come from the client's string table by the source's id. An NPC with no quest for the character and one service opens that service at once and sends no menu |
+| C→S | `GossipSelect` (npcId, index) | For gossip options that are neither a quest nor one of the four service flags (taxi, bank, battlemaster, scripted options), with `options[]` (index, icon, string id) added to `GossipMenu`. Not in use: no built NPC has such an option; a service is opened with its own message (`VendorOpen`, `TrainerOpen`, `BindHearth`) |
+| S→C | `QuestOffer` | npcId, questId, level, XP, coin, reward lists, objectives (text comes from the client's string table). Not in use: see below |
+| C→S | `QuestAccept` (sourceId, questId) · `QuestAbandon` (questId) | |
+| S→C | `QuestLogFull` | active[]: questId, counts[] (one per objective, in order); done[]: questId. Sent once on entering the world: the log and every quest the character has done |
+| S→C | `QuestAdded` | questId, counts[] |
+| S→C | `QuestProgressed` | questId, objective index, count, required |
+| S→C | `QuestObjectivesComplete` | questId: it can be handed in |
+| S→C | `QuestRemoved` | questId: the quest left the log without being handed in (abandoned) |
+| S→C | `QuestFailed` | questId, reason code: a request about a quest was refused |
+| S→C | `QuestTurnInWindow` | npcId, questId, canComplete, rewards. Not in use: see below |
+| C→S | `QuestComplete` | sourceId, questId, chosen reward index (0 where there is no choice) |
+| S→C | `QuestCompleted` | questId, XP, coin, items[] (itemId, count), next quest offered by the same source; reputation gains[] are added with reputation (T-M6-03) |
 | C→S | `QuestShare` (questId) · S→C `QuestShareOffer` | |
 | S→C | `QuestGiverStatus` | sent inside `EntityUpdate`: none, available, available low level, in progress, complete |
 | S→C | `ExploredArea` | subareaId, XP |
 | S→C | `ExploredAreas` | subareaIds[] (on entering the world: every sub-area already found) |
-| S→C | `ObjectState` | objectId, state (per-player world objects) |
+| S→C | `XpStatus` | XP into the level, XP the level needs (0 at the cap), rested XP. Sent on entering the world and after every change |
+| C→S | `BindHearth` (npcId) · `UseHearthstone` · `SitStand` (sit) | |
+| S→C | `BindSet` | zoneId, position: the character's home is now this place |
+| S→C | `ObjectState` | objectId, state, for world objects with more than two states (doors, levers). Not in use: a per-player object that has been used leaves that character's interest set (§4.2), which needs no message |
 | S→C | `ScriptedScene` | sceneId, parameters (escort start, shard resonance, the VM-29 ending) |
+
+**Quest pages.** The client draws the offer, progress and completion pages from its own content pack: the server sends ids and states (`GossipMenu`, `QuestLogFull`, `QuestProgressed`), never text or reward lists, and the rewards, objectives and XP on a page are computed from the same quest records the server uses. `QuestOffer` and `QuestTurnInWindow` are therefore not sent, and the content hash checked at login is what guarantees the two sides agree. **Open:** whether `QuestOffer` and `QuestTurnInWindow` are dropped from the protocol or built later (they would be needed for a quest whose offer the server must vary per character) is the owner's choice; `GossipSelect` and `ObjectState` stay in the catalogue and are built with the first content that needs them.
 
 ### 5.4 Chat and social (0x06xx)
 
@@ -276,7 +297,7 @@ Chat limits: 1 message per second sustained, burst of 5; yell and global channel
 |---|---|---|
 | C→S | `TaxiOpen` (npcId) · `TaxiTake` (destination node) | S→C `TaxiMap` (known nodes, fares) · `TaxiStart` (path, duration) · `TaxiEnd` |
 | S→C | `TransportState` | transportId, position on its path, at stop or under way (the ship, lifts, mine-carts) |
-| C→S | `UseHearthstone` · `Mount` (itemId) / `Dismount` · `SitStand` · `AreaTriggerEnter` (triggerId; verified by position) | |
+| C→S | `Mount` (itemId) / `Dismount` · `AreaTriggerEnter` (triggerId; verified by position) | `UseHearthstone` and `SitStand` are in §5.3 |
 | S→C | `ZoneChange` (zoneId; a hand-over between zone hosts, invisible to the player) · `LoginQueue` (position, estimated wait; sent on the login connection while the realm is full) · `WeatherChange` · `GameClock` (every 60 s) · `ServerMessage` (restart warnings, world boss spawn) · `RestState` | |
 | C→S | `SettingsSave` (keybindings, UI, action buttons, macros; channel 2) · `BarberApply` · `TicketCreate` | |
 
