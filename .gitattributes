@@ -1,0 +1,2 @@
+# Store every file exactly as written: no line-ending conversion, so generated files stay byte-identical.
+* -text
