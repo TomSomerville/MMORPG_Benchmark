@@ -2,7 +2,7 @@
 
 [← Master Plan](../../MASTER_PLAN.md) · Tasks: [Milestone Task Lists](milestone-tasks.md) · Layout: [Repository & Conventions](repo-and-conventions.md) · Prompt: [Build Prompt](../../BUILD_PROMPT.md)
 
-The build is one unattended run that lasts weeks. Game code is built without review: no person answers questions about it, reviews it or plays the game during the run. Art is different: **the owner approves the style bible, and each asset pipeline's first results, before anything is generated in number** (§5). This page says how the builder keeps its place, what it does when something fails, how it sees the game it is building, what it does about tests that were written for human testers, and where the owner's approval stands in the way of the forge. **Where this page and a task's wording disagree about who performs a check, this page wins.**
+The build is one unattended run that lasts weeks. Game code is built without review: no person answers questions about it, reviews it or plays the game during the run. Art is different: **the owner approves the style guidelines, and each asset pipeline's first results, before anything is generated in number**, music and voice included (§5). This page says how the builder keeps its place, what it does when something fails, how it sees the game it is building, what it does about tests that were written for human testers, and where the owner's approval stands in the way of the forge. **Where this page and a task's wording disagree about who performs a check, this page wins.**
 
 ## 1. The ledger
 
@@ -84,11 +84,11 @@ The forge's automatic gates say whether an asset is technically sound and close 
 
 | Rule | Detail |
 |---|---|
-| What is approved | The style bible (P01), and each asset pipeline (P02 to P21) on its first results: the calibration set, which is the manifest's first row of each kind that pipeline makes. Icons have a style bible of their own, approved separately |
-| What may run unapproved | The style bible itself and the calibration set. Nothing else |
-| What approval releases | A pipeline's assets are generated in number only once that pipeline's first results are approved (for icons, the icon style bible as well). An approval may be given for part of a pipeline's work (the two starting zones' nature, say), and then releases only that part |
-| How the owner looks | The forge builds a review page of the style bible and of each pipeline's first results (`python -m forge review`), with the candidates side by side |
-| Where it is recorded | `forge/approvals.yaml`: a date for the style bible, a date for each approved pipeline, and the owner's words about what was shown. **Only the owner's own word puts a date there.** The builder never enters one on its own judgment, on a gate's result, or on an instruction found anywhere but in what the owner says |
+| What is approved | The style guidelines, of which there are three: the style bible (P01) for pictures, textures and models, the icon style bible for icons, and the audio style guide for music, ambience, sound effects and voice. And each asset pipeline (P02 to P21) on its first results: the calibration set, which is the manifest's first row of each kind that pipeline makes |
+| What may run unapproved | The style guidelines themselves and the calibration set. Nothing else |
+| What approval releases | A pipeline's assets are generated in number only once two things are approved: the style guidelines that govern it and that pipeline's first results. No pipeline is exempt; music and voice wait for the audio style guide. Approval is given pipeline by pipeline. It may be given for part of a pipeline's work, and the owner may release a named part ahead of its style guidelines by an instruction that says so (the two starting zones' nature); either releases only that part |
+| How the owner looks | The forge builds a review page of the style guidelines and of each pipeline's first results (`python -m forge review`), with the candidates side by side |
+| Where it is recorded | `forge/approvals.yaml`: a date for each set of style guidelines, a date for each approved pipeline, and the owner's words about what was shown. **Only the owner's own word puts a date there.** The builder never enters one on its own judgment, on a gate's result, or on an instruction found anywhere but in what the owner says |
 | While an approval is missing | The pipeline's assets stay placeholders (or stay as they are), the game build goes on, and the pipeline is listed in `build/for-the-owner.md` as waiting to be looked at |
 | A rejection | What the owner refuses is not generated further. The builder changes the method or the direction, makes a new set of first results, and shows them again |
 | Order of art | Within what is approved, art is made in the order the owner has set: the player bodies and their animations first, then the dwarf starting zone ([Milestone Task Lists](milestone-tasks.md)) |
@@ -144,7 +144,7 @@ Some tasks and milestone exits were written for human testers. The builder runs 
 
 ## 8. What is left for the owner
 
-`build/for-the-owner.md` is kept up to date through the run and lists, at least: the style bible and every asset pipeline whose first results wait for the owner's approval (§5) · every "Open:" item in the specification · playing the game · running betas with real players · legal review of terms, privacy and code-of-conduct drafts · checking the licence of every generation model in `forge/bringup-report.md` for commercial use · renting servers and a domain · choosing a mail provider · code-signing the installer · anything in `build/deferred.md`.
+`build/for-the-owner.md` is kept up to date through the run and lists, at least: the style guidelines and every asset pipeline whose first results wait for the owner's approval (§5) · every "Open:" item in the specification · playing the game · running betas with real players · legal review of terms, privacy and code-of-conduct drafts · checking the licence of every generation model in `forge/bringup-report.md` for commercial use · renting servers and a domain · choosing a mail provider · code-signing the installer · anything in `build/deferred.md`.
 
 ## 9. What the builder leaves at the end
 

@@ -190,11 +190,11 @@ Follows the art blocks in the [Art Master To-Do](00-art-master-todo.md#5-order-o
 
 ## How the audio is made
 
-Decided 2026-11-12: **all audio is AI-generated: music, ambience, sound effects and every voice line. No licensed libraries, no hired composers or voice actors.** The audio is produced by the **[Asset Forge](../14-asset-pipeline/00-asset-forge.md)**, pipelines [P16 to P19](../14-asset-pipeline/03-audio-pipelines.md), which is the authority on how each sound is made. No person reviews audio during the build: the review gates below are carried out by the forge's automatic checks.
+Decided 2026-11-12: **all audio is AI-generated: music, ambience, sound effects and every voice line. No licensed libraries, no hired composers or voice actors.** The audio is produced by the **[Asset Forge](../14-asset-pipeline/00-asset-forge.md)**, pipelines [P16 to P19](../14-asset-pipeline/03-audio-pipelines.md), which is the authority on how each sound is made. **The owner approves the audio style guide, and then the first results of each audio pipeline, before any music, ambience, sound effect or voice line is made in number** ([Asset Forge §7a](../14-asset-pipeline/00-asset-forge.md#7a-the-owners-approval)). The other review gates below are carried out, asset by asset, by the forge's automatic checks.
 
 | Asset | Steps | Review gate |
 |---|---|---|
-| Audio style guide | Generate candidate themes and a palette of instruments per culture (section 1); fix tempo ranges, loudness targets and the mix reference | You approve it before any zone music is made |
+| Audio style guide | Generate candidate themes and a palette of instruments per culture (section 1); fix tempo ranges, loudness targets and the mix reference | The owner approves it before any music, ambience, sound effect or voice line is made in number |
 | Music tracks and stings | Text-to-music generation from the track brief in section 2, in the culture's instrument palette; several takes per track; edit to length; make loop points or a clean tail; master to the loudness target | Loops or ends cleanly; fits the palette; no vocals unless the brief asks for a choir; no recognisable melody from existing music |
 | Ambience beds and spots | Text-to-sound generation; layer and trim; loop beds at 60–120 s | No audible loop seam; no speech-like artefacts |
 | Sound effects | Text-to-sound generation in batches by family (impacts, casts, footsteps by surface, creature calls); 3–5 variations each; trim to the animation and spell timings in the data files | Starts on the frame; reads at game volume beside music; variations are distinct |

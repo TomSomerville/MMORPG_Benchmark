@@ -87,7 +87,7 @@ The complete list of art the game needs before code begins: every texture, UI el
 
 **Player models come first.** The four player bodies and their animations are the most important art in the game: players look at them every minute. They are made, fitted and put right before any other model work. After them comes everything the dwarf starting zone, Embercrag Hollow, shows: its creatures, its people, its buildings and props, its nature and ground. The rest follows in the manifest's order.
 
-Nothing is made in number until the owner has approved the style bible and the first results of the pipeline that makes it (§8).
+Nothing is made in number until the owner has approved the style guidelines that govern it and the first results of the pipeline that makes it (§8).
 
 Ordered so that each block unlocks a build milestone in the [Roadmap](../08-tech/roadmap.md) and the earliest blocks are the smallest.
 
@@ -124,7 +124,7 @@ All counts are planning estimates meant for scoping and tracking. Counts given a
 
 Decided 2026-11-12: **every visual asset is AI-generated. No licensed, bought or CC0 asset packs are used.** The assets are produced by the **[Asset Forge](../14-asset-pipeline/00-asset-forge.md)**: twenty-one pipelines, one per kind of asset, run on the forge's asset machines and built as the first step of the game build. **That specification is the authority on how each asset is made.**
 
-**The owner approves the look before volume.** The owner approves the style bible, and then the first results of each pipeline, before that pipeline makes its assets in number. Until both approvals are given for a pipeline, only the style bible itself and the calibration set are made. Icons go by their own style ([Icons](06-icons.md#the-icon-style)), which the owner has approved, and not by the general style bible.
+**The owner approves the look before volume.** Approval is given pipeline by pipeline: the owner approves the style guidelines that govern a pipeline, and then its first results, before it makes its assets in number. Until both approvals are given for a pipeline, only the guidelines themselves and the calibration set are made. The style bible governs pictures, textures and models. Icons go by their own style ([Icons](06-icons.md#the-icon-style)), which the owner has approved, and not by the general style bible. Music, ambience, sound effects and voice go by the audio style guide ([Audio](09-audio.md#how-the-audio-is-made)) and wait for its approval in the same way.
 
 Open: the style bible is not yet approved.
 
@@ -150,7 +150,7 @@ Every review gate named in the table below is carried out, asset by asset, by th
 | Rule | Detail |
 |---|---|
 | One style | Every generation uses the style guide's reference images and palette; icons use the icon style's rules and hues instead. An asset that looks like a different game is regenerated, not blended in |
-| Owner approval | The owner approves the style bible and each pipeline's first results before that pipeline makes its assets in number. Approval is given by the owner only; passing the automatic gates is not approval |
+| Owner approval | The owner approves a pipeline's style guidelines (the style bible, the icon style bible or the audio style guide) and its first results before that pipeline makes its assets in number. Approval is given by the owner only; passing the automatic gates is not approval |
 | Regenerate before repairing | If an asset needs more than about an hour of hand repair, it is regenerated with a better reference |
 | No real people, brands or existing games | Prompts never name a living artist, a studio, a franchise or a real person, and outputs are checked for look-alikes of existing characters. This protects the game legally and keeps it original |
 | Acceptance | Each list's ☐ is ticked only after the asset has passed the forge's gates and the acceptance check in the game engine ([Placeholders and Swapping](../14-asset-pipeline/04-placeholders-and-swap.md)), not in the generator. The owner approves the style bible and each pipeline's first results, not each asset: once a pipeline is approved, its assets are accepted by the gates alone |

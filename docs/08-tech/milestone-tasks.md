@@ -14,7 +14,7 @@ Specifications each task builds from: [Repository](repo-and-conventions.md) · [
 
 ## MA — Asset Forge (done first)
 
-The asset generation system on the dedicated GMKtec EVO-X3, specified in [Asset Forge](../14-asset-pipeline/00-asset-forge.md). It is built before any game code so that assets are generated in the background for the whole build. From MA-08 onward the forge runs unattended; the builder moves on to M0 and returns to the forge only when a pipeline reports failures. What the forge may make in number is set by the owner's approvals ([Build Procedure §5](build-procedure.md#the-owners-approval-of-art)): until the style bible and a pipeline are approved, only the style bible itself and the calibration set (the manifest's first row of each kind) are generated.
+The asset generation system on the dedicated GMKtec EVO-X3, specified in [Asset Forge](../14-asset-pipeline/00-asset-forge.md). It is built before any game code so that assets are generated in the background for the whole build. From MA-08 onward the forge runs unattended; the builder moves on to M0 and returns to the forge only when a pipeline reports failures. What the forge may make in number is set by the owner's approvals ([Build Procedure §5](build-procedure.md#the-owners-approval-of-art)): until a pipeline's style guidelines and its first results are approved, only the guidelines themselves and the calibration set (the manifest's first row of each kind) are generated.
 
 | Task | Work | Acceptance test |
 |---|---|---|

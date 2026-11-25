@@ -250,17 +250,17 @@ Failure handling: on a failed check the job retries with a new seed, up to 3 att
 
 ### 7a. The owner's approval
 
-**Nothing is made in number until the owner has approved it.** The owner approves the style bible (for icons, the icon style bible) and then each pipeline's first results. Until a pipeline is approved the queue makes only two things unapproved: the style bible itself (P01) and the calibration set (§5).
+**Nothing is made in number until the owner has approved it.** Approval is given pipeline by pipeline, and a pipeline needs two things approved: the style guidelines that govern it, and its own first results. There are three sets of style guidelines: the **style bible** for pictures, textures and models; the **icon style bible** for icons; and the **audio style guide** ([Audio](../10-art/09-audio.md#how-the-audio-is-made)) for music, ambience, sound effects and voice. No pipeline is exempt: music and voice wait for the audio style guide as the visual pipelines wait for theirs. Until a pipeline is approved the queue makes only the guidelines themselves and the calibration set (§5).
 
 | Rule | Detail |
 |---|---|
-| The record | `forge/approvals.yaml`: a date for the style bible, a date for the icon style bible, and a date per pipeline. An empty entry means not approved. **Only the owner's own word puts a date there**; the builder never infers an approval |
-| What the queue does | `fleet queue` shares out an asset only if its pipeline carries a date, and for icons only if the icon style bible does too. Everything else is held back and reported as held, by pipeline |
+| The record | `forge/approvals.yaml`: a date for each set of style guidelines (the style bible, the icon style bible, the audio style guide) and a date per pipeline. An empty entry means not approved. **Only the owner's own word puts a date there**; the builder never infers an approval |
+| What the queue does | `fleet queue` shares out an asset only if its pipeline carries a date and its style guidelines do. Everything else is held back and reported as held, by pipeline |
 | What the owner looks at | A review page written by `python -m forge review`: the style bible (palette, anchors, swatches) and each pipeline's first results, side by side with any candidate that would replace them |
-| Scope | An approval is the owner's word on what that pipeline makes, given by eye on its results. It may be limited, for example to named zones. A pipeline whose results do not depend on the visual style (music, voice) may be approved before the style bible is |
+| Scope | An approval is the owner's word on what that pipeline makes, given by eye on its results. It may be limited, for example to named zones. The owner may also release a pipeline for a named part of the game ahead of its style guidelines, by an instruction that says so; it is recorded as such and covers that part only |
 | Refusal | What the owner refuses is recorded beside the approvals in the owner's words, and the pipeline stays held until new first results are shown |
 
-Status on 2026-11-24: approved are P16 (music), P19 (voice lines), P02 (icons, on the approved icon style bible) and P12 (nature) for the two starting zones only. The style bible is not approved, and every other pipeline is held.
+Status on 2026-11-24: P02 (icons) has both approvals, its first results and the icon style bible, and is made in number. P12 (nature) is released for the two starting zones only, by instruction ahead of the style bible. The first results of P16 (music) and P19 (voice lines) are approved, but the audio style guide has not yet been put to the owner, so both are held until it is approved. The style bible is not approved, and every other pipeline is held.
 
 Open: the style bible is not yet approved; the model-free anchors were refused and a candidate made by the image model is with the owner, so the pipelines that depend on it stay held.
 

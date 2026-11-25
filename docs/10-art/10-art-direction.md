@@ -2,7 +2,7 @@
 
 [← Art Master To-Do](00-art-master-todo.md) · Made by: [Asset Forge](../14-asset-pipeline/00-asset-forge.md)
 
-This page defines what the game looks like in rules a program can follow and check, and explains how roughly nine thousand separately generated assets are made to look like one game. It is the authority on style. The forge's style bible ([P01](../14-asset-pipeline/01-image-pipelines.md#p01--style-bible)) is generated *from* this page, not invented. The owner approves the style bible, and then the first results of each pipeline, before anything is made in number.
+This page defines what the game looks like in rules a program can follow and check, and explains how roughly nine thousand separately generated assets are made to look like one game. It is the authority on style. The forge's style bible ([P01](../14-asset-pipeline/01-image-pipelines.md#p01--style-bible)) is generated *from* this page, not invented. The owner approves the style bible, and then the first results of each pipeline it governs, before anything is made in number.
 
 Open: the style bible is not yet approved, so §1 to §4 are the direction it is being made to and are not final.
 
@@ -138,7 +138,7 @@ A generator asked nine thousand separate times for "a stylised barrel" will give
 | 7 | **A trained style adapter** | After the style bible exists, the forge trains a small style adapter (a LoRA) for the image model on about 150 approved images, and uses it for every image it generates, with reference images as well. All generations use the same sampler, step count and guidance settings, fixed at bring-up. If adapter training does not run on this hardware, reference conditioning alone is used |
 | 8 | **Palette lock** | Every colour image except an icon is pulled toward the master palette, and each zone's and culture's assets toward its subset |
 | 9 | **Measured style gates** | Each asset is measured, not judged by description: see §7 |
-| 10 | **Calibration and approval before volume** | Block A makes one of each asset type first. The gate thresholds are set from those and from a spread of probe assets, then frozen (§7). The owner then approves the style bible and, pipeline by pipeline, its first results; only an approved pipeline makes its assets in number |
+| 10 | **Calibration and approval before volume** | Block A makes one of each asset type first. The gate thresholds are set from those and from a spread of probe assets, then frozen (§7). The owner then approves the style bible and, pipeline by pipeline, the first results; only a pipeline with both approvals makes its assets in number |
 
 Open: whether the palette lock and the repaint pass apply to generated bodies and creatures fitted to a rig, which today keep their generator's colours, is not decided.
 
