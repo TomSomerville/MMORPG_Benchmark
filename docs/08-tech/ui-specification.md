@@ -194,7 +194,7 @@ Item, spell and quest names can be shift-clicked into chat as links that open a 
 
 ## 7. First-session tutorial tips
 
-One small panel each (380 × 132, lower right above the bag bar), shown once per character, with "Don't show tips" in options and on the panel itself. A tip is shown when its trigger condition first holds; it closes when acknowledged or after 20 seconds, and the next one due waits its turn. Which tips a character has seen is part of its interface settings: the client keeps it in its user folder by character id until interface settings are saved on the server with frame positions (T-M11-05). The tip's text names keys as they are bound.
+One small panel each (380 × 132), shown once per character and placed in the middle of the screen: centred horizontally, with its top edge just below the vertical centre, so that it does not cover the character and stands clear of the bag window and the bars at the bottom. This places the tip panel only; tooltips stay at the bottom right (§1). The panel carries a "Got it" button, with "Don't show tips" in options and on the panel itself. A tip is shown when its trigger condition first holds; it closes when acknowledged or after 20 seconds, and the next one due waits its turn. Which tips a character has seen is part of its interface settings: the client keeps it in its user folder by character id until interface settings are saved on the server with frame positions (T-M11-05). The tip's text names keys as they are bound.
 
 | # | Trigger | Tip |
 |---|---|---|
