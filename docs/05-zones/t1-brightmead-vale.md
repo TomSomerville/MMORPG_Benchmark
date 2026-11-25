@@ -47,7 +47,12 @@ Warden Elyse Farrow (start) · Sergeant Tobias Kern (Fighter) · Brother Aldwin 
 | Silverrun Gillkin | 4–5 | Humanoid | Net (root 3 s); calls allies | Fish, shiny scales |
 | Creek Snapper | 4 | Beast | Shell (−50% damage, 4 s) | Snapper meat |
 
-Creatures of level 1 to 3 in this zone are not aggressive: they do not attack a player who comes near, they fight back when attacked, and they call for help as usual. Creatures of level 4 and above are aggressive ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)). Decided 2026-11-25.
+In this zone a creature's aggression is set by the sub-area it lives in, by the level at which a player arrives there: the first number of the sub-area's level band in the table above, and 5 for Hartwell Deep. Where that is 1 to 3 the creatures are not aggressive: they do not attack a player who comes near, they fight back when attacked, and they call for help as usual. Where it is 4 or more they are aggressive. The creature's own level does not decide it, and the rares, the elite and the mini-boss follow the same rule ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)). Decided 2026-11-25; to be adjusted when the owner has played the zone.
+
+- **Not aggressive:** Larkhill Steading, Larkhill Pastures, Hartwell Mine above Hartwell Deep, Brightmead Fields, and Greenhollow Woods. A level 4 creature there is therefore not aggressive, nor is Kibbler the Candle King (in the mine's third gallery) or Old Greymaw (in Greenhollow).
+- **Aggressive:** Hartwell Deep ("Brander" Hale Morrow), the Burned Mill & Cray's Orchard, Ashhand Camp, and Silverrun Creek. A level 3 Ashhand Cutpurse there is aggressive.
+
+Open: whether the Ashhand Branders on the approach to Hartwell Deep count as creatures of Hartwell Deep (aggressive) or of the mine (not).
 
 **Rares:** *Kibbler the Candle King* (4, Hartwell Mine — drops *Candle-Crown*, cloth head oddity) · *Old Greymaw* (5 elite wolf, Greenhollow — quest target).
 **Mini-boss:** *"Brander" Hale Morrow* (5, Hartwell Deep) — Searing Brand, summons 2 Ashhand Cutpurses at 50%.

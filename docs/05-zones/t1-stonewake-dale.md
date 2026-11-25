@@ -53,7 +53,12 @@ Steadwife Marit Sunbank (start) · Dale-Sergeant Hakon Shieldwall (Fighter) · H
 | Rustler's Hound | 4 | Beast | Bite | Sharp Fang |
 | Rustler Hound-Master | 5 | Humanoid | Whistle (calls allies), Cudgel | Linen, Peddler's Coin |
 
-Creatures of level 1 to 3 in this zone are not aggressive: they do not attack a player who comes near, they fight back when attacked, and they call for help as usual. Creatures of level 4 and above are aggressive ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)). Decided 2026-11-25.
+In this zone a creature's aggression is set by the sub-area it lives in, by the level at which a player arrives there: the first number of the sub-area's level band in the table above, and 5 for the Deep Sink. Where that is 1 to 3 the creatures are not aggressive: they do not attack a player who comes near, they fight back when attacked, and they call for help as usual. Where it is 4 or more they are aggressive. The creature's own level does not decide it, and the rares, the elite and the mini-boss follow the same rule ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)). Decided 2026-11-25; to be adjusted when the owner has played the zone.
+
+- **Not aggressive:** Sunbank Steading, the Barley Terraces, Greywall Quarry, the Larch Hangers, the Gravelkin Sinks above the Deep Sink, and the Hop-Yards. A level 4 Hop-Blight Beetle is therefore not aggressive.
+- **Aggressive:** the Deep Sink (Chief Gnarr), Daleside Adit, the Old Brewery, and Ridgefold & the High Pastures (Greedy Gund, Old Bitterhorn).
+
+Open: whether Chief Gnarr's two Bonechewer guards, who stand on the ramp down to the Deep Sink, count as creatures of the Deep Sink (aggressive) or of the Sinks (not).
 
 **Rares:** *Greedy Gund* (4 rustler chief, High Pastures — *Gund's Lasso-Belt*, leather waist) · *Old Bitterhorn* (5 elite giant ram, ridge top — quest target).
 **Mini-boss:** *Chief Gnarr* (5, the Deep Sink) — Gnaw, Frenzy (self-enrage at 30%), 2 Bonechewer guards.
