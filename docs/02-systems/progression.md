@@ -103,12 +103,12 @@ Standard quest XP by quest level:
 
 | Tier | XP needed | Quest XP (one zone) | Kills done for quests | Dungeon / explore / grind | Notes |
 |---|---|---|---|---|---|
-| T1 1→5(6) | 7,600 | ~4,060 (53%) | ~4,600 | — | Player leaves at 5½–6 |
+| T1 1→5(6) | 7,600 | ~4,060 (53%) | ~4,600 | ~4,000–4,400 more from kills made on the way | Player leaves at about level 7, after about 200–280 kills in all, about 75 of them asked for by quests |
 | T2 5→10 | 20,000 | ~12,170 (60%) | ~12,500 | — | Over-provided so the elite quests are optional |
 | T3 10→20 | 139,600 | ~50,000 per zone (36%) | ~50,000 | ~40,000 | Gap filled by repeat Gallowmere Crypts runs, class quests, part of the *other* T3 zone |
 | T4 20→30 | 331,800 | ~95,000 per zone | ~95,000 per zone | — | Needs ≈ 2 of 3 zones + dungeon runs |
 
-Open: the Brightmead bot run made about 280 kills, not the 75 the quests ask for, and the bot runs of both starting zones left at level 7; the owner decides whether the T1 row's kill XP and exit level are raised to that or the zones' creatures are thinned until the row holds.
+The starting zones are expected to give more than their quests ask for (decided 2026-11-25, in place of thinning the zones' creatures). A player fights what stands between them and the objectives and kills more than once for items that drop by chance, so a starting zone is about 200–280 kills in all, about 75 of them asked for by quests, and a player leaves it at about level 7. The quest XP is exactly as designed. Measured by the zone bot runs: Brightmead Vale about 281 kills, 4,060 quest XP, about 13,175 XP in all, level 7; Embercrag Hollow 211 kills in 96 minutes, level 7.
 
 Rule of thumb used when authoring zones: **≈40% quests, ≈35–40% kills made while questing, ≈20–25% dungeons/exploration/grind** — the classic split. Having two or three zones per tier is what removes forced grinding.
 

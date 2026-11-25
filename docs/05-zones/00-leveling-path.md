@@ -18,6 +18,8 @@ Routes are suggestions only. **No quest is race-locked**; the ship between Solha
 
 **Redundancy at 5–10.** Each of the four T2 zones is a complete 5→10 with its own version of the main story, so each continent offers two interchangeable zones: farmland or autumn forest on Meridia; a farmed valley or the mountain's interior on Khazrun.
 
+**Arriving at 5–10.** A player leaves a starting zone at about level 7, not the 5½–6 first planned (see [Progression §5](../02-systems/progression.md#5-xp-budget-per-tier-design-target)), so players arrive in Harrowfield, Russetwood, Stonewake Dale and Stoneheart Deeps about a level higher than those zones were first planned for. Open: the difficulty of the level 5–10 zones should be checked for arrivals at level 7; their numbers are unchanged until then.
+
 ## 2. Main chains through the zones
 
 | Chain | Levels | Path |

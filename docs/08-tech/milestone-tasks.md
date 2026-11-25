@@ -93,7 +93,7 @@ The asset generation system on the dedicated GMKtec EVO-X3, specified in [Asset 
 | T-M2-13 | Per-player world objects and world state (grain sacks, cider barrels, the Burned Mill trigger) | Bot test for BM-07, BM-11 and BM-13 |
 | T-M2-14 | Elite and mini-boss creatures; summon-at-health ability (Hale Morrow) | Two-bot test kills Morrow; he summons at 50% |
 | T-M2-15 | Minimap, zone map with fog, zone banner, tutorial tips 1–10 | Manual checklist |
-| T-M2-16 | **Zone bot run:** the Quester brain ([Bots and Testing §3](bots-and-testing.md#3-how-the-quester-plays)) plays BM-01 to BM-18 from the content data alone | The run completes all 18 quests; the bot is level 5 or more; the quest XP it earned is within 5% of the zone document's quest XP total; its total XP, kills, deaths, time and final level are recorded in the evidence. **Open:** the zone document estimates about 75 quest kills and leaving at level 5½–6, while the measured run makes about 280 kills and ends at level 7; whether the documents' estimate is raised or the zone's creatures are thinned is the owner's choice |
+| T-M2-16 | **Zone bot run:** the Quester brain ([Bots and Testing §3](bots-and-testing.md#3-how-the-quester-plays)) plays BM-01 to BM-18 from the content data alone | The run completes all 18 quests; the bot is level 5 or more (the measured run leaves at level 7); the quest XP it earned is within 5% of the zone document's quest XP total; its total XP, kills, deaths, time and final level are recorded in the evidence, to be read beside the zone document's expectation of about 200–280 kills in all and leaving at about level 7 (measured: about 281 kills) |
 | T-M2-17 | Art block C integrated (Brightmead kit, creatures, effects, icons) | No placeholder assets remain in the zone; 60 fps on the reference machine in Millbrook |
 
 T-M2-17 is done after T-M3-01, T-M3-02 and the finishing of Embercrag Hollow (the order of the build-out, above). Until it is done Brightmead is played with whatever of its assets the forge has delivered and placeholders for the rest.
@@ -107,7 +107,7 @@ T-M3-01 and T-M3-02 are done first, ahead of T-M2-17, and Embercrag Hollow is th
 | Task | Work | Acceptance test |
 |---|---|---|
 | T-M3-01 | Dwarf race, character creation complete | Manual: create each race, sex and class |
-| T-M3-02 | Embercrag Hollow content and zone; snow terrain | Zone bot run EC-01 to EC-18 completes, held to the same checks as T-M2-16, with a dwarf |
+| T-M3-02 | Embercrag Hollow content and zone; snow terrain | Zone bot run EC-01 to EC-18 completes, held to the same checks as T-M2-16, with a dwarf (the measured run: 211 kills in 96 minutes, leaving at level 7) |
 | T-M3-03 | Solhaven and Hammerdeep as zones with all service NPCs placed (no quests yet) | Every roster NPC is present and its service window opens |
 | T-M3-04 | Transports: the ship on its path and schedule; lifts; boarding and riding as a passenger | Bot rides Solhaven → Seagate and arrives standing on the quay |
 | T-M3-05 | Eyries: discovery, taxi map, routes and fares | Bot test: fares and times match [Reference Tables §1](../12-data/reference-tables.md#1-eyrie-routes-and-fares) |

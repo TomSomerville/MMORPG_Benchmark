@@ -73,7 +73,7 @@ Open: the Slagborn Firebrand's Slag Bolt does about 12 damage a second, where a 
 | EC-17 | Grawl the Boulder-Eater | 5 | Miner Ulf | Kill Grawl (elite) | 525 | 3s · choose 1: *Boulder-Eater's Girdle* (mail waist, ilvl 10, +4 Str +5 Sta) · *Grawl's Molar* (held off-hand, ilvl 10, +3 Int +2 Spi) · *Warren-Delver's Mantle* (leather shoulders, ilvl 10, +4 Agi +5 Sta) |
 | EC-18 | **[MC1]** Word to Stonewake | 5 | Forgemaster Emberhand | Carry a Branded Ingot to Dale-Reeve Garrik Stonewake in Hopstead, or to Hallwarden Lampwright in Lanternhold | 175 | 1s → continues at [ST-01](t2-stonewake-dale.md#quests) or [SD-01](t2-stoneheart-deeps.md#quests) |
 
-**Totals:** 18 quests · ≈ 4,060 quest XP — identical structure and XP to Brightmead so neither race levels faster. Open: the zone bot run made 211 kills in 96 minutes, died 4 times and ended at level 7, where the design figure the two zones share is about 75 quest kills and leaving at level 5½–6; either that estimate is raised to what a playthrough makes or the zone's creatures are thinned until it holds.
+**Totals:** 18 quests · ≈ 4,060 quest XP — identical structure and XP to Brightmead so neither race levels faster · about 200–280 kills in all, about 75 of them asked for by quests → player leaves at about level 7. The kills beyond the quests' 75 are the creatures that stand between a player and the objectives, and the repeat kills for items that drop by chance; the zone is meant to play this way and its creatures are not thinned (decided 2026-11-25). Measured by the zone bot run: 211 kills in 96 minutes, 4 deaths, level 7.
 
 ## Gathering & professions
 
