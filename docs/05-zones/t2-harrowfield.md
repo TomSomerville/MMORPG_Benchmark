@@ -1,6 +1,6 @@
 # Harrowfield — T2, levels 5–10 (Meridia)
 
-[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Prev: [Brightmead Vale](t1-brightmead-vale.md) · Sister zones: [Russetwood](t2-russetwood.md) (adjacent) · [Stonewake Dale](t2-stonewake-dale.md) · [Stoneheart Deeps](t2-stoneheart-deeps.md) · Next: [Thornwick Marches](t3-thornwick-marches.md)
+[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Prev: [Brightmead Vale](t1-brightmead-vale.md) · Sister zones: [Russetwood](t2-russetwood.md) (adjacent) · [Embercrag Hollow](t2-embercrag-hollow.md) · [Stoneheart Deeps](t2-stoneheart-deeps.md) · Next: [Thornwick Marches](t3-thornwick-marches.md)
 
 **Build detail:** [Quest text](../06-quests/text/hf-harrowfield.md) · [NPC roster](../11-npcs/01-brightmead-harrowfield-russetwood.md) · [World layout](../13-world/02-harrowfield-russetwood.md) · [Creature data](../12-data/creatures.md). The quest table's Reward column on this page is copied from the quest text.
 
@@ -55,7 +55,7 @@ Reeve Maren Holt · Captain Jorah Wyck (militia) · Farmer Odell Fenner · Goodw
 
 | ID | Quest | Lvl | Giver | Objective | XP | Reward |
 |---|---|---|---|---|---|---|
-| HF-01 | **[MC1]** The Reeve's Burden | 5 | (from BM-18 / EC-18 or direct) Reeve Holt | Present the brand to Reeve Holt | 175 | — |
+| HF-01 | **[MC1]** The Reeve's Burden | 5 | (from BM-18 / ST-18 or direct) Reeve Holt | Present the brand to Reeve Holt | 175 | — |
 | HF-02 | Jackals in the Chaff | 5 | Farmer Fenner | Kill 10 Harrow Jackals | 350 | 2s · *Fenner's Harvest Cloak* (back, ilvl 10, +3 Sta +3 Spi) |
 | HF-03 | Rooters in the Turnips | 6 | Farmer Fenner | Kill 8 Tusked Rooters | 420 | 3s · choose 1: *Turnip-Puller's Mitts* (cloth hands, ilvl 11, +4 Int +4 Spi) · *Fieldhand's Grips* (leather hands, ilvl 11, +4 Agi +6 Sta) · *Fenner's Chain Gauntlets* (mail hands, ilvl 11, +4 Str +6 Sta) |
 | HF-04 | Harvest Pie | 6 | Goodwife Fenner | Bring 6 Rooter Flank and 4 Harrier Eggs | 420 | 1s 50c · *Recipe: Harvest Pie* (Cooking 10) · 5 *Harvest Pie* |

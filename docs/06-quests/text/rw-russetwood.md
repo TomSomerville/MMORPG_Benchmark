@@ -1,11 +1,11 @@
 # Quest Text — Russetwood (RW-01 to RW-20)
 
-[← Quest Text Index](00-quest-text-index.md) · Zone: [Russetwood](../../05-zones/t2-russetwood.md) · Prev: [Harrowfield](hf-harrowfield.md) · Next: [Stonewake Dale](st-stonewake-dale.md)
+[← Quest Text Index](00-quest-text-index.md) · Zone: [Russetwood](../../05-zones/t2-russetwood.md) · Prev: [Harrowfield](hf-harrowfield.md) · Next: [Embercrag Hollow](ec-embercrag-hollow.md)
 
 Format and global rules are in the [index](00-quest-text-index.md). Levels, XP and coin match Harrowfield quest for quest.
 
 ### RW-01 · [MC1] The Forester's Burden
-*Level 5 · Requires BM-18 or EC-18, or none (see notes) · Forest-Reeve Anselm Birch → Forest-Reeve Birch*
+*Level 5 · Requires BM-18 or ST-18, or none (see notes) · Forest-Reeve Anselm Birch → Forest-Reeve Birch*
 
 **Offer:** The Russetwood has stood in autumn since before the Concord had a name. I've walked it forty years and I know its sounds. Lately there are new ones. Axes at night. Kilns burning where no charcoal-burner of mine has a stack. If you've come with news, give it to me straight.
 **Tracker:** Present the brand to Forest-Reeve Birch

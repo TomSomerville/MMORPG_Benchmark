@@ -18,8 +18,8 @@ There is **no water zone**: the sea is scenery and a ship route, never a questin
 
 | Levels | Meridia | Khazrun | Sundrel | Total |
 |---|---|---|---|---|
-| 1–5 | Brightmead Vale | Embercrag Hollow | — | 2 |
-| 5–10 | Harrowfield · Russetwood | Stonewake Dale · Stoneheart Deeps | — | 4 |
+| 1–5 | Brightmead Vale | Stonewake Dale | — | 2 |
+| 5–10 | Harrowfield · Russetwood | Embercrag Hollow · Stoneheart Deeps | — | 4 |
 | 10–20 | Thornwick Marches | Ironroot Highlands | — | 2 |
 | 20–30 | Veilmoor · The Riftlands | Cinderfall Barrens | — | 3 |
 | *30–40* | *2 zones* | *2 zones* | *1 zone* | *5* |
@@ -34,10 +34,10 @@ Rows in italics are reserved, not built; concepts in §8.
 | Tier | Levels | Zone | Continent | Theme | Hub(s) |
 |---|---|---|---|---|---|
 | T1 | 1–5 | [Brightmead Vale](../05-zones/t1-brightmead-vale.md) | Meridia | Green valley, mills, orchards | Larkhill Steading, Millbrook |
-| T1 | 1–5 | [Embercrag Hollow](../05-zones/t1-embercrag-hollow.md) | Khazrun | Snowy forge-valley of the mountain dwarves | Coldhearth Camp, Anvilrest |
+| T1 | 1–5 | [Stonewake Dale](../05-zones/t1-stonewake-dale.md) | Khazrun | Hill-dwarf farm valley in spring, beneath a great dam; the dwarf start | Sunbank Steading, Hopstead |
 | T2 | 5–10 | [Harrowfield](../05-zones/t2-harrowfield.md) | Meridia | Harvest farmland under bandit raids | Harrow's Cross |
 | T2 | 5–10 | [Russetwood](../05-zones/t2-russetwood.md) | Meridia | Autumn forest of woodcutters and charcoal-burners | Cooper's Hollow |
-| T2 | 5–10 | [Stonewake Dale](../05-zones/t2-stonewake-dale.md) | Khazrun | Hill-dwarf farm valley beneath a great dam | Hopstead |
+| T2 | 5–10 | [Embercrag Hollow](../05-zones/t2-embercrag-hollow.md) | Khazrun | Snowy forge-valley of the mountain dwarves | Anvilrest |
 | T2 | 5–10 | [Stoneheart Deeps](../05-zones/t2-stoneheart-deeps.md) | Khazrun | An entire zone inside the mountain | Lanternhold |
 | T3 | 10–20 | [Thornwick Marches](../05-zones/t3-thornwick-marches.md) | Meridia | Darkening forest and marsh | Thornwick, Warden's Rest, Mistral Hollow |
 | T3 | 10–20 | [Ironroot Highlands](../05-zones/t3-ironroot-highlands.md) | Khazrun | Pine highlands, ogres, deep mines | Ironroot Hold, Ramshead Lodge, Deepseam Camp |
@@ -51,12 +51,12 @@ Each of the four T2 zones carries a **complete 5→10** on its own, so every rac
 
 ```
 MERIDIA                                             KHAZRUN
-        Veilmoor (20-30)                            Embercrag Hollow (1-5)
+        Veilmoor (20-30)                            Embercrag Hollow (5-10)
            |         \                                  |
  Thornwick Marches -- The Riftlands (20-30)         HAMMERDEEP (capital, inside Mount Khaz)
       (10-20)          [Kite's Rest, raid]             |              \
       /       \                                 Stoneheart Deeps -- Stonewake Dale
- Russetwood -- Harrowfield (5-10)                  (5-10, interior)     (5-10)
+ Russetwood -- Harrowfield (5-10)                  (5-10, interior)     (1-5, dwarf start)
       \       /                                         \              /
       SOLHAVEN (capital) ~~~~~~ ship ~~~~~~~~>      Ironroot Highlands (10-20)
           |                 (into the Seagate)          |
@@ -122,7 +122,7 @@ A city carved in rising rings inside Mount Khaz, which stands directly on the co
 | Method | Detail |
 |---|---|
 | **Walking / running** | Run speed 7 yd/s. No level or race restriction on any outdoor zone |
-| **The capital ship** | Free. *The Hearth-Oath* sails **Solhaven Harbor ↔ the Seagate of Hammerdeep** every 5 minutes: out of the estuary, along the mountain coast of Khazrun, and through the sea-arch into the mountain. Usable from level 1 — this is how a level 1 human reaches Embercrag. The only ship route in the game |
+| **The capital ship** | Free. *The Hearth-Oath* sails **Solhaven Harbor ↔ the Seagate of Hammerdeep** every 5 minutes: out of the estuary, along the mountain coast of Khazrun, and through the sea-arch into the mountain. Usable from level 1 — this is how a level 1 human reaches Stonewake Dale, through Hammerdeep and out by the Dalegate. The only ship route in the game |
 | **Eyries (flight paths)** | Crag-eagle taxis between discovered eyries on the same continent. Cost scales with distance (≈ 50c–8s). One eyrie in every hub |
 | **Hearthstone** | Starting item. Returns to bound inn. 60 min cooldown |
 | **Mounts** | Riding at level 30: +60% ground speed. Epic riding at level 60: +100% **while the mount is fed** (see [Economy](../02-systems/economy-and-social.md#4-the-level-60-gold-sink-plan)). Horses (Solhaven), rams (Hammerdeep) |

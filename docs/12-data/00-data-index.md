@@ -38,7 +38,7 @@ These are the rules the generator applies. Changing a rule changes every creatur
 | XP | 45 + 5 × level, before the level-difference rules in [Progression](../02-systems/progression.md) |
 | Respawn | 2.5 minutes in level 1–5 zones, 5 minutes elsewhere; dynamic respawn scales this down to as little as 15% in crowded areas (there are no layers) |
 | Aggro radius | 20 yards at equal level, ±1 per level of difference, minimum 5, maximum 45. A creature all of whose places are indoors is written with `aggroRadiusMod: -8` (12 yards at equal level) |
-| Reaction | Hostile (attacks a player within its aggro radius), except that in the two starting zones (Brightmead Vale, Embercrag Hollow) a creature of level 1 to 3 is neutral: it has no aggro radius, fights back when attacked, and calls for help as usual. Level 4 and above are hostile there as elsewhere ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)). A creature the zone documents mark neutral stays so |
+| Reaction | Hostile (attacks a player within its aggro radius), except that in the two starting zones (Brightmead Vale, Stonewake Dale) a creature of level 1 to 3 is neutral: it has no aggro radius, fights back when attacked, and calls for help as usual. Level 4 and above are hostile there as elsewhere ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)). A creature the zone documents mark neutral stays so |
 
 **Ability kinds.** Each ability named in a zone table is given a kind from its name and note, and its numbers from the kind:
 

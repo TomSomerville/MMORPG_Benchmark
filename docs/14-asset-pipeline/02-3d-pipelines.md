@@ -60,7 +60,7 @@ One pipeline per kind of 3D asset. Shared rules are on the [Asset Forge](00-asse
 | Variants | 3–5 seeds per species; autumn, snow and ash variants by palette remap |
 | Checks | Triangle budget; trunk base at the origin; leaf cards face outward; a generated tree is inside its box; a node is distinguishable from its non-node neighbour (colour difference above a threshold in a rendered scene) |
 
-Open: P12's generated method is approved for the two starting zones only, by instruction and before the owner had looked at its results; whether it becomes the general method waits on that.
+Open: P12's generated method is approved for the two starting zones only, by instruction and before the owner had looked at its results; whether it becomes the general method waits on that. Open: when that approval was given the two starting zones were Brightmead Vale and Embercrag Hollow; since 2026-11-25 the dwarf starting zone is Stonewake Dale, and whether the approval now covers Stonewake Dale's nature, and still Embercrag Hollow's, is not decided.
 
 ## P13 — Characters and creatures: base models (4 player bodies, 110 customisation pieces, 62 creature rigs' base models, 18 bosses)
 

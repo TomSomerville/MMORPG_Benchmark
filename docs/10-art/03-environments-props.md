@@ -69,7 +69,7 @@ Each kit is a set of modular pieces (walls, roofs, doors, floors, stairs, trims)
 |---|---|---|---|
 | NAT-01 | ☐ | Temperate trees | Oak ×3, birch ×2, apple (orchard) ×2, willow, dead tree ×2, stumps ×3, fallen log ×2 |
 | NAT-02 | ☐ | **Autumn** trees (Russetwood, Harrowfield) | Giant oak ×3, maple ×3, beech ×2 with red/gold/copper leaf sets; leaf-litter decals |
-| NAT-03 | ☐ | Conifers | Frostpine ×3 (snow-laden variant), highland pine ×3 |
+| NAT-03 | ☐ | Conifers | Frostpine ×3 (snow-laden variant), highland pine ×3 (also the larches of Stonewake Dale) |
 | NAT-04 | ☐ | Marsh / moor | Gnarled swamp tree ×3, reeds ×2, cattails, hanging moss, peat stacks, gibbet tree |
 | NAT-05 | ☐ | Thornwick briar | Thorn-wall segments ×4, bramble clumps ×3 |
 | NAT-06 | ☐ | Arid | Scrub ×3, cactus-like succulents ×2, tumbleweed, dry tree ×2 |
@@ -98,20 +98,20 @@ Each zone needs: a **terrain set** (6–8 tiling ground textures), a **sky and l
 | Z-BM-08 | ☐ | Ashhand Camp (KIT-12/13) |
 | Z-BM-09 | ☐ | Quest objects: Grain Sack, Cider Barrel, Tallow Candle (item), Branded Coin (item), Ashhand crate with sigil |
 
-### Embercrag Hollow
+### Stonewake Dale
 | ID | Done | Asset |
 |---|---|---|
-| Z-EC-01 | ☐ | Terrain set: deep snow, packed snow path, frozen ground, exposed rock, ice, forge-warmed mud, cave floor |
-| Z-EC-02 | ☐ | Sky: cold bright day, blue dusk, aurora night; snowfall light/heavy |
-| Z-EC-03 | ☐ | Coldhearth Camp (KIT-04 + tents) |
-| Z-EC-04 | ☐ | Anvilrest town with *The Banked Coal* inn interior |
-| Z-EC-05 | ☐ | **The Old Forge**: open-air ancestral forge, two states — cold/dark and relit (Ever-Ember glow) |
-| Z-EC-06 | ☐ | Gravelkin Warrens interior; Kiln Cave interior with boss chamber |
-| Z-EC-07 | ☐ | Rimewater Pond: ice sheet, fishing holes |
-| Z-EC-08 | ☐ | Coldgate (tunnel mouth to Hammerdeep), Bouldergate Pass |
-| Z-EC-09 | ☐ | Quest objects: sooty footprints (decal trail), Stolen Pick, Branded Ingot, the Ever-Ember |
-
-How the terrain set is laid on the ground: the zone's eight ground slots are filled from these seven textures. Deep snow is the base and is used again under the frostpines; frozen ground shows in wind-scoured patches; the packed snow path is roads and towns; ice is Rimewater Pond; exposed rock is cliffs. Interiors draw their walls and floor with the exposed rock slot, so the cave floor texture is not laid anywhere, and forge-warmed mud is held for a zone rule that paints it.
+| Z-ST-01 | ☐ | Terrain set: pasture grass, terrace soil, young barley, dry-stone path, sinkhole rubble, dam masonry apron, quarry stone |
+| Z-ST-02 | ☐ | Sky: clear mountain-valley day with peaks on both sides, cool dusk, clear night; breeze, light rain |
+| Z-ST-03 | ☐ | Hopstead (KIT-05) with brewhouse green and *The Dry Boot* |
+| Z-ST-04 | ☐ | Barley terraces (stepped retaining walls), hop-yards (in new leaf; blighted variant) |
+| Z-ST-05 | ☐ | Ridgefold steading, bothies, sheep-folds |
+| Z-ST-06 | ☐ | The Gravelkin Sinks (open sinkholes into KIT-06 tunnels) |
+| Z-ST-07 | ☐ | The Old Brewery interior: vats, copper pipes |
+| Z-ST-08 | ☐ | **Stonewake Dam**: monumental dwarven dam wall, sluice-houses, spillway, reservoir backdrop; the Millrace channel |
+| Z-ST-09 | ☐ | Sunbank Steading (KIT-05): longhouse, sawpit, stone-sledge, lambing paddock; Greywall Quarry face; the Larch Hangers |
+| Z-ST-10 | ☐ | Daleside Adit (mine mouth to the Deeps), Dalegate (to Hammerdeep) |
+| Z-ST-11 | ☐ | Quest objects: stolen crate, Copper Fitting, hand-marked slag lump, herb basket, Stolen Whetstone (item), Peddler's Coin (item), Payroll-Slate (item) |
 
 ### Harrowfield
 | ID | Done | Asset |
@@ -142,20 +142,20 @@ How the terrain set is laid on the ground: the zone's eight ground slots are fil
 | Z-RW-09 | ☐ | **The Great Kiln** (brick KIT-09 variant): kiln domes, counting-shed, flame-jet floor |
 | Z-RW-10 | ☐ | Quest objects: Stolen Pelts bundle, snare trap, fire (dousable), ledger, Woodcutter's Axe |
 
-### Stonewake Dale
+### Embercrag Hollow
 | ID | Done | Asset |
 |---|---|---|
-| Z-ST-01 | ☐ | Terrain set: pasture grass, terrace soil, barley stubble, dry-stone path, sinkhole rubble, dam masonry apron, gully slag |
-| Z-ST-02 | ☐ | Sky: clear mountain-valley day with peaks on both sides, cool dusk, clear night; breeze, light rain |
-| Z-ST-03 | ☐ | Hopstead (KIT-05) with brewhouse green and *The Dry Boot* |
-| Z-ST-04 | ☐ | Barley terraces (stepped retaining walls), hop-yards (blighted variant) |
-| Z-ST-05 | ☐ | Ridgefold steading, bothies, sheep-folds |
-| Z-ST-06 | ☐ | The Gravelkin Sinks (open sinkholes into KIT-06 tunnels) |
-| Z-ST-07 | ☐ | The Old Brewery interior: vats, copper pipes |
-| Z-ST-08 | ☐ | **Stonewake Dam**: monumental dwarven dam wall, sluice-houses, spillway, reservoir backdrop; the Millrace channel |
-| Z-ST-09 | ☐ | Blackmatch Camp; Slagfall Gully vents |
-| Z-ST-10 | ☐ | Daleside Adit (mine mouth to the Deeps), Dalegate (to Hammerdeep) |
-| Z-ST-11 | ☐ | Quest objects: Cinder-Charge (armed/defused), stolen crate, Copper Fitting, ram bell, ledger |
+| Z-EC-01 | ☐ | Terrain set: deep snow, packed snow path, frozen ground, exposed rock, ice, forge-warmed mud, gully slag |
+| Z-EC-02 | ☐ | Sky: cold bright day, blue dusk, aurora night; snowfall light/heavy |
+| Z-EC-03 | ☐ | Coldhearth Camp (KIT-04 + tents) |
+| Z-EC-04 | ☐ | Anvilrest town with *The Banked Coal* inn interior |
+| Z-EC-05 | ☐ | **The Old Forge**: open-air ancestral forge, two states — cold/dark and relit (Ever-Ember glow) |
+| Z-EC-06 | ☐ | Gravelkin Warrens interior; Kiln Cave interior with boss chamber; Slagfall Gully slag tip; Blackmatch Camp (KIT-09) |
+| Z-EC-07 | ☐ | Rimewater Pond: ice sheet, fishing holes |
+| Z-EC-08 | ☐ | Coldgate (tunnel mouth to Hammerdeep), Bouldergate Pass |
+| Z-EC-09 | ☐ | Quest objects: sooty footprints (decal trail), tool crate, loaded ore cart, powder sledge, Cinder-Charge (armed/defused), ledger, the Ever-Ember |
+
+How the terrain set is laid on the ground: the zone's eight ground slots are filled from these seven textures. Deep snow is the base and is used again under the frostpines; frozen ground shows in wind-scoured patches; the packed snow path is roads and towns; ice is Rimewater Pond; exposed rock is cliffs. Interiors draw their walls and floor with the exposed rock slot. Gully slag is Slagfall Gully and the floor of Blackmatch Camp, where no snow lies; it takes the place of the cave floor texture, which was never laid. Forge-warmed mud is held for a zone rule that paints it (the melt-pools below the Old Forge).
 
 ### Stoneheart Deeps
 | ID | Done | Asset |

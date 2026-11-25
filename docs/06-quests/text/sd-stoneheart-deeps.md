@@ -1,18 +1,18 @@
 # Quest Text — Stoneheart Deeps (SD-01 to SD-20)
 
-[← Quest Text Index](00-quest-text-index.md) · Zone: [Stoneheart Deeps](../../05-zones/t2-stoneheart-deeps.md) · Prev: [Stonewake Dale](st-stonewake-dale.md) · Next: [Thornwick Marches](tm-thornwick-marches.md)
+[← Quest Text Index](00-quest-text-index.md) · Zone: [Stoneheart Deeps](../../05-zones/t2-stoneheart-deeps.md) · Prev: [Embercrag Hollow](ec-embercrag-hollow.md) · Next: [Thornwick Marches](tm-thornwick-marches.md)
 
 Format and global rules are in the [index](00-quest-text-index.md). Levels, XP and coin match the other three level 5–10 zones quest for quest.
 
 ### SD-01 · [MC1] The Hallwarden's Burden
-*Level 5 · Requires EC-18 or BM-18, or none (see notes) · Hallwarden Ragnhild Lampwright → Hallwarden Lampwright*
+*Level 5 · Requires ST-18 or BM-18, or none (see notes) · Hallwarden Ragnhild Lampwright → Hallwarden Lampwright*
 
 **Offer:** Welcome to Lanternhold. Stand in the light, please. It is a custom here. The Deeps are the roots of Mount Khaz, and everything Hammerdeep burns or forges comes up through my halls. For a month my lamps have been going out, one by one, on the lower roads. If you know why, tell me.
-**Tracker:** Present the Branded Ingot to Hallwarden Lampwright
+**Tracker:** Present the Payroll-Slate to Hallwarden Lampwright
 **Progress:** —
-**Complete:** An outsider arming the Slagborn. Then the lamps are being put out so that somebody can work in the dark. Below us are the roots of the Great Forge itself. I will not think about that yet. Sapper-Sergeant Fuse holds the lower roads. Report to her.
+**Complete:** An outsider paying rock-eaters in marked slag, and the dam on his tally. Then the lamps are being put out so that somebody can work in the dark. Below us are the roots of the Great Forge itself. I will not think about that yet. Sapper-Sergeant Fuse holds the lower roads. Report to her.
 **Rewards:** 175 XP
-**Notes:** If the player turned in EC-18 to Lampwright, this quest is offered and completed in the same conversation. Offered directly at level 5 to anyone else; the tracker then reads "Speak to Hallwarden Lampwright".
+**Notes:** If the player turned in ST-18 to Lampwright, this quest is offered and completed in the same conversation. Offered directly at level 5 to anyone else; the tracker then reads "Speak to Hallwarden Lampwright".
 
 ### SD-02 · Bats in the Lamps
 *Level 5 · Requires — · Lamp-keeper Inga Wickfast → Lamp-keeper Wickfast*

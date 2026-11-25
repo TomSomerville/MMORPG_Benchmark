@@ -1,6 +1,6 @@
 # Russetwood — T2, levels 5–10 (Meridia)
 
-[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Prev: [Brightmead Vale](t1-brightmead-vale.md) · Sister zones: [Harrowfield](t2-harrowfield.md) (adjacent) · [Stonewake Dale](t2-stonewake-dale.md) · [Stoneheart Deeps](t2-stoneheart-deeps.md) · Next: [Thornwick Marches](t3-thornwick-marches.md)
+[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Prev: [Brightmead Vale](t1-brightmead-vale.md) · Sister zones: [Harrowfield](t2-harrowfield.md) (adjacent) · [Embercrag Hollow](t2-embercrag-hollow.md) · [Stoneheart Deeps](t2-stoneheart-deeps.md) · Next: [Thornwick Marches](t3-thornwick-marches.md)
 
 **Build detail:** [Quest text](../06-quests/text/rw-russetwood.md) · [NPC roster](../11-npcs/01-brightmead-harrowfield-russetwood.md) · [World layout](../13-world/02-harrowfield-russetwood.md) · [Creature data](../12-data/creatures.md). The quest table's Reward column on this page is copied from the quest text.
 
@@ -61,7 +61,7 @@ Same levels and XP, quest for quest, as the other three T2 zones.
 
 | ID | Quest | Lvl | Giver | Objective | XP | Reward |
 |---|---|---|---|---|---|---|
-| RW-01 | **[MC1]** The Forester's Burden | 5 | (from BM-18 / EC-18 or direct) Forest-Reeve Birch | Present the brand to the Forest-Reeve | 175 | — |
+| RW-01 | **[MC1]** The Forester's Burden | 5 | (from BM-18 / ST-18 or direct) Forest-Reeve Birch | Present the brand to the Forest-Reeve | 175 | — |
 | RW-02 | Foxes in the Henhouse | 5 | Innkeeper Bung | Kill 10 Russet Foxes | 350 | 2s · *Split-Stave Travelling Cloak* (back, ilvl 10, +3 Sta +3 Spi) |
 | RW-03 | Beetles in the Timber | 6 | Master Cooper Stave | Kill 8 Leafmold Beetles | 420 | 3s · choose 1: *Stave-Sorter's Mitts* (cloth hands, ilvl 11, +4 Int +4 Spi) · *Cooper's Hide Gloves* (leather hands, ilvl 11, +4 Agi +6 Sta) · *Hoop-Setter's Gauntlets* (mail hands, ilvl 11, +4 Str +6 Sta) |
 | RW-04 | Venison and Chanterelles | 6 | Cook Gristle | Bring 6 Venison and 4 Chanterelles | 420 | 1s 50c · *Recipe: Woodsman's Stew* (Cooking 25) · 5 *Woodsman's Stew* |

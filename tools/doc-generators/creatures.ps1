@@ -78,8 +78,8 @@ function Loot($type, [int]$lo, [int]$hi, $drops, $mult) {
   $parts += 'World table'
   return ($parts -join " $md ")
 }
-$zones = @{ 't1-brightmead-vale' = 'BM'; 't1-embercrag-hollow' = 'EC'; 't2-harrowfield' = 'HF'; 't2-russetwood' = 'RW'; 't2-stonewake-dale' = 'ST'; 't2-stoneheart-deeps' = 'SD'; 't3-thornwick-marches' = 'TM'; 't3-ironroot-highlands' = 'IR'; 't4-cinderfall-barrens' = 'CF'; 't4-riftlands' = 'RL'; 't4-veilmoor' = 'VM' }
-$extra = @{ 'HF' = @(@('Paymaster Grice', 8, 'Humanoid', 'named')); 'RW' = @(@('Odo Ketch', 8, 'Humanoid', 'named')); 'ST' = @(@('Chief Gnarr', 8, 'Humanoid', 'named')); 'SD' = @(@('Shard-Chief Krakk', 8, 'Humanoid', 'named')); 'TM' = @(@('Preceptor Hask', 14, 'Humanoid (caster)', 'named')); 'IR' = @(@('Runner Vask', 15, 'Humanoid', 'named')) }
+$zones = @{ 't1-brightmead-vale' = 'BM'; 't2-embercrag-hollow' = 'EC'; 't2-harrowfield' = 'HF'; 't2-russetwood' = 'RW'; 't1-stonewake-dale' = 'ST'; 't2-stoneheart-deeps' = 'SD'; 't3-thornwick-marches' = 'TM'; 't3-ironroot-highlands' = 'IR'; 't4-cinderfall-barrens' = 'CF'; 't4-riftlands' = 'RL'; 't4-veilmoor' = 'VM' }
+$extra = @{ 'HF' = @(@('Paymaster Grice', 8, 'Humanoid', 'named')); 'RW' = @(@('Odo Ketch', 8, 'Humanoid', 'named')); 'SD' = @(@('Shard-Chief Krakk', 8, 'Humanoid', 'named')); 'TM' = @(@('Preceptor Hask', 14, 'Humanoid (caster)', 'named')); 'IR' = @(@('Runner Vask', 15, 'Humanoid', 'named')) }
 $sb = New-Object System.Text.StringBuilder
 [void]$sb.AppendLine('# Creature Data ' + $mdash + ' stat blocks, abilities and loot')
 [void]$sb.AppendLine('')

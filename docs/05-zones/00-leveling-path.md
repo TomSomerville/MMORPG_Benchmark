@@ -8,17 +8,19 @@ This page is the reading guide for the journey. Read the zone files in order to 
 
 | Levels | Meridia route (human default) | Khazrun route (dwarf default) | Shared |
 |---|---|---|---|
-| 1–5 | [Brightmead Vale](t1-brightmead-vale.md) | [Embercrag Hollow](t1-embercrag-hollow.md) — mountain dwarves | Capital visit at ~5: professions |
-| 5–10 | [Harrowfield](t2-harrowfield.md) **or** [Russetwood](t2-russetwood.md) | [Stonewake Dale](t2-stonewake-dale.md) (hill dwarves) **or** [Stoneheart Deeps](t2-stoneheart-deeps.md) (inside the mountain) | Class quest at 10; talents begin |
+| 1–5 | [Brightmead Vale](t1-brightmead-vale.md) | [Stonewake Dale](t1-stonewake-dale.md) — hill dwarves, in spring | Capital visit at ~5: professions |
+| 5–10 | [Harrowfield](t2-harrowfield.md) **or** [Russetwood](t2-russetwood.md) | [Embercrag Hollow](t2-embercrag-hollow.md) (mountain dwarves, snow) **or** [Stoneheart Deeps](t2-stoneheart-deeps.md) (inside the mountain) | Class quest at 10; talents begin |
 | 10–20 | [Thornwick Marches](t3-thornwick-marches.md) | [Ironroot Highlands](t3-ironroot-highlands.md) | **Dungeon 1** Gallowmere Crypts (13–16); Main Chain 2 begins at 15; Chain 1 finale at Brandspire (20) |
 | 20–30 | [Veilmoor](t4-veilmoor.md) · [The Riftlands](t4-riftlands.md) | [Cinderfall Barrens](t4-cinderfall-barrens.md) | **Dungeon 2** (20–23), **Dungeon 3** (27–30); world bosses |
 | 30 | — | — | Raid attunement → **The Hollow Throne**; battleground bracket 30; FFA arena |
 
 Routes are suggestions only. **No quest is race-locked**; the ship between Solhaven Harbor and the Seagate inside Hammerdeep is free from level 1.
 
-**Redundancy at 5–10.** Each of the four T2 zones is a complete 5→10 with its own version of the main story, so each continent offers two interchangeable zones: farmland or autumn forest on Meridia; a farmed valley or the mountain's interior on Khazrun.
+**Redundancy at 5–10.** Each of the four T2 zones is a complete 5→10 with its own version of the main story, so each continent offers two interchangeable zones: farmland or autumn forest on Meridia; a snowbound forge-valley or the mountain's interior on Khazrun.
 
-**Arriving at 5–10.** A player leaves a starting zone at about level 7, not the 5½–6 first planned (see [Progression §5](../02-systems/progression.md#5-xp-budget-per-tier-design-target)), so players arrive in Harrowfield, Russetwood, Stonewake Dale and Stoneheart Deeps about a level higher than those zones were first planned for. Open: the difficulty of the level 5–10 zones should be checked for arrivals at level 7; their numbers are unchanged until then.
+**The dwarf start.** Decided 2026-11-25: dwarves begin in Stonewake Dale, the hill dwarves' farming valley, in spring, so that the first hours are warm and welcoming; the snow of Embercrag Hollow comes second, at 5–10. The two zones exchanged places and levels; each was rewritten on the template of its new tier.
+
+**Arriving at 5–10.** A player leaves a starting zone at about level 7, not the 5½–6 first planned (see [Progression §5](../02-systems/progression.md#5-xp-budget-per-tier-design-target)), so players arrive in Harrowfield, Russetwood, Embercrag Hollow and Stoneheart Deeps about a level higher than those zones were first planned for. Open: the difficulty of the level 5–10 zones should be checked for arrivals at level 7; their numbers are unchanged until then.
 
 ## 2. Main chains through the zones
 
@@ -34,8 +36,8 @@ The second chain deliberately walks the player through **all three** T4 zones �
 | Level | Where you are | What you get | Milestone |
 |---|---|---|---|
 | 1 | Start camp | 2–3 abilities, white gear | First kill quest |
-| 2–3 | First creature camp (mine/warrens) | New ability at 2 (trainer) | First bag |
-| 4 | T1 town | Class abilities at 4; cultists appear | First caster enemies |
+| 2–3 | First creature camp (mine/sinks) | New ability at 2 (trainer) | First bag |
+| 4 | T1 town | Class abilities at 4; cultists or rustlers appear | First caster enemies (Brightmead); first enemies that call a whole camp (Stonewake Dale) |
 | 5 | T1 finale | First green weapon | Professions unlock |
 | 6–7 | T2 opening areas | Class core rotation forms (Stomp / Dawnstrike / Briarskin) | Cooking, First Aid quests |
 | 8–9 | T2 back half | First debuffs to cleanse; first elite quests | 8-slot bags |
@@ -72,7 +74,7 @@ The second chain deliberately walks the player through **all three** T4 zones �
 7. Gathering and profession notes
 8. Suggested flow
 
-Quest IDs are `ZONE-NN` (BM, EC, HF, RW, ST, SD, TM, IR, CF, RL, VM) and are the stable keys used in data files.
+Quest IDs are `ZONE-NN` (BM, ST, HF, RW, EC, SD, TM, IR, CF, RL, VM) and are the stable keys used in data files.
 
 ## 6. Reward shorthand used in quest tables
 
@@ -87,10 +89,10 @@ Quest IDs are `ZONE-NN` (BM, EC, HF, RW, ST, SD, TM, IR, CF, RL, VM) and are the
 | Zone | Code | Quests | Main-chain quests |
 |---|---|---|---|
 | Brightmead Vale | BM | 18 | 6 (Chain 1) |
-| Embercrag Hollow | EC | 18 | 6 (Chain 1) |
+| Stonewake Dale | ST | 18 | 6 (Chain 1) |
 | Harrowfield | HF | 20 | 8 (Chain 1) |
 | Russetwood | RW | 20 | 8 (Chain 1) |
-| Stonewake Dale | ST | 20 | 8 (Chain 1) |
+| Embercrag Hollow | EC | 20 | 8 (Chain 1) |
 | Stoneheart Deeps | SD | 20 | 8 (Chain 1) |
 | Thornwick Marches | TM | 36 | 12 (Chain 1) + 5 (Chain 2) |
 | Ironroot Highlands | IR | 36 | 12 (Chain 1) + 5 (Chain 2) |

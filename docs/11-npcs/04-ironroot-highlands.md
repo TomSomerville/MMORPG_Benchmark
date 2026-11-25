@@ -8,7 +8,7 @@ Column meanings and the `STK-` and `TRN-` lists are in the [index](00-npc-index.
 
 | ID | Name | Short name | Role | Where | Services | Gives | Ends | Greeting | Sex |
 |---|---|---|---|---|---|---|---|---|---|
-| NPC-IR-01 | Ranger-Captain Sigrun Farstride | Ranger-Captain Farstride | Ranger-Captain | Ironroot Hold, gate-tower (Brandspire siege camp during TM-35–36) | — | IR-01, IR-05, IR-06, IR-11, IR-14, IR-15, IR-23, IR-24, IR-25, IR-35, IR-36 | IR-01, IR-05, IR-06, IR-11, IR-14, IR-23, IR-24, IR-25, IR-35, SD-20, ST-20 | "I only have the one border. Let's start with it." | F |
+| NPC-IR-01 | Ranger-Captain Sigrun Farstride | Ranger-Captain Farstride | Ranger-Captain | Ironroot Hold, gate-tower (Brandspire siege camp during TM-35–36) | — | IR-01, IR-05, IR-06, IR-11, IR-14, IR-15, IR-23, IR-24, IR-25, IR-35, IR-36 | EC-20, IR-01, IR-05, IR-06, IR-11, IR-14, IR-23, IR-24, IR-25, IR-35, SD-20 | "I only have the one border. Let's start with it." | F |
 | NPC-IR-02 | Thane's Steward Balder Ironroot | Steward Ironroot | Thane's Steward | Ironroot Hold, keep hall | — | IR-04 | IR-04 | "A hold runs on bread and on what people say over it." | M |
 | NPC-IR-03 | Leif | Leif | Huntmaster's Apprentice | Ironroot Hold, game larder | TRN-SKN (Journeyman) · Skinning Knife | IR-02, IR-03, IR-08 | IR-02, IR-03, IR-08 | "The Huntmaster's away. Don't tell him how well it's going." | M |
 | NPC-IR-04 | Cook Ylva Stewpot | Cook Stewpot | Cooking Trainer | Ironroot Hold, smokehouse (Ramshead Lodge kitchen for IR-20) | TRN-CK (Journeyman) · Hot Spices · STK-RECIPE: Crag Stalker Steak | IR-07, IR-20 | IR-07, IR-20 | "Juniper under, wet sacking over, and you go away for a day." | F |

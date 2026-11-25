@@ -1,6 +1,6 @@
 # Quest Text — Brightmead Vale (BM-01 to BM-18)
 
-[← Quest Text Index](00-quest-text-index.md) · Zone: [Brightmead Vale](../../05-zones/t1-brightmead-vale.md) · Next: [Embercrag Hollow](ec-embercrag-hollow.md)
+[← Quest Text Index](00-quest-text-index.md) · Zone: [Brightmead Vale](../../05-zones/t1-brightmead-vale.md) · Next: [Stonewake Dale](st-stonewake-dale.md)
 
 Format and global rules are in the [index](00-quest-text-index.md).
 

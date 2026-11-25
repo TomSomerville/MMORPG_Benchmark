@@ -146,10 +146,10 @@ Every opening the world layouts call for. Positions are zone-local and come from
 | Zone | Cutouts |
 |---|---|
 | Brightmead Vale | Hartwell Mine mouth (130, 450); the cellar hole in Hobb's store shed |
-| Embercrag Hollow | Gravelkin Warrens mouth (150, 690); the larder hole at Coldhearth; Kiln Cave mouth (850, 880); Coldgate tunnel to Hammerdeep (300, 0) |
+| Embercrag Hollow | Gravelkin Warrens mouth (150, 690); the larder hole at Coldhearth; Kiln Cave mouth (850, 880); Blackmatch chief's cave (630, 990); Coldgate tunnel to Hammerdeep (300, 0) |
 | Harrowfield | Vane Manor cellar hatch; the quarry is open terrain, not a cutout |
 | Russetwood | Rootgnaw Burrows: 5 burrow mouths under the root-plates around (240, 1170) |
-| Stonewake Dale | The six Sinks around (830, 180), as sinkhole rims; Daleside Adit to Stoneheart Deeps (0, 800); Old Brewery cellar; Blackmatch chief's cave (1380, 1390); Dalegate to Hammerdeep (100, 1400) |
+| Stonewake Dale | The Sinks: the mouth in the first sink (500, 240), and the four open pits around (570, 140), as sinkhole rims; Daleside Adit to Stoneheart Deeps (0, 800) and its upper drift (70, 900); Old Brewery cellar; Dalegate to Hammerdeep (100, 1400) |
 | Stoneheart Deeps | An interior zone; reached through the Daleside Adit, the Long Stair from Hammerdeep's Deepgate, and the Deep Gate rail-tunnel |
 | Thornwick Marches | Wolfscar Den (350, 720); **Gallowmere Crypts gate (1080, 1260), an instance entrance**; Ashgrave Estate cellar |
 | Ironroot Highlands | Old Ironhide's cave (380, 1560); the root-hollow under the Singing Stones (1240, 1760); Lurker Hollows: 3 cave mouths; Deepseam Mine mouth (800, 260); the Deep Gate rail-head (640, 1960); Brandforge inner forge |

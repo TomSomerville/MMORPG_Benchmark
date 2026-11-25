@@ -1,18 +1,18 @@
 # Quest Text — Harrowfield (HF-01 to HF-20)
 
-[← Quest Text Index](00-quest-text-index.md) · Zone: [Harrowfield](../../05-zones/t2-harrowfield.md) · Prev: [Embercrag Hollow](ec-embercrag-hollow.md) · Next: [Russetwood](rw-russetwood.md)
+[← Quest Text Index](00-quest-text-index.md) · Zone: [Harrowfield](../../05-zones/t2-harrowfield.md) · Prev: [Stonewake Dale](st-stonewake-dale.md) · Next: [Russetwood](rw-russetwood.md)
 
 Format and global rules are in the [index](00-quest-text-index.md).
 
 ### HF-01 · [MC1] The Reeve's Burden
-*Level 5 · Requires BM-18 or EC-18, or none (see notes) · Reeve Maren Holt → Reeve Holt*
+*Level 5 · Requires BM-18 or ST-18, or none (see notes) · Reeve Maren Holt → Reeve Holt*
 
 **Offer:** You have the look of someone carrying bad news. Harrow's Cross feeds Solhaven, <name>. Every loaf in the capital starts in these fields, and this year I have bandits in the ditches, straw men walking the hill, and strangers whispering to my field hands. If you know anything about any of it, I'll hear it now.
 **Tracker:** Present the brand to Reeve Holt
 **Progress:** —
 **Complete:** So it has a shape. A hand in ash. I've been fighting three troubles and you're telling me they may be one. I'm deputising you. Captain Wyck commands the militia, such as it is. Farmer Fenner speaks for the growers. Help them, and keep your eyes open for that mark.
 **Rewards:** 175 XP
-**Notes:** If the player turned in BM-18 to Holt, this quest is offered and completed in the same conversation. A player arriving without the chain (from Embercrag, or skipping) is offered it directly at level 5; the tracker then reads "Speak to Reeve Holt" and Holt's completion text is unchanged.
+**Notes:** If the player turned in BM-18 to Holt, this quest is offered and completed in the same conversation. A player arriving without the chain (from Stonewake Dale, or skipping) is offered it directly at level 5; the tracker then reads "Speak to Reeve Holt" and Holt's completion text is unchanged.
 
 ### HF-02 · Jackals in the Chaff
 *Level 5 · Requires — · Farmer Odell Fenner → Farmer Fenner*

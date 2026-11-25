@@ -146,13 +146,13 @@ ZONES = OrderedDict([
     ('CORE', ('Before the world (login, character creation)', 0, 0, '', '')),
     ('ANY', ('Any zone', 1, 1, '', '')),
     ('BM', ('Brightmead Vale', 1, 2, 'spring green and warm gold', 'human rural: timber frame and thatch')),
-    ('EC', ('Embercrag Hollow', 1, 3, 'snow blue-white and ember orange', 'mountain dwarf: dark carved stone, iron, brass')),
+    ('ST', ('Stonewake Dale', 1, 3, 'fresh green and grey stone', 'hill dwarf: low, rounded, turf roofs, dry-stone walls')),
     ('SOL', ('Solhaven', 5, 4, 'white stone, royal blue and gold', 'human city: tall, arched, pointed roofs, banners')),
     ('HAM', ('Hammerdeep', 5, 5, 'dark grey stone, iron, ember orange and brass', 'mountain dwarf: square, heavy, angular knotwork')),
     ('SEA', ('The ship crossing', 5, 6, 'sea blue-grey and sail white', '')),
     ('HF', ('Harrowfield', 5, 7, 'wheat gold and rust', 'human rural')),
     ('RW', ('Russetwood', 5, 8, 'copper, red and gold', 'human rural, woodland')),
-    ('ST', ('Stonewake Dale', 5, 9, 'fresh green and grey stone', 'hill dwarf: low, rounded, turf roofs, dry-stone walls')),
+    ('EC', ('Embercrag Hollow', 5, 9, 'snow blue-white and ember orange', 'mountain dwarf: dark carved stone, iron, brass')),
     ('SD', ('Stoneheart Deeps', 5, 10, 'lamp gold on deep teal dark, glowcap cyan', 'mountain dwarf, underground')),
     ('TM', ('Thornwick Marches', 10, 11, 'desaturated olive and grey-violet', 'human town, dark forest and marsh')),
     ('IR', ('Ironroot Highlands', 10, 12, 'pine green and cold grey', 'mountain dwarf keep-town; hill dwarf steadings')),
@@ -189,8 +189,8 @@ HINTS = [(re.compile(p), z, l) for p, z, l in [
     (r'[Ww]orld.boss', 'WB', 30), (r'Dustpit|Pitmaster', 'DP', 24),
     (r'Larkhill', 'BM', 1), (r'Millbrook', 'BM', 3), (r'Hartwell', 'BM', 2), (r'Greenhollow', 'BM', 3),
     (r'Silverrun', 'BM', 4), (r'Ashhand', 'BM', 3), (r'Burned Mill|The Mill\b|Cray', 'BM', 4), (r'Brightmead', 'BM', 1),
-    (r'Coldhearth', 'EC', 1), (r'Anvilrest', 'EC', 3), (r'Old Forge', 'EC', 4), (r'Kiln Cave', 'EC', 5),
-    (r'Rimewater', 'EC', 4), (r'Gravelkin Warrens|[Ww]arrens', 'EC', 2), (r'Bouldergate', 'EC', 5), (r'Embercrag', 'EC', 1),
+    (r'Coldhearth', 'EC', 5), (r'Anvilrest', 'EC', 5), (r'Old Forge', 'EC', 7), (r'Kiln Cave', 'EC', 7),
+    (r'Rimewater', 'EC', 8), (r'Gravelkin Warrens|[Ww]arrens', 'EC', 6), (r'Bouldergate', 'EC', 5), (r'Blackmatch|Slagfall', 'EC', 9), (r'Embercrag', 'EC', 5),
     (r'Athenaeum', 'SOL', 5), (r'Solhaven', 'SOL', 5),
     (r'Hammerdeep|Mount Khaz|Seagate|Rootvault|Goldring|Thane.s Hall', 'HAM', 5),
     (r'Hearth-Oath|[Ss]ea route|ship crossing', 'SEA', 5),
@@ -199,8 +199,8 @@ HINTS = [(re.compile(p), z, l) for p, z, l in [
     (r'Harrowfield', 'HF', 5),
     (r"Cooper's Hollow", 'RW', 5), (r'Birch', 'RW', 5), (r'[Cc]harcoal', 'RW', 6), (r'High Canopy', 'RW', 7),
     (r'Burning Ride', 'RW', 8), (r'Mossback', 'RW', 8), (r'Great Kiln|Kilnmaster|[Kk]iln worker', 'RW', 9), (r'Russetwood', 'RW', 5),
-    (r'Hopstead', 'ST', 5), (r'Ridgefold', 'ST', 6), (r'\bSinks\b', 'ST', 6), (r'Old Brewery', 'ST', 7),
-    (r'Stonewake Dam|Millrace', 'ST', 8), (r'Blackmatch|Slagfall', 'ST', 9), (r'Rustler', 'ST', 7), (r'Stonewake|Dale\b', 'ST', 5),
+    (r'Sunbank', 'ST', 1), (r'Hopstead', 'ST', 3), (r'Ridgefold', 'ST', 4), (r'\bSinks\b', 'ST', 2), (r'Old Brewery', 'ST', 4),
+    (r'Stonewake Dam', 'ST', 1), (r'Millrace', 'ST', 3), (r'Daleside Adit', 'ST', 4), (r'Rustler', 'ST', 4), (r'Stonewake|Dale\b', 'ST', 1),
     (r'Lanternhold', 'SD', 5), (r'Long Stair', 'SD', 5), (r'Glowcap Grotto', 'SD', 6), (r'Underwarrens', 'SD', 6),
     (r'Cartwright|Trestles', 'SD', 7), (r'Crystal Galleries', 'SD', 8), (r'Shattered Hall', 'SD', 9),
     (r'Undercut|Great Bore', 'SD', 10), (r'Stoneheart|\bDeeps\b', 'SD', 5),
@@ -459,7 +459,7 @@ for h1, h2, h3, c in table(L1):
                     f'Player {ANIM_NOTE[group]} clip "{clip}" on the {rig.lower()} rig{"" if rig == "Human" else ", retargeted from the human clip and corrected for dwarf proportions"}. {loop} Weighty, readable poses; no foot sliding.',
                     f'All {rig.lower()} player characters and NPCs', 'CORE' if lv == 0 else 'ANY', lv, group)
 
-ZONES_T1 = [('BM', 1), ('EC', 1), ('HF', 5), ('RW', 5), ('ST', 5), ('SD', 5)]
+ZONES_T1 = [('BM', 1), ('ST', 1), ('HF', 5), ('RW', 5), ('EC', 5), ('SD', 5)]
 ZONES_T3 = [('TM', 10), ('TM', 15), ('IR', 10), ('IR', 15)]
 ZONES_T4 = [('CF', 20), ('CF', 25), ('RL', 20), ('RL', 25), ('VM', 20), ('VM', 25)]
 REGIONS = ['chest', 'legs', 'feet', 'hands', 'wrist', 'waist']
@@ -599,8 +599,8 @@ add('MNT-09', 'Prop', 'Mine-cart with rider seat', 'Iron-banded dwarven mine-car
 L2 = 'docs/10-art/02-creatures-npcs.md'
 STD_CLIPS = ['Idle', 'Idle fidget', 'Walk', 'Run', 'Attack A', 'Attack B', 'Hit react', 'Death', 'Stunned', 'Special']
 RIG_LEVEL, RIG_NAMES = {}, []
-SKIN_FIX = {'Crag Eagle': ('BM', 3), 'Dust Devil': ('RL', 25), 'Chief Gnarr': ('ST', 9), 'Shard-Chief Krakk': ('SD', 9), 'Clockwork Ram': ('ANY', 15),
-            'Target Dummy': ('ANY', 10), 'Mechanical Squirrel': ('ANY', 12), 'farm goats and sheep': ('ST', 5), 'critter rat': ('SD', 5), 'ambient deer': ('RW', 5),
+SKIN_FIX = {'Crag Eagle': ('BM', 3), 'Dust Devil': ('RL', 25), 'Chief Gnarr': ('ST', 5), 'Shard-Chief Krakk': ('SD', 9), 'Clockwork Ram': ('ANY', 15),
+            'Target Dummy': ('ANY', 10), 'Mechanical Squirrel': ('ANY', 12), 'farm goats and sheep': ('ST', 1), 'critter rat': ('SD', 5), 'ambient deer': ('RW', 5),
             'ambient crows, gulls over Solhaven': ('SOL', 5)}
 for h1, h2, h3, c in table(L2):
     if not c or not re.fullmatch(r'CRE-[A-Z]\d+', c[0]):
@@ -677,11 +677,11 @@ for h1, h2, h3, c in table(L2):
         continue
     nid, outfit, worn = c[0], clean(c[2]), clean(c[3])
     rig = 'human' if 'HU' in nid else 'dwarf'
-    z, l = locate(worn) or locate(outfit) or (('BM', 1) if rig == 'human' else ('EC', 1))
+    z, l = locate(worn) or locate(outfit) or (('BM', 1) if rig == 'human' else ('ST', 1))
     if 'All human hubs' in worn or worn == 'Trainers':
-        z, l = ('BM', 1) if rig == 'human' else ('EC', 1)
+        z, l = ('BM', 1) if rig == 'human' else ('ST', 1)
     if 'All Khazrun zones' in worn:
-        z, l = 'EC', 3
+        z, l = 'EC', 7          # the Slagborn are first met at Kiln Cave
     parts = split_top(outfit, [' + '])
     names = []
     base = parts[0]
@@ -727,7 +727,7 @@ for h1, h2, h3, c in table(L2):
             f'Worn by: {worn}', zz, ll, nid)
 add('NPC-SPIRIT', 'Character model', 'Spirit healer', 'Unique winged spectre in pale robes, hooded, translucent blue-white, hovering; seen only by the dead.', 'Every graveyard', 'ANY', 1, 'Service NPCs')
 
-CRIT_Z = {'CRT-01': ('BM', 1), 'CRT-02': ('BM', 3), 'CRT-03': ('BM', 1), 'CRT-04': ('ST', 5), 'CRT-05': ('BM', 1), 'CRT-06': ('TM', 10),
+CRIT_Z = {'CRT-01': ('BM', 1), 'CRT-02': ('BM', 3), 'CRT-03': ('BM', 1), 'CRT-04': ('ST', 1), 'CRT-05': ('BM', 1), 'CRT-06': ('TM', 10),
           'CRT-07': ('RL', 20), 'CRT-08': ('TM', 10), 'CRT-09': ('SD', 5), 'CRT-10': ('CF', 20), 'CRT-11': ('BM', 1), 'CRT-12': ('BM', 4)}
 for h1, h2, h3, c in table(L2):
     if c and c[0] in CRIT_Z:
@@ -795,7 +795,7 @@ KIT_FIX = {'fence ×4': 'fence ×4 (post-and-rail, wattle, picket, split-rail)',
            'totem ×3': 'totem ×3 (skull, tusk, painted hide)', 'Hut ×2': 'Hut ×2 (small, large)', 'statue ×3': 'statue ×3 (emperor, legionary, magister)',
            'pillar ×4': 'pillar ×4 (plain, fluted, rune-carved, broken)', 'Hall facade ×3': 'Hall facade ×3 (plain, arcaded, grand)',
            'Flat-roof house ×3': 'Flat-roof house ×3 (small, two-storey, courtyard)', 'market awning ×3': 'market awning ×3 (striped, plain, patched)'}
-KITZ = {'KIT-01': ('BM', 1), 'KIT-02': ('BM', 3), 'KIT-03': ('SOL', 5), 'KIT-04': ('EC', 1), 'KIT-05': ('ST', 5), 'KIT-06': ('BM', 2), 'KIT-07': ('SD', 5),
+KITZ = {'KIT-01': ('BM', 1), 'KIT-02': ('BM', 3), 'KIT-03': ('SOL', 5), 'KIT-04': ('HAM', 5), 'KIT-05': ('ST', 1), 'KIT-06': ('BM', 2), 'KIT-07': ('SD', 5),
         'KIT-08': ('TM', 11), 'KIT-09': ('RW', 9), 'KIT-10': ('HF', 9), 'KIT-11': ('CR', 10), 'KIT-12': ('BM', 3), 'KIT-13': ('BM', 3), 'KIT-14': ('IR', 13),
         'KIT-15': ('BM', 2), 'KIT-16': ('BM', 4), 'KIT-17': ('RL', 22), 'KIT-18': ('TM', 14), 'KIT-19': ('RL', 20), 'KIT-20': ('BM', 1)}
 ASSEMBLED = {'KIT-01', 'KIT-02', 'KIT-03', 'KIT-05', 'KIT-10', 'KIT-19'}
@@ -826,13 +826,13 @@ for h1, h2, h3, c in table(L3):
             f'Used in: {usedin}', z, l, kid)
 
 OBJ = {
-    'OBJ-01': [('Mailbox, human', 'BM', 1), ('Mailbox, dwarf', 'EC', 1), ('Mailbox, mesa', 'RL', 22)],
+    'OBJ-01': [('Mailbox, human', 'BM', 1), ('Mailbox, dwarf', 'ST', 1), ('Mailbox, mesa', 'RL', 22)],
     'OBJ-02': [('Chest, wooden (open and closed)', 'BM', 2), ('Chest, iron-bound (open and closed)', 'TM', 10), ('Chest, imperial (open and closed)', 'RL', 20)],
     'OBJ-03': [('Campfire', 'ANY', 1), ('Cooking spit over a campfire', 'ANY', 1)],
-    'OBJ-04': [('Forge, human', 'BM', 3), ('Anvil, human', 'BM', 3), ('Forge, dwarf', 'EC', 1), ('Anvil, dwarf', 'EC', 1)],
+    'OBJ-04': [('Forge, human', 'BM', 3), ('Anvil, human', 'BM', 3), ('Forge, dwarf', 'ST', 3), ('Anvil, dwarf', 'ST', 3)],
     'OBJ-05': [('Meeting stone', 'TM', 13)],
     'OBJ-06': [(f'Headstone {LETTERS[i]}', 'BM', 1) for i in range(6)] + [('Graveyard fence', 'BM', 1), ('Graveyard gate', 'BM', 1), ('Graveyard angel statue', 'BM', 1)],
-    'OBJ-07': [('Eyrie perch, human', 'BM', 3), ('Eyrie perch, dwarf', 'EC', 3), ('Eyrie perch, mesa', 'RL', 22)],
+    'OBJ-07': [('Eyrie perch, human', 'BM', 3), ('Eyrie perch, dwarf', 'ST', 3), ('Eyrie perch, mesa', 'RL', 22)],
     'OBJ-08': [('Bank vault door', 'SOL', 5), ('Guild vault', 'SOL', 10)],
     'OBJ-09': [('Auction podium', 'SOL', 5), ('Notice board', 'BM', 3), ('Wanted poster', 'BM', 5), ('Bounty board', 'HF', 5)],
     'OBJ-10': [('Training dummy, straw', 'BM', 1), ('Training dummy, armoured', 'SOL', 5)],
@@ -840,7 +840,7 @@ OBJ = {
     'OBJ-12': [('Duel flag', 'ANY', 1)],
     'OBJ-13': [('Fishing bobber', 'ANY', 5), ('Fishing pool surface', 'TM', 10)],
     'OBJ-14': [(n, 'SOL', 5) for n in ['Book, closed', 'Book, open on a stand', 'Large tome', 'Scroll', 'Scroll case', 'Letter']],
-    'OBJ-15': [('Door, wooden', 'BM', 1), ('Door, iron-bound', 'BM', 2), ('Door, dwarven stone', 'EC', 1), ('Double gate', 'BM', 3), ('Floor lever', 'ST', 8),
+    'OBJ-15': [('Door, wooden', 'BM', 1), ('Door, iron-bound', 'BM', 2), ('Door, dwarven stone', 'HAM', 5), ('Double gate', 'BM', 3), ('Floor lever', 'ST', 3),
                ('Wall lever', 'SD', 7), ('Portcullis', 'TM', 10), ('Lift platform', 'HAM', 5)],
     'OBJ-16': [('Instance portal frame, dungeon', 'GC', 13), ('Instance portal frame, raid', 'HT', 30)],
     'OBJ-17': [('Crown relic', 'CR', 10), ('Hill banner, red', 'CR', 10), ('Hill banner, blue', 'CR', 10), ('Hill banner, yellow', 'CR', 10), ('Shrine of Steel', 'CR', 10),
@@ -858,11 +858,11 @@ OBJ['OBJ-18'] = [(f'{g}: {v}', 'BM' if g != 'Banner' else {'Solhaven': 'SOL', 'H
                  for g, vs in GENERIC for v in vs]
 for oid, items in OBJ.items():
     for nm, z, l in items:
-        l = max(l, ZONES[z][1]) if z not in ('ANY', 'BM', 'EC') else l
+        l = max(l, ZONES[z][1]) if z not in ('ANY', 'BM', 'ST') else l
         add(f'{oid}-{slug(nm)}', 'Prop', nm, f'{nm}: interactive world object or generic prop, low-poly with a clear outline. {zcue(z)}', 'Hubs, camps and interiors', z, l, oid)
 
 NODES = [('Copper Vein', 'BM', 1), ('Tin Vein', 'HF', 7), ('Silver Vein', 'SD', 8), ('Iron Deposit', 'IR', 15), ('Gold Vein', 'CF', 20), ('Starmetal Deposit', 'CF', 26),
-         ('Slag Heap', 'CF', 22), ('Sunpetal', 'BM', 1), ('Hearthroot', 'BM', 1), ('Dewleaf', 'BM', 3), ('Bramblethorn', 'HF', 6), ('Marshbloom', 'ST', 8),
+         ('Slag Heap', 'CF', 22), ('Sunpetal', 'BM', 1), ('Hearthroot', 'BM', 1), ('Dewleaf', 'BM', 3), ('Bramblethorn', 'HF', 6), ('Marshbloom', 'EC', 8),
          ('Gravecap', 'TM', 11), ('Crownleaf', 'TM', 12), ('Emberweed', 'IR', 15), ('Frostcap', 'IR', 16), ('Wyrmtongue', 'CF', 20), ('Veilshade', 'VM', 21),
          ('Riftbloom', 'RL', 22), ('Ashbloom', 'CF', 24), ('Ghostlily', 'VM', 27), ('Starpetal', 'CF', 28), ('Glowcap', 'SD', 5)]
 for i, (nm, z, l) in enumerate(NODES):
@@ -876,7 +876,7 @@ NAT = {
                          'Stump A', 'Stump B', 'Stump C', 'Fallen log A', 'Fallen log B']),
     'NAT-02': ('HF', 5, ['Giant oak A, red leaves', 'Giant oak B, gold leaves', 'Giant oak C, copper leaves', 'Maple A, red', 'Maple B, gold', 'Maple C, copper',
                          'Beech A, gold', 'Beech B, copper', 'Leaf-litter decal, red', 'Leaf-litter decal, gold', 'Leaf-litter decal, copper']),
-    'NAT-03': ('EC', 1, ['Frostpine A, snow-laden', 'Frostpine B, snow-laden', 'Frostpine C, snow-laden', 'Highland pine A', 'Highland pine B', 'Highland pine C']),
+    'NAT-03': ('EC', 5, ['Frostpine A, snow-laden', 'Frostpine B, snow-laden', 'Frostpine C, snow-laden', 'Highland pine A', 'Highland pine B', 'Highland pine C']),
     'NAT-04': ('TM', 10, ['Gnarled swamp tree A', 'Gnarled swamp tree B', 'Gnarled swamp tree C', 'Reeds A', 'Reeds B', 'Cattails', 'Hanging moss', 'Peat stack', 'Gibbet tree']),
     'NAT-05': ('TM', 10, [f'Thorn-wall segment {LETTERS[i]}' for i in range(4)] + [f'Bramble clump {LETTERS[i]}' for i in range(3)]),
     'NAT-06': ('RL', 20, ['Scrub A', 'Scrub B', 'Scrub C', 'Succulent A', 'Succulent B', 'Tumbleweed', 'Dry tree A', 'Dry tree B']),
@@ -890,8 +890,8 @@ NAT = {
     'NAT-12': ('BM', 1, [f'{s} cliff: {m}' for s in ('Meadow granite', 'Snow', 'Highland shale', 'Black basalt', 'Red mesa sandstone', 'Moor tor')
                          for m in ('straight face', 'outer corner', 'inner corner', 'top cap')]),
 }
-NAT_HINT = [(r'[Ss]now|Frostpine', 'EC', 1), (r'Highland|highland', 'IR', 10), (r'basalt|Charred|Ash', 'CF', 20), (r'mesa|arid|Scrub|Succulent|Tumbleweed|Dry tree', 'RL', 20),
-            (r'[Mm]oor|Heather|Peat|Gibbet', 'VM', 20), (r'[Aa]utumn|Maple|Beech|Giant oak|Leaf-litter|Scorched|Turnip', 'HF', 5), (r'Hop', 'ST', 5), (r'Willow', 'BM', 4)]
+NAT_HINT = [(r'[Ss]now|Frostpine', 'EC', 5), (r'Highland pine', 'ST', 2), (r'Highland|highland', 'IR', 10), (r'basalt|Charred|Ash', 'CF', 20), (r'mesa|arid|Scrub|Succulent|Tumbleweed|Dry tree', 'RL', 20),
+            (r'[Mm]oor|Heather|Peat|Gibbet', 'VM', 20), (r'[Aa]utumn|Maple|Beech|Giant oak|Leaf-litter|Scorched|Turnip', 'HF', 5), (r'Hop', 'ST', 3), (r'Willow', 'BM', 4)]
 for nid, (z0, l0, names) in NAT.items():
     lib = next(clean(c[2]) for h1, h2, h3, c in table(L3) if c and c[0] == nid)
     for nm in names:
@@ -905,7 +905,7 @@ for nid, (z0, l0, names) in NAT.items():
                 else 'thick trunk, few heavy branches, leaf clumps as cards')
         add(f'{nid}-{slug(nm)}', 'Nature model', nm, f'{nm}, from the {lib.lower()} library. Stylised: {look}; painted light from above. {zcue(z)}',
             f'Scattered by the world generator in {ZONES[z][0]} and zones like it', z, l, nid)
-for nm, z, l in [('River and stream surface', 'BM', 1), ('Pond surface', 'BM', 1), ('Millrace channel surface', 'ST', 5), ('Waterfall and dam spillway', 'ST', 8),
+for nm, z, l in [('River and stream surface', 'BM', 1), ('Pond surface', 'BM', 1), ('Millrace channel surface', 'ST', 3), ('Waterfall and dam spillway', 'ST', 1),
                  ('Harbour sea surface', 'SOL', 5), ('Lava and slag surface', 'CF', 20), ('Sulfur pool surface', 'CF', 24), ('Bog water surface', 'TM', 10)]:
     add(f'NAT-13-{slug(nm)}', 'Water surface', nm, f'{nm}: tiling painted surface with flow direction and edge foam for the one world shader. {zcue(z)}', 'Water and liquids', z, l, 'NAT-13')
 
@@ -1082,7 +1082,7 @@ for h1, h2, h3, c in table(L4):
         if vid == 'VFX-W02':
             els = ['available "!" (gold)', 'in-progress "?" (grey)', 'complete "?" (gold)', 'repeatable (blue)', 'class quest (class colour)', 'low-level (dim)']
         if vid == 'VFX-W18':
-            els = [f'colour grade for {ZONES[z][0]}' for z in ('BM', 'EC', 'HF', 'RW', 'ST', 'SD', 'TM', 'IR', 'CF', 'RL', 'VM')] + ['underwater tint', 'low-health vignette', 'stun blur', 'ghost desaturation', 'drunk wobble']
+            els = [f'colour grade for {ZONES[z][0]}' for z in ('BM', 'ST', 'HF', 'RW', 'EC', 'SD', 'TM', 'IR', 'CF', 'RL', 'VM')] + ['underwater tint', 'low-health vignette', 'stun blur', 'ghost desaturation', 'drunk wobble']
         lvl = {'VFX-W01': 1, 'VFX-W02': 1, 'VFX-W03': 1, 'VFX-W04': 10, 'VFX-W05': 1, 'VFX-W06': 1, 'VFX-W07': 1, 'VFX-W08': 1, 'VFX-W09': 1, 'VFX-W10': 1, 'VFX-W11': 1,
                'VFX-W12': 4, 'VFX-W13': 1, 'VFX-W14': 3, 'VFX-W15': 10, 'VFX-W16': 30, 'VFX-W17': 4, 'VFX-W18': 1}[vid]
         for e in [re.sub(r'\s*\(\d+\)$', '', x) for x in els]:
@@ -1104,7 +1104,7 @@ UI_FIX = {'arrow ×4': 'arrow up, arrow down, arrow left, arrow right',
           'class trees ×3': 'three class-tree tabs', 'Backdrop ×2': 'backdrop'}
 # Rows whose look was decided after the art list was written; the id stays the one the row gives.
 UI_SAY = {'UI-H12-20-segments': ('XP bar: 10 sections', 'The fill is divided into 10 equal sections ("bubbles") by thin dividers drawn over it; the bar sits directly on the top edge of the main action bar, the same width, and its text is centred inside the fill.')}
-LOADING = [(ZONES[z][0], z, ZONES[z][1]) for z in ('BM', 'EC', 'HF', 'RW', 'ST', 'SD', 'TM', 'IR', 'CF', 'RL', 'VM', 'SOL', 'HAM', 'GC', 'SW', 'HK', 'HT', 'CR', 'SEA')] \
+LOADING = [(ZONES[z][0], z, ZONES[z][1]) for z in ('BM', 'ST', 'HF', 'RW', 'EC', 'SD', 'TM', 'IR', 'CF', 'RL', 'VM', 'SOL', 'HAM', 'GC', 'SW', 'HK', 'HT', 'CR', 'SEA')] \
     + [('generic A: a road at dawn', 'CORE', 0), ('generic B: a campfire at night', 'CORE', 0)]
 for h1, h2, h3, c in table(L5):
     if not c or not re.fullmatch(r'UI-[A-Z]\d+', c[0]):
@@ -1131,23 +1131,23 @@ for h1, h2, h3, c in table(L5):
         add(f'{uid}-bar', 'UI texture', 'Loading bar and tip strip', f'Loading progress bar and a text strip for tips. {style}', 'Loading screens', 'CORE', 0, uid)
         continue
     if uid == 'UI-S06':
-        for race, z in (('human', 'BM'), ('dwarf', 'EC')):
+        for race, z in (('human', 'BM'), ('dwarf', 'ST')):
             for i in range(1, 4):
                 add(f'{uid}-{race}-{i}', 'Painting', f'Intro card {i} of 3, {race}', f'Still painting {i} of 3 for the {race} introduction: the homeland, the trouble, the call to the starting camp. Room at the bottom for text. {zcue(z)}',
                     'First login of a new character', 'CORE', 0, uid)
         continue
     if uid == 'UI-M03':
-        for z in ('BM', 'EC', 'HF', 'RW', 'ST', 'SD', 'TM', 'IR', 'CF', 'RL', 'VM'):
+        for z in ('BM', 'ST', 'HF', 'RW', 'EC', 'SD', 'TM', 'IR', 'CF', 'RL', 'VM'):
             add(f'{uid}-{z}', 'Painting', f'Zone map: {ZONES[z][0]}', f'Painted top-down zone map of {ZONES[z][0]} on parchment, made over the render of the built zone so it matches the ground; roads, water, hubs and landmark drawn, no text. {zcue(z)}',
                 'World map window', z, ZONES[z][1], uid)
         continue
     MAPS = {'UI-M01': [('World map: the three continents, Sundrel shrouded', 'CORE', 1)],
-            'UI-M02': [('Continent map: Meridia, unbuilt half as unexplored wilderness', 'BM', 1), ('Continent map: Khazrun, unbuilt half as unexplored wilderness', 'EC', 1)],
+            'UI-M02': [('Continent map: Meridia, unbuilt half as unexplored wilderness', 'BM', 1), ('Continent map: Khazrun, unbuilt half as unexplored wilderness', 'ST', 1)],
             'UI-M04': [(f'Stoneheart Deeps layer map: {x}', 'SD', 5) for x in ('Upper Galleries', 'Great Cavern', 'Underworks')],
             'UI-M05': [('City map: Solhaven', 'SOL', 5), ('City map: Hammerdeep', 'HAM', 5)] + [(f'Hammerdeep level layer {i}', 'HAM', 5) for i in (1, 2, 3)],
             'UI-M06': [('Instance map: Gallowmere Crypts', 'GC', 13), ('Instance map: The Slagworks', 'SW', 20), ('Instance map: Hollowspire Keep', 'HK', 27),
                        ('Instance map: The Hollow Throne', 'HT', 30), ('Instance map: Crownfall', 'CR', 10), ('Instance map: The Dustpit', 'DP', 24)],
-            'UI-M07': [('Eyrie route map: Meridia', 'BM', 3), ('Eyrie route map: Khazrun', 'EC', 3)]}
+            'UI-M07': [('Eyrie route map: Meridia', 'BM', 3), ('Eyrie route map: Khazrun', 'ST', 3)]}
     if uid in MAPS:
         for nm, z, l in MAPS[uid]:
             add(f'{uid}-{slug(nm)}', 'Painting', nm, f'{nm}. Painted on parchment in the map style, no text. {zcue(z)}', 'Map windows', z if z != 'CORE' else 'ANY', l, uid)
@@ -1176,7 +1176,7 @@ for h1, h2, h3, c in table(L5):
         add(f'{uid}-keyart', 'Painting', 'Login key art', 'Animated key-art scene in layers: Solhaven harbour at dawn with the ship The Hearth-Oath leaving for the mountain on the horizon. No text.', 'Login screen', 'CORE', 0, uid)
         els = ['logo placement frame', 'account fields', 'buttons']
     if uid == 'UI-S03':
-        for nm in ('human backdrop: Larkhill hearth', 'dwarf backdrop: Coldhearth forge'):
+        for nm in ('human backdrop: Larkhill hearth', 'dwarf backdrop: Sunbank hearth'):
             add(f'{uid}-{slug(nm)}', 'Set piece', f'Character select {nm}', f'Small 3D backdrop scene for the character-select screen, {nm}; warm firelight, a spot for the character to stand.', 'Character select', 'CORE', 0, uid)
         els = ['10-slot character list', 'enter, create and delete buttons']
     if not els:
@@ -1337,7 +1337,7 @@ for h1, h2, h3, c in table(L6):
                 z, l = locate(cb[0]) or ('ANY', 5)
                 for nm in (cb[2], cb[3].split(' → ')[0]):
                     icon(f'{iid}-{slug(nm)}', clean(nm), f'the fish "{clean(nm)}"', 'Fishing catches', z, max(5, l), iid)
-        icon(f'{iid}-pike-oil', 'Pike Oil', 'a small flask of fish oil', 'Fishing by-product', 'ST', 8, iid)
+        icon(f'{iid}-pike-oil', 'Pike Oil', 'a small flask of fish oil', 'Fishing by-product', 'ST', 5, iid)
     elif fam == 'K':
         for nm in icon_names(re.sub(r'^\d+ ', '', body) if iid != 'ICO-K6' else body):
             lv = 3 if iid in ('ICO-K3', 'ICO-K5') else 30 if iid == 'ICO-K11' else 10
@@ -1361,7 +1361,7 @@ for h1, h2, h3, c in table(L6):
                                                                     "Behemoth's Heart": ('SD', 10), 'Spire Key': ('TM', 19), "Smuggler's Key": ('IR', 12)}.get(nm, ('ANY', 20))
             icon(f'{iid}-{slug(nm)}', nm, f'{"the key or token" if iid == "ICO-Q5" else "the"} "{nm}"', group, z, l, iid)
 
-ITEM_SRC = {'t1-brightmead-vale': 'BM', 't1-embercrag-hollow': 'EC', 't2-harrowfield': 'HF', 't2-russetwood': 'RW', 't2-stoneheart-deeps': 'SD', 't2-stonewake-dale': 'ST',
+ITEM_SRC = {'t1-brightmead-vale': 'BM', 't2-embercrag-hollow': 'EC', 't2-harrowfield': 'HF', 't2-russetwood': 'RW', 't2-stoneheart-deeps': 'SD', 't1-stonewake-dale': 'ST',
             't3-ironroot-highlands': 'IR', 't3-thornwick-marches': 'TM', 't4-cinderfall-barrens': 'CF', 't4-riftlands': 'RL', 't4-veilmoor': 'VM',
             'quest-text-rl-riftlands': 'RL', 'quest-text-tm-thornwick-marches': 'TM', 'quest-text-vm-veilmoor': 'VM'}
 DUNG = rd('docs/07-instances/dungeons.md')
@@ -1478,7 +1478,7 @@ for h1, h2, h3, c in table(L9):
     tracks = expand(rest, [', ', '; ']) if rest else [head]
     if mid == 'MUS-25':
         tracks = split_top(rest, [', '])
-    MUS_FIX = [('human', 'BM', 3), ('mountain dwarf', 'EC', 3), ('hill dwarf', 'ST', 5), ('shard answers', 'TM', 20), ('Three Envoys', 'RL', 24),
+    MUS_FIX = [('human', 'BM', 3), ('mountain dwarf', 'EC', 5), ('hill dwarf', 'ST', 3), ('shard answers', 'TM', 20), ('Three Envoys', 'RL', 24),
                ('goes under', 'RL', 27), ('shatters', 'HT', 30), ('Dustpit', 'DP', 24)]
     for t in tracks:
         tl = next(((zz, ll) for key, zz, ll in MUS_FIX if key in t and mid in ('MUS-16', 'MUS-26', 'MUS-24')), None) or locate(t)
@@ -1496,7 +1496,7 @@ for h1, h2, h3, c in table(L9):
     if aid == 'AMB-12':
         z, l = 'BM', 1
     if aid == 'AMB-15':
-        z, l = 'ST', 5
+        z, l = 'ST', 1
     if ':' in bed:
         beds, spots_l = split_top(bed.split(':', 1)[1], [', ']), []
         if aid == 'AMB-06':
@@ -1589,7 +1589,7 @@ for cid, (z, l) in CRIT_Z.items():
         sfx(f'SFX-C05-{cid[4:]}-{s}', f'Critter {nm}: {s}', f'Small {s} sound of the {nm.lower()} critter.', 'Ambient life', z, l, 'SFX-C05')
 for vid, e, lv in MLIB:
     sfx(f'SFX-C06-{vid[4:]}-{slug(e)}', f'Creature ability: {e}', f'Sound for the creature ability effect "{e}" ({vid}).', 'Creature abilities', 'ANY', lv, 'SFX-C06')
-for race, z in (('human', 'BM'), ('dwarf', 'EC')):
+for race, z in (('human', 'BM'), ('dwarf', 'ST')):
     for v in ('male A', 'male B', 'male C', 'female A', 'female B'):
         for s in ['aggro A', 'aggro B', 'aggro C', 'attack A', 'attack B', 'attack C', 'wound A', 'wound B', 'death', 'flee']:
             sfx(f'SFX-C07-{race}-{slug(v)}-{slug(s)}', f'Enemy {race} voice {v}: {s}', f'Wordless combat vocalisation for {race} enemies, voice {v}: {s}.', f'{race.capitalize()} enemy humanoids', z, 3, 'SFX-C07')
@@ -1606,7 +1606,7 @@ for nm, z, l, row in [("The Stitched Choir's six-voice out-of-tune hymn, layered
 
 SPK = rd('docs/12-data/spoken-lines.md')
 sec = lambda a, b: SPK[SPK.index(a):SPK.index(b)]
-VOICE_L = [(r'Human', 'BM', 1), (r'Mountain dwarf', 'EC', 1), (r'Hill dwarf', 'ST', 5), (r'Human guard', 'BM', 1), (r'Dwarf guard', 'EC', 1), (r'Elf', 'TM', 14), (r'Ogre', 'IR', 12), (r'Covenant', 'RL', 22)]
+VOICE_L = [(r'Human', 'BM', 1), (r'Mountain dwarf', 'EC', 5), (r'Hill dwarf', 'ST', 1), (r'Human guard', 'BM', 1), (r'Dwarf guard', 'ST', 1), (r'Elf', 'TM', 14), (r'Ogre', 'IR', 12), (r'Covenant', 'RL', 22)]
 for line in sec('## 2. NPC barks', '## 3. Story lines').splitlines():
     if not line.startswith('|') or '"' not in line:
         continue
@@ -1731,7 +1731,7 @@ idx = ['# Asset Manifest — every asset, in order of first appearance', '',
        '| Rule | Detail |', '|---|---|',
        '| First key | **First-seen level**: the lowest character level at which a player normally meets the asset. Level 0 is everything seen before entering the world (login, character creation) and the core kit every character needs at once |',
        '| Second key | Kind, world first: interface, paintings, ground, sky, buildings, nature, props, then rigs, models, hair, skins, animation, then armor and weapons, effects, icons, and last music, ambience, sound and voice. So at every level the textures and models a player looks at come before the sounds |',
-       '| Third key | Zone, in the order of the journey: any-zone assets, Brightmead Vale, Embercrag Hollow, Solhaven, Hammerdeep, the ship, Harrowfield, Russetwood, Stonewake Dale, Stoneheart Deeps, Thornwick Marches, Ironroot Highlands, Crownfall, Gallowmere Crypts, Cinderfall Barrens, the Riftlands, Veilmoor, the Slagworks, the Dustpit, Hollowspire Keep, the Hollow Throne, world bosses |',
+       '| Third key | Zone, in the order of the journey: any-zone assets, Brightmead Vale, Stonewake Dale, Solhaven, Hammerdeep, the ship, Harrowfield, Russetwood, Embercrag Hollow, Stoneheart Deeps, Thornwick Marches, Ironroot Highlands, Crownfall, Gallowmere Crypts, Cinderfall Barrens, the Riftlands, Veilmoor, the Slagworks, the Dustpit, Hollowspire Keep, the Hollow Throne, world bosses |',
        '| Where the level comes from | Creatures: their level in the creature and encounter data. Items: required level, from the item level or the bracketed level. Abilities and talents: the level learned. Zone ground, sky, music and kits: the level at which the zone opens. Set pieces: the level of their place in the zone. Profession items: recipe skill divided by 7.5 |',
        '| Shared assets | An asset used in several places takes the earliest. A rig, its base model and its animation take the level of the lowest-level creature that uses it |',
        '| What the forge does with it | Each asset machine takes the next row in this order that one of its pipelines can make. Images and audio on one machine and 3D on another therefore advance side by side, each in order of first appearance |', '',

@@ -137,4 +137,4 @@ Rules the table states briefly:
 
 ## 6. Trainers
 
-Brother Aldwin (Larkhill), Hearthpriest Magna Coalbright (Coldhearth), one in every T1/T2 town, three in each capital (Dawnspire Close / Hall of Embers).
+Brother Aldwin (Larkhill), Hearth-mother Sigrid Emberkin (Sunbank), Hearthpriest Magna Coalbright (Coldhearth), one in every T1/T2 town, three in each capital (Dawnspire Close / Hall of Embers).

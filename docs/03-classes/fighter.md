@@ -137,4 +137,4 @@ Format: tier (points required in tree) · talent · max rank · effect per rank.
 
 ## 6. Trainers
 
-Sergeant Tobias Kern (Larkhill), Battlemaster Kol Ironvow (Coldhearth), one in every T1/T2 town, three in each capital. Class quests: [framework §6](class-framework.md#6-class-quests).
+Sergeant Tobias Kern (Larkhill), Dale-Sergeant Hakon Shieldwall (Sunbank), Battlemaster Kol Ironvow (Coldhearth), one in every T1/T2 town, three in each capital. Class quests: [framework §6](class-framework.md#6-class-quests).

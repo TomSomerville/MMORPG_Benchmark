@@ -26,7 +26,7 @@ function MakeRx($short) {
   }
   return ($alts -join '|')
 }
-$classEnders = @{ 'BM-03' = @('NPC-BM-02', 'NPC-BM-03', 'NPC-BM-04'); 'EC-03' = @('NPC-EC-02', 'NPC-EC-03', 'NPC-EC-04') }
+$classEnders = @{ 'BM-03' = @('NPC-BM-02', 'NPC-BM-03', 'NPC-BM-04'); 'ST-03' = @('NPC-ST-19', 'NPC-ST-20', 'NPC-ST-21') }
 $named = 0; $groups = 0; $withQuests = 0
 foreach ($f in (Get-ChildItem (Join-Path $Root 'docs\11-npcs') -Filter '0*.md' | Where-Object { $_.Name -notmatch '^00-' })) {
   $lines = [IO.File]::ReadAllLines($f.FullName)

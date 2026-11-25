@@ -9,10 +9,10 @@ Every quest from level 1 to 30, written out in full: the text the player reads, 
 | Zone | Levels | Quests | File |
 |---|---|---|---|
 | Brightmead Vale | 1–5 | BM-01 to BM-18 | [bm-brightmead-vale.md](bm-brightmead-vale.md) |
-| Embercrag Hollow | 1–5 | EC | [ec-embercrag-hollow.md](ec-embercrag-hollow.md) |
+| Stonewake Dale | 1–5 | ST-01 to ST-18 | [st-stonewake-dale.md](st-stonewake-dale.md) |
 | Harrowfield | 5–10 | HF | [hf-harrowfield.md](hf-harrowfield.md) |
 | Russetwood | 5–10 | RW | [rw-russetwood.md](rw-russetwood.md) |
-| Stonewake Dale | 5–10 | ST | [st-stonewake-dale.md](st-stonewake-dale.md) |
+| Embercrag Hollow | 5–10 | EC | [ec-embercrag-hollow.md](ec-embercrag-hollow.md) |
 | Stoneheart Deeps | 5–10 | SD | [sd-stoneheart-deeps.md](sd-stoneheart-deeps.md) |
 | Thornwick Marches | 10–20 | TM | [tm-thornwick-marches.md](tm-thornwick-marches.md) |
 | Ironroot Highlands | 10–20 | IR | [ir-ironroot-highlands.md](ir-ironroot-highlands.md) |
@@ -37,12 +37,12 @@ Every quest from level 1 to 30, written out in full: the text the player reads, 
 ## Global rules
 
 1. **Text tokens.** `<name>` = character name, `<class>` = class name. No text refers to the player's race; every quest reads the same for every race.
-2. **Minimum level.** A quest can be accepted from 3 levels below its quest level (minimum 1). Dungeon quests ([D]) from 2 below. A quest that needs a higher level than that states it after its prerequisites, as "and level N" ("Requires BM-01 and level 2"): it is then offered only from level N. BM-03 and EC-03 are the two that do.
+2. **Minimum level.** A quest can be accepted from 3 levels below its quest level (minimum 1). Dungeon quests ([D]) from 2 below. A quest that needs a higher level than that states it after its prerequisites, as "and level N" ("Requires BM-01 and level 2"): it is then offered only from level N. BM-03 and ST-03 are the two that do.
 3. **Prerequisites.** "Requires" lists quests that must be *completed*. "—" means none. Chain variants that satisfy the same step are written "A or B".
 4. **Availability marker.** Givers show the quest marker only when level and prerequisites are met.
 5. **Quest-item drops.** Quest items drop only for players on the quest, and each group member on the quest gets their own roll. The rate is given per quest. Rates below 100% are tuned so the quest takes 1.3–1.6 kills per item.
 6. **Kill credit.** A kill counts for the player who tapped the creature and for every living party member within 100 yards of it, the same distance as shared kill XP ([Progression §2](../../02-systems/progression.md#2-kill-xp)). Raid groups get no quest credit except for raid quests.
-7. **World objects.** A clickable quest object can be used only by a character who is on its quest. Using it is a 3-second channel, lost on moving or on being struck, unless a note says otherwise. Every quest object is per player: once a character has used one it is gone for that character alone and stays for everyone else, so there is no respawn timer and a crowd cannot empty a quest. A character's used objects are there again when the quest is taken again, abandoned or handed in. Where a note makes an object usable only after an earlier step (the Slag Crucible after Sootbeard's death, EC-16), the object cannot be used until that objective of its quest is complete.
+7. **World objects.** A clickable quest object can be used only by a character who is on its quest. Using it is a 3-second channel, lost on moving or on being struck, unless a note says otherwise. Every quest object is per player: once a character has used one it is gone for that character alone and stays for everyone else, so there is no respawn timer and a crowd cannot empty a quest. A character's used objects are there again when the quest is taken again, abandoned or handed in. Where a note makes an object usable only after an earlier step (the Slag Crucible after Sootbeard's death, EC-07), the object cannot be used until that objective of its quest is complete.
 8. **Coin.** The coin stated in each entry is final. The baseline it was drawn from:
 
 | Quest level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
@@ -67,14 +67,14 @@ Every quest from level 1 to 30, written out in full: the text the player reads, 
 10. **Replay and abandon.** Abandoning a quest removes its quest items. Items granted at accept are re-granted when the quest is taken again.
 11. **Failure.** Escort and defend quests fail if the escorted NPC dies or the player goes beyond 80 yards; the quest can be abandoned and retaken at once.
 12. **Reputation.** Every quest grants reputation equal to 25% of its XP (minimum 10) with the reputation of its zone, as listed in [Reference Tables §2](../../12-data/reference-tables.md#2-reputation). Fixed reputation amounts written in a quest's rewards are added on top.
-13. **Tracker lines and objectives.** Each part of a Tracker line is one objective, with one exception: "Speak to" or "Report to" the NPC who ends the quest is the hand-in itself and makes no objective. A quest whose only line is that one has no objectives; its line is still shown in the tracker. Objectives may be done in any order: ordered objectives are not supported, so where a note says "in order" (the footprint triggers of EC-11) the order is not enforced. The one dependency there is belongs to world objects: an object can wait on an earlier objective of its quest (rule 7).
+13. **Tracker lines and objectives.** Each part of a Tracker line is one objective, with one exception: "Speak to" or "Report to" the NPC who ends the quest is the hand-in itself and makes no objective. A quest whose only line is that one has no objectives; its line is still shown in the tracker. Objectives may be done in any order: ordered objectives are not supported, so where a note says "in order" the order is not enforced. The one dependency there is belongs to world objects: an object can wait on an earlier objective of its quest (rule 7).
 
 ## Counts
 
 | Zone file | Quests |
 |---|---|
-| BM, EC | 18 each |
-| HF, RW, ST, SD | 20 each |
+| BM, ST | 18 each |
+| HF, RW, EC, SD | 20 each |
 | TM, IR, CF, RL, VM | 36 each |
 | **Total** | **296** — every quest ID in the zone tables has exactly one entry here (checked by script) |
 
@@ -83,7 +83,7 @@ Every quest from level 1 to 30, written out in full: the text the player reads, 
 Writing the text needed a few details the zone files did not have. They are decided here and should be copied back into the zone files when those are next edited.
 
 - **New minor NPCs:** Lady Chamberlain Edith Marr (Marrowind Keep, TM-24) · Hall-Steward Borin Oathkeeper (Thane's Hall, IR-15) · Goodwife Marla Sedge (Mistral Hollow, TM-34) · Quartermaster Eydis (Emberwell, CF-36).
-- **Named quest targets given a level and place:** Paymaster Grice, Odo Ketch, Chief Gnarr, Shard-Chief Krakk (level 8, 5–10 zones) · Preceptor Hask (14) · Runner Vask (15).
+- **Named quest targets given a level and place:** Paymaster Grice, Odo Ketch, Grolm Sootbeard, Shard-Chief Krakk (level 8, 5–10 zones) · Preceptor Hask (14) · Runner Vask (15).
 - **Third reward options** added wherever a zone table offered only two, so each class has a usable choice.
 - **Boss last words** for the act bosses of Main Chain 1 and the bosses of Main Chain 2.
 - **Dialogue flags** `rl14_ysolde` and `rl14_corvane` (RL-14), stored for future faction content.

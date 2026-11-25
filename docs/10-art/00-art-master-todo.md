@@ -85,7 +85,7 @@ The complete list of art the game needs before code begins: every texture, UI el
 
 **The order in which assets are generated is the order of the [Asset Manifest](../15-asset-manifest/00-manifest-index.md): one row per asset, in order of first appearance in the game.** The blocks below are kept as a summary of what each build milestone needs; where the two differ, the manifest's order is the one the forge follows. "Block A" now means the calibration set: the style bible plus the first row of every kind in the manifest.
 
-**Player models come first.** The four player bodies and their animations are the most important art in the game: players look at them every minute. They are made, fitted and put right before any other model work. After them comes everything the dwarf starting zone, Embercrag Hollow, shows: its creatures, its people, its buildings and props, its nature and ground. The rest follows in the manifest's order.
+**Player models come first.** The four player bodies and their animations are the most important art in the game: players look at them every minute. They are made, fitted and put right before any other model work. After them comes everything the dwarf starting zone, Stonewake Dale, shows (the dwarf starting zone was Embercrag Hollow until 2026-11-25): its creatures, its people, its buildings and props, its nature and ground. The rest follows in the manifest's order.
 
 Nothing is made in number until the owner has approved the style guidelines that govern it and the first results of the pipeline that makes it (§8).
 
@@ -96,10 +96,10 @@ Ordered so that each block unlocks a build milestone in the [Roadmap](../08-tech
 | **A — Style guide** | Palette, one finished example of each asset type (1 body, 1 creature, 1 building, 1 weapon, 1 spell effect, 5 icons, 1 window) | Sets the bar for everything else | 1% |
 | **B — Core kit** | Human rig + male body, canine and boar rigs, player locomotion and melee/cast clips, tier-a weapons, ARM-C1/L1/M1, shared VFX blocks, HUD and core windows, fonts, cursors | M0–M1 (movement and combat on a test map) | 8% |
 | **C — Brightmead Vale** | KIT-01/02/06/12/13/15, temperate nature, Z-BM rows, its 12 creatures, Burrowkin, Gillkin, Ashhand outfits, level 1–10 class effects and icons, quest/vendor/trainer UI | M2 (vertical slice) | 10% |
-| **D — Second race and travel** | Dwarf rig and bodies, KIT-04, Embercrag, both capitals, the ship and sea route, eagle taxi, map paintings | M3 | 12% |
+| **D — Second race and travel** | Dwarf rig and bodies, KIT-05, Stonewake Dale, both capitals (KIT-04), the ship and sea route, eagle taxi, map paintings | M3 | 12% |
 | **E — Classes complete** | All remaining ability and talent effects and icons, talent backgrounds | M4 | 8% |
 | **F — Professions** | Nodes, material and consumable icons, tier-b/c armor and weapons, crafting UI, named crafted items | M5 | 9% |
-| **G — 5–10 and 10–20 zones** | Harrowfield, Russetwood (autumn library), Stonewake Dale (KIT-05), Stoneheart Deeps (KIT-07, cavern flora), Thornwick, Ironroot and their creatures and outfits | M6 | 18% |
+| **G — 5–10 and 10–20 zones** | Harrowfield, Russetwood (autumn library), Embercrag Hollow (snow library, forge-works at Blackmatch Camp), Stoneheart Deeps (KIT-07, cavern flora), Thornwick, Ironroot and their creatures and outfits | M6 | 18% |
 | **H — Dungeon 1** | KIT-08, Gallowmere Crypts, its bosses and effects, dungeon armor sets | M7 | 4% |
 | **I — 20–30 zones and dungeons 2–3** | Cinderfall, Riftlands (KIT-11, KIT-19), Veilmoor, KIT-09/10, The Slagworks, Hollowspire Keep | M8 | 17% |
 | **J — PvP** | The Dustpit, Crownfall, team dressing, PvP sets, scoreboard UI | M9 | 3% |
@@ -116,7 +116,7 @@ Ordered so that each block unlocks a build milestone in the [Roadmap](../08-tech
 
 Lists 7 and 8 are generated from the design documents; regenerate them whenever items or quests change. Lists 1–6 are hand-written against the design documents as of version 0.2 of the [Master Plan](../../MASTER_PLAN.md); when a zone, creature or ability changes, change its row here in the same edit.
 
-**The full list, one row per asset, is the [Asset Manifest](../15-asset-manifest/00-manifest-index.md)**, generated from these lists and the design data by `tools/doc-generators/asset_manifest.py`. Where a row here stands for several assets ("×7 schools", "40 pieces"), the manifest names each one, and its count (8,978 rows) replaces the estimates below. Regenerate the manifest after changing any list.
+**The full list, one row per asset, is the [Asset Manifest](../15-asset-manifest/00-manifest-index.md)**, generated from these lists and the design data by `tools/doc-generators/asset_manifest.py`. Where a row here stands for several assets ("×7 schools", "40 pieces"), the manifest names each one, and its count (8,994 rows) replaces the estimates below. Regenerate the manifest after changing any list.
 
 All counts are planning estimates meant for scoping and tracking. Counts given as exact (765 named items, 296 quests, 214 class icons, 145 weapon models) come from the documents; counts marked ≈ are sums of the ranges in each list.
 

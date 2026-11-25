@@ -65,63 +65,132 @@ Generated from the creature tables in the zone documents using the rules in the 
 | **Old Greymaw** | World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
 | **"Brander" Hale Morrow** | Coin 60–180c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
 
-## Embercrag Hollow — T1, levels 1–5 (Khazrun)
+## Stonewake Dale — T1, levels 1–5 (Khazrun)
 
 ### Stat blocks
 
 | ID | Creature | Level | Type | Health | Damage per swing | Swing | Armor | Mana | Respawn | XP |
 |---|---|---|---|---|---|---|---|---|---|---|
-| CRE-EC-01 | Rime Wolf Cub | 1 | Beast | 42 | 3–5 | 2 s | 20 | — | 2.5 min | 50 |
-| CRE-EC-02 | Rime Wolf | 2–3 | Beast | 57–72 | 5–7 to 6–9 | 2 s | 75 | — | 2.5 min | 55–60 |
-| CRE-EC-03 | Crag Ram | 1–2 | Beast | 42–57 | 3–5 to 5–7 | 2 s | 48 | — | 2.5 min | 50–55 |
-| CRE-EC-04 | Gravelkin Scrabbler | 1–2 | Humanoid | 42–57 | 3–5 to 5–7 | 2 s | 48 | — | 2.5 min | 50–55 |
-| CRE-EC-05 | Gravelkin Gnasher | 3 | Humanoid | 72 | 6–9 | 2 s | 75 | — | 2.5 min | 60 |
-| CRE-EC-06 | Gravelkin Rockchucker | 3–4 | Humanoid (ranged) | 72–87 | 6–9 to 8–11 | 2 s | 102 | — | 2.5 min | 60–65 |
-| CRE-EC-07 | Snowshoe Lynx | 3–4 | Beast | 72–87 | 6–9 to 8–11 | 2 s | 102 | — | 2.5 min | 60–65 |
-| CRE-EC-08 | Tuskfall Boar | 4 | Beast | 87 | 8–11 | 2 s | 102 | — | 2.5 min | 65 |
-| CRE-EC-09 | Rimewater Sprite | 4–5 | Elemental | 87–102 | 9–12 to 10–14 | 2.2 s | 130 | — | 2.5 min | 65–70 |
-| CRE-EC-10 | Slagborn Lookout | 4 | Humanoid | 87 | 8–11 | 2 s | 102 | — | 2.5 min | 65 |
-| CRE-EC-11 | Slagborn Firebrand | 5 | Humanoid (caster) | 82 | 4–5 | 2 s | 98 | 285 | 2.5 min | 70 |
-| CRE-EC-12 | **Whitepelt** (Rare) | 4 | Beast | 130 | 9–13 | 2 s | 102 | — | 2–8 h | 65 |
-| CRE-EC-13 | **Grawl the Boulder-Eater** (Elite) | 5 | Humanoid | 306 | 17–23 | 2 s | 130 | — | 7 min | 140 |
-| CRE-EC-14 | **Grolm Sootbeard** (Mini-boss) | 5 | Humanoid | 204 | 12–16 | 2 s | 130 | — | 5 min | 210 |
+| CRE-ST-01 | Highland Buzzard | 1 | Beast (bird) | 42 | 3–4 | 1.8 s | 20 | — | 2.5 min | 50 |
+| CRE-ST-02 | Feral Billy | 1–2 | Beast (goat) | 42–57 | 3–5 to 5–7 | 2 s | 48 | — | 2.5 min | 50–55 |
+| CRE-ST-03 | Young Shale Bear | 2–3 | Beast | 57–72 | 5–7 to 6–9 | 2 s | 75 | — | 2.5 min | 55–60 |
+| CRE-ST-04 | Gravelkin Sinkdweller | 1–2 | Humanoid | 42–57 | 3–5 to 5–7 | 2 s | 48 | — | 2.5 min | 50–55 |
+| CRE-ST-05 | Gravelkin Bonechewer | 3 | Humanoid | 72 | 6–9 | 2 s | 75 | — | 2.5 min | 60 |
+| CRE-ST-06 | Hop-Blight Beetle | 3–4 | Beast | 72–87 | 6–9 to 8–11 | 2 s | 102 | — | 2.5 min | 60–65 |
+| CRE-ST-07 | Shale Bear | 4 | Beast | 87 | 8–11 | 2 s | 102 | — | 2.5 min | 65 |
+| CRE-ST-08 | Fermented Ooze | 4–5 | Aberration | 87–102 | 8–11 to 9–13 | 2 s | 130 | — | 2.5 min | 65–70 |
+| CRE-ST-09 | Dale Rustler | 4 | Humanoid | 87 | 8–11 | 2 s | 102 | — | 2.5 min | 65 |
+| CRE-ST-10 | Rustler's Hound | 4 | Beast | 87 | 8–11 | 2 s | 102 | — | 2.5 min | 65 |
+| CRE-ST-11 | Rustler Hound-Master | 5 | Humanoid | 102 | 9–13 | 2 s | 130 | — | 2.5 min | 70 |
+| CRE-ST-12 | **Greedy Gund** (Rare) | 4 | Humanoid | 130 | 9–13 | 2 s | 102 | — | 2–8 h | 65 |
+| CRE-ST-13 | **Old Bitterhorn** (Elite) | 5 | Beast | 306 | 17–23 | 2 s | 130 | — | 7 min | 140 |
+| CRE-ST-14 | **Chief Gnarr** (Mini-boss) | 5 | Humanoid | 204 | 12–16 | 2 s | 130 | — | 5 min | 210 |
 
 ### Abilities
 
 | Creature | Ability | Kind | Effect at top level |
 |---|---|---|---|
-| Rime Wolf Cub | — | — | Melee only |
-| Rime Wolf | Bite | Strike | 10 Physical; cooldown 8 s |
-| Crag Ram | Headbutt | Control | Stun/incapacitate 1 s; deals 6 Physical; cooldown 20 s |
-| Gravelkin Scrabbler | — | — | Melee only |
-| Gravelkin Gnasher | Gnaw | Debuff | armor −10; lasts 15 s; cooldown 20 s |
-| Gravelkin Rockchucker | Throw Rock | Ranged or spell | 10–14 Physical; 2 s cast; range 30 yd |
-| Snowshoe Lynx | Pounce | Opener | 14 Physical on the first hit; the creature is hidden until within 8 yd; stealth opener |
-| Tuskfall Boar | Charge | Opener | 14 Physical on the first hit; closes from 8 to 25 yd |
-| Rimewater Sprite | Frost Nip | Slow | Slows movement 20% for 6 s; deals 7 Frost; cooldown 12 s |
-| Slagborn Lookout | Shoot | Ranged or spell | 10–14 Physical; 2 s cast; range 30 yd |
-| Slagborn Lookout | calls allies | Summon | Calls 1 ally of the same family within 30 yd; once per fight unless a cooldown is given |
-| Slagborn Firebrand | Slag Bolt | Ranged or spell | 20–28 Fire; 2 s cast; range 30 yd |
-| Slagborn Firebrand | Soot Cloud | Debuff | −10% hit; lasts 15 s; cooldown 20 s |
+| Highland Buzzard | — | — | Melee only |
+| Feral Billy | Headbutt | Strike | 7 Physical; cooldown 8 s |
+| Young Shale Bear | Maul | Strike | 10 Physical; cooldown 8 s |
+| Gravelkin Sinkdweller | — | — | Melee only |
+| Gravelkin Bonechewer | Gnaw | Debuff | armor −10; lasts 15 s; cooldown 20 s |
+| Hop-Blight Beetle | Blight Spray | Damage over time | 22 Nature over 12 s (4 ticks); applied on hit, cooldown 15 s; disease |
+| Shale Bear | Maul | Strike | 11 Physical; cooldown 8 s |
+| Fermented Ooze | Sour Splash | Slow | Slows movement 20% for 6 s; deals 7 Physical; cooldown 12 s |
+| Dale Rustler | Lasso | Root | Roots 3 s; range 20 yd; cooldown 20 s |
+| Rustler's Hound | Bite | Strike | 11 Physical; cooldown 8 s |
+| Rustler Hound-Master | Whistle | Summon | calls allies; once per fight unless a cooldown is given |
+| Rustler Hound-Master | Cudgel | Strike | 13 Physical; cooldown 8 s |
 
 ### Loot
 
 | Creature | Loot table |
 |---|---|
-| Rime Wolf Cub | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps · Stringy Wolf Meat 40% · World table |
+| Highland Buzzard | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps · Buzzard Egg 40% · feathers 25% · World table |
+| Feral Billy | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps · Goat Meat 40% · World table |
+| Young Shale Bear | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Bear Meat 40% · World table |
+| Gravelkin Sinkdweller | Coin 3–18c (100%) · Linen Cloth 35% · Grey junk 70% · Stolen Whetstone 40% · World table |
+| Gravelkin Bonechewer | Coin 9–27c (100%) · Linen Cloth 35% · Grey junk 70% · Rough Stone 40% · World table |
+| Hop-Blight Beetle | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Blight Gland 40% · shell 25% · World table |
+| Shale Bear | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Bear Meat 40% · World table |
+| Fermented Ooze | No coin · Slime grey 65% · Copper Fitting 40% · yeast 25% · World table |
+| Dale Rustler | Coin 12–36c (100%) · Linen Cloth 35% · Grey junk 70% · Peddler's Coin 40% · World table |
+| Rustler's Hound | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Sharp Fang 40% · World table |
+| Rustler Hound-Master | Coin 15–45c (100%) · Linen Cloth 35% · Grey junk 70% · Peddler's Coin 40% · World table |
+| **Greedy Gund** | Coin 48–144c · Guaranteed green (100%) · named drop and quest items as listed in the zone and quest text documents |
+| **Old Bitterhorn** | World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
+| **Chief Gnarr** | Coin 60–180c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
+
+## Embercrag Hollow — T2, levels 5–10 (Khazrun)
+
+### Stat blocks
+
+| ID | Creature | Level | Type | Health | Damage per swing | Swing | Armor | Mana | Respawn | XP |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CRE-EC-01 | Rime Wolf | 5–6 | Beast | 102–121 | 9–13 to 11–15 | 2 s | 184 | — | 5 min | 70–75 |
+| CRE-EC-02 | Crag Ram | 5–6 | Beast | 102–121 | 9–13 to 11–15 | 2 s | 184 | — | 5 min | 70–75 |
+| CRE-EC-03 | Tuskfall Boar | 6–7 | Beast | 121–140 | 11–15 to 13–18 | 2 s | 238 | — | 5 min | 75–80 |
+| CRE-EC-04 | Gravelkin Scrabbler | 6–7 | Humanoid | 121–140 | 11–15 to 13–18 | 2 s | 238 | — | 5 min | 75–80 |
+| CRE-EC-05 | Gravelkin Gnasher | 7–8 | Humanoid | 140–160 | 13–18 to 15–20 | 2 s | 292 | — | 5 min | 80–85 |
+| CRE-EC-06 | Slagborn Lookout | 7–8 | Humanoid | 140–160 | 13–18 to 15–20 | 2 s | 292 | — | 5 min | 80–85 |
+| CRE-EC-07 | Snowshoe Lynx | 7–8 | Beast | 140–160 | 13–18 to 15–20 | 2 s | 292 | — | 5 min | 80–85 |
+| CRE-EC-08 | Slagborn Firebrand | 8 | Humanoid (caster) | 128 | 6–8 | 2 s | 219 | 420 | 5 min | 85 |
+| CRE-EC-09 | Gravelkin Rockchucker | 8–9 | Humanoid (ranged) | 160–179 | 15–20 to 17–23 | 2 s | 346 | — | 5 min | 85–90 |
+| CRE-EC-10 | Rimewater Sprite | 8–9 | Elemental | 160–179 | 16–22 to 19–25 | 2.2 s | 346 | — | 5 min | 85–90 |
+| CRE-EC-11 | Slagborn Sapper | 8–9 | Humanoid | 160–179 | 15–20 to 17–23 | 2 s | 346 | — | 5 min | 85–90 |
+| CRE-EC-12 | Loose Slag Sprite | 9 | Elemental | 179 | 19–25 | 2.2 s | 346 | — | 5 min | 90 |
+| CRE-EC-13 | Slagborn Powderkeg | 9–10 | Humanoid | 179–198 | 17–23 to 19–25 | 2 s | 400 | — | 5 min | 90–95 |
+| CRE-EC-14 | **Whitepelt** (Rare) | 8 | Beast | 239 | 18–24 | 2 s | 292 | — | 2–8 h | 85 |
+| CRE-EC-15 | **Grawl the Boulder-Eater** (Elite) | 9 | Humanoid | 536 | 30–41 | 2 s | 346 | — | 7 min | 180 |
+| CRE-EC-16 | **Powderkeg Pol** (Elite) | 10 | Humanoid | 594 | 34–46 | 2 s | 400 | — | 7 min | 190 |
+| CRE-EC-17 | **Grolm Sootbeard** (Named) | 8 | Humanoid | 239 | 18–24 | 2 s | 292 | — | 5 min | 85 |
+| CRE-EC-18 | **Sapper-Chief Dolga Blackmatch** (Chain boss (elite)) | 10 | Humanoid | 990 | 37–51 | 2 s | 400 | — | 5 min | 285 |
+
+### Abilities
+
+| Creature | Ability | Kind | Effect at top level |
+|---|---|---|---|
+| Rime Wolf | Bite | Strike | 16 Physical; cooldown 8 s |
+| Crag Ram | Headbutt | Control | Stun/incapacitate 1 s; deals 13 Physical; cooldown 20 s |
+| Tuskfall Boar | Charge | Opener | 22 Physical on the first hit; closes from 8 to 25 yd |
+| Gravelkin Scrabbler | Gnaw | Debuff | armor −10; lasts 15 s; cooldown 20 s |
+| Gravelkin Gnasher | Gnaw | Debuff | armor −10; lasts 15 s; cooldown 20 s |
+| Gravelkin Gnasher | Frenzy at 30% | Buff | Self: +25% damage and +30% attack speed for 10 s; cooldown 30 s |
+| Slagborn Lookout | Shoot | Ranged or spell | 20–26 Physical; 2 s cast; range 30 yd |
+| Slagborn Lookout | calls allies | Summon | Calls 1 ally of the same family within 30 yd; once per fight unless a cooldown is given |
+| Snowshoe Lynx | Pounce | Opener | 27 Physical on the first hit; the creature is hidden until within 8 yd; stealth opener |
+| Slagborn Firebrand | Slag Bolt | Ranged or spell | 33–45 Fire; 2 s cast; range 30 yd |
+| Slagborn Firebrand | Soot Cloud | Debuff | −10% hit; lasts 15 s; cooldown 20 s |
+| Gravelkin Rockchucker | Throw Rock | Ranged or spell | 22–30 Physical; 2 s cast; range 30 yd |
+| Rimewater Sprite | Frost Nip | Slow | Slows movement 20% for 6 s; deals 13 Frost; cooldown 12 s |
+| Slagborn Sapper | Throw Charge | Ranged or spell | 22–30 Physical; 2 s cast; range 30 yd; aimed at the ground, avoidable |
+| Slagborn Sapper | Sunder | Debuff | −10% armor; lasts 15 s; cooldown 20 s |
+| Loose Slag Sprite | Slag Spit | Damage over time | 42 Fire over 12 s (4 ticks); applied on hit, cooldown 15 s; Fire DoT |
+| Slagborn Powderkeg | Explodes on death | Area attack | 18 Physical to all enemies within 8 yd, on death; 2 s warning; cooldown 12 s; AoE, 3 s warning |
+
+### Loot
+
+| Creature | Loot table |
+|---|---|
 | Rime Wolf | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Wolf meat 40% · Sharp Fang 25% · World table |
-| Crag Ram | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps · Ram Flank 40% · World table |
-| Gravelkin Scrabbler | Coin 3–18c (100%) · Linen Cloth 35% · Grey junk 70% · Stolen Pick 40% · World table |
-| Gravelkin Gnasher | Coin 9–27c (100%) · Linen Cloth 35% · Grey junk 70% · Rough Stone 40% · World table |
-| Gravelkin Rockchucker | Coin 9–36c (100%) · Linen Cloth 35% · Grey junk 70% · Rough Stone 40% · World table |
-| Snowshoe Lynx | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Lynx Pelt 40% · Big Cat Meat 25% · World table |
+| Crag Ram | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Ram Flank 40% · World table |
 | Tuskfall Boar | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Boar Haunch 40% · World table |
+| Gravelkin Scrabbler | Coin 18–63c (100%) · Linen Cloth 35% · Grey junk 70% · Rough Stone 40% · World table |
+| Gravelkin Gnasher | Coin 21–72c (100%) · Linen Cloth 35% · Grey junk 70% · Rough Stone 40% · World table |
+| Slagborn Lookout | Coin 21–72c (100%) · Linen Cloth 35% · Grey junk 70% · Branded Ingot 40% · World table |
+| Snowshoe Lynx | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Musk Gland 40% · Big Cat Meat 25% · World table |
+| Slagborn Firebrand | Coin 24–72c (100%) · Linen Cloth 35% · Grey junk 70% · Branded Ingot 40% · World table |
+| Gravelkin Rockchucker | Coin 24–81c (100%) · Linen Cloth 35% · Grey junk 70% · Rough Stone 40% · World table |
 | Rimewater Sprite | No coin · Elemental grey 60% · Rimewater Shard 40% · World table |
-| Slagborn Lookout | Coin 12–36c (100%) · Linen Cloth 35% · Grey junk 70% · Branded Ingot 40% · World table |
-| Slagborn Firebrand | Coin 15–45c (100%) · Linen Cloth 35% · Grey junk 70% · Branded Ingot 40% · World table |
+| Slagborn Sapper | Coin 24–81c (100%) · Linen Cloth 35% · Grey junk 70% · blasting powder 40% · World table |
+| Loose Slag Sprite | No coin · Elemental grey 60% · Small Ember Core 3% · Coal 25% · World table |
+| Slagborn Powderkeg | Coin 27–90c (100%) · Linen Cloth 35% · Grey junk 70% · World table |
 | **Whitepelt** | Guaranteed green (100%) · named drop and quest items as listed in the zone and quest text documents |
-| **Grawl the Boulder-Eater** | Coin 60–180c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
-| **Grolm Sootbeard** | World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
+| **Grawl the Boulder-Eater** | Coin 108–324c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
+| **Powderkeg Pol** | Coin 120–360c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
+| **Grolm Sootbeard** | Coin 96–288c · World green 2% · named drop and quest items as listed in the zone and quest text documents |
+| **Sapper-Chief Dolga Blackmatch** | Coin 120–360c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
 
 ## Harrowfield — T2, levels 5–10 (Meridia)
 
@@ -284,7 +353,7 @@ Generated from the creature tables in the zone documents using the rules in the 
 | **Red Tom** | Guaranteed green (100%) · named drop and quest items as listed in the zone and quest text documents |
 | **Old Mossback** | World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
 | **Garrick Snare, the Poacher-King** | Coin 120–360c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
-| **Kilnmaster Bertram Soot** | World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
+| **Kilnmaster Bertram Soot** | Coin 120–360c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
 | **O** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
 | **8** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
 | **H** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
@@ -370,80 +439,6 @@ Generated from the creature tables in the zone documents using the rules in the 
 | **Fusewright Odd** | Coin 120–360c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
 | **Bore-Captain Vigga Deepdrill** | Coin 120–360c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
 | **S** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
-| **8** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
-| **H** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
-| **n** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
-
-## Stonewake Dale — T2, levels 5–10 (Khazrun)
-
-### Stat blocks
-
-| ID | Creature | Level | Type | Health | Damage per swing | Swing | Armor | Mana | Respawn | XP |
-|---|---|---|---|---|---|---|---|---|---|---|
-| CRE-ST-01 | Feral Billy | 5–6 | Beast (goat) | 102–121 | 9–13 to 11–15 | 2 s | 184 | — | 5 min | 70–75 |
-| CRE-ST-02 | Highland Buzzard | 5–6 | Beast (bird) | 102–121 | 8–11 to 10–14 | 1.8 s | 184 | — | 5 min | 70–75 |
-| CRE-ST-03 | Shale Bear | 6–7 | Beast | 121–140 | 11–15 to 13–18 | 2 s | 238 | — | 5 min | 75–80 |
-| CRE-ST-04 | Gravelkin Sinkdweller | 6–7 | Humanoid | 121–140 | 11–15 to 13–18 | 2 s | 238 | — | 5 min | 75–80 |
-| CRE-ST-05 | Gravelkin Bonechewer | 7–8 | Humanoid | 140–160 | 13–18 to 15–20 | 2 s | 292 | — | 5 min | 80–85 |
-| CRE-ST-06 | Dale Rustler | 7–8 | Humanoid | 140–160 | 13–18 to 15–20 | 2 s | 292 | — | 5 min | 80–85 |
-| CRE-ST-07 | Hop-Blight Beetle | 7–8 | Beast | 140–160 | 13–18 to 15–20 | 2 s | 292 | — | 5 min | 80–85 |
-| CRE-ST-08 | Rustler Hound-Master | 8–9 | Humanoid | 160–179 | 15–20 to 17–23 | 2 s | 346 | — | 5 min | 85–90 |
-| CRE-ST-09 | Fermented Ooze | 8–9 | Aberration | 160–179 | 15–20 to 17–23 | 2 s | 346 | — | 5 min | 85–90 |
-| CRE-ST-10 | Slagborn Sapper | 8–9 | Humanoid | 160–179 | 15–20 to 17–23 | 2 s | 346 | — | 5 min | 85–90 |
-| CRE-ST-11 | Slagborn Powderkeg | 9–10 | Humanoid | 179–198 | 17–23 to 19–25 | 2 s | 400 | — | 5 min | 90–95 |
-| CRE-ST-12 | Loose Slag Sprite | 9 | Elemental | 179 | 19–25 | 2.2 s | 346 | — | 5 min | 90 |
-| CRE-ST-13 | **Greedy Gund** (Rare) | 8 | Humanoid | 239 | 18–24 | 2 s | 292 | — | 2–8 h | 85 |
-| CRE-ST-14 | **Old Bitterhorn** (Elite) | 9 | Beast | 536 | 30–41 | 2 s | 346 | — | 7 min | 180 |
-| CRE-ST-15 | **Powderkeg Pol** (Elite) | 10 | Humanoid | 594 | 34–46 | 2 s | 400 | — | 7 min | 190 |
-| CRE-ST-16 | **Sapper-Chief Dolga Blackmatch** (Chain boss (elite)) | 10 | Humanoid | 990 | 37–51 | 2 s | 400 | — | 5 min | 285 |
-| CRE-ST-17 | **C** (Named) | h | i | 1725 | 102–138 | 2 s | 1750 | — | 5 min | 565 |
-| CRE-ST-18 | **8** (Named) |  |  | 40 | 2–3 | 2 s | -8 | — | 5 min | 45 |
-| CRE-ST-19 | **H** (Named) | u | m | 1725 | 102–138 | 2 s | 1750 | — | 5 min | 630 |
-| CRE-ST-20 | **n** (Named) | a | m | 1725 | 102–138 | 2 s | 1750 | — | 5 min | 530 |
-
-### Abilities
-
-| Creature | Ability | Kind | Effect at top level |
-|---|---|---|---|
-| Feral Billy | Headbutt | Strike | 16 Physical; cooldown 8 s; knockback |
-| Highland Buzzard | Swoop | Opener | 18 Physical on the first hit; closes from 8 to 25 yd |
-| Shale Bear | Maul | Strike | 18 Physical; cooldown 8 s |
-| Shale Bear | Swipe | Area attack | 12 Physical to all enemies within 5 yd; cooldown 12 s |
-| Gravelkin Sinkdweller | Gnaw | Debuff | −10% armor; lasts 15 s; cooldown 20 s |
-| Gravelkin Bonechewer | Frenzy at 30% | Buff | Self: +25% damage and +30% attack speed for 10 s; cooldown 30 s |
-| Dale Rustler | Lasso | Pull or charm | Pulls the target to the creature; range 25 yd; cooldown 20 s |
-| Dale Rustler | Cudgel | Strike | 22 Physical; cooldown 8 s |
-| Hop-Blight Beetle | Blight Spray | Damage over time | 38 Nature over 12 s (4 ticks); applied on hit, cooldown 15 s; disease: −5% Stamina |
-| Rustler Hound-Master | Sic 'Em | Summon | 2 hounds; once per fight unless a cooldown is given |
-| Rustler Hound-Master | Whistle | Buff | Allies within 15 yd: +25% damage and +30% attack speed for 10 s; cooldown 30 s |
-| Fermented Ooze | Sour Splash | Slow | Slows movement 40% for 6 s; deals 12 Physical; cooldown 12 s |
-| Fermented Ooze | splits once | Strike | 24 Physical; cooldown 8 s |
-| Slagborn Sapper | Throw Charge | Ranged or spell | 22–30 Physical; 2 s cast; range 30 yd; aimed at the ground, avoidable |
-| Slagborn Sapper | Sunder | Debuff | −10% armor; lasts 15 s; cooldown 20 s |
-| Slagborn Powderkeg | Explodes on death | Area attack | 18 Physical to all enemies within 8 yd, on death; 2 s warning; cooldown 12 s; AoE, 3 s warning |
-| Loose Slag Sprite | Slag Spit | Damage over time | 42 Fire over 12 s (4 ticks); applied on hit, cooldown 15 s; Fire DoT |
-
-### Loot
-
-| Creature | Loot table |
-|---|---|
-| Feral Billy | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Goat Meat 40% · World table |
-| Highland Buzzard | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Feathers 40% · Buzzard Egg 25% · World table |
-| Shale Bear | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Bear Meat 40% · World table |
-| Gravelkin Sinkdweller | Coin 18–63c (100%) · Linen Cloth 35% · Grey junk 70% · Rough Stone 40% · World table |
-| Gravelkin Bonechewer | Coin 21–72c (100%) · Linen Cloth 35% · Grey junk 70% · stolen stores 40% · World table |
-| Dale Rustler | Coin 21–72c (100%) · Linen Cloth 35% · Grey junk 70% · World table |
-| Hop-Blight Beetle | No coin · Grey junk 75% · Skinning: Ruined Leather Scraps or Light Leather · Blight Gland 40% · shell 25% · World table |
-| Rustler Hound-Master | Coin 24–81c (100%) · Linen Cloth 35% · Grey junk 70% · Shepherdess's Bell quest rate · World table |
-| Fermented Ooze | No coin · Slime grey 65% · Copper Fitting 40% · yeast 25% · World table |
-| Slagborn Sapper | Coin 24–81c (100%) · Linen Cloth 35% · Grey junk 70% · blasting powder 40% · World table |
-| Slagborn Powderkeg | Coin 27–90c (100%) · Linen Cloth 35% · Grey junk 70% · World table |
-| Loose Slag Sprite | No coin · Elemental grey 60% · Small Ember Core 3% · Coal 25% · World table |
-| **Greedy Gund** | Coin 96–288c · Guaranteed green (100%) · named drop and quest items as listed in the zone and quest text documents |
-| **Old Bitterhorn** | World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
-| **Powderkeg Pol** | Coin 120–360c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
-| **Sapper-Chief Dolga Blackmatch** | Coin 120–360c · World green 8%, world blue 1% · named drop and quest items as listed in the zone and quest text documents |
-| **C** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
 | **8** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
 | **H** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
 | **n** | World green 2% · named drop and quest items as listed in the zone and quest text documents |
@@ -922,4 +917,4 @@ Generated from the creature tables in the zone documents using the rules in the 
 | **The Lamplighter's Ghost** | Coin 300–900c · Guaranteed green (100%) · named drop and quest items as listed in the zone and quest text documents |
 | **Ser Cadoc the Unhorsed** | Coin 348–1044c · Guaranteed green (100%) · named drop and quest items as listed in the zone and quest text documents |
 
-**Totals:** 151 creature types · 76 named, rare and elite creatures · 273 ability rows.
+**Totals:** 152 creature types · 73 named, rare and elite creatures · 272 ability rows.

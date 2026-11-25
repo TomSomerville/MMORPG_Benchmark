@@ -119,4 +119,4 @@ Cloth with caster stats is often better than leather for Druids below 30 — an 
 
 ## 6. Trainers
 
-Hedgewarden Mirelle (Larkhill), Stonesinger Yrsa Mosshelm (Coldhearth), one in every T1/T2 town, three in each capital (The Hedgerow / The Rootvault).
+Hedgewarden Mirelle (Larkhill), Stonesinger Arne Furrow (Sunbank), Stonesinger Yrsa Mosshelm (Coldhearth), one in every T1/T2 town, three in each capital (The Hedgerow / The Rootvault).

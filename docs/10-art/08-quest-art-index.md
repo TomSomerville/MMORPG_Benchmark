@@ -29,28 +29,53 @@ Every zone quest from level 1 to 30 with the art its objective implies, extracte
 | BM-17 | ☐ | Old Greymaw | Kill Old Greymaw (elite) | None beyond creatures and NPCs |
 | BM-18 | ☐ | [MC1] Word to Harrowfield | Carry Morrow's brand to Reeve Maren Holt in Harrow's Cross, or to Forest-Reeve Birch in Cooper's Hollow | Item icon + World object / scene |
 
-## t1-embercrag-hollow
+## t1-stonewake-dale
 
 | Quest | Done | Name | Objective | Art implied |
 |---|---|---|---|---|
-| EC-01 | ☐ | A Cold Welcome | Speak to the Warden | None beyond creatures and NPCs |
-| EC-02 | ☐ | Culling the Cubs | Kill 8 Rime Wolf Cubs | None beyond creatures and NPCs |
-| EC-03 | ☐ | A Summons from Your Trainer | Speak to your class trainer | None beyond creatures and NPCs |
-| EC-04 | ☐ | Gnashers in the Larder | Kill 8 Gravelkin Scrabblers | None beyond creatures and NPCs |
-| EC-05 | ☐ | Ram Chops for the Camp | Collect 6 Ram Flanks | Item icon |
-| EC-06 | ☐ | Pilfered Picks | Collect 8 Stolen Picks | Item icon |
-| EC-07 | ☐ | [MC1] The Cold Forge | Inspect the Old Forge; report to Forgemaster Emberhand | World object / scene |
-| EC-08 | ☐ | Down to Anvilrest | Deliver the Warden's tally to Innkeeper Alekettle | Item icon |
-| EC-09 | ☐ | Lynx Pelts for Winter | Collect 6 Lynx Pelts | Item icon |
+| ST-01 | ☐ | A Dale Welcome | Speak to the Steadwife | None beyond creatures and NPCs |
+| ST-02 | ☐ | Buzzards over the Paddock | Kill 8 Highland Buzzards | None beyond creatures and NPCs |
+| ST-03 | ☐ | A Summons from Your Trainer | Speak to your class trainer | None beyond creatures and NPCs |
+| ST-04 | ☐ | Rock-Eaters at the Wall | Kill 8 Gravelkin Sinkdwellers | None beyond creatures and NPCs |
+| ST-05 | ☐ | Dale Pasties | Collect 6 Goat Meat | Item icon |
+| ST-06 | ☐ | Blunt Axes | Collect 8 Stolen Whetstones | Item icon |
+| ST-07 | ☐ | [MC1] Stolen Stores | Recover 6 Crates of Stolen Stores from the Sinks | Item icon |
+| ST-08 | ☐ | Down to Hopstead | Deliver the Steadwife's tally to Innkeeper Dryboot | Item icon |
+| ST-09 | ☐ | Baskets on the Bank | Recover 6 Herb Baskets from the herb banks | Item icon |
+| ST-10 | ☐ | Beetles in the Bines | Kill 10 Hop-Blight Beetles | None beyond creatures and NPCs |
+| ST-11 | ☐ | [MC1] Empty Folds | Investigate the High Fold; speak to Shepherdess Ramsbell | World object / scene |
+| ST-12 | ☐ | [MC1] Rustlers on the Ridge | Kill 8 Dale Rustlers and 4 Rustler Hound-Masters | None beyond creatures and NPCs |
+| ST-13 | ☐ | The Old Brewery | Collect 5 Copper Fittings | Item icon |
+| ST-14 | ☐ | Bears in the Adit | Kill 8 Shale Bears | None beyond creatures and NPCs |
+| ST-15 | ☐ | [MC1] The Peddler's Coin | Collect 6 Peddler's Coins from the rustlers | Item icon |
+| ST-16 | ☐ | [MC1] Paid in Slag | Kill Chief Gnarr in the Deep Sink and take his Payroll-Slate (2 players suggested) | Item icon |
+| ST-17 | ☐ | Old Bitterhorn | Bring down Old Bitterhorn (elite) | Item icon |
+| ST-18 | ☐ | [MC1] Word to the Mountain | Carry the Payroll-Slate to Forgemaster Emberhand in Anvilrest, or to Hallwarden Lampwright in Lanternhold | Item icon |
+
+## t2-embercrag-hollow
+
+| Quest | Done | Name | Objective | Art implied |
+|---|---|---|---|---|
+| EC-01 | ☐ | [MC1] The Forgemaster's Burden | Present the Payroll-Slate | Item icon |
+| EC-02 | ☐ | Fleece for Winter | Kill 10 Crag Rams | None beyond creatures and NPCs |
+| EC-03 | ☐ | Tusks of Tuskfall | Kill 8 Tuskfall Boars | None beyond creatures and NPCs |
+| EC-04 | ☐ | Ram Chops for the Camp | Bring 6 Ram Flanks and 4 Boar Haunches | Item icon |
+| EC-05 | ☐ | [MC1] Gnashers in the Larder | Kill 10 Gravelkin Scrabblers | None beyond creatures and NPCs |
+| EC-06 | ☐ | Pilfered Picks | Recover 8 Tool Crates from the Gnashers | Item icon |
+| EC-07 | ☐ | [MC1] Sootbeard's Reckoning | Kill Grolm Sootbeard; recover the Ever-Ember | Item icon |
+| EC-08 | ☐ | Soot and Shadow | Kill 8 Slagborn Lookouts | None beyond creatures and NPCs |
+| EC-09 | ☐ | [MC1] Powder on the Cart Road | Remove 6 Cinder-Charges hidden in the ore carts on the Tuskfall siding | World object / scene |
 | EC-10 | ☐ | Rockchucker Roundup | Kill 10 Gravelkin Rockchuckers | None beyond creatures and NPCs |
-| EC-11 | ☐ | [MC1] Tracks in the Snow | Follow the sooty footprints to Kiln Cave | World object / scene |
-| EC-12 | ☐ | [MC1] Soot and Shadow | Kill 8 Slagborn Lookouts and 4 Firebrands | None beyond creatures and NPCs |
-| EC-13 | ☐ | The Brewer's Ice | Collect 5 Rimewater Shards | Item icon |
-| EC-14 | ☐ | Tusks of Tuskfall | Kill 8 Tuskfall Boars | None beyond creatures and NPCs |
-| EC-15 | ☐ | [MC1] Branded Ingots | Collect 6 Branded Ingots from the Slagborn | Item icon |
-| EC-16 | ☐ | [MC1] Sootbeard's Reckoning | Kill Grolm Sootbeard and recover the Ever-Ember (2 players suggested) | Item icon |
-| EC-17 | ☐ | Grawl the Boulder-Eater | Kill Grawl (elite) | None beyond creatures and NPCs |
-| EC-18 | ☐ | [MC1] Word to Stonewake | Carry a Branded Ingot to Dale-Reeve Garrik Stonewake in Hopstead, or to Hallwarden Lampwright in Lanternhold | Item icon |
+| EC-11 | ☐ | The Carter's Hall-Token | Recover a hurt carter's hall-token from a Rockchucker | Item icon |
+| EC-12 | ☐ | The Brewer's Ice | Kill 8 Rimewater Sprites; collect 5 Rimewater Shards | Item icon |
+| EC-13 | ☐ | Slag Sprites | Kill 8 Loose Slag Sprites | None beyond creatures and NPCs |
+| EC-14 | ☐ | [MC1] The Powder Train | Defuse 6 Cinder-Charges on the powder sledges; kill 6 Slagborn Sappers | World object / scene |
+| EC-15 | ☐ | Musk for the Still | Collect 6 Musk Glands | Item icon |
+| EC-16 | ☐ | [MC1] The Blackmatch Ledger | Steal the ledger from Blackmatch Camp | Item icon |
+| EC-17 | ☐ | [MC1] Sapper-Chief | Kill Dolga Blackmatch (group 2–3) | None beyond creatures and NPCs |
+| EC-18 | ☐ | Grawl the Boulder-Eater | Kill Grawl (elite) | None beyond creatures and NPCs |
+| EC-19 | ☐ | Wanted: Powderkeg Pol | Kill Powderkeg Pol (elite) | None beyond creatures and NPCs |
+| EC-20 | ☐ | [MC1] Ledger Signed "C.A." | Take the ledger to Ranger-Captain Farstride in Ironroot Hold | Item icon |
 
 ## t2-harrowfield
 
@@ -106,7 +131,7 @@ Every zone quest from level 1 to 30 with the art its objective implies, extracte
 
 | Quest | Done | Name | Objective | Art implied |
 |---|---|---|---|---|
-| SD-01 | ☐ | [MC1] The Hallwarden's Burden | Present the Branded Ingot | Item icon |
+| SD-01 | ☐ | [MC1] The Hallwarden's Burden | Present the Payroll-Slate | Item icon |
 | SD-02 | ☐ | Bats in the Lamps | Kill 10 Lanternwing Bats | None beyond creatures and NPCs |
 | SD-03 | ☐ | Shamblers in the Glowcaps | Kill 8 Glowcap Shamblers | None beyond creatures and NPCs |
 | SD-04 | ☐ | Bear and Glowcap Hotpot | Bring 6 Bear Meat and 4 Glowcaps | Item icon |
@@ -126,31 +151,6 @@ Every zone quest from level 1 to 30 with the art its objective implies, extracte
 | SD-18 | ☐ | Old Blindmaw | Kill Old Blindmaw (elite) | None beyond creatures and NPCs |
 | SD-19 | ☐ | Wanted: Fusewright Odd | Kill Fusewright Odd (elite) | None beyond creatures and NPCs |
 | SD-20 | ☐ | [MC1] Plans Signed "C.A." | Ride the Deep Gate line to Ranger-Captain Farstride in Ironroot Hold | World object / scene |
-
-## t2-stonewake-dale
-
-| Quest | Done | Name | Objective | Art implied |
-|---|---|---|---|---|
-| ST-01 | ☐ | [MC1] The Dale-Reeve's Burden | Present the Branded Ingot | Item icon |
-| ST-02 | ☐ | Billies in the Barley | Kill 10 Feral Billies | None beyond creatures and NPCs |
-| ST-03 | ☐ | Bears in the Bothy | Kill 8 Shale Bears | None beyond creatures and NPCs |
-| ST-04 | ☐ | Dale Pasties | Bring 6 Goat Meat and 4 Buzzard Eggs | Item icon |
-| ST-05 | ☐ | [MC1] The Sinks | Kill 10 Gravelkin Sinkdwellers | None beyond creatures and NPCs |
-| ST-06 | ☐ | Stolen Stores | Recover 8 crates from Bonechewers | Item icon |
-| ST-07 | ☐ | [MC1] Paid in Slag | Kill Chief Gnarr; take the Payroll-Slate | Item icon |
-| ST-08 | ☐ | Rustlers on the Ridge | Kill 8 Dale Rustlers | None beyond creatures and NPCs |
-| ST-09 | ☐ | [MC1] Powder in the Millrace | Collect 6 Cinder-Charges hidden in the millrace culverts | Item icon |
-| ST-10 | ☐ | Hound-Masters | Kill 10 Rustler Hound-Masters | None beyond creatures and NPCs |
-| ST-11 | ☐ | The Shepherdess's Bell | Recover her lead-ram's heirloom bell from a Hound-Master | Item icon |
-| ST-12 | ☐ | The Old Brewery | Kill 8 Fermented Oozes; collect 5 Copper Fittings | Item icon |
-| ST-13 | ☐ | Slag Sprites | Kill 8 Loose Slag Sprites | None beyond creatures and NPCs |
-| ST-14 | ☐ | [MC1] Charges on the Dam | Defuse 6 Cinder-Charges; kill 6 Slagborn Sappers | World object / scene |
-| ST-15 | ☐ | Hop-Blight | Collect 6 Blight Glands | Item icon |
-| ST-16 | ☐ | [MC1] The Blackmatch Ledger | Steal the ledger from Blackmatch Camp | Item icon |
-| ST-17 | ☐ | [MC1] Sapper-Chief | Kill Dolga Blackmatch (group 2–3) | None beyond creatures and NPCs |
-| ST-18 | ☐ | Old Bitterhorn | Bring down Old Bitterhorn (elite) | Item icon |
-| ST-19 | ☐ | Wanted: Powderkeg Pol | Kill Powderkeg Pol (elite) | None beyond creatures and NPCs |
-| ST-20 | ☐ | [MC1] Ledger Signed "C.A." | Take the ledger to Ranger-Captain Farstride in Ironroot Hold | Item icon |
 
 ## t3-ironroot-highlands
 

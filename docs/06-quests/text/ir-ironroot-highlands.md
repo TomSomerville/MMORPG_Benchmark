@@ -5,14 +5,14 @@
 Format and global rules are in the [index](00-quest-text-index.md). The zone's dungeon and finale quests are shared with Thornwick: TM-15, TM-16, TM-17, TM-35 and TM-36.
 
 ### IR-01 · [MC1] The Thane's Ranger
-*Level 10 · Requires ST-20 or SD-20, or none (see notes) · Ranger-Captain Sigrun Farstride → Ranger-Captain Farstride*
+*Level 10 · Requires EC-20 or SD-20, or none (see notes) · Ranger-Captain Sigrun Farstride → Ranger-Captain Farstride*
 
 **Offer:** Ironroot Hold guards the high road and the pass to the ogre steppes. The pass fell in a generation ago and we thought that was the end of the Stonemaw. This spring they came over the rubble with better weapons than my rangers carry. If what you've brought explains that, I want it.
 **Tracker:** Deliver the "C.A." papers to Ranger-Captain Farstride
 **Progress:** —
 **Complete:** Powder for the dam, a bore for the forge, and hammers for the ogres. All bought by one hand. Somebody wants Hammerdeep looking every way at once. Well, I only have the one border. Let's start with it.
 **Rewards:** 375 XP
-**Notes:** If the player delivered ST-20 or SD-20 to Farstride, this is offered and completed in the same conversation. Offered directly at level 10 to anyone else; the tracker then reads "Speak to Ranger-Captain Farstride".
+**Notes:** If the player delivered EC-20 or SD-20 to Farstride, this is offered and completed in the same conversation. Offered directly at level 10 to anyone else; the tracker then reads "Speak to Ranger-Captain Farstride".
 
 ### IR-02 · Ironhorn Cull
 *Level 10 · Requires — · Leif, the Huntmaster's apprentice → Leif*

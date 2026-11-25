@@ -72,14 +72,14 @@ The triangle is expressed in PvP through map objectives and resources rather tha
 - **Humans of Meridia.** Kingdom of Solhaven, ruled by Queen **Isolde Marrowind II**. Farmers, soldiers, priests. Human druids are **Hedgewardens**, keepers of the pre-imperial hedge-circles — tolerated by the Church of the Dawn, resented by the Wildpact as "thieves of the old ways".
 - **Dwarves of Khazrun** are one people with two ways of life. The **mountain dwarves (the Hallborn)** live in the snow peaks, inside the mountains and at their very feet: miners, smiths and engineers of the Deep Thanedom of Hammerdeep under High Thane **Durek Deepanvil**. The **hill dwarves (the Dalefolk)** live in the valleys between the mountains and on the farmed foothills: farmers, herders and brewers who govern themselves through the **Dale-Moot** of elected reeves and owe the Thane grain and levies, not obedience. Each thinks the other has forgotten what a dwarf is. Dwarven druids are **Stonesingers**, who hear the Choir in root and rock — a calling far commoner among the Dalefolk. Detail: [Factions & Races](factions-and-races.md#52-mountain-dwarves-and-hill-dwarves).
 - **The Church of the Twin Flames** trains Clerics: armoured priests who fight with hammer and Dawnflame.
-- **The Hearth-Oath** means no race-locked content: a human may be sworn in at Coldhearth and a dwarf at Larkhill.
+- **The Hearth-Oath** means no race-locked content: a human may be taken in at Sunbank and a dwarf sworn in at Larkhill.
 
 ## 6. Antagonists of levels 1–30
 
 | Group | What they are | Where | Role |
 |---|---|---|---|
 | **The Cinderbrand** | Cult of humans and dwarves who burn an ash sigil into their flesh, promised "a crown for every brow" | T1–T3 zones | Villains of Main Chain 1 |
-| **The Slagborn** | Mountain-dwarf clan exiled for forging with hollow-fire; the cult's armourers | Embercrag, Stonewake, Ironroot, Cinderfall | Chain 1 & 2 |
+| **The Slagborn** | Mountain-dwarf clan exiled for forging with hollow-fire; the cult's armourers | Embercrag, Stoneheart Deeps, Ironroot, Cinderfall | Chain 1 & 2 |
 | **Magister Corvin Ashgrave** | Disgraced Solhaven court-magister, the "Branded Lord" | Thornwick (Brandspire) | Final boss of Chain 1 |
 | **The Hollowed** | Living people emptied by exposure to crown shards | T3–T4 | Chain 2 threat |
 | **Lady Seraphine Vael** | Last heir of the imperial bloodline; wants to re-crown her ancestor | Veilmoor (Hollowspire Keep) | Dungeon 3 end boss |

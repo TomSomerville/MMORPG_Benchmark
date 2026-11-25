@@ -30,12 +30,12 @@ Every named piece of equipment in the level 1-30 design documents, extracted aut
 | Polearm | 3 | 3 |
 | Relic | 2 | 2 |
 | Ring | 45 | 20 |
-| Shield | 26 | 15 |
+| Shield | 27 | 15 |
 | Shoulders | 57 | 9 |
 | Staff | 24 | 10 |
 | Tabard | 5 | 5 |
 | Trinket | 20 | 12 |
-| Waist | 66 | 12 |
+| Waist | 65 | 12 |
 | Wrist | 51 | 7 |
 
 ## Source: crafting
@@ -345,201 +345,201 @@ Every named piece of equipment in the level 1-30 design documents, extracted aut
 | ITM-251 | ☐ | Millbrook Chain Bracers | Wrist | mail wrist, ilvl 10, +1 Str +1 Sta | Tier body texture, recolor + icon |
 | ITM-252 | ☐ | Reeve's Cloth Cuffs | Wrist | cloth wrist, ilvl 10, +1 Int +1 Spi | Tier body texture, recolor + icon |
 
-## Source: t1-embercrag-hollow
+## Source: t1-stonewake-dale
 
 | ID | Done | Item | Slot | As described | Art needed |
 |---|---|---|---|---|---|
-| ITM-253 | ☐ | Anvilrest Hand Axe | 1H axe | 1H axe, ilvl 5, speed 2.3 | Tier model, recolor + icon |
-| ITM-254 | ☐ | Hearth-Shrine Mace | 1H mace | 1H mace, ilvl 5, speed 2.4 | Tier model, recolor + icon |
-| ITM-255 | ☐ | Sootbeard's Tongs | 1H mace | 1H mace, ilvl 10, speed 2.4, +3 Str +2 Sta | Tier model, recolor + icon |
-| ITM-256 | ☐ | Ember-Quenched Greataxe | 2H axe | 2H axe, ilvl 10, speed 3.4, +6 Str +5 Sta | Tier model, recolor + icon |
-| ITM-257 | ☐ | Ulf's Ore Pouch | Bag | 6-slot bag | Icon only |
-| ITM-258 | ☐ | Whitepelt's Lined Cloak | Cloak | back, ilvl 9, +1 Sta | Cloak design recolor + icon |
-| ITM-259 | ☐ | Anvilrest Felt Boots | Feet | cloth feet, ilvl 6 | Tier body texture, recolor + icon |
-| ITM-260 | ☐ | Carter's Chain Boots | Feet | mail feet, ilvl 6 | Tier body texture, recolor + icon |
-| ITM-261 | ☐ | Ridge-Walker Boots | Feet | leather feet, ilvl 6 | Tier body texture, recolor + icon |
-| ITM-262 | ☐ | Coldhearth Hide Gloves | Hands | leather hands, ilvl 3 | Tier body texture, recolor + icon |
-| ITM-263 | ☐ | Coldhearth Ringed Gauntlets | Hands | mail hands, ilvl 3 | Tier body texture, recolor + icon |
-| ITM-264 | ☐ | Coldhearth Wool Mitts | Hands | cloth hands, ilvl 3 | Tier body texture, recolor + icon |
-| ITM-265 | ☐ | Grawl's Molar | Off-hand | held off-hand, ilvl 10, +3 Int +2 Spi | Tier model, recolor + icon |
-| ITM-266 | ☐ | Warren-Delver's Mantle | Shoulders | leather shoulders, ilvl 10, +4 Agi +5 Sta | Tier 3D piece, recolor + icon |
-| ITM-267 | ☐ | Stonesinger's Rootstaff | Staff | staff, ilvl 10, speed 3.0, +5 Int +4 Spi +1 Sta | Tier model, recolor + icon |
-| ITM-268 | ☐ | Stonesinger's Walking Staff | Staff | staff, ilvl 5, speed 3.0 | Tier model, recolor + icon |
-| ITM-269 | ☐ | Boulder-Eater's Girdle | Waist | mail waist, ilvl 10, +4 Str +5 Sta | Tier body texture, recolor + icon |
-| ITM-270 | ☐ | Brynja's Rope Sash | Waist | cloth waist, ilvl 6 | Tier body texture, recolor + icon |
-| ITM-271 | ☐ | Ledge-Guard Girdle | Waist | mail waist, ilvl 6 | Tier body texture, recolor + icon |
-| ITM-272 | ☐ | Scout's Leather Belt | Waist | leather waist, ilvl 6 | Tier body texture, recolor + icon |
-| ITM-273 | ☐ | Anvilrest Chain Bracers | Wrist | mail wrist, ilvl 10, +1 Str +1 Sta | Tier body texture, recolor + icon |
-| ITM-274 | ☐ | Forgemaster's Cloth Cuffs | Wrist | cloth wrist, ilvl 10, +1 Int +1 Spi | Tier body texture, recolor + icon |
-| ITM-275 | ☐ | Kilnside Bracers | Wrist | leather wrist, ilvl 10, +1 Agi +1 Sta | Tier body texture, recolor + icon |
-| ITM-276 | ☐ | Whitepelt Wraps | Wrist | leather wrist; dropped by Whitepelt (4 lynx, Tuskfall) | Tier body texture, recolor + icon |
+| ITM-253 | ☐ | Sunbank Hatchet | 1H axe | 1H axe, ilvl 5, speed 2.3 | Tier model, recolor + icon |
+| ITM-254 | ☐ | Gnarr's Jawbone Club | 1H mace | 1H mace, ilvl 10, speed 2.4, +3 Str +2 Sta | Tier model, recolor + icon |
+| ITM-255 | ☐ | Hearth-Nook Mace | 1H mace | 1H mace, ilvl 5, speed 2.4 | Tier model, recolor + icon |
+| ITM-256 | ☐ | Dale-Moot Felling Axe | 2H axe | 2H axe, ilvl 10, speed 3.4, +6 Str +5 Sta | Tier model, recolor + icon |
+| ITM-257 | ☐ | Larchwood's Chip-Sack | Bag | 6-slot bag | Icon only |
+| ITM-258 | ☐ | Hedgerow's Gathering Cloak | Cloak | back, ilvl 9, +1 Sta | Cloak design recolor + icon |
+| ITM-259 | ☐ | Bine-Walker Boots | Feet | leather feet, ilvl 6 | Tier body texture, recolor + icon |
+| ITM-260 | ☐ | Hop-Picker's Slippers | Feet | cloth feet, ilvl 6 | Tier body texture, recolor + icon |
+| ITM-261 | ☐ | Hopstead Chain Boots | Feet | mail feet, ilvl 6 | Tier body texture, recolor + icon |
+| ITM-262 | ☐ | Sunbank Hide Gloves | Hands | leather hands, ilvl 3 | Tier body texture, recolor + icon |
+| ITM-263 | ☐ | Sunbank Ringed Gauntlets | Hands | mail hands, ilvl 3 | Tier body texture, recolor + icon |
+| ITM-264 | ☐ | Sunbank Wool Mitts | Hands | cloth hands, ilvl 3 | Tier body texture, recolor + icon |
+| ITM-265 | ☐ | Horn-Toggle Charm | Off-hand | held off-hand, ilvl 10, +3 Int +2 Spi | Tier model, recolor + icon |
+| ITM-266 | ☐ | Ram's-Brow Buckler | Shield | shield, ilvl 10, +2 Str +3 Sta | Tier model, recolor + icon |
+| ITM-267 | ☐ | Bitterhorn Mantle | Shoulders | leather shoulders, ilvl 10, +4 Agi +5 Sta | Tier 3D piece, recolor + icon |
+| ITM-268 | ☐ | Dalefolk Crook-Staff | Staff | staff, ilvl 10, speed 3.0, +5 Int +4 Spi +1 Sta | Tier model, recolor + icon |
+| ITM-269 | ☐ | Terrace-Walker's Staff | Staff | staff, ilvl 5, speed 3.0 | Tier model, recolor + icon |
+| ITM-270 | ☐ | Fold-Guard Girdle | Waist | mail waist, ilvl 6 | Tier body texture, recolor + icon |
+| ITM-271 | ☐ | Gund's Lasso-Belt | Waist | leather waist; dropped by Greedy Gund (4 rustler chief, High Pastures) | Tier body texture, recolor + icon |
+| ITM-272 | ☐ | Ramsbell's Wool Sash | Waist | cloth waist, ilvl 6 | Tier body texture, recolor + icon |
+| ITM-273 | ☐ | Shepherd's Leather Belt | Waist | leather waist, ilvl 6 | Tier body texture, recolor + icon |
+| ITM-274 | ☐ | Dale-Reeve's Cloth Cuffs | Wrist | cloth wrist, ilvl 10, +1 Int +1 Spi | Tier body texture, recolor + icon |
+| ITM-275 | ☐ | Hopstead Chain Bracers | Wrist | mail wrist, ilvl 10, +1 Str +1 Sta | Tier body texture, recolor + icon |
+| ITM-276 | ☐ | Ridge-Watch Bracers | Wrist | leather wrist, ilvl 10, +1 Agi +1 Sta | Tier body texture, recolor + icon |
+
+## Source: t2-embercrag-hollow
+
+| ID | Done | Item | Slot | As described | Art needed |
+|---|---|---|---|---|---|
+| ITM-277 | ☐ | Blackmatch Fuse-Cutter | 1H axe | 1H axe, ilvl 15, speed 2.3, +4 Str +5 Sta | Tier model, recolor + icon |
+| ITM-278 | ☐ | Ember-Quenched Maul | 2H mace | 2H mace, ilvl 15, speed 3.6, +8 Str +10 Sta | Tier model, recolor + icon |
+| ITM-279 | ☐ | Ulf's Ore Sack | Bag | 8-slot bag | Icon only |
+| ITM-280 | ☐ | Boulder-Eater's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-281 | ☐ | Grawl-Hide Wrap | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-282 | ☐ | Hearthpriest's Robe | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-283 | ☐ | Powder-Burned Hauberk | Chest | mail chest, ilvl 15, +8 Str +10 Sta | Tier body texture, recolor + icon |
+| ITM-284 | ☐ | Singed Sapper's Robe | Chest | cloth chest, ilvl 15, +8 Int +7 Spi | Tier body texture, recolor + icon |
+| ITM-285 | ☐ | Slagfall Jerkin | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-286 | ☐ | Warden's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-287 | ☐ | Whitepelt's Lined Cloak | Cloak | back, ilvl 10, +3 Sta +3 Spi | Cloak design recolor + icon |
+| ITM-288 | ☐ | Pol's Last Match | Dagger | dagger, ilvl 15, speed 1.7, +4 Agi +5 Sta | Tier model, recolor + icon |
+| ITM-289 | ☐ | Anvilrest Felt Boots | Feet | cloth feet, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-290 | ☐ | Ledge-Guard Chain Boots | Feet | mail feet, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-291 | ☐ | Ridge-Walker Boots | Feet | leather feet, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-292 | ☐ | Anvilrest Felt Mitts | Hands | cloth hands, ilvl 11, +4 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-293 | ☐ | Springlock's Insulated Mitts | Hands | leather hands, ilvl 13, +4 Agi +3 Sta, +5 Fire resistance | Tier body texture, recolor + icon |
+| ITM-294 | ☐ | Trap-Line Gloves | Hands | leather hands, ilvl 11, +4 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-295 | ☐ | Tuskfall Chain Gauntlets | Hands | mail hands, ilvl 11, +4 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-296 | ☐ | Warren-Delver's Cowl | Head | leather head, ilvl 14, +8 Agi +9 Sta | Tier 3D piece, recolor + icon |
+| ITM-297 | ☐ | Anvilrest Chain Leggings | Legs | mail legs, ilvl 13, +7 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-298 | ☐ | Carter's Hide Leggings | Legs | leather legs, ilvl 13, +7 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-299 | ☐ | Loom-House Trousers | Legs | cloth legs, ilvl 13, +7 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-300 | ☐ | Carter's Chip Charm | Neck | neck, ilvl 13, +2 Spi +2 Sta | Icon only |
+| ITM-301 | ☐ | Forge-Warden's Bulwark | Shield | shield, ilvl 15, +4 Str +6 Sta | Tier model, recolor + icon |
+| ITM-302 | ☐ | Coldhearth Pauldrons | Shoulders | mail shoulders, ilvl 14, +6 Str +7 Sta | Tier 3D piece, recolor + icon |
+| ITM-303 | ☐ | Gully-Walker's Spaulders | Shoulders | leather shoulders, ilvl 14, +6 Agi +7 Sta | Tier 3D piece, recolor + icon |
+| ITM-304 | ☐ | Hearth-Shrine Mantle | Shoulders | cloth shoulders, ilvl 14, +6 Int +5 Spi | Tier 3D piece, recolor + icon |
+| ITM-305 | ☐ | Stonesinger's Rootstaff | Staff | staff, ilvl 15, speed 3.0, +8 Int +7 Spi +2 Sta | Tier model, recolor + icon |
+| ITM-306 | ☐ | Forge-Tender's Sash | Waist | cloth waist, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-307 | ☐ | Kilnside Belt | Waist | leather waist, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-308 | ☐ | Sootbeard's Chain Girdle | Waist | mail waist, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-309 | ☐ | Coldhearth Wool Wristwraps | Wrist | cloth wrist, ilvl 11, +3 Int +3 Spi | Tier body texture, recolor + icon |
+| ITM-310 | ☐ | Warden's Chain Vambraces | Wrist | mail wrist, ilvl 11, +3 Str +4 Sta | Tier body texture, recolor + icon |
+| ITM-311 | ☐ | Warren-Runner's Bracers | Wrist | leather wrist, ilvl 11, +3 Agi +4 Sta | Tier body texture, recolor + icon |
+| ITM-312 | ☐ | Whitepelt Wraps | Wrist | leather wrist; dropped by Whitepelt (8 lynx, Tuskfall) | Tier body texture, recolor + icon |
 
 ## Source: t2-harrowfield
 
 | ID | Done | Item | Slot | As described | Art needed |
 |---|---|---|---|---|---|
-| ITM-277 | ☐ | Vane's Disgrace | 1H sword | 1H sword, ilvl 15, speed 2.3, +4 Str +5 Sta | Tier model, recolor + icon |
-| ITM-278 | ☐ | Gleaner's Greatscythe | 2H axe | 2H axe, ilvl 15, speed 3.5, +8 Str +10 Sta | Tier model, recolor + icon |
-| ITM-279 | ☐ | Quartermaster's Satchel | Bag | 8-slot bag | Icon only |
-| ITM-280 | ☐ | Fire-Line Jerkin | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-281 | ☐ | Harvest Pie | Chest |  | Tier body texture, recolor + icon |
-| ITM-282 | ☐ | Militia Captain's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-283 | ☐ | Reaver Captain's Hauberk | Chest | mail chest, ilvl 15, +8 Str +10 Sta | Tier body texture, recolor + icon |
-| ITM-284 | ☐ | Smoke-Stained Robe | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-285 | ☐ | Strawman's Stuffed Vest | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-286 | ☐ | Fenner's Harvest Cloak | Cloak | back, ilvl 10, +3 Sta +3 Spi | Cloak design recolor + icon |
-| ITM-287 | ☐ | Sal's Sweet-Tooth | Dagger | dagger, ilvl 15, speed 1.7, +4 Agi +5 Sta | Tier model, recolor + icon |
-| ITM-288 | ☐ | Hill-Field Boots | Feet | leather feet, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-289 | ☐ | Scarecrow's Rag Shoes | Feet | cloth feet, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-290 | ☐ | Stubble-Stompers | Feet | mail feet, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-291 | ☐ | Fenner's Chain Gauntlets | Hands | mail hands, ilvl 11, +4 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-292 | ☐ | Fieldhand's Grips | Hands | leather hands, ilvl 11, +4 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-293 | ☐ | Turnip-Puller's Mitts | Hands | cloth hands, ilvl 11, +4 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-294 | ☐ | Wort's Fireproof Mitts | Hands | cloth hands, ilvl 13, +4 Int +3 Sta, +5 Fire resistance | Tier body texture, recolor + icon |
-| ITM-295 | ☐ | Rattlebones' Burlap Hood | Head | cloth head, ilvl 14, +8 Int +6 Spi | Tier 3D piece, recolor + icon |
-| ITM-296 | ☐ | Fisher's Oilskin Leggings | Legs | leather legs, ilvl 13, +7 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-297 | ☐ | Longstrand Chain Leggings | Legs | mail legs, ilvl 13, +7 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-298 | ☐ | Strand-Comber's Trousers | Legs | cloth legs, ilvl 13, +7 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-299 | ☐ | Brell's Keepsake | Neck | neck, ilvl 13, +2 Spi +2 Sta | Icon only |
-| ITM-300 | ☐ | Sweet Sal's Lucky Scarf | Neck | cloth neck, ilvl 15, +4 Int +4 Spi | Icon only |
-| ITM-301 | ☐ | Marshal's Tower Shield | Shield | shield, ilvl 15, +4 Str +6 Sta | Tier model, recolor + icon |
-| ITM-302 | ☐ | Cog-Plate Pauldrons | Shoulders | mail shoulders, ilvl 14, +6 Str +7 Sta | Tier 3D piece, recolor + icon |
-| ITM-303 | ☐ | Thresher-Belt Spaulders | Shoulders | leather shoulders, ilvl 14, +6 Agi +7 Sta | Tier 3D piece, recolor + icon |
-| ITM-304 | ☐ | Tinker's Padded Mantle | Shoulders | cloth shoulders, ilvl 14, +6 Int +5 Spi | Tier 3D piece, recolor + icon |
-| ITM-305 | ☐ | Harrowfield Reaping-Staff | Staff | staff, ilvl 15, speed 3.0, +8 Int +7 Spi +2 Sta | Tier model, recolor + icon |
-| ITM-306 | ☐ | Mudtusk Hide Belt | Waist | dropped by Mudtusk (8 boar) | Tier body texture, recolor + icon |
-| ITM-307 | ☐ | Paymaster's Silk Sash | Waist | cloth waist, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-308 | ☐ | Reaver-Hide Belt | Waist | leather waist, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-309 | ☐ | Row-Breaker Girdle | Waist | mail waist, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-310 | ☐ | Sickle-Crown Girdle | Waist | mail waist, ilvl 14, +6 Str +7 Sta | Tier body texture, recolor + icon |
-| ITM-311 | ☐ | Ditch-Runner Bracers | Wrist | leather wrist, ilvl 11, +3 Agi +4 Sta | Tier body texture, recolor + icon |
-| ITM-312 | ☐ | Militia Cloth Wristwraps | Wrist | cloth wrist, ilvl 11, +3 Int +3 Spi | Tier body texture, recolor + icon |
-| ITM-313 | ☐ | Wyck's Chain Vambraces | Wrist | mail wrist, ilvl 11, +3 Str +4 Sta | Tier body texture, recolor + icon |
+| ITM-313 | ☐ | Vane's Disgrace | 1H sword | 1H sword, ilvl 15, speed 2.3, +4 Str +5 Sta | Tier model, recolor + icon |
+| ITM-314 | ☐ | Gleaner's Greatscythe | 2H axe | 2H axe, ilvl 15, speed 3.5, +8 Str +10 Sta | Tier model, recolor + icon |
+| ITM-315 | ☐ | Quartermaster's Satchel | Bag | 8-slot bag | Icon only |
+| ITM-316 | ☐ | Fire-Line Jerkin | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-317 | ☐ | Harvest Pie | Chest |  | Tier body texture, recolor + icon |
+| ITM-318 | ☐ | Militia Captain's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-319 | ☐ | Reaver Captain's Hauberk | Chest | mail chest, ilvl 15, +8 Str +10 Sta | Tier body texture, recolor + icon |
+| ITM-320 | ☐ | Smoke-Stained Robe | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-321 | ☐ | Strawman's Stuffed Vest | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-322 | ☐ | Fenner's Harvest Cloak | Cloak | back, ilvl 10, +3 Sta +3 Spi | Cloak design recolor + icon |
+| ITM-323 | ☐ | Sal's Sweet-Tooth | Dagger | dagger, ilvl 15, speed 1.7, +4 Agi +5 Sta | Tier model, recolor + icon |
+| ITM-324 | ☐ | Hill-Field Boots | Feet | leather feet, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-325 | ☐ | Scarecrow's Rag Shoes | Feet | cloth feet, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-326 | ☐ | Stubble-Stompers | Feet | mail feet, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-327 | ☐ | Fenner's Chain Gauntlets | Hands | mail hands, ilvl 11, +4 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-328 | ☐ | Fieldhand's Grips | Hands | leather hands, ilvl 11, +4 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-329 | ☐ | Turnip-Puller's Mitts | Hands | cloth hands, ilvl 11, +4 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-330 | ☐ | Wort's Fireproof Mitts | Hands | cloth hands, ilvl 13, +4 Int +3 Sta, +5 Fire resistance | Tier body texture, recolor + icon |
+| ITM-331 | ☐ | Rattlebones' Burlap Hood | Head | cloth head, ilvl 14, +8 Int +6 Spi | Tier 3D piece, recolor + icon |
+| ITM-332 | ☐ | Fisher's Oilskin Leggings | Legs | leather legs, ilvl 13, +7 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-333 | ☐ | Longstrand Chain Leggings | Legs | mail legs, ilvl 13, +7 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-334 | ☐ | Strand-Comber's Trousers | Legs | cloth legs, ilvl 13, +7 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-335 | ☐ | Brell's Keepsake | Neck | neck, ilvl 13, +2 Spi +2 Sta | Icon only |
+| ITM-336 | ☐ | Sweet Sal's Lucky Scarf | Neck | cloth neck, ilvl 15, +4 Int +4 Spi | Icon only |
+| ITM-337 | ☐ | Marshal's Tower Shield | Shield | shield, ilvl 15, +4 Str +6 Sta | Tier model, recolor + icon |
+| ITM-338 | ☐ | Cog-Plate Pauldrons | Shoulders | mail shoulders, ilvl 14, +6 Str +7 Sta | Tier 3D piece, recolor + icon |
+| ITM-339 | ☐ | Thresher-Belt Spaulders | Shoulders | leather shoulders, ilvl 14, +6 Agi +7 Sta | Tier 3D piece, recolor + icon |
+| ITM-340 | ☐ | Tinker's Padded Mantle | Shoulders | cloth shoulders, ilvl 14, +6 Int +5 Spi | Tier 3D piece, recolor + icon |
+| ITM-341 | ☐ | Harrowfield Reaping-Staff | Staff | staff, ilvl 15, speed 3.0, +8 Int +7 Spi +2 Sta | Tier model, recolor + icon |
+| ITM-342 | ☐ | Mudtusk Hide Belt | Waist | dropped by Mudtusk (8 boar) | Tier body texture, recolor + icon |
+| ITM-343 | ☐ | Paymaster's Silk Sash | Waist | cloth waist, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-344 | ☐ | Reaver-Hide Belt | Waist | leather waist, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-345 | ☐ | Row-Breaker Girdle | Waist | mail waist, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-346 | ☐ | Sickle-Crown Girdle | Waist | mail waist, ilvl 14, +6 Str +7 Sta | Tier body texture, recolor + icon |
+| ITM-347 | ☐ | Ditch-Runner Bracers | Wrist | leather wrist, ilvl 11, +3 Agi +4 Sta | Tier body texture, recolor + icon |
+| ITM-348 | ☐ | Militia Cloth Wristwraps | Wrist | cloth wrist, ilvl 11, +3 Int +3 Spi | Tier body texture, recolor + icon |
+| ITM-349 | ☐ | Wyck's Chain Vambraces | Wrist | mail wrist, ilvl 11, +3 Str +4 Sta | Tier body texture, recolor + icon |
 
 ## Source: t2-russetwood
 
 | ID | Done | Item | Slot | As described | Art needed |
 |---|---|---|---|---|---|
-| ITM-314 | ☐ | Forester's Hand-Axe | 1H axe | 1H axe, ilvl 15, speed 2.3, +4 Str +5 Sta | Tier model, recolor + icon |
-| ITM-315 | ☐ | Soot's Coal-Rake | 2H mace | 2H mace, ilvl 15, speed 3.5, +8 Str +10 Sta | Tier model, recolor + icon |
-| ITM-316 | ☐ | Forester's Game Bag | Bag | 8-slot bag | Icon only |
-| ITM-317 | ☐ | Fire-Ride Jerkin | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-318 | ☐ | Forest-Reeve's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-319 | ☐ | Leaf-Fall Robe | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-320 | ☐ | Mossback Bark Vest | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-321 | ☐ | Poacher-King's Ringmail | Chest | mail chest, ilvl 15, +8 Str +10 Sta | Tier body texture, recolor + icon |
-| ITM-322 | ☐ | Red Tom's Brush | Cloak | cloak; dropped by Red Tom (7 fox) | Cloak design recolor + icon |
-| ITM-323 | ☐ | Split-Stave Travelling Cloak | Cloak | back, ilvl 10, +3 Sta +3 Spi | Cloak design recolor + icon |
-| ITM-324 | ☐ | Snare's Gutting Knife | Dagger | dagger, ilvl 15, speed 1.7, +4 Agi +5 Sta | Tier model, recolor + icon |
-| ITM-325 | ☐ | High-Canopy Boots | Feet | leather feet, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-326 | ☐ | Limb-Climber's Chain Boots | Feet | mail feet, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-327 | ☐ | Rope-Walker's Slippers | Feet | cloth feet, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-328 | ☐ | Cooper's Hide Gloves | Hands | leather hands, ilvl 11, +4 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-329 | ☐ | Embery's Kiln-Mitts | Hands | leather hands, ilvl 13, +4 Agi +3 Sta, +5 Fire resistance | Tier body texture, recolor + icon |
-| ITM-330 | ☐ | Hoop-Setter's Gauntlets | Hands | mail hands, ilvl 11, +4 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-331 | ☐ | Stave-Sorter's Mitts | Hands | cloth hands, ilvl 11, +4 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-332 | ☐ | Heartwood Hood | Head | cloth head, ilvl 14, +8 Int +6 Spi | Tier 3D piece, recolor + icon |
-| ITM-333 | ☐ | Bark-Stripper's Leggings | Legs | leather legs, ilvl 13, +7 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-334 | ☐ | Cooper's Apprentice Breeches | Legs | cloth legs, ilvl 13, +7 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-335 | ☐ | Root-Guard Chain Leggings | Legs | mail legs, ilvl 13, +7 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-336 | ☐ | Hewer's Leaf-Charm | Neck | neck, ilvl 13, +2 Int +2 Spi | Icon only |
-| ITM-337 | ☐ | Hewer's Whetstone Pendant | Neck | neck, ilvl 13, +2 Str +2 Sta | Icon only |
-| ITM-338 | ☐ | Poacher-King's Rabbit-Foot | Neck | neck, ilvl 15, +4 Int +4 Spi | Icon only |
-| ITM-339 | ☐ | Kiln-Door Shield | Shield | shield, ilvl 15, +4 Str +6 Sta | Tier model, recolor + icon |
-| ITM-340 | ☐ | Ash-Dusted Pauldrons | Shoulders | mail shoulders, ilvl 14, +6 Str +7 Sta | Tier 3D piece, recolor + icon |
-| ITM-341 | ☐ | Charcoal-Burner's Spaulders | Shoulders | leather shoulders, ilvl 14, +6 Agi +7 Sta | Tier 3D piece, recolor + icon |
-| ITM-342 | ☐ | Ember-Watcher's Mantle | Shoulders | cloth shoulders, ilvl 14, +6 Int +5 Spi | Tier 3D piece, recolor + icon |
-| ITM-343 | ☐ | Copperleaf Staff | Staff | staff, ilvl 15, speed 3.0, +8 Int +7 Spi +2 Sta | Tier model, recolor + icon |
-| ITM-344 | ☐ | Fence's Silk Sash | Waist | cloth waist, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-345 | ☐ | Hollow-Breaker Girdle | Waist | mail waist, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-346 | ☐ | Oldgrowth Girdle | Waist | mail waist, ilvl 14, +6 Str +7 Sta | Tier body texture, recolor + icon |
-| ITM-347 | ☐ | Pelt-Trader's Belt | Waist | leather waist, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-348 | ☐ | Lodge-Keeper's Wristwraps | Wrist | cloth wrist, ilvl 11, +3 Int +3 Spi | Tier body texture, recolor + icon |
-| ITM-349 | ☐ | Thicket's Chain Vambraces | Wrist | mail wrist, ilvl 11, +3 Str +4 Sta | Tier body texture, recolor + icon |
-| ITM-350 | ☐ | Trail-Cutter's Bracers | Wrist | leather wrist, ilvl 11, +3 Agi +4 Sta | Tier body texture, recolor + icon |
+| ITM-350 | ☐ | Forester's Hand-Axe | 1H axe | 1H axe, ilvl 15, speed 2.3, +4 Str +5 Sta | Tier model, recolor + icon |
+| ITM-351 | ☐ | Soot's Coal-Rake | 2H mace | 2H mace, ilvl 15, speed 3.5, +8 Str +10 Sta | Tier model, recolor + icon |
+| ITM-352 | ☐ | Forester's Game Bag | Bag | 8-slot bag | Icon only |
+| ITM-353 | ☐ | Fire-Ride Jerkin | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-354 | ☐ | Forest-Reeve's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-355 | ☐ | Leaf-Fall Robe | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-356 | ☐ | Mossback Bark Vest | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-357 | ☐ | Poacher-King's Ringmail | Chest | mail chest, ilvl 15, +8 Str +10 Sta | Tier body texture, recolor + icon |
+| ITM-358 | ☐ | Red Tom's Brush | Cloak | cloak; dropped by Red Tom (7 fox) | Cloak design recolor + icon |
+| ITM-359 | ☐ | Split-Stave Travelling Cloak | Cloak | back, ilvl 10, +3 Sta +3 Spi | Cloak design recolor + icon |
+| ITM-360 | ☐ | Snare's Gutting Knife | Dagger | dagger, ilvl 15, speed 1.7, +4 Agi +5 Sta | Tier model, recolor + icon |
+| ITM-361 | ☐ | High-Canopy Boots | Feet | leather feet, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-362 | ☐ | Limb-Climber's Chain Boots | Feet | mail feet, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-363 | ☐ | Rope-Walker's Slippers | Feet | cloth feet, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-364 | ☐ | Cooper's Hide Gloves | Hands | leather hands, ilvl 11, +4 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-365 | ☐ | Embery's Kiln-Mitts | Hands | leather hands, ilvl 13, +4 Agi +3 Sta, +5 Fire resistance | Tier body texture, recolor + icon |
+| ITM-366 | ☐ | Hoop-Setter's Gauntlets | Hands | mail hands, ilvl 11, +4 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-367 | ☐ | Stave-Sorter's Mitts | Hands | cloth hands, ilvl 11, +4 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-368 | ☐ | Heartwood Hood | Head | cloth head, ilvl 14, +8 Int +6 Spi | Tier 3D piece, recolor + icon |
+| ITM-369 | ☐ | Bark-Stripper's Leggings | Legs | leather legs, ilvl 13, +7 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-370 | ☐ | Cooper's Apprentice Breeches | Legs | cloth legs, ilvl 13, +7 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-371 | ☐ | Root-Guard Chain Leggings | Legs | mail legs, ilvl 13, +7 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-372 | ☐ | Hewer's Leaf-Charm | Neck | neck, ilvl 13, +2 Int +2 Spi | Icon only |
+| ITM-373 | ☐ | Hewer's Whetstone Pendant | Neck | neck, ilvl 13, +2 Str +2 Sta | Icon only |
+| ITM-374 | ☐ | Poacher-King's Rabbit-Foot | Neck | neck, ilvl 15, +4 Int +4 Spi | Icon only |
+| ITM-375 | ☐ | Kiln-Door Shield | Shield | shield, ilvl 15, +4 Str +6 Sta | Tier model, recolor + icon |
+| ITM-376 | ☐ | Ash-Dusted Pauldrons | Shoulders | mail shoulders, ilvl 14, +6 Str +7 Sta | Tier 3D piece, recolor + icon |
+| ITM-377 | ☐ | Charcoal-Burner's Spaulders | Shoulders | leather shoulders, ilvl 14, +6 Agi +7 Sta | Tier 3D piece, recolor + icon |
+| ITM-378 | ☐ | Ember-Watcher's Mantle | Shoulders | cloth shoulders, ilvl 14, +6 Int +5 Spi | Tier 3D piece, recolor + icon |
+| ITM-379 | ☐ | Copperleaf Staff | Staff | staff, ilvl 15, speed 3.0, +8 Int +7 Spi +2 Sta | Tier model, recolor + icon |
+| ITM-380 | ☐ | Fence's Silk Sash | Waist | cloth waist, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-381 | ☐ | Hollow-Breaker Girdle | Waist | mail waist, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-382 | ☐ | Oldgrowth Girdle | Waist | mail waist, ilvl 14, +6 Str +7 Sta | Tier body texture, recolor + icon |
+| ITM-383 | ☐ | Pelt-Trader's Belt | Waist | leather waist, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-384 | ☐ | Lodge-Keeper's Wristwraps | Wrist | cloth wrist, ilvl 11, +3 Int +3 Spi | Tier body texture, recolor + icon |
+| ITM-385 | ☐ | Thicket's Chain Vambraces | Wrist | mail wrist, ilvl 11, +3 Str +4 Sta | Tier body texture, recolor + icon |
+| ITM-386 | ☐ | Trail-Cutter's Bracers | Wrist | leather wrist, ilvl 11, +3 Agi +4 Sta | Tier body texture, recolor + icon |
 
 ## Source: t2-stoneheart-deeps
 
 | ID | Done | Item | Slot | As described | Art needed |
 |---|---|---|---|---|---|
-| ITM-351 | ☐ | Deepdrill's Bit | 1H mace | 1H mace, ilvl 15, speed 2.4, +4 Str +5 Sta | Tier model, recolor + icon |
-| ITM-352 | ☐ | Trestle-Beam Maul | 2H mace | 2H mace, ilvl 15, speed 3.6, +8 Str +10 Sta | Tier model, recolor + icon |
-| ITM-353 | ☐ | Carter's Ore-Bag | Bag | 8-slot bag | Icon only |
-| ITM-354 | ☐ | Cave-Bear Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-355 | ☐ | Fusewright's Blast-Apron | Chest | mail chest, ilvl 15, +8 Str +10 Sta | Tier body texture, recolor + icon |
-| ITM-356 | ☐ | Hallwarden's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-357 | ☐ | Lantern-Lit Robe | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-358 | ☐ | Rootwhite Wrap | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-359 | ☐ | Singed Blastwright's Robe | Chest | cloth chest, ilvl 15, +8 Int +7 Spi | Tier body texture, recolor + icon |
-| ITM-360 | ☐ | Undercut Jerkin | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-361 | ☐ | Wickfast's Lamp-Keeper Cloak | Cloak | back, ilvl 10, +3 Sta +3 Spi | Cloak design recolor + icon |
-| ITM-362 | ☐ | Odd's Short Fuse | Dagger | dagger, ilvl 15, speed 1.7, +4 Agi +5 Sta | Tier model, recolor + icon |
-| ITM-363 | ☐ | Assayer's Soft Shoes | Feet | cloth feet, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-364 | ☐ | Brightvein Chain Boots | Feet | mail feet, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-365 | ☐ | Gallery-Walker's Boots | Feet | leather feet, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-366 | ☐ | Fuse's Blast-Mitts | Hands | mail hands, ilvl 13, +4 Str +3 Sta, +5 Fire resistance | Tier body texture, recolor + icon |
-| ITM-367 | ☐ | Grotto-Tender's Mitts | Hands | cloth hands, ilvl 11, +4 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-368 | ☐ | Lanternhold Chain Gauntlets | Hands | mail hands, ilvl 11, +4 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-369 | ☐ | Spore-Picker's Gloves | Hands | leather hands, ilvl 11, +4 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-370 | ☐ | Blindmaw Cowl | Head | leather head, ilvl 14, +8 Agi +9 Sta | Tier 3D piece, recolor + icon |
-| ITM-371 | ☐ | Elder Hall Chain Leggings | Legs | mail legs, ilvl 13, +7 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-372 | ☐ | Hall-Sweeper's Leggings | Legs | leather legs, ilvl 13, +7 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-373 | ☐ | Speaker's Mourning Trousers | Legs | cloth legs, ilvl 13, +7 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-374 | ☐ | Hallowstone Bead | Neck | neck, ilvl 13, +2 Int +2 Spi | Icon only |
-| ITM-375 | ☐ | Glimmerqueen's Facet | Off-hand | off-hand; dropped by Glimmerqueen (8 skitterer) | Tier model, recolor + icon |
-| ITM-376 | ☐ | Seal of the Elder Hall | Ring | neck, ilvl 13, +2 Str +2 Sta | Icon only |
-| ITM-377 | ☐ | Bore-Plate Bulwark | Shield | shield, ilvl 15, +4 Str +6 Sta | Tier model, recolor + icon |
-| ITM-378 | ☐ | Gem-Sorter's Mantle | Shoulders | cloth shoulders, ilvl 14, +6 Int +5 Spi | Tier 3D piece, recolor + icon |
-| ITM-379 | ☐ | Mint-Guard Pauldrons | Shoulders | mail shoulders, ilvl 14, +6 Str +7 Sta | Tier 3D piece, recolor + icon |
-| ITM-380 | ☐ | Shard-Catcher Spaulders | Shoulders | leather shoulders, ilvl 14, +6 Agi +7 Sta | Tier 3D piece, recolor + icon |
-| ITM-381 | ☐ | Glowcap Staff | Staff | staff, ilvl 15, speed 3.0, +8 Int +7 Spi +2 Sta | Tier model, recolor + icon |
-| ITM-382 | ☐ | Geode-Reader's Sash | Waist | cloth waist, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-383 | ☐ | Krakk's Shard Girdle | Waist | mail waist, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-384 | ☐ | Underdweller-Hide Belt | Waist | leather waist, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-385 | ☐ | Lamp-Trimmer's Wristwraps | Wrist | cloth wrist, ilvl 11, +3 Int +3 Spi | Tier body texture, recolor + icon |
-| ITM-386 | ☐ | Sapper's Chain Vambraces | Wrist | mail wrist, ilvl 11, +3 Str +4 Sta | Tier body texture, recolor + icon |
-| ITM-387 | ☐ | Tunnel-Runner's Bracers | Wrist | leather wrist, ilvl 11, +3 Agi +4 Sta | Tier body texture, recolor + icon |
-
-## Source: t2-stonewake-dale
-
-| ID | Done | Item | Slot | As described | Art needed |
-|---|---|---|---|---|---|
-| ITM-388 | ☐ | Blackmatch Fuse-Cutter | 1H axe | 1H axe, ilvl 15, speed 2.3, +4 Str +5 Sta | Tier model, recolor + icon |
-| ITM-389 | ☐ | Sluicegate Maul | 2H mace | 2H mace, ilvl 15, speed 3.6, +8 Str +10 Sta | Tier model, recolor + icon |
-| ITM-390 | ☐ | Drover's Pack | Bag | 8-slot bag | Icon only |
-| ITM-391 | ☐ | Dammaster's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-392 | ☐ | Dam-Warden's Robe | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-393 | ☐ | Horn-Toggle Wrap | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-394 | ☐ | Powder-Burned Hauberk | Chest | mail chest, ilvl 15, +8 Str +10 Sta | Tier body texture, recolor + icon |
-| ITM-395 | ☐ | Ram-Hide Vest | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-396 | ☐ | Singed Sapper's Robe | Chest | cloth chest, ilvl 15, +8 Int +7 Spi | Tier body texture, recolor + icon |
-| ITM-397 | ☐ | Sluice-House Jerkin | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-398 | ☐ | Bine's Terrace Cloak | Cloak | back, ilvl 10, +3 Sta +3 Spi | Cloak design recolor + icon |
-| ITM-399 | ☐ | Pol's Last Match | Dagger | dagger, ilvl 15, speed 1.7, +4 Agi +5 Sta | Tier model, recolor + icon |
-| ITM-400 | ☐ | Fold-Tender's Slippers | Feet | cloth feet, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-401 | ☐ | High-Pasture Boots | Feet | leather feet, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-402 | ☐ | Ridgefold Chain Boots | Feet | mail feet, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-403 | ☐ | Bothy-Keeper's Mitts | Hands | cloth hands, ilvl 11, +4 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-404 | ☐ | Fellhammer's Chain Gauntlets | Hands | mail hands, ilvl 11, +4 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-405 | ☐ | Ridge-Ranger's Gloves | Hands | leather hands, ilvl 11, +4 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-406 | ☐ | Sparkwright's Insulated Mitts | Hands | leather hands, ilvl 13, +4 Agi +3 Sta, +5 Fire resistance | Tier body texture, recolor + icon |
-| ITM-407 | ☐ | Bitterhorn Cowl | Head | leather head, ilvl 14, +8 Agi +9 Sta | Tier 3D piece, recolor + icon |
-| ITM-408 | ☐ | Dale-Weaver's Trousers | Legs | cloth legs, ilvl 13, +7 Int +6 Spi | Tier body texture, recolor + icon |
-| ITM-409 | ☐ | Hound-Hide Leggings | Legs | leather legs, ilvl 13, +7 Agi +9 Sta | Tier body texture, recolor + icon |
-| ITM-410 | ☐ | Ranger's Chain Leggings | Legs | mail legs, ilvl 13, +7 Str +9 Sta | Tier body texture, recolor + icon |
-| ITM-411 | ☐ | Ramsbell Charm | Neck | neck, ilvl 13, +2 Spi +2 Sta | Icon only |
-| ITM-412 | ☐ | Dam-Warden's Bulwark | Shield | shield, ilvl 15, +4 Str +6 Sta | Tier model, recolor + icon |
-| ITM-413 | ☐ | Dam-Crew Pauldrons | Shoulders | mail shoulders, ilvl 14, +6 Str +7 Sta | Tier 3D piece, recolor + icon |
-| ITM-414 | ☐ | Gully-Walker's Spaulders | Shoulders | leather shoulders, ilvl 14, +6 Agi +7 Sta | Tier 3D piece, recolor + icon |
-| ITM-415 | ☐ | Sluice-Tender's Mantle | Shoulders | cloth shoulders, ilvl 14, +6 Int +5 Spi | Tier 3D piece, recolor + icon |
-| ITM-416 | ☐ | Dalefolk Crook-Staff | Staff | staff, ilvl 15, speed 3.0, +8 Int +7 Spi +2 Sta | Tier model, recolor + icon |
-| ITM-417 | ☐ | Gnarr's Tooth Girdle | Waist | mail waist, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
-| ITM-418 | ☐ | Gund's Lasso-Belt | Waist | dropped by Greedy Gund (8 rustler chief) | Tier body texture, recolor + icon |
-| ITM-419 | ☐ | Sinkdweller-Hide Belt | Waist | leather waist, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
-| ITM-420 | ☐ | Slate-Reader's Sash | Waist | cloth waist, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
-| ITM-421 | ☐ | Dalefolk Wristwraps | Wrist | cloth wrist, ilvl 11, +3 Int +3 Spi | Tier body texture, recolor + icon |
-| ITM-422 | ☐ | Ridgefold Chain Vambraces | Wrist | mail wrist, ilvl 11, +3 Str +4 Sta | Tier body texture, recolor + icon |
-| ITM-423 | ☐ | Sink-Climber's Bracers | Wrist | leather wrist, ilvl 11, +3 Agi +4 Sta | Tier body texture, recolor + icon |
+| ITM-387 | ☐ | Deepdrill's Bit | 1H mace | 1H mace, ilvl 15, speed 2.4, +4 Str +5 Sta | Tier model, recolor + icon |
+| ITM-388 | ☐ | Trestle-Beam Maul | 2H mace | 2H mace, ilvl 15, speed 3.6, +8 Str +10 Sta | Tier model, recolor + icon |
+| ITM-389 | ☐ | Carter's Ore-Bag | Bag | 8-slot bag | Icon only |
+| ITM-390 | ☐ | Cave-Bear Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-391 | ☐ | Fusewright's Blast-Apron | Chest | mail chest, ilvl 15, +8 Str +10 Sta | Tier body texture, recolor + icon |
+| ITM-392 | ☐ | Hallwarden's Hauberk | Chest | mail chest, ilvl 14, +8 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-393 | ☐ | Lantern-Lit Robe | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-394 | ☐ | Rootwhite Wrap | Chest | cloth chest, ilvl 14, +8 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-395 | ☐ | Singed Blastwright's Robe | Chest | cloth chest, ilvl 15, +8 Int +7 Spi | Tier body texture, recolor + icon |
+| ITM-396 | ☐ | Undercut Jerkin | Chest | leather chest, ilvl 14, +8 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-397 | ☐ | Wickfast's Lamp-Keeper Cloak | Cloak | back, ilvl 10, +3 Sta +3 Spi | Cloak design recolor + icon |
+| ITM-398 | ☐ | Odd's Short Fuse | Dagger | dagger, ilvl 15, speed 1.7, +4 Agi +5 Sta | Tier model, recolor + icon |
+| ITM-399 | ☐ | Assayer's Soft Shoes | Feet | cloth feet, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-400 | ☐ | Brightvein Chain Boots | Feet | mail feet, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-401 | ☐ | Gallery-Walker's Boots | Feet | leather feet, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-402 | ☐ | Fuse's Blast-Mitts | Hands | mail hands, ilvl 13, +4 Str +3 Sta, +5 Fire resistance | Tier body texture, recolor + icon |
+| ITM-403 | ☐ | Grotto-Tender's Mitts | Hands | cloth hands, ilvl 11, +4 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-404 | ☐ | Lanternhold Chain Gauntlets | Hands | mail hands, ilvl 11, +4 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-405 | ☐ | Spore-Picker's Gloves | Hands | leather hands, ilvl 11, +4 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-406 | ☐ | Blindmaw Cowl | Head | leather head, ilvl 14, +8 Agi +9 Sta | Tier 3D piece, recolor + icon |
+| ITM-407 | ☐ | Elder Hall Chain Leggings | Legs | mail legs, ilvl 13, +7 Str +9 Sta | Tier body texture, recolor + icon |
+| ITM-408 | ☐ | Hall-Sweeper's Leggings | Legs | leather legs, ilvl 13, +7 Agi +9 Sta | Tier body texture, recolor + icon |
+| ITM-409 | ☐ | Speaker's Mourning Trousers | Legs | cloth legs, ilvl 13, +7 Int +6 Spi | Tier body texture, recolor + icon |
+| ITM-410 | ☐ | Hallowstone Bead | Neck | neck, ilvl 13, +2 Int +2 Spi | Icon only |
+| ITM-411 | ☐ | Glimmerqueen's Facet | Off-hand | off-hand; dropped by Glimmerqueen (8 skitterer) | Tier model, recolor + icon |
+| ITM-412 | ☐ | Seal of the Elder Hall | Ring | neck, ilvl 13, +2 Str +2 Sta | Icon only |
+| ITM-413 | ☐ | Bore-Plate Bulwark | Shield | shield, ilvl 15, +4 Str +6 Sta | Tier model, recolor + icon |
+| ITM-414 | ☐ | Gem-Sorter's Mantle | Shoulders | cloth shoulders, ilvl 14, +6 Int +5 Spi | Tier 3D piece, recolor + icon |
+| ITM-415 | ☐ | Mint-Guard Pauldrons | Shoulders | mail shoulders, ilvl 14, +6 Str +7 Sta | Tier 3D piece, recolor + icon |
+| ITM-416 | ☐ | Shard-Catcher Spaulders | Shoulders | leather shoulders, ilvl 14, +6 Agi +7 Sta | Tier 3D piece, recolor + icon |
+| ITM-417 | ☐ | Glowcap Staff | Staff | staff, ilvl 15, speed 3.0, +8 Int +7 Spi +2 Sta | Tier model, recolor + icon |
+| ITM-418 | ☐ | Geode-Reader's Sash | Waist | cloth waist, ilvl 12, +5 Int +4 Spi | Tier body texture, recolor + icon |
+| ITM-419 | ☐ | Krakk's Shard Girdle | Waist | mail waist, ilvl 12, +5 Str +6 Sta | Tier body texture, recolor + icon |
+| ITM-420 | ☐ | Underdweller-Hide Belt | Waist | leather waist, ilvl 12, +5 Agi +6 Sta | Tier body texture, recolor + icon |
+| ITM-421 | ☐ | Lamp-Trimmer's Wristwraps | Wrist | cloth wrist, ilvl 11, +3 Int +3 Spi | Tier body texture, recolor + icon |
+| ITM-422 | ☐ | Sapper's Chain Vambraces | Wrist | mail wrist, ilvl 11, +3 Str +4 Sta | Tier body texture, recolor + icon |
+| ITM-423 | ☐ | Tunnel-Runner's Bracers | Wrist | leather wrist, ilvl 11, +3 Agi +4 Sta | Tier body texture, recolor + icon |
 
 ## Source: t3-ironroot-highlands
 

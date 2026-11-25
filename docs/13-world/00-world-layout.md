@@ -97,16 +97,18 @@ Khazrun lies east of Meridia across the Hearth Strait. Its west coast faces Solh
 | Ironroot Highlands | 2,200 × 2,200 | 500, 2400 | North ↔ Stonewake · Deep Gate rail-head at the Hold · south ↔ Cinderfall, the Ash Road (1600, 2400) · east: the collapsed Stonemaw pass (sealed) |
 | Cinderfall Barrens | 2,400 × 2,400 | 400, 0 | North ↔ Ironroot · east: the sealed Blackanvil Gate · west and south: lava coast |
 
+Stonewake Dale is the dwarf starting zone (levels 1–5; decided 2026-11-25). Embercrag Hollow and Stoneheart Deeps are the two level 5–10 zones: Embercrag is reached from the Dale by Bouldergate Pass or through Hammerdeep by the Coldgate, the Deeps by the Daleside Adit or the Long Stair. The Dale also opens south onto Ironroot Highlands (10–20).
+
 ```
 z
 7800 +----------------------------------+
-     |      EMBERCRAG HOLLOW            |
+     |      EMBERCRAG HOLLOW  5-10      |
 6800 |   +----------+ Bouldergate       |
 sea  |)) | HAMMER-  |   Pass            |
      |)) |  DEEP    +----------+        |
 6000 |   +--+-------+          |        |
      |   |DEEPS|   | STONEWAKE |        |
-5000 |   +--+--+   |   DALE    |        |
+5000 |   +--+--+   | DALE 1-5  |        |
 4600 |      \rail  +-----+-----+        |
      |   +---------------+----------+   |
      |   |   IRONROOT HIGHLANDS     |## collapsed pass
@@ -122,10 +124,10 @@ sea  |)) | HAMMER-  |   Pass            |
 | | Count |
 |---|---|
 | Zones laid out | 11, plus 2 capitals, 3 dungeons, the raid, the arena and the battleground |
-| Sub-areas and city districts | 139 |
-| Hubs with building positions | 36, plus the two capitals |
-| Spawn camps | 157, holding 3,021 spawn points for 152 creature types |
-| Graveyards | 55 |
+| Sub-areas and city districts | 143 |
+| Hubs with building positions | 37, plus the two capitals |
+| Spawn camps | 158, holding 3,027 spawn points for 153 creature types |
+| Graveyards | 57 |
 
 ## 6. Checks run on these files
 
@@ -133,7 +135,7 @@ sea  |)) | HAMMER-  |   Pass            |
 
 | Check | Result |
 |---|---|
-| Every creature in a zone creature table has at least one camp | Pass: all 151, plus the Exile Challengers |
+| Every creature in a zone creature table has at least one camp | Pass: all 152, plus the Exile Challengers |
 | Every camp's creature exists in a zone creature table | Pass |
 | For every kill objective of 4 or more, the zone holds at least twice that many of the creature | Pass for all creature objectives. Two objectives are world objects, not creatures (Wyrm Eggs, Ward-Pylons); they are listed under Points |
 

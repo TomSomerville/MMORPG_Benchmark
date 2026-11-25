@@ -1,6 +1,6 @@
 # World Layout — Stonewake Dale and Stoneheart Deeps
 
-[← World Layout Index](00-world-layout.md) · Zones: [Stonewake Dale](../05-zones/t2-stonewake-dale.md) · [Stoneheart Deeps](../05-zones/t2-stoneheart-deeps.md) · Prev: [Harrowfield and Russetwood](02-harrowfield-russetwood.md) · Next: [Thornwick Marches](04-thornwick-marches.md)
+[← World Layout Index](00-world-layout.md) · Zones: [Stonewake Dale](../05-zones/t1-stonewake-dale.md) · [Stoneheart Deeps](../05-zones/t2-stoneheart-deeps.md) · Prev: [Harrowfield and Russetwood](02-harrowfield-russetwood.md) · Next: [Thornwick Marches](04-thornwick-marches.md)
 
 Notation and rules are in the [index](00-world-layout.md).
 
@@ -9,46 +9,52 @@ Notation and rules are in the [index](00-world-layout.md).
 | | |
 |---|---|
 | Size and offset | 1,400 × 1,400 m · Khazrun (1200, 4600). Each grid cell is 140 m |
-| Shape | A farmed valley running north to south between Mount Khaz (north-west) and a long ridge (east). The dam closes the valley's north end; its millrace runs down the middle to Hopstead |
-| Elevation | Valley floor 0–15 m · terraces up to 40 m · Ridgefold 55 m · High Pastures 80 m · dam crest 60 m |
-| Landmark | Stonewake Dam, a grey wall across the north end at (900, 1270) |
-| Exits | Dalegate road → Hammerdeep (100, 1400) · Bouldergate Pass → Embercrag (300, 1400) · Daleside Adit → Stoneheart Deeps (0, 800) · south road → Ironroot (700, 0) |
+| Shape | A farmed valley running north to south between Mount Khaz (north-west) and a long ridge (east). The terraces and the worked mountainside climb its west side, the pastures its east. The dam closes the valley's north end; its millrace runs down the middle to Hopstead |
+| Elevation | Valley floor 0–15 m · Sunbank 12 m · terraces up to 40 m · Greywall Quarry 55 m · Larch Hangers 45–70 m · Ridgefold 55 m · High Pastures 80 m · dam crest 60 m |
+| Landmark | Stonewake Dam, a grey wall across the north end at (900, 1270), seen from the whole valley |
+| Exits | Dalegate road → Hammerdeep (100, 1400) · Bouldergate Pass → Embercrag Hollow (300, 1400) · Daleside Adit → Stoneheart Deeps (0, 800) · south road → Ironroot (700, 0) |
+| Start point | (330, 215), facing north toward the longhouse |
 
 ```
       A  B  C  D  E  F  G  H  I  J
- 10   .. .. .. .. .. DM DM .. BC BC
-  9   ## .. .. .. MR DM DM SG BC BC
-  8   ## OB OB .. MR .. .. SG SG ##
-  7   ## OB OB .. MR .. .. HP HP ##
-  6   .. .. HY HY MR .. .. HP HP ##
-  5   ## .. HY HY MR .. RF RF HP ##
-  4   ## .. .. .. HS HS RF RF .. ##
+ 10   .. .. .. .. .. DM DM .. ## ##
+  9   ## .. .. .. MR DM DM .. ## ##
+  8   ## OB OB .. MR .. .. HP HP ##
+  7   DA OB OB .. MR .. .. HP HP ##
+  6   DA LH HY HY MR .. .. HP HP ##
+  5   ## GQ HY HY MR .. RF RF HP ##
+  4   ## BT .. .. HS HS RF RF .. ##
   3   ## BT BT .. HS HS .. .. .. ##
-  2   ## BT BT BT .. GS GS .. .. ##
-  1   ## .. BT .. .. GS GS .. .. ##
+  2   ## BT SS .. GS .. .. .. .. ##
+  1   ## .. .. GS GS .. .. .. .. ##
 ```
 
 ## Sub-areas
 
 | Code | Sub-area | Centre | Size | Elevation and terrain |
 |---|---|---|---|---|
+| SS | Sunbank Steading | (330, 230) | 160 × 140 | A low sunny bank, 12 m, at the foot of the terraces; longhouse at the north end, lambing paddock to the south, lane running east |
+| BT | The Barley Terraces | (230, 340) | 240 × 400 | Stepped fields of young barley with dry-stone walls, climbing west to 40 m |
+| GQ | Greywall Quarry | (190, 600) | 140 × 120 | A quarry face 14 m high cut into the mountainside above the top terrace; dressed stone stacked on its floor |
+| LH | The Larch Hangers | (230, 720) | 180 × 180 | Larch wood on a steep slope; felled logs and the sawyers' slide down to the terraces |
+| GS | The Gravelkin Sinks | Mouth (500, 240), in the first sink; interior under the low fields, running in south-east from the mouth within (470–670, 20–260) | Surface 200 × 240, five sinkholes; interior 2 galleries, about 220 m of tunnel, and the Deep Sink below | Round gnawed tunnels under fallen-in barley strips; the Deep Sink is a single cavern 40 m across. The first sink is a hollow that is walked down into, and the mouth opens in its south-east bank; the other four sinks, around (570, 140), are open pits with broken rims and are not ways in |
 | HS | Hopstead | (640, 480) | 220 × 220 | Market village around a brewhouse green; two mills on the race |
-| BT | The Barley Terraces | (320, 300) | 400 × 380 | Stepped fields with dry-stone walls climbing west |
-| RF | Ridgefold | (970, 600) | 240 × 240 | Sheep-folds and bothies on a shoulder of the ridge |
-| HP | The High Pastures | (1140, 820) | 260 × 400 | Open hill grazing up to the snow line; 4 stone bothies |
-| GS | The Gravelkin Sinks | (830, 180) | 280 × 280 | 6 sinkholes opening into about 240 m of tunnel; the deepest sink at (880, 120) |
-| HY | The Hop-Yards | (440, 760) | 260 × 260 | Rows of blighted hop-poles |
+| HY | The Hop-Yards | (440, 760) | 260 × 260 | Rows of hop-poles in new leaf; the herb banks along the west edge, where the yards meet the larches |
+| MR | The Millrace | Runs dam foot (780, 1200) → (640, 900) → (630, 600) → Hopstead mills → mill-pool (660, 350) | 12 m channel with a path; 6 culverts | Stone-lined, fast water, crossed by 4 slab bridges |
 | OB | The Old Brewery | (270, 1050) | 240 × 240 | Stone brewhouse with a vat hall, cellar and yard |
-| MR | The Millrace | Runs dam foot (780, 1200) → (640, 900) → (630, 600) → Hopstead mills | 12 m channel with a path; 6 culverts | Stone-lined, fast water, crossed by 4 slab bridges |
-| DM | Stonewake Dam | (850, 1290) | 280 × 180 | Dam crest road, two sluice-houses (east and west), 3 more charge points along the crest; reservoir behind (scenery) |
-| SG | Slagfall Gully | (1090, 1180) | 220 × 260 | Black scree below the mountain's forge-vents |
-| BC | Blackmatch Camp | (1300, 1310) | 200 × 240 | Side canyon: floor camp, goat-track along the north wall, powder-tent on a ledge, the chief's cave at the head |
+| DA | Daleside Adit | Adit door (0, 800), the exit; upper drift mouth (70, 900), running in west | Surface 160 × 200; the upper drift is an interior of 1 gallery and about 60 m of tunnel | Timbered mine mouths in the west mountainside, spoil banks below them. The upper drift is a worked-out level of its own, not joined to the way through to the Deeps |
+| RF | Ridgefold | (970, 600) | 240 × 240 | Sheep-folds and bothies on a shoulder of the ridge |
+| HP | The High Pastures | (1140, 820) | 260 × 400 | Open hill grazing; the High Fold at its south end, 4 stone bothies, the ridge top at its north-east corner |
+| DM | Stonewake Dam | (850, 1290) | 280 × 180 | Dam crest road, two sluice-houses (east and west); reservoir behind (scenery) |
+
+No sink lies within 35 m of the Dale Road or within 60 m of Sunbank's edge. The Old Brewery is a building that is entered: its vat hall, with a cellar below reached by a hatch and stair.
 
 ## Hubs
 
 | Hub | Centre | Radius | Buildings and spots |
 |---|---|---|---|
-| Hopstead | (640, 480) | 110 | Moot-house (0, +55) · brewhouse, kitchen and eyrie on its roof (−30, +10) · *The Barley Mow* (+35, 0) · hop-yard gate (−80, +90) · smithy on the green (+10, −30) · tan-yard (−100, −50) · weaving-house (+60, −50) · physic garden (+90, +40) · cottage at the lane end (+120, −80) · market stall (−10, −5) · muster field (−60, −90) · hearth-house (+85, −10) · wanted board on the green · mailbox by the inn · graveyard (+140, +90) |
+| Sunbank Steading | (330, 230) | 60 | Longhouse and hearth (0, +30) · practice yard (−35, +5) · hearth-nook (+35, +10) · terrace wall (−50, −20) · kitchen (+14, +38) · sawpit (+45, −30) · stone-sledge (−15, −32) · lambing paddock (+15, −55) · graveyard (+80, −60) |
+| Hopstead | (640, 480) | 110 | Moot-house (0, +55) · brewhouse and eyrie on its roof (−30, +10) · *The Dry Boot* (+35, 0) · hop-yard gate (−80, +90) · smithy on the green (+10, −30) · tan-yard (−100, −50) · weaving-house (+60, −50) · physic garden (+90, +40) · cottage at the lane end (+120, −80) · market stall (−10, −5) · mailbox by the inn · graveyard (+140, +90) |
 | Ridgefold | (970, 600) | 60 | Ranger bothy (0, 0) · sheep-fold (+30, +20) · lambing shed (−25, +30) |
 | Dam east sluice-house | (960, 1290) | 25 | Dammaster's post |
 
@@ -56,61 +62,59 @@ Notation and rules are in the [index](00-world-layout.md).
 
 | Point | Position | Used by |
 |---|---|---|
-| Crates of Stolen Stores (12 positions) | Lower Sinks tunnels | ST-06 |
-| Chief Gnarr | Deepest sink (880, 120) | ST-07 |
-| Tinker Sparkwright's sluice hut | (650, 880) | ST-09 |
-| Millrace Culverts (6) | (770, 1150) · (720, 1050) · (670, 950) · (640, 820) · (632, 700) · (630, 600) | ST-09 |
-| Set Cinder-Charges (6) | East sluice-house 2 · west sluice-house 1 · crest 3 | ST-14 |
-| Brewmaster Maltby | Brewery yard (330, 990) | ST-12 |
-| Blackmatch Ledger | Powder-tent (1330, 1360) | ST-16 |
-| Dolga Blackmatch | Cave at the canyon head (1380, 1390) | ST-17 |
-| Powderkeg Pol | Powder store (1290, 1260) | ST-19 |
-| Old Bitterhorn | Ridge top (1250, 960) | ST-18 |
-| Angler Pikehook | Dam-foot pool (780, 1190) | — |
-| Stonesinger Furrow | Top terrace wall (160, 380) | — |
+| Crates of Stolen Stores (10 positions) | Second gallery of the Sinks | ST-07 |
+| Herb Baskets (8 positions) | The herb banks, (300–330, 660–880) | ST-09 |
+| High Fold trigger | (1080, 720) r25 | ST-11 |
+| Brewmaster Maltby | Brewery yard (330, 990) | ST-13 |
+| Chief Gnarr | Middle of the Deep Sink, the lowest cavern, reached by the ramp from the second gallery | ST-16 |
+| Old Bitterhorn | Ridge top (1250, 960) | ST-17 |
 | Greedy Gund (rare) | 3 bothies on the High Pastures | — |
-| Graveyards | Hopstead (780, 570) · Ridgefold (900, 680) · dam road (760, 1100) | — |
-| Chests (one active) | Sink chamber · brewery cellar · Blackmatch floor tent · high bothy | — |
+| Tinker Sparkwright's sluice hut | (650, 880) | — |
+| Angler Pikehook | Mill-pool below Hopstead (660, 350) | — |
+| Graveyards | Sunbank (410, 170) · Hopstead (780, 570) · Ridgefold (900, 680) · Brewery Lane (430, 960) · dam road (760, 1100) | — |
+| Chests (one active) | Second gallery of the Sinks · brewery cellar · high bothy | — |
+
+Until Embercrag Hollow and Stoneheart Deeps are built as level 5–10 zones, the two NPCs who end ST-18 wait inside the dale, each about 15 m in from the exit that leads to their zone and beside its road: Forgemaster Emberhand at Bouldergate Pass, Hallwarden Lampwright at the Daleside Adit.
 
 ## Spawn camps
 
 | Camp | Creature | Count | Where | Notes |
 |---|---|---|---|---|
-| ST-S01 | Feral Billy | 24 | BT, spread | |
-| ST-S02 | Highland Buzzard | 14 | BT upper walls | |
-| ST-S03 | Shale Bear | 20 | HP bothies, 5 at each | |
-| ST-S04 | Gravelkin Sinkdweller | 24 | GS sink rims and upper tunnels | |
-| ST-S05 | Gravelkin Bonechewer | 16 | GS lower tunnels | |
-| ST-S06 | Dale Rustler | 20 | HP south and RF edge | |
-| ST-S07 | Rustler Hound-Master | 22 | HP north | Each summons 2 hounds |
-| ST-S08 | Hop-Blight Beetle | 18 | HY rows | |
-| ST-S09 | Fermented Ooze | 18 | OB vat hall and cellar | |
-| ST-S10 | Slagborn Sapper | 16 | DM crest and sluice-houses | Plus scripted spawns at 2 culverts |
-| ST-S11 | Loose Slag Sprite | 18 | SG | |
-| ST-S12 | Slagborn Powderkeg | 12 | BC: 4 goat-track, 8 floor | |
-| ST-S13 | Slagborn Sapper | 8 | BC floor | |
+| ST-S01 | Highland Buzzard | 26 | BT lower terraces and the walls above the lambing paddock | Within 150 m of Sunbank |
+| ST-S02 | Feral Billy | 22 | BT upper terraces and the Quarry Track | |
+| ST-S03 | Young Shale Bear | 12 | LH @ (230, 720) r80 | |
+| ST-S04 | Gravelkin Sinkdweller | 26 | GS first sink and first gallery | 8 outside, in the first sink and on the rims |
+| ST-S05 | Gravelkin Bonechewer | 14 | GS second gallery and the Deep Sink approach | 12 in the second gallery, around the crates · 2 on the ramp down to the Deep Sink, who are Chief Gnarr's two guards |
+| ST-S06 | Hop-Blight Beetle | 24 | HY rows north of z = 660 and west of x = 540 | Clear of Adit Lane and the Dale Road |
+| ST-S07 | Shale Bear | 18 | DA spoil banks and the upper drift | 12 outside · 6 in the drift's gallery; none within 40 m of Adit Lane |
+| ST-S08 | Fermented Ooze | 16 | OB yard, vat hall and cellar | 10 in the yard and round the walls · 4 in the vat hall · 2 in the cellar |
+| ST-S09 | Dale Rustler | 20 | HP south and middle: the High Fold and the lower bothies | None within 60 m of Ridgefold's edge |
+| ST-S10 | Rustler's Hound | 10 | HP north, among the upper bothies | |
+| ST-S11 | Rustler Hound-Master | 12 | HP north, the upper bothies | No two within 30 m of each other |
 
 ## Nodes
 
 | Node | Positions | Where |
 |---|---|---|
-| Copper Vein | 20 | Terrace walls |
-| Tin Vein | 16 | Sinks 8 · dam abutments 8 |
-| Dewleaf | 14 | Field margins |
-| Bramblethorn | 22 | Hop-yards, terrace walls |
-| Marshbloom | 22 | Millrace banks, dam-foot pool |
-| Fishing | Millrace and dam-foot pool | Mussel beds at the pool for River Pearls |
+| Copper Vein | 22 | Terrace walls 10 · quarry face 6 · adit spoil banks 6 |
+| Sunpetal | 20 | Field margins and lanes |
+| Hearthroot | 16 | Feet of the terrace walls and the quarry |
+| Dewleaf | 12 | Larch Hangers and the herb banks |
+| Fishing | Millrace and the mill-pool | No pools at this level |
 
 ## Roads
 
 | Road | Path |
 |---|---|
-| Dale Road | Ironroot (700, 0) → Hopstead (640, 480) → (560, 950) → (300, 1250) → Dalegate (100, 1400) |
+| Dale Road | Ironroot (700, 0) → (735, 250) → Hopstead (640, 480) → (560, 950) → (300, 1250) → Dalegate (100, 1400) |
 | Bouldergate Path | (300, 1250) → (300, 1400) |
-| Adit Lane | Hopstead → Hop-Yards → Daleside Adit (0, 800) |
-| Ridge Track | Hopstead → Ridgefold (970, 600) → High Pastures (1140, 820) |
+| Sunbank Lane | Sunbank (330, 230) → (470, 330) → Hopstead (640, 480) |
+| Sink Track | Sunbank Lane (430, 300) → the first sink (500, 240) |
+| Quarry Track | Sunbank → up the terrace steps (250, 420) → Greywall Quarry (190, 600) → the sawyers' slide (230, 680) |
+| Adit Lane | Hopstead → along the south edge of the Hop-Yards (440, 620) → (300, 650) → (150, 690) → Daleside Adit (0, 800) |
+| Brewery Lane | Dale Road (560, 950) → brewery yard (330, 990) |
+| Ridge Track | Hopstead → Ridgefold (970, 600) → the High Fold (1080, 720) → High Pastures (1140, 820) |
 | Race Path | Hopstead mills → along the millrace → dam foot → switchback up to the crest (850, 1290) |
-| Canyon Track | Dam crest east end → Slagfall Gully → Blackmatch Camp mouth (1210, 1250) |
 
 ---
 

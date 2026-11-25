@@ -1,6 +1,6 @@
 # Ironroot Highlands — T3, levels 10–20 (Khazrun)
 
-[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Prev: [Stonewake Dale](t2-stonewake-dale.md) · [Stoneheart Deeps](t2-stoneheart-deeps.md) · Sister zone: [Thornwick Marches](t3-thornwick-marches.md) · Next: T4 — [Cinderfall Barrens](t4-cinderfall-barrens.md) · [Riftlands](t4-riftlands.md) · [Veilmoor](t4-veilmoor.md)
+[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Prev: [Embercrag Hollow](t2-embercrag-hollow.md) · [Stoneheart Deeps](t2-stoneheart-deeps.md) · Sister zone: [Thornwick Marches](t3-thornwick-marches.md) · Next: T4 — [Cinderfall Barrens](t4-cinderfall-barrens.md) · [Riftlands](t4-riftlands.md) · [Veilmoor](t4-veilmoor.md)
 
 **Build detail:** [Quest text](../06-quests/text/ir-ironroot-highlands.md) · [NPC roster](../11-npcs/04-ironroot-highlands.md) · [World layout](../13-world/05-ironroot-highlands.md) · [Creature data](../12-data/creatures.md). The quest table's Reward column on this page is copied from the quest text.
 
@@ -60,7 +60,7 @@ Ranger-Captain Sigrun Farstride · Thane's Steward Balder Ironroot · Stonesinge
 
 | ID | Quest | Lvl | Giver | Objective | XP | Reward |
 |---|---|---|---|---|---|---|
-| IR-01 | **[MC1]** The Thane's Ranger | 10 | (from ST-20 / SD-20) Ranger-Captain Farstride | Deliver the "C.A." ledger | 375 | — |
+| IR-01 | **[MC1]** The Thane's Ranger | 10 | (from EC-20 / SD-20) Ranger-Captain Farstride | Deliver the "C.A." ledger | 375 | — |
 | IR-02 | Ironhorn Cull | 10 | Huntmaster's apprentice Leif | Kill 10 Ironhorn Rams | 750 | 5s · *Ramsdown Wool Cloak* (back, ilvl 15, +5 Sta +5 Spi) |
 | IR-03 | Stalker Pelts | 11 | Leif | Collect 8 Crag Stalker Pelts | 840 | 7s · choose 1: *Hold-Scribe's Gloves* (cloth hands, ilvl 16, +6 Int +6 Spi) · *Stalker-Pelt Grips* (leather hands, ilvl 16, +6 Agi +9 Sta) · *Ranger's Chain Gauntlets* (mail hands, ilvl 16, +6 Str +9 Sta) |
 | IR-04 | Hold Rumours | 10 | Steward Ironroot | Speak with the innkeeper, the smith and the Stonesinger | 375 | 3s |

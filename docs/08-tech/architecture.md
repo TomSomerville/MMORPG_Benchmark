@@ -101,10 +101,10 @@ realm: { name: Halcyra, maxPlayers: 3500 }
 machines:
   - host: game1
     runs: [login, gateway, world, social, zoneHosts]
-    zones: [solhaven, hammerdeep, brightmead, embercrag, harrowfield, russetwood]
+    zones: [solhaven, hammerdeep, brightmead, stonewake, harrowfield, russetwood]
   - host: game2
     runs: [zoneHosts, instanceHosts]
-    zones: [stonewake, stoneheart, thornwick, ironroot, cinderfall, riftlands, veilmoor]
+    zones: [embercrag, stoneheart, thornwick, ironroot, cinderfall, riftlands, veilmoor]
     instanceCopies: 200
   - host: db1
     runs: [database, redis]

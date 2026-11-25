@@ -7,11 +7,11 @@
 **Structure.** Acts I, III and IV exist in two parallel versions, one per continent, and Act II in **four** — one for each of the 5–10 zones, so every one of those zones carries the main story on its own. Together they tell the same conspiracy from two sides (humans see arson and grave-robbing; dwarves see sabotage and arms-smuggling). A player needs **either** version of each act — they are linked as *exclusive groups* in the quest data — and may freely switch continents between acts. Both versions converge for the dungeon and the finale.
 
 ```
-Act I    BM-07 → 11 → 12 → 15 → 16 → 18          EC-07 → 11 → 12 → 15 → 16 → 18
-           (Brightmead Vale)                        (Embercrag Hollow)
+Act I    BM-07 → 11 → 12 → 15 → 16 → 18          ST-07 → 11 → 12 → 15 → 16 → 18
+           (Brightmead Vale)                        (Stonewake Dale)
                      \                               /
-Act II   HF-.. or RW-..                             ST-.. or SD-..
-           (Harrowfield or Russetwood)              (Stonewake Dale or Stoneheart Deeps)
+Act II   HF-.. or RW-..                             EC-.. or SD-..
+           (Harrowfield or Russetwood)              (Embercrag Hollow or Stoneheart Deeps)
            the same eight steps in every zone:  01 → 05 → 07 → 09 → 14 → 16 → 17 → 20
                      |                               |
 Act III  TM-01 → 05 → 06 → 10 → 11 → 14             IR-01 → 05 → 06 → 10 → 11 → 14 → 15
@@ -37,16 +37,18 @@ Finale                TM-35 Brandspire → TM-36 The Branded Lord
 | 5 | BM-16 The Brander | In Hartwell Deep, recruiter Hale Morrow is branding new initiates. His last words: *"It burns clean. You'll beg for it."* |
 | 6 | BM-18 Word to Harrowfield | Carry his branding iron north |
 
-### Khazrun version: "The Cold Forge" — [Embercrag Hollow](../05-zones/t1-embercrag-hollow.md)
+### Khazrun version: "Paid in Slag" — [Stonewake Dale](../05-zones/t1-stonewake-dale.md)
 
 | Step | Quest | Beat |
 |---|---|---|
-| 1 | EC-07 The Cold Forge | The Old Forge has burned for a thousand years. Its Ever-Ember is gone |
-| 2 | EC-11 Tracks in the Snow | Sooty footprints lead to Kiln Cave |
-| 3 | EC-12 Soot and Shadow | Slagborn exiles — kin who were cast out for hollow-fire smithing |
-| 4 | EC-15 Branded Ingots | They carry ingots stamped with an ash sigil |
-| 5 | EC-16 Sootbeard's Reckoning | Grolm Sootbeard was using the Ever-Ember to "wake" the brand in cold iron. Recover it and relight the forge (a visible, permanent world-state change for the player) |
-| 6 | EC-18 Word to Stonewake | Carry an ingot down to the Dale-Reeve in Hopstead, or into the mountain to the Hallwarden at Lanternhold |
+| 1 | ST-07 Stolen Stores | Gravelkin have taken the Dale's spring stores. In the Sinks the crates are stacked neatly, and in one lies a lump of forge-slag with a hand pressed into it — someone *paid* the rock-eaters |
+| 2 | ST-11 Empty Folds | The High Fold stands empty. Shepherdess Ramsbell saw men with ropes and hounds, and none of them Dalefolk |
+| 3 | ST-12 Rustlers on the Ridge | Drive the rustlers and their hound-masters from the High Pastures |
+| 4 | ST-15 The Peddler's Coin | Their purses hold coins with the same hand burned into them |
+| 5 | ST-16 Paid in Slag | In the Deep Sink, Chief Gnarr wears a payroll-slate: fields undermined, folds emptied, slag paid. Its last line, not yet paid, is a wall drawn across a valley — the dam |
+| 6 | ST-18 Word to the Mountain | Carry the slate up to the Forgemaster at Anvilrest, or into the mountain to the Hallwarden at Lanternhold |
+
+Decided 2026-11-25: the Khazrun version of Act I is Stonewake Dale's, since dwarves now start there. "The Cold Forge", which was Act I when Embercrag Hollow was the starting zone, is now the first half of Embercrag's Act II.
 
 ## Act II — Kindling (levels 5–10)
 
@@ -62,11 +64,11 @@ RW-01 → RW-05 Poachers' Trails → RW-07 Paid in Charcoal → RW-09 What the K
 
 Poachers are being paid in sacks of oddly heavy charcoal to keep the foresters busy while Ashhand charcoalers fire something else in the clearings: the **cinders** themselves, the living coals that will later be sewn into scarecrows and corpses. When the foresters get close, the cult sets the wood alight to cover its tracks. **Kilnmaster Bertram Soot** runs the Great Kiln; his ledger lists every delivery, each countersigned **"C.A."**. (This version shows where the cult's cinders are *made*; Harrowfield shows where they are *used*.)
 
-### Khazrun: "Charges on the Dam" — [Stonewake Dale](../05-zones/t2-stonewake-dale.md)
+### Khazrun: "The Cold Forge" — [Embercrag Hollow](../05-zones/t2-embercrag-hollow.md)
 
-ST-01 → ST-05 The Sinks → ST-07 Paid in Slag → ST-09 Powder in the Millrace → ST-14 Charges on the Dam → ST-16 The Blackmatch Ledger → ST-17 Sapper-Chief → ST-20 Ledger Signed "C.A."
+EC-01 → EC-05 Gnashers in the Larder → EC-07 Sootbeard's Reckoning → EC-09 Powder on the Cart Road → EC-14 The Powder Train → EC-16 The Blackmatch Ledger → EC-17 Sapper-Chief → EC-20 Ledger Signed "C.A."
 
-Gravelkin are being paid in slag-iron to open sinkholes under the hill dwarves' fields while Slagborn sappers mine the great dam above the dale with cinder-charges. **Dolga Blackmatch** means to drown the valley and Hammerdeep's ground-level halls with it. The Dalefolk and the mountain engineers who built the dam must work together for the first time in a generation. Her ledger records payments from a human — **"C.A."**.
+The Old Forge has burned for a thousand years, and its Ever-Ember is gone. Gravelkin are being paid in branded iron to gnaw under the wardens' camp while Slagborn exiles — kin who were cast out for hollow-fire smithing — hold Kiln Cave. Their smith **Grolm Sootbeard** was using the Ever-Ember to "wake" the brand in cold iron; the player recovers it and relights the forge (a visible, permanent world-state change for the player). But the forge was put out for a second reason: in the dark, Slagborn sappers have been packing cinder-charges to run down Bouldergate Pass and set on the great dam above Stonewake Dale. **Dolga Blackmatch** means to drown the valley and Hammerdeep's ground-level halls with it. The charges are stopped in Embercrag, at their source, and the mountain wardens and the Dale-Moot must work together for the first time in a generation. Her ledger records payments from a human — **"C.A."**.
 
 ### Khazrun: "The Undercut" — [Stoneheart Deeps](../05-zones/t2-stoneheart-deeps.md)
 

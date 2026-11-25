@@ -1,6 +1,6 @@
 # Stoneheart Deeps — T2, levels 5–10 (Khazrun, inside the mountain)
 
-[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Prev: [Embercrag Hollow](t1-embercrag-hollow.md) · Sister zones: [Stonewake Dale](t2-stonewake-dale.md) (adjacent) · [Harrowfield](t2-harrowfield.md) · [Russetwood](t2-russetwood.md) · Next: [Ironroot Highlands](t3-ironroot-highlands.md)
+[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Prev: [Stonewake Dale](t1-stonewake-dale.md) (adjacent) · Sister zones: [Embercrag Hollow](t2-embercrag-hollow.md) (through Hammerdeep) · [Harrowfield](t2-harrowfield.md) · [Russetwood](t2-russetwood.md) · Next: [Ironroot Highlands](t3-ironroot-highlands.md)
 
 **Build detail:** [Quest text](../06-quests/text/sd-stoneheart-deeps.md) · [NPC roster](../11-npcs/02-embercrag-stonewake-stoneheart.md) · [World layout](../13-world/03-stonewake-stoneheart.md) · [Creature data](../12-data/creatures.md). The quest table's Reward column on this page is copied from the quest text.
 
@@ -8,7 +8,7 @@
 |---|---|
 | Theme | An entire questing zone **inside Mount Khaz**: cathedral-sized caverns, glowing mushroom forests, crystal galleries, rail-roads on trestles, and halls the mountain dwarves abandoned generations ago. No sky. Light comes from lanterns, glowcaps and forge-glow |
 | Culture | The heartland of the **mountain dwarves** (the Hallborn) — miners, rail-wrights, lamp-keepers |
-| Why it exists | A **complete, self-sufficient 5→10** alternative to Stonewake Dale, directly beside it |
+| Why it exists | A **complete, self-sufficient 5→10** alternative to Embercrag Hollow, directly beside the dwarf starting zone, Stonewake Dale |
 | Hub | **Lanternhold** (a waystation hall: inn *The Low Flame*, lift-eyrie, mailbox, smith, Journeyman profession trainers) |
 | Minor hubs | Cartwright's Junction (rail yard); Deep Gate watch-post |
 | Exits | Up the Long Stair → Hammerdeep (Deepgate); Daleside Adit (a mine mouth) → Stonewake Dale; the Deep Gate rail-tunnel south → Ironroot Highlands (surfaces near Ironroot Hold) |
@@ -62,7 +62,7 @@ Same levels and XP, quest for quest, as the other three T2 zones.
 
 | ID | Quest | Lvl | Giver | Objective | XP | Reward |
 |---|---|---|---|---|---|---|
-| SD-01 | **[MC1]** The Hallwarden's Burden | 5 | (from EC-18 / BM-18 or direct) Hallwarden Lampwright | Present the Branded Ingot | 175 | — |
+| SD-01 | **[MC1]** The Hallwarden's Burden | 5 | (from ST-18 / BM-18 or direct) Hallwarden Lampwright | Present the Payroll-Slate | 175 | — |
 | SD-02 | Bats in the Lamps | 5 | Lamp-keeper Wickfast | Kill 10 Lanternwing Bats | 350 | 2s · *Wickfast's Lamp-Keeper Cloak* (back, ilvl 10, +3 Sta +3 Spi) |
 | SD-03 | Shamblers in the Glowcaps | 6 | Stonesinger Fjola | Kill 8 Glowcap Shamblers | 420 | 3s · choose 1: *Grotto-Tender's Mitts* (cloth hands, ilvl 11, +4 Int +4 Spi) · *Spore-Picker's Gloves* (leather hands, ilvl 11, +4 Agi +6 Sta) · *Lanternhold Chain Gauntlets* (mail hands, ilvl 11, +4 Str +6 Sta) |
 | SD-04 | Bear and Glowcap Hotpot | 6 | Cook Ladle | Bring 6 Bear Meat and 4 Glowcaps | 420 | 1s 50c · *Recipe: Glowcap Hotpot* (Cooking 25) · 5 *Glowcap Hotpot* |
@@ -87,7 +87,7 @@ Same levels and XP, quest for quest, as the other three T2 zones.
 
 ## Gathering & professions
 
-Copper (Upper Galleries), **Tin and Silver** (Crystal Galleries — the best low-level mining zone), gems from Geode Sprites · Herbs are scarce by design: Dewleaf and Glowcap in the Grotto only (Glowcap is a cooking ingredient, not an Alchemy herb) · Light Leather from bears and borers · Linen, first Wool · No fishing. Herbalists are better served in Stonewake Dale; miners here — the two adjacent zones complement each other.
+Copper (Upper Galleries), **Tin and Silver** (Crystal Galleries — the best low-level mining zone), gems from Geode Sprites · Herbs are scarce by design: Dewleaf and Glowcap in the Grotto only (Glowcap is a cooking ingredient, not an Alchemy herb) · Light Leather from bears and borers · Linen, first Wool · No fishing. Herbalists are better served in Embercrag Hollow; miners here — the two level 5–10 zones of Khazrun complement each other.
 
 ## Flow
 

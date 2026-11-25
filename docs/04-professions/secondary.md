@@ -13,12 +13,13 @@ Needs a fire (campfire object, or *Basic Campfire* spell: flint + tinder + wood 
 | 1 | Charred Wolf Meat | 1 Stringy Wolf Meat | 61 health | Trainer |
 | 1 | Roasted Boar Haunch | 1 Boar Haunch | 61 health | Trainer |
 | 1 | Spiced Wolf Skewer | 1 Stringy Wolf Meat, 1 Mild Spices | 61 health; +2 Sta +2 Spi | Trainer |
+| 1 | Dale Pasty | 1 Goat Meat, 1 Buzzard Egg | 61 health | Quest ST-05 |
 | 10 | Harvest Pie | 1 Rooter Flank, 1 Harrier Egg | 243 health; +4 Sta | Quest HF-04 |
-| 25 | Dale Pasty | 1 Goat Meat, 1 Buzzard Egg | 243 health; +4 Sta +4 Spi | Quest ST-04 |
+| 25 | Seared Ram Chop | 1 Ram Flank, 1 Boar Haunch | 243 health; +4 Sta +4 Spi | Quest EC-04 |
 | 25 | Woodsman's Stew | 1 Venison, 1 Chanterelle | 243 health; +4 Sta +4 Spi | Quest RW-04 |
 | 25 | Glowcap Hotpot | 1 Bear Meat, 1 Glowcap | 243 health; +4 Sta +4 Spi | Quest SD-04 |
 | 40 | Spider Leg Stew | 2 Gooey Spider Leg | 243 health; +4 Sta | Vendor (Millbrook) |
-| 50 | Ram Chop Roast | 1 Ram Flank, 1 Mild Spices | 243 health; +4 Sta +4 Spi | Trainer (the skill 1 *Seared Ram Chop* is the EC-05 quest recipe) |
+| 50 | Ram Chop Roast | 1 Ram Flank, 1 Mild Spices | 243 health; +4 Sta +4 Spi | Trainer (the skill 25 *Seared Ram Chop* is the EC-04 quest recipe) |
 | 75 | Smoked Bear Steak | 1 Bear Meat | 552 health | Trainer |
 | 85 | Lynx Tenderloin / Crag Stalker Steak | 1 Big Cat Meat, 1 Hot Spices | 552 health; +6 Sta +6 Spi | Vendor (Ironroot Hold) |
 | 100 | Mirejaw Gumbo | 1 Mirejaw Meat, 1 Marshbloom, 1 Hot Spices | 552 health; +6 Sta +6 Spi | Vendor (Thornwick) |
@@ -39,9 +40,9 @@ Needs a Fishing Pole (vendor); lures raise effective skill. Cast into water → 
 | Zone / water | Skill for no misses | Common catch | Uncommon | Rare |
 |---|---|---|---|---|
 | Brightmead (Silverrun Creek) | 25 | Silverrun Minnow | Brook Trout | Old boot → *Lucky Boot* (grey) |
-| Embercrag (Rimewater Pond, ice holes) | 25 | Rime Smelt | Frost Perch | — |
+| Stonewake Dale (millrace, mill-pool) | 25 | Dale Trout | Longjaw Pike → Pike Oil | River Pearl (mussels) |
 | Harrowfield (Longstrand coast) | 75 | Strand Mackerel | Slitherskin Eel | Sealed crate (linen, potions) |
-| Stonewake Dale (millrace, dam-foot pool) | 75 | Dale Trout | Longjaw Pike → Pike Oil | River Pearl (mussels) |
+| Embercrag (Rimewater Pond, ice holes) | 75 | Rime Smelt | Frost Perch | — |
 | Russetwood (forest streams) | 75 | Copperleaf Dace | Stream Eel | Sealed crate (linen, potions) |
 | Thornwick (Blackwater Fen) | 150 | Fen Catfish | Murk Eel | Waterlogged locket (quest starter TM-34) |
 | Ironroot (highland streams) | 150 | Highland Salmon | Stonescale Carp | — |

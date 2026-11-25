@@ -189,7 +189,7 @@ Riding (level 30): 30g. Epic riding is listed and greyed out.
 
 | | Count |
 |---|---|
-| Named NPCs | 356 |
+| Named NPCs | 359 |
 | Generic groups (guards and similar) | 25 groups, about 240 individuals |
-| NPCs that give or end at least one quest | 119 |
+| NPCs that give or end at least one quest | 123 |
 | Quests whose giver and ender both resolve to a roster NPC, an object or an item | 296 of 296 (checked by script) |

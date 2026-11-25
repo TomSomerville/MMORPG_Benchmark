@@ -34,8 +34,8 @@ Requires a Mining Pick. Smelting needs a forge.
 
 | Node | Skill | Found in | Yields |
 |---|---|---|---|
-| Copper Vein | 1 | Brightmead, Embercrag, Harrowfield, Russetwood, Stonewake Dale, Stoneheart Deeps | 1–3 Copper Ore; Rough Stone; rare Malachite, Tigerseye |
-| Tin Vein | 65 | Harrowfield (quarry), Russetwood (kiln quarry), Stonewake Dale, Stoneheart Deeps (Crystal Galleries — richest), Thornwick, Ironroot | 1–3 Tin Ore; Coarse Stone; rare Moss Agate, Dusk Opal |
+| Copper Vein | 1 | Brightmead, Stonewake Dale, Harrowfield, Russetwood, Embercrag, Stoneheart Deeps | 1–3 Copper Ore; Rough Stone; rare Malachite, Tigerseye |
+| Tin Vein | 65 | Harrowfield (quarry), Russetwood (kiln quarry), Embercrag (Tuskfall Ridge, the deep Warrens), Stoneheart Deeps (Crystal Galleries — richest), Thornwick, Ironroot | 1–3 Tin Ore; Coarse Stone; rare Moss Agate, Dusk Opal |
 | Silver Vein | 75 | Rare spawn replacing Tin: Stoneheart Deeps, Thornwick, Ironroot | 1–3 Silver Ore; rare Moss Agate, Lesser Moonstone |
 | Iron Deposit | 125 | Ironroot (Deepseam, peaks), Thornwick south, all T4 zones | 1–3 Iron Ore; Heavy Stone; rare Jade, Citrine |
 | Gold Vein | 155 | Rare spawn replacing Iron: T4 zones | 1–3 Gold Ore; rare Citrine |
@@ -61,11 +61,11 @@ Node respawn 5–10 min; each zone has ~40–70 possible node positions with ~40
 
 | Herb | Skill | Habitat | Zones |
 |---|---|---|---|
-| Sunpetal | 1 | Open meadow, roadsides | Brightmead, Embercrag (sheltered slopes) |
-| Hearthroot | 1 | At the foot of hills and rocks | Brightmead, Embercrag |
+| Sunpetal | 1 | Open meadow, roadsides | Brightmead, Stonewake Dale (field margins) |
+| Hearthroot | 1 | At the foot of hills and rocks | Brightmead, Stonewake Dale (feet of the terrace walls) |
 | Dewleaf | 15 | Under trees | T1 edges; all T2 zones (richest in Russetwood; Glowcap Grotto only in the Deeps) |
-| Bramblethorn | 50 | Hedgerows, fences, ruins | Harrowfield, Russetwood, Stonewake Dale |
-| Marshbloom | 70 | Stream and channel banks | Stonewake Dale (millrace), Russetwood streams, Harrowfield coast, Thornwick fen |
+| Bramblethorn | 50 | Hedgerows, fences, ruins | Harrowfield, Russetwood, Embercrag (the sheltered south wall of Anvilrest) |
+| Marshbloom | 70 | Stream and channel banks | Embercrag (forge-warmed melt-pools), Russetwood streams, Harrowfield coast, Thornwick fen |
 | Gravecap | 85 | Graveyards, crypts, near undead | Thornwick (Gallowmere), Gallowmere Crypts |
 | Crownleaf | 100 | Forest clearings | Thornwick, Ironroot |
 | Emberweed | 115 | Warm rock, near forges and vents | Ironroot (Brandforge), Cinderfall |

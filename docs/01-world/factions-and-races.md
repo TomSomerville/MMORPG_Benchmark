@@ -67,7 +67,7 @@ Because race is data, adding Elf, Gnome, Ogre or Undead means: one race record, 
 
 | | **Human** | **Dwarf** |
 |---|---|---|
-| Home | Meridia — starts in [Brightmead Vale](../05-zones/t1-brightmead-vale.md) | Khazrun — starts in [Embercrag Hollow](../05-zones/t1-embercrag-hollow.md) |
+| Home | Meridia — starts in [Brightmead Vale](../05-zones/t1-brightmead-vale.md) | Khazrun — starts in [Stonewake Dale](../05-zones/t1-stonewake-dale.md) |
 | Classes | Fighter, Cleric, Druid | Fighter, Cleric, Druid |
 | Base Str / Agi / Sta / Int / Spi | 20 / 20 / 20 / 20 / 21 | 22 / 16 / 23 / 19 / 19 |
 | Racial 1 | **Versatile** — Spirit +5% | **Stoneform** (active, 3 min CD) — 8 s: immune to bleed, poison and disease, armor +10% |
@@ -93,7 +93,7 @@ Dwarves are **one playable race with two cultures**. The split is cultural and v
 | Says of the other | "Dirt-farmers who've forgotten the stone." | "Moles who've never seen what they're fighting for." |
 | Zones | Embercrag Hollow, Hammerdeep, Stoneheart Deeps, Ironroot Hold, Deepseam | Stonewake Dale, Ramshead Lodge, the Ironroot steadings, Emberwell |
 
-**Players are simply dwarves.** There is one dwarf race with one starting zone (Embercrag Hollow) and no culture choice at character creation; a player dwarf is not marked as Hallborn or Dalefolk and nothing in the game treats them as either. The two cultures exist only in the world: in its NPCs, their dress, voices, buildings and attitudes toward each other. (Decided 2026-11-12.)
+**Players are simply dwarves.** There is one dwarf race with one starting zone (Stonewake Dale) and no culture choice at character creation; a player dwarf is not marked as Hallborn or Dalefolk and nothing in the game treats them as either. The two cultures exist only in the world: in its NPCs, their dress, voices, buildings and attitudes toward each other. (Decided 2026-11-12.) A dwarf now begins among the hill dwarves, at Sunbank Steading in Stonewake Dale, in spring, and meets the mountain dwarves at levels 5–10, in Embercrag Hollow or the Stoneheart Deeps (decided 2026-11-25; the start was Embercrag Hollow before). Starting in the Dale makes a player a guest of the Dalefolk, not one of them.
 
 **In the story:** the dam in Stonewake Dale, the Rootvault gardens in Hammerdeep and the Ironroot levies are the three places the two cultures are forced to cooperate; the Slagborn are what happens when a mountain clan stops listening to anyone.
 
@@ -101,7 +101,7 @@ Dwarves are **one playable race with two cultures**. The split is cultural and v
 
 | Race | Allegiance | Sketch of racials | Starting zone concept |
 |---|---|---|---|
-| Gnome | Concord | +5% Intellect; escape root/snare; +15 Engineering | Shares Embercrag (sub-area) |
+| Gnome | Concord | +5% Intellect; escape root/snare; +15 Engineering | Shares Stonewake Dale (sub-area) |
 | Elf | Wildpact | +1% dodge; nature resist; out-of-combat stealth | Sael'anor deepwoods (Meridia far west) |
 | Ogre | Wildpact | +5% max health; stun resist; +5 two-handed skill | Stonemaw Steppes |
 | Undead (Unburied) | Covenant | Break fear/charm; shadow resist; underwater breathing; consume corpse | Vael Morrow outskirts (Sundrel) |
@@ -109,7 +109,7 @@ Dwarves are **one playable race with two cultures**. The split is cultural and v
 ## 6. Race-neutral questing (hard requirement)
 
 - **No quest checks race.** Every quest in both starting zones can be taken by either race.
-- A level 1 human who runs to Embercrag Hollow can complete it start to finish, and vice versa.
+- A level 1 human who takes the ship and walks to Stonewake Dale can complete it start to finish, and vice versa.
 - The only race-specific thing is *where the character first appears* and the two-line introductory text of the very first quest.
 - Class trainers for all three classes exist in both starting camps.
 - Travel between the two starting continents is free and available from level 1 (see [World & Travel](world-and-travel.md)).

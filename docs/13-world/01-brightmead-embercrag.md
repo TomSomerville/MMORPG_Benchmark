@@ -1,6 +1,6 @@
 # World Layout — Brightmead Vale and Embercrag Hollow
 
-[← World Layout Index](00-world-layout.md) · Zones: [Brightmead Vale](../05-zones/t1-brightmead-vale.md) · [Embercrag Hollow](../05-zones/t1-embercrag-hollow.md) · Next: [Harrowfield and Russetwood](02-harrowfield-russetwood.md)
+[← World Layout Index](00-world-layout.md) · Zones: [Brightmead Vale](../05-zones/t1-brightmead-vale.md) · [Embercrag Hollow](../05-zones/t2-embercrag-hollow.md) · Next: [Harrowfield and Russetwood](02-harrowfield-russetwood.md)
 
 Notation and rules are in the [index](00-world-layout.md).
 
@@ -111,20 +111,21 @@ Until Harrowfield and Russetwood are built, the two NPCs who end BM-18 wait insi
 
 # Embercrag Hollow
 
+A level 5–10 zone since 2026-11-25; it was laid out and built as the dwarf starting zone. Its ground, hubs, caves and roads stand where they were built. What changed for its new levels: the creatures and their places, the quest points, the nodes, and two places added on the north wall (Slagfall Gully, Blackmatch Camp) with the ore-cart siding at Tuskfall foot.
+
 | | |
 |---|---|
 | Size and offset | 1,000 × 1,000 m · Khazrun (500, 6800) |
 | Shape | A snowbound hanging valley that drops from north-west to south-east. Mount Khaz fills the southern horizon |
-| Elevation | Coldhearth 60 m · Frostpine Rise 85 m · Old Forge 40 m · Anvilrest 20 m · Rimewater 5 m. A hanging valley: the land beyond the north edge lies at 85 m and beyond the west edge at 66 m, the valley's own height on those sides; the south and east edges meet the valley floor |
-| Landmark | The Old Forge's chimney-stack at (480, 620); dark until EC-16, then a red glow on the snow |
+| Elevation | Coldhearth 60 m · Frostpine Rise 85 m · Slagfall Gully 55 m · Blackmatch canyon floor 70 m · Old Forge 40 m · Anvilrest 20 m · Rimewater 5 m. A hanging valley: the land beyond the north edge lies at 85 m and beyond the west edge at 66 m, the valley's own height on those sides; the south and east edges meet the valley floor |
+| Landmark | The Old Forge's chimney-stack at (480, 620); dark until EC-07, then a red glow on the snow |
 | Exits | Coldgate tunnel → Hammerdeep (300, 0), the inner road running on through Hammerdeep to Stoneheart Deeps · Bouldergate Pass → Stonewake Dale (960, 40) |
-| Start point | (250, 765), facing north toward the Warden's hall |
 
 ```
       A  B  C  D  E  F  G  H  I  J
- 10   ## FR FR FR ## ## ## KC KC ##
-  9   ## FR FR FR .. .. .. KC KC ##
-  8   ## CH CH .. .. .. .. KC .. ##
+ 10   ## FR FR FR ## ## BC KC KC ##
+  9   ## FR FR FR SG SG BC KC KC ##
+  8   ## CH CH .. SG SG .. KC .. ##
   7   GW GW CH .. OF OF .. TR TR ##
   6   GW GW .. .. OF OF .. TR TR ##
   5   ## .. .. .. .. AR .. TR TR ##
@@ -138,65 +139,75 @@ Until Harrowfield and Russetwood are built, the two NPCs who end BM-18 wait insi
 
 | Code | Sub-area | Centre | Size | Elevation and terrain |
 |---|---|---|---|---|
+| AR | Anvilrest | (540, 430) | 180 × 170 | Stone town on a terrace above the pond |
 | CH | Coldhearth Camp | (250, 780) | 160 × 140 | Palisaded shelf, 60 m; hall at the north end |
 | FR | Frostpine Rise | (290, 920) | 300 × 160 | Steep snow slope with frostpines |
 | GW | Gravelkin Warrens | Mouth (150, 690); interior under the camp, running in north-east from the mouth within (70–345, 610–850) | Surface 160 × 160; interior 3 chambers, about 200 m of tunnel, deep warren 40 m across below | Round gnawed tunnels; the mouth opens in a mound 9 m high. The hole in the larder floor is a pit of its own under the larder, not joined to the warren |
 | OF | The Old Forge | (480, 640) | 180 × 180 | Open stone platform with the firebed at its centre |
-| AR | Anvilrest | (540, 430) | 180 × 170 | Stone town on a terrace above the pond |
-| TR | Tuskfall Ridge | (810, 600) | 200 × 300 | Rocky spine with ledges; copper outcrops. Its feet (the cart road, the graveyard) lie at 30 m and the spine stands 34 m over them |
+| TR | Tuskfall Ridge | (810, 600) | 200 × 300 | Rocky spine with ledges; copper and tin outcrops. Its feet (the cart road, the siding, the graveyard) lie at 30 m and the spine stands 34 m over them |
 | RP | Rimewater Pond | (690, 260) | 200 × 180 | Frozen pond 170 × 150, ice to walk on; 4 ice-fishing holes |
 | KC | Kiln Cave | Mouth (850, 880); approach (790, 800); interior running north-west from the mouth within (690–900, 870–1000) | Approach 180 × 200; interior a hall 43 m across and, beyond it, Sootbeard's chamber 30 m across, about 80 m of tunnel, about 160 m from mouth to back | Soot-blackened; ledges for lookouts; the mouth opens in a mound 9 m high |
+| SG | Slagfall Gully | (500, 830) | 160 × 160 | Black slag scree in a gully of the north slope, the Old Forge's tip of a thousand years; no snow lies on it. The powder sledges stand at its head, around (500, 895) |
+| BC | Blackmatch Camp | Mouth (630, 800); canyon running north to its head at (630, 990) | 120 × 200 | Side canyon cut into the north wall: floor camp, goat-track along the east wall, powder-tent on a ledge, the chief's cave at the head |
 
-Kiln Cave runs north-west so that its back stays within 450 m of the Tuskfall foot graveyard. The Slagborn shoot and cast, so its hall is wide: each creature in it is given 150 m² of floor, and those who stand along its wall are out of each other's notice.
+Kiln Cave runs north-west so that its back stays within 450 m of the Tuskfall foot graveyard. The Slagborn shoot and cast, so its hall is wide: each creature in it is given 150 m² of floor, and those who stand along its wall are out of each other's notice. Blackmatch Camp's canyon lies west of the cave's interior and is not joined to it.
 
 ## Hubs
 
 | Hub | Centre | Radius | Buildings and spots |
 |---|---|---|---|
+| Anvilrest | (540, 430) | 80 | Forge-hall (0, +40) · *The Banked Coal* (−30, 0) · eyrie ledge (+55, +50) · drying racks (−60, +45) · brewhouse (+30, −40) · loom-house (+10, −10) · cart-works (−20, −55) · stores (+35, +15) · mailbox by the inn · wanted board on the forge-hall steps · sheltered south wall (+5, −72), the south edge of the terrace · graveyard (−95, +60) |
 | Coldhearth Camp | (250, 780) | 60 | Warden's hall and hearth (0, +30) · the ring (−35, 0) · hearth-shrine (+35, +10) · standing stone (+53, −20), beside the Forge Road where it leaves the camp · larder (−12, −28), with a hatch in its floor to the pit beneath · adit mouth (−70, −60) · graveyard (+70, −50) |
-| Anvilrest | (540, 430) | 80 | Forge-hall (0, +40) · *The Banked Coal* (−30, 0) · eyrie ledge (+55, +50) · drying racks (−60, +45) · brewhouse (+30, −40) · loom-house (+10, −10) · cart-works (−20, −55) · stores (+35, +15) · mailbox by the inn · sheltered south wall (+5, −72), the south edge of the terrace · graveyard (−95, +60) |
 
 ## Points
 
 | Point | Position | Used by |
 |---|---|---|
-| Cold Firebed | (480, 640) | EC-07 |
-| Sooty Footprints (3 triggers) | (560, 690) → (660, 740) → (760, 790) | EC-11 |
-| Scout Brynja's boulder | (800, 830) | EC-11, EC-12 |
-| Grolm Sootbeard | Middle of Sootbeard's chamber in Kiln Cave, before the crucible | EC-16 |
-| Slag Crucible (Ever-Ember) | Back of Kiln Cave: against the far wall of Sootbeard's chamber, behind him | EC-16 |
-| Grawl the Boulder-Eater | Deep warren, past the second rock-fall | EC-17 |
+| Tool Crates (12 positions) | Second warren chamber | EC-06 |
+| Cold Firebed | (480, 640) | Scenery; lit for a player after EC-07 |
+| Sooty Footprints (decals) | (560, 690) → (660, 740) → (760, 790) | Scenery for EC-07 |
+| Scout Brynja's boulder | (800, 830) | EC-08 |
+| Grolm Sootbeard | Middle of Sootbeard's chamber in Kiln Cave, before the crucible | EC-07 |
+| Slag Crucible (Ever-Ember) | Back of Kiln Cave: against the far wall of Sootbeard's chamber, behind him | EC-07 |
+| Loaded Ore Carts (6) | Tuskfall siding: (702, 540) · (703, 560) · (704, 580) · (705, 600) · (705, 620) · (705, 640) | EC-09 |
+| Powder Sledges (6) | Head of Slagfall Gully, within 25 m of (500, 895) | EC-14 |
+| Blackmatch Ledger | Powder-tent (660, 930) | EC-16 |
+| Dolga Blackmatch | Cave at the canyon head (630, 990) | EC-17 |
+| Grawl the Boulder-Eater | Deep warren, past the second rock-fall | EC-18 |
+| Powderkeg Pol | Powder store (600, 870) | EC-19 |
 | Whitepelt (rare) | 3 ledges on Tuskfall Ridge | — |
 | Ice-fisher's hut | (700, 300) | — |
 | Graveyards | Coldhearth (320, 730) · Anvilrest (445, 490) · Tuskfall foot (720, 520) | — |
-| Chests (one active) | Second warren chamber · Kiln Cave ledge · ridge top (840, 700) | — |
-
-Until Stonewake Dale and Stoneheart Deeps are built, the two NPCs who end EC-18 wait inside the hollow, each about 15 m in from the exit that leads to their zone and beside its road: Dale-Reeve Stonewake at Bouldergate Pass, Hallwarden Lampwright at the Coldgate tunnel, since the road to the Deeps runs through Hammerdeep.
+| Chests (one active) | Second warren chamber · Kiln Cave ledge · ridge top (840, 700) · Blackmatch floor tent | — |
 
 ## Spawn camps
 
 | Camp | Creature | Count | Where | Notes |
 |---|---|---|---|---|
-| EC-S01 | Rime Wolf Cub | 26 | FR, spread | |
-| EC-S02 | Crag Ram | 22 | FR east half and the slope down to OF | |
-| EC-S03 | Rime Wolf | 12 | Between OF and TR @ (640, 620) r90 | |
+| EC-S01 | Crag Ram | 22 | FR east half, the slope down to OF and the snowfields below it | |
+| EC-S02 | Rime Wolf | 14 | Snowfields between OF and TR @ (640, 620) r90 | |
+| EC-S03 | Tuskfall Boar | 20 | TR east foot @ (880, 520) r90 | |
 | EC-S04 | Gravelkin Scrabbler | 26 | GW mouth and first chamber | 8 outside |
-| EC-S05 | Gravelkin Gnasher | 12 | GW second chamber | |
-| EC-S06 | Gravelkin Rockchucker | 24 | TR west ledges above the cart road | |
+| EC-S05 | Gravelkin Gnasher | 16 | GW second chamber | Around the tool crates |
+| EC-S06 | Slagborn Lookout | 20 | KC approach ledges and cave mouth @ (805, 835) r55, and inside | 12 outside · 6 in the hall · 2 on the ramp to Sootbeard's chamber, who are his two guards |
 | EC-S07 | Snowshoe Lynx | 20 | TR upper ledges | Stealthed |
-| EC-S08 | Tuskfall Boar | 18 | TR east foot @ (880, 520) r90 | |
-| EC-S09 | Rimewater Sprite | 16 | RP, on the ice | |
-| EC-S10 | Slagborn Lookout | 20 | KC approach ledges and cave mouth @ (805, 835) r55, and inside | 12 outside · 6 in the hall · 2 on the ramp to Sootbeard's chamber, who are his two guards |
-| EC-S11 | Slagborn Firebrand | 12 | East side of the KC approach, (812–898, 728–878), and inside | 10 outside, no two within 30 m of each other and all clear of Scout Brynja's boulder · 2 in the hall |
+| EC-S08 | Slagborn Firebrand | 12 | East side of the KC approach, (812–898, 728–878), and inside | 10 outside, no two within 30 m of each other and all clear of Scout Brynja's boulder · 2 in the hall |
+| EC-S09 | Gravelkin Rockchucker | 24 | TR west ledges, 60 m and more above the Cart Road and the siding | Out of notice of travellers on the road |
+| EC-S10 | Rimewater Sprite | 16 | RP, on the ice | |
+| EC-S11 | Slagborn Sapper | 16 | SG head, around the powder sledges | Plus scripted spawns at 2 ore carts |
+| EC-S12 | Loose Slag Sprite | 18 | SG, on the scree | |
+| EC-S13 | Slagborn Powderkeg | 12 | BC: 4 goat-track, 8 floor | |
+| EC-S14 | Slagborn Sapper | 8 | BC floor | |
 
 ## Nodes
 
 | Node | Positions | Where |
 |---|---|---|
-| Copper Vein | 22 | TR 14 · GW mouth 4 · OF platform edge 4 |
-| Sunpetal | 14 | South-facing slopes below AR |
-| Hearthroot | 14 | Foot of TR and the terrace walls |
-| Dewleaf | 10 | Under the frostpines |
+| Copper Vein | 20 | TR 12 · GW mouth 4 · OF platform edge 4 |
+| Tin Vein | 16 | TR upper ledges 10 · deep warren 6 |
+| Dewleaf | 12 | Under the frostpines |
+| Bramblethorn | 18 | Sheltered south wall of AR and the terrace walls |
+| Marshbloom | 16 | Forge-warmed melt-pools below OF |
 | Fishing | 4 ice holes on RP | |
 
 ## Roads
@@ -206,4 +217,6 @@ Until Stonewake Dale and Stoneheart Deeps are built, the two NPCs who end EC-18 
 | Forge Road | Coldhearth (250, 780) → Old Forge (480, 640) → Anvilrest (540, 430) |
 | Coldgate Road | Anvilrest → (420, 250) → Coldgate (300, 0) |
 | Cart Road | Anvilrest → east below the stores (612, 420) → (700, 520) → round the south foot of TR (790, 425) → (868, 310) → (884, 200) → (938, 138) → Bouldergate (960, 40) |
+| Siding | Cart Road (700, 520) → along the west foot of TR to (705, 640) |
 | Kiln Track | Old Forge → (660, 740) → Kiln Cave approach (790, 800) |
+| Gully Track | Kiln Track (560, 690) → Slagfall Gully (500, 830) → Blackmatch Camp mouth (630, 800) |

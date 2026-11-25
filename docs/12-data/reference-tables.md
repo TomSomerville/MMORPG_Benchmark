@@ -106,10 +106,10 @@ Each cast yields one catch from the pool's table. "Junk" is vendor-grey (weeds, 
 | Water | Skill | Common | Uncommon | Rare | Junk |
 |---|---|---|---|---|---|
 | Silverrun Creek (Brightmead) | 25 | Silverrun Minnow 60% | Brook Trout 22% | Old Boot 3% (gives *Lucky Boot*) | 15% |
-| Rimewater Pond (Embercrag) | 25 | Rime Smelt 62% | Frost Perch 23% | — | 15% |
+| Millrace and mill-pool (Stonewake) | 25 | Dale Trout 56% | Longjaw Pike 22% | River Pearl 5% | 17% |
 | Longstrand (Harrowfield) | 75 | Strand Mackerel 58% | Slitherskin Eel 22% | Sealed Crate 4% | 16% |
 | Forest streams (Russetwood) | 75 | Copperleaf Dace 58% | Stream Eel 22% | Sealed Crate 4% | 16% |
-| Millrace and dam-foot pool (Stonewake) | 75 | Dale Trout 56% | Longjaw Pike 22% | River Pearl 5% | 17% |
+| Rimewater Pond (Embercrag) | 75 | Rime Smelt 62% | Frost Perch 23% | — | 15% |
 | Blackwater Fen (Thornwick) | 150 | Fen Catfish 56% | Murk Eel 24% | Waterlogged Locket 2% (until TM-34 is done) | 18% |
 | Highland streams (Ironroot) | 150 | Highland Salmon 58% | Stonescale Carp 25% | — | 17% |
 | Moor pools (Veilmoor) | 225 | Ghost Koi 55% | Lantern Eel 24% | Barrow-ring 2% (random green ring, ilvl 28–33) | 19% |
@@ -155,7 +155,7 @@ Every recipe not listed here is taught by its profession trainer at the skill sh
 | Moorhound Pie | Cooking | Peat-cutter Moss, Lanternwatch; also quest VM-10 | 16s |
 | Firefin Fillet | Cooking | Wellkeeper Sunniva, Emberwell | 18s, limited 1 |
 | Wyrm Steak Supreme | Cooking | Freeholders, Honored | 2g |
-| Harvest Pie · Dale Pasty · Woodsman's Stew · Glowcap Hotpot · Roasted Boar Haunch · Seared Ram Chop · Smoked Bear Steak · Highland Stew · Strider Pot-Roast | Cooking | Quests HF-04 · ST-04 · RW-04 · SD-04 · BM-06 · EC-05 · IR-07 · IR-20 · RL-02 | Quest reward (Smoked Bear Steak and Highland Stew are also trainer-taught) |
+| Harvest Pie · Dale Pasty · Woodsman's Stew · Glowcap Hotpot · Roasted Boar Haunch · Seared Ram Chop · Smoked Bear Steak · Highland Stew · Strider Pot-Roast | Cooking | Quests HF-04 · ST-05 · RW-04 · SD-04 · BM-06 · EC-04 · IR-07 · IR-20 · RL-02 | Quest reward (Smoked Bear Steak and Highland Stew are also trainer-taught) |
 | Anti-Venom | First Aid | Apothecary Crane, Thornwick | 5s |
 | Strong Anti-Venom | First Aid | Surgeon Burnsalve, Fort Ashwatch | 20s |
 | Starforged Greataxe | Blacksmithing | Farrier Hoofpick, Scoria Post | 4g, limited 1, restock 6 h |

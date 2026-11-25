@@ -1,6 +1,6 @@
 # Brightmead Vale — T1, levels 1–5 (Meridia)
 
-[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Sister zone: [Embercrag Hollow](t1-embercrag-hollow.md) · Next: [Harrowfield](t2-harrowfield.md) or [Russetwood](t2-russetwood.md)
+[← Master Plan](../../MASTER_PLAN.md) · [Leveling Path](00-leveling-path.md) · Sister zone: [Stonewake Dale](t1-stonewake-dale.md) · Next: [Harrowfield](t2-harrowfield.md) or [Russetwood](t2-russetwood.md)
 
 **Build detail:** [Quest text](../06-quests/text/bm-brightmead-vale.md) · [NPC roster](../11-npcs/01-brightmead-harrowfield-russetwood.md) · [World layout](../13-world/01-brightmead-embercrag.md) · [Creature data](../12-data/creatures.md). The quest table's Reward column on this page is copied from the quest text.
 
