@@ -27,7 +27,7 @@ All bindings are rebindable: every action has a primary and a secondary key, set
 | Player frame | Portrait, name, level, health, resource bar, combat/rest/leader/PvP icons |
 | Target frame | Health, resource, level and rank (elite dragon, rare silver, skull), buffs/debuffs, target-of-target, cast bar |
 | Party frames (4) / raid frames | Health, resource, debuff type colours, range fade, role |
-| Action bars | Main bar (12 × 6 pages), bottom-left, bottom-right, 2 right bars; stance bar (Fighter); pet bar reserved. The optional bottom-left and bottom-right bars stack above the XP bar |
+| Action bars | Main bar (12 × 6 pages), bottom-left, bottom-right, 2 right bars; stance bar (Fighter); pet bar reserved. The optional bottom-left and bottom-right bars sit side by side directly above the XP bar, the bottom-left on the left half and the bottom-right on the right half |
 | Cast bar, swing timer, GCD sweep | |
 | Buff / debuff row | Durations, cancel on right-click |
 | Minimap | Zoom, tracking (herbs/ore/treasure/undead), quest and town icons, clock, mail and LFG indicators |
