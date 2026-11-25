@@ -28,6 +28,7 @@ Every friendly NPC in the level 1–30 game: name, role, where they stand, what 
 | Services | Stock lists (`STK-…`), trainer lists (`TRN-…`) and other services from this page. "+" adds single items to a stock list |
 | Gives / Ends | Quest IDs this NPC offers and completes. **Filled in by script from the [quest text](../06-quests/text/00-quest-text-index.md)**; do not edit by hand |
 | Greeting | The line shown when the NPC is spoken to with nothing to hand in. Service NPCs open their service window with this line above it |
+| Sex | `M` or `F`: the body the NPC is drawn with, the man's or the woman's of its race ([Presentation Rules §2](../12-data/presentation-rules.md#2-npcs-and-humanoid-enemies-on-player-rigs)). `M/F` on a row that stands for several people (a "×N" row): the group has both. It is the last column, after Greeting, so that the programs that read a row's columns by their place still find them |
 
 Rules for all NPCs:
 
@@ -35,7 +36,8 @@ Rules for all NPCs:
 2. Every NPC that is not a quest giver has one greeting line; quest givers have one, plus their quest text.
 3. Vendors buy anything sellable. Any vendor marked **Repair** repairs all gear.
 4. Prices below are base prices. Reputation discounts: Friendly 5%, Honored 10%, Revered 15%, Exalted 20% with the vendor's allegiance.
-5. "×N" in a roster row means N copies of a generic NPC with a shared name pool, such as guards.
+5. "×N" in a roster row means N copies of a generic NPC with a shared name pool, such as guards. Its Sex is `M/F`: the copies alternate, the first a man, the second a woman, and so on in the order they are placed, so every post has both.
+6. Every other row has one Sex, `M` or `F`, and the game draws that body for the NPC wherever it stands, on each of its rows if it has several (a visiting NPC has the same Sex on every row).
 
 ## 2. Stock lists
 
