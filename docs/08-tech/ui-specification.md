@@ -102,7 +102,7 @@ The Report, Penalty notice and Help windows use the standard dialog frame and co
 | Launcher | Before the client starts: news panel, version, a progress bar for updates, Play (enabled when files are verified), Repair, Settings (install folder, download limit), links to register an account and to the policy pages ([Accounts and Live Service §6](accounts-and-live-service.md#6-updates-versions-and-restarts)) |
 | Login queue | Shown when the realm is at its player cap (`realm.maxPlayers`, at most 5,000): position in queue, estimated wait, Cancel. A dropped player who reconnects within 5 minutes keeps their place |
 | Character select | Up to 10 characters listed at the right with name, level, class, zone; the selected character standing in their home capital; Enter World, Create, Delete (type DELETE to confirm), Back |
-| Character create | Race buttons (Human, Dwarf), sex, class buttons (all three for both races); customisation sliders (skin, face, hair, hair colour, facial); race and class descriptions; name field with a Random button; Accept, Back |
+| Character create | Race buttons (Human, Dwarf), sex, class buttons (all three for both races); customisation sliders (skin, face, hair, hair colour, facial); a preview that is the live model, built as the game builds a player (the bald body with the chosen face, hair piece, facial pieces, skin tint and hair-colour tint, [Presentation Rules §2a](../12-data/presentation-rules.md#2a-player-characters)) and rebuilt as each slider moves; race and class descriptions; name field with a Random button; Accept, Back |
 | Loading | One painting per zone or instance, a tip line, a progress bar |
 
 ## 4. Default keybindings

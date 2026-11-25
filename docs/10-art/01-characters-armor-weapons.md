@@ -8,11 +8,13 @@ Every asset needed to put a player character on screen at any level from 1 to 30
 
 Two rigs (Human, Dwarf); male and female share a rig with different meshes. The four player bodies are the most important art in the game, because players look at them every minute; they and their animations are made before any other model.
 
-**How a body is made.** Each body is a generated model fitted to its rig's contract. A figure is painted in the game's style standing in an A-pose, an image-to-3D model makes a textured mesh of it, and the fitting step keeps that mesh: it is reduced to the triangle budget, given its own UV layout with its colour baked onto one 1024² texture, its joints are found from its outline, it is skinned, and it is carried to the contract's skeleton and rest pose so that every player clip plays on it. The result is **a single mesh with its own baked texture**. What the figure wears, its hair and its face are part of that mesh and that texture.
+**How a body is made.** Each body is a generated model fitted to its rig's contract. A figure is painted in the game's style standing in an A-pose, an image-to-3D model makes a textured mesh of it, and the fitting step keeps that mesh: it is reduced to the triangle budget, given its own UV layout with its colour baked onto one 1024² texture, its joints are found from its outline, it is skinned, and it is carried to the contract's skeleton and rest pose so that every player clip plays on it. The result is **a single mesh with its own baked texture**.
+
+**A player body is bald and clean-shaven.** Each of the four is painted with no hair on its head and none on its face, in plain underclothes, so the body carries nothing a player may choose. The underclothes are part of the mesh and its texture. Hair, facial hair and features are separate pieces that follow the head, faces are variants of the body's head, and skin and hair colour are tints (§2).
 
 The constructed body a fitted body replaces is kept beside it. A skin or outfit painted for the constructed body's layout fits that mesh and no other, so a character wearing one is drawn on the constructed body until the outfit has a dressed body of its own ([Creatures & NPCs §6](02-creatures-npcs.md#6-npc-outfits-on-player-rigs)).
 
-Open: whether the swappable head, hair and facial-hair pieces and the layered skin texture of §2 apply to fitted bodies is not decided; a fitted body is one mesh with one texture and has no route for them today.
+**Customisation on a fitted body: separate hair and faces.** A player's character is built from its bald body, one face, one hair style, its facial hair or features, a skin tone and a hair colour, each chosen freely of the others. The body is never generated again for a choice: every option of §2 is a piece, a head variant or a tint laid on the one body. This settles customisation only; what a fitted body wears over it is the armor question of §4.
 
 | ID | Done | Asset | Notes |
 |---|---|---|---|
@@ -29,6 +31,8 @@ Open: whether the swappable head, hair and facial-hair pieces and the layered sk
 
 ## 2. Customisation permutations
 
+Every option below is made for the bald, clean-shaven fitted body of §1 and is mixed and matched freely with the others.
+
 | ID | Done | Option | Human M | Human F | Dwarf M | Dwarf F | Total assets |
 |---|---|---|---|---|---|---|---|
 | CUS-01 | ☐ | Skin tones (texture tints + hand-tuned variants) | 6 | 6 | 6 (3 Hallborn pale, 3 Dalefolk weathered) | 6 | 24 |
@@ -39,6 +43,16 @@ Open: whether the swappable head, hair and facial-hair pieces and the layered sk
 | CUS-07 | ☐ | Starting outfits | 3 (one per class) | 3 | 3 | 3 | Built from tier-1 armor textures (§5) |
 
 Possible distinct faces-on-bodies: 4 bodies × 6 skins × 6 faces × 8 hair × 8 colours × 4–8 facial = ~46,000 combinations from **110 authored assets**.
+
+**How each row is made on a fitted body.**
+
+- **CUS-01, skin tones.** A tint of the skin region of the body's own texture. A mask made with the body marks which part of the texture is skin, so the tint leaves the eyes, the lips and the underclothes alone. A hand-tuned variant is the same tint corrected by hand where the plain one reads wrong.
+- **CUS-02, faces.** A variant of the body's head: a head texture painted onto the head region of the body's texture, with a small change of shape (brow, jaw, nose, cheeks) where it is cheap to make. The body below the neck is the same for every face. The skin tone tints the face as it tints the rest of the skin.
+- **CUS-03, hair styles.** Each is a separate piece, made by the route that makes the body: a picture of the head wearing the style, an image-to-3D model, then the hair cut from the head and fitted to the body's scalp ([3D Pipelines, P21](../14-asset-pipeline/02-3d-pipelines.md#p21--hair-beards-manes-and-tails)). A short style is attached to the head bone. A long one is skinned to the head and neck bones so that it moves with the neck. The style named bald is the body with no hair piece.
+- **CUS-04, hair colours.** Tint ramps shared by all four bodies. A hair or facial-hair piece keeps its light and dark in grey, and the ramp colours it, so every style comes in every colour. The ramp colours hair pieces only.
+- **CUS-05, facial hair and features.** Beards, moustaches, braids and sideburn-plaits are pieces made as the hair styles are, skinned to the head and neck bones where they must move with the jaw or the neck, and coloured by the hair colour ramp. Rings and earrings are small pieces attached to the head bone, in their own colours. Freckles and scars are drawn on the face, over the head texture, and take the skin tone. "None" is the body with no piece.
+
+**Order of making.** Under the approval rule, the four bald bodies and a small first set of pieces are made first and shown to the owner. The full set of this section is made only after he approves them.
 
 ## 3. Player animation set
 

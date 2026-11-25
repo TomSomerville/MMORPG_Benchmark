@@ -29,6 +29,19 @@ The data files say what a creature, spell or item *does*. The art lists say what
 | Held items | A vendor or crafter holds nothing; a guard and any combat trainer hold the weapon of their kind; an NPC whose text mentions a tool or object holds it if the prop exists |
 | Idle | Stand, with the work animation of the role where one exists (hammering at a forge, sweeping, reading), otherwise the idle variations |
 
+### 2a. Player characters
+
+A player's character is not a dressed body. It is built from its appearance (skin, face, hair, hair colour, facial), each part chosen freely of the others ([Characters, Armor & Weapons §2](../10-art/01-characters-armor-weapons.md#2-customisation-permutations); [Placeholders and Swapping §2a](../14-asset-pipeline/04-placeholders-and-swap.md#2a-fitted-bodies-kept-templates-and-dressed-bodies)).
+
+| Part | Rule |
+|---|---|
+| Body | The fitted body of the character's race and sex (CHR-003 to CHR-006), which is bald and clean-shaven, in plain underclothes |
+| Face | The chosen face of that body (CUS-02): its head texture on the head region of the body's texture, with its small change of shape where it has one |
+| Hair | The chosen hair style's piece for that body (CUS-03), attached to the head bone or skinned to the head and neck bones. The style named bald adds no piece |
+| Facial hair and features | The chosen piece for that body (CUS-05): beards, moustaches, braids, sideburn-plaits, rings and earrings as pieces that follow the head; freckles and scars drawn on the face. "None" adds nothing |
+| Skin tone | The chosen tone (CUS-01), a tint of the skin region of the body's texture, the face included. Eyes, lips and clothes are not tinted |
+| Hair colour | The chosen ramp (CUS-04), a tint on the hair and facial-hair pieces only. Rings and earrings keep their own colours |
+
 ## 3. Abilities
 
 | Field | Rule |

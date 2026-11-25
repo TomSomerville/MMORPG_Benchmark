@@ -34,7 +34,7 @@ A skeleton is shared by everything on a rig; a UV layout is not. Three kinds of 
 | Model | Mesh and UV layout | Where it is |
 |---|---|---|
 | **Template** | The model-free maker's body for the rig family. All template skins of the rig share its UV layout (`uv_layout` in the rig contract) | The asset's own file until a fitted body replaces it; after that, beside it as `<name>.template.glb` |
-| **Fitted body** | A generated mesh carried onto the skeleton by rig-fit: one mesh, its own baked texture, **its own UV layout**. Clothing, hair and face are part of the mesh | The asset's own file, `<name>.glb`, state `generated` |
+| **Fitted body** | A generated mesh carried onto the skeleton by rig-fit: one mesh, its own baked texture, **its own UV layout**. Clothing is part of the mesh, and so are hair and face, except on a player body, which is bald and clean-shaven (rule 5) | The asset's own file, `<name>.glb`, state `generated` |
 | **Dressed body** | A fitted body made for **one outfit on one body**: that body's skeleton under a mesh that already wears the outfit | Beside the outfit's texture, named for the outfit and the body: `client/assets/outfits/<outfit file name>.<body id in lower case>.glb`, for example `….chr-005.glb` |
 
 Rules:
@@ -43,6 +43,7 @@ Rules:
 2. **Which model the client builds**, for an entity with a body and optionally a skin or outfit: if a dressed body exists for this outfit on this body, that file, whole, and the outfit texture is not applied; otherwise, if the body is `generated` and the skin or outfit is not, the kept template with the skin applied; otherwise the body's own file with the skin applied.
 3. **A skin made for a fitted model** (a creature variety's tint of the fitted model's texture, [P07](01-image-pipelines.md)) is delivered as `generated`, so by rule 2 it is applied to the fitted model.
 4. A dressed body is not a manifest asset of its own: it has no id, no state entry and no placeholder. Its presence beside the outfit is what the client tests.
+5. **A player's model is built from parts; an NPC's is not.** A player's character is its bald fitted body with, from the character's appearance: one **face**, a variant of the body's head (a head texture laid on the head region of the body's texture, with its small change of shape where it has one, and any freckles or scar drawn over it); one **hair piece** and its **facial hair or feature pieces**, each attached to the `head` bone or skinned to the head and neck bones, so they follow the head in every clip; a **skin tone**, a tint of the skin region of the body's texture; and a **hair colour**, a tint ramp on the hair and facial-hair pieces. The tints leave eyes, lips and clothes alone. "Bald" and "none" add no piece. Each face, piece and ramp is an asset of its own with its own placeholder, so each swaps in when it arrives, and the pieces are re-attached when the body's visual node is rebuilt (§8). An NPC is drawn as rule 2 says, a dressed body where one exists, and that body's hair and face are part of its mesh ([P13 and P21](02-3d-pipelines.md)).
 
 Open: whether dressed bodies are the permanent method for NPC clothing, in which case each needs a manifest row, a contract and a state entry, or a measure for the starting zones, is the owner's decision.
 
