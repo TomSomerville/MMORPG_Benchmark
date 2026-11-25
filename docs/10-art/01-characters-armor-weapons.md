@@ -26,7 +26,7 @@ The constructed body a fitted body replaces is kept beside it. A skin or outfit 
 | CHR-004 | ☐ | Human female body mesh | |
 | CHR-005 | ☐ | Dwarf male body mesh | |
 | CHR-006 | ☐ | Dwarf female body mesh | |
-| CHR-007 | ☐ | Underwear layer ×4 bodies | Painted into the skin atlas |
+| CHR-007 | ☐ | Underwear layer ×4 bodies | Plain underclothes; part of the body mesh and its texture |
 | CHR-008 | ☐ | First-person arms ×4 | Optional; only if first-person zoom shows hands |
 | CHR-009 | ☐ | Ghost shader variant | Used when dead; applies to any body |
 | CHR-010 | ☐ | Character-select podium poses ×4 | Idle on the select screen |
@@ -93,11 +93,25 @@ The six regions counted for each set in §5 are these six pieces (chest, legs, f
 
 **Geometry swaps.** Shapes a texture cannot make (flared sleeves, boot tops, a robe skirt, glove cuffs, a tabard, a cloak) are parts built into the body mesh, hidden until an item calls for them. They may be made after the textures.
 
+**Robe skirts and cloaks are geometry swaps, not separate models** (decided 2026-11-24). Each of the four player bodies carries switchable lower-body variants (plain legs, a short kilt, a long robe skirt to the ankles; the robe skirt hides the legs under it) and cape shapes (short, long, wide), all skinned to the body's rig. A robe is painted by the region textures of the shared layout: its lower-torso and leg regions carry onto the skirt, so a robe needs no texture beyond its set's. A cloak's cape shows the cloak item's own texture (§6). Flared sleeves, glove cuffs and boot tops work the same way, each painted by the region texture of the piece that calls for it.
+
+| ID | Done | Geometry swap parts of each body | Painted by | Per body | Total (4 bodies) |
+|---|---|---|---|---|---|
+| GEO-01 | ☐ | Lower-body variants: plain legs, short kilt, long robe skirt | The worn piece's lower-torso and leg region textures | 3 | 12 |
+| GEO-02 | ☐ | Cape shapes: short, long, wide | The worn cloak's texture (CLK-02, CLK-03) | 3 | 12 |
+| GEO-03 | ☐ | Flared sleeves | The arm regions of the worn chest piece | 1 | 4 |
+| GEO-04 | ☐ | Glove cuffs | The lower-arm region of the worn gloves | 1 | 4 |
+| GEO-05 | ☐ | Boot tops | The lower-leg region of the worn boots | 1 | 4 |
+
+**36 geometry swap parts**, 9 for each body. They are parts of the body meshes of §1 and add no model and no texture of their own.
+
+Open: whether the tabard needs a part of its own, or is the tabard region texture alone, is not decided; no tabard part is counted. Which sets show the short kilt in place of the long robe skirt (the Dawnwarden "tabard-skirt" of §5 among them), and which cloak designs take which cape shape, are not decided either.
+
 **Attached models.** Helms, shoulders, weapons and shields are models of their own, attached to bones. A helm hides the hair and, as that race and that helm need, the ears or the beard. Each character has a "hide helm" option.
 
 **How the textures are made.** The region textures are made by pipeline P06 ([Image Pipelines](../14-asset-pipeline/01-image-pipelines.md#p06--armor-region-textures-and-colourways-about-550-textures)), painted in the game's style for the shared layout. Under the approval rule a first batch, the starting cloth set and one set each of leather and mail, is shown to the owner before the rest is made.
 
-The counts of §5 and §6 (robe skirts for each set and body, one cloak mesh for each rig) were written before this decision and are unchanged.
+The counts of §5, §6 and §11 follow this: no robe skirt is a model of its set and no cloak has a cloth mesh of its own.
 
 Open: whether the palette lock and the repaint pass apply to fitted bodies is not decided; a fitted body keeps its generator's colours today.
 
@@ -105,17 +119,17 @@ Open: whether the palette lock and the repaint pass apply to fitted bodies is no
 |---|---|---|---|
 | **Body texture region** painted over the skin atlas | Chest, Legs, Feet, Hands, Wrist, Waist, Shirt, Tabard | Appearance set × colourway | Painted once on a shared UV layout that all 4 bodies use |
 | **Attached model** on a bone | Head, Shoulders (pair), belt buckle (optional) | Appearance set | 2 fits (Human, Dwarf); male/female by scale offset |
-| **Geometry swap** built into the body mesh | Robe skirt, boot top, glove cuff, flared sleeve, tabard | Shape, shown when an item calls for it | Part of each of the 4 bodies |
-| **Cloak** | Back | Cloak design × colourway | One cloth mesh per rig (2) |
+| **Geometry swap** built into the body mesh | Lower body (plain legs, short kilt, long robe skirt), cape, boot top, glove cuff, flared sleeve | Shape, shown when an item calls for it | Part of each of the 4 bodies (GEO-01 to GEO-05) |
+| **Cloak texture** on the body's cape shape | Back | Cloak design × colourway | Every body: the cape is a geometry swap of each body (GEO-02) |
 | **Weapon / shield / held item** | Main hand, Off hand, Ranged | Model × colourway | Universal (hand sockets) |
 
-So a full armor **appearance set** = 6 texture regions + helm mesh + shoulder mesh (+ robe skirt for cloth chests) and each **colourway** is a recolour of those textures.
+So a full armor **appearance set** = 6 texture regions + helm mesh + shoulder mesh, and each **colourway** is a recolour of those textures. A set worn as a robe adds nothing: its region textures carry onto the body's robe skirt.
 
 **Total permutations supported:** 4 bodies × every combination of 10 visible armor slots × weapons — all from the lists in §5–§9.
 
 ## 5. Armor appearance sets (levels 1–30)
 
-Colourways are full recolours; "Head/Shoulders" says whether that tier has those pieces.
+Colourways are full recolours; "Head/Shoulders" says whether that tier has those pieces. "Robe skirt" says whether the set is worn with the body's robe skirt (the geometry swap GEO-01 of §4), which the set's lower-torso and leg regions paint; it is not a model of the set.
 
 **Colourway rule (set after the quest rewards were named).** The nine general sets (C1–C3, L1–L3, M1–M3) dress 377 tier-art items, so each needs enough colourways that two rewards for the same slot from the same zone never look identical:
 
@@ -150,17 +164,18 @@ Colourways are full recolours; "Head/Shoulders" says whether that tier has those
 | ARM-P1 | ☐ | **Contender's** PvP sets ×3 classes | Mail ×2, Leather ×1 | 30 | 6 each | ✓ | ✓ | Druid ✓ | 1 each (team-neutral) | PvP vendor |
 | ARM-E1 | ☐ | World-boss epic pieces | Mixed | 30 | individual | 0 | 2 (Barkhide, Cinderheart) | — | 1 | See item index: unique textures |
 
-**Counts:** 23 appearance sets (counting the three PvP sets separately) · 138 texture regions authored once · **≈ 550 colourway region textures** in total · 22 helm meshes × 2 fits · 23 shoulder meshes × 2 fits · 7 robe skirts × 4 fits.
+**Counts:** 23 appearance sets (counting the three PvP sets separately) · 138 texture regions authored once · **≈ 550 colourway region textures** in total · 22 helm meshes × 2 fits · 23 shoulder meshes × 2 fits · 8 sets worn with the body's robe skirt (the five cloth sets, the Druid raid and PvP sets, and the Cleric raid set's tabard-skirt), which need no model of their own.
 
 Named items that need their own unique texture or mesh on top of these are listed one by one in the [Named Item Index](07-named-item-index.md): 16 chests, 6 legs, 5 feet, 3 hands, 6 wrists, 11 belts, 6 helms, 8 shoulder pairs.
 
 ## 6. Cloaks, shirts, tabards
 
+A cloak is a texture, one for each cloak look. It is shown on a cape shape built into each player body (the geometry swap GEO-02 of §4); there is no cloak mesh.
+
 | ID | Done | Asset | Count |
 |---|---|---|---|
-| CLK-01 | ☐ | Cloak cloth mesh + sim setup | 2 (per rig) |
 | CLK-02 | ☐ | Cloak designs (plain, trimmed, fur-collared, patched, pelt, scale, tattered, embroidered, hooded-look, crested, winged-membrane, burial shroud) | 12 designs × 3 colourways = 36 textures |
-| CLK-03 | ☐ | Unique cloaks | 5 (see item index) |
+| CLK-03 | ☐ | Unique cloaks | 8 textures (see item index) |
 | SHT-01 | ☐ | Shirts (brown linen, red, white formal, class starting shirt) | 4 textures |
 | TAB-01 | ☐ | Guild tabard base (front/back region) | 1 template |
 | TAB-02 | ☐ | Guild emblems | 40 emblem masks |
@@ -251,11 +266,12 @@ From the [Named Item Index](07-named-item-index.md), every blue or epic weapon a
 | Category | Assets |
 |---|---|
 | Rigs and bodies | 2 rigs, 4 bodies |
+| Geometry swap parts built into the bodies | 36 (9 per body: 3 lower-body variants, 3 cape shapes, flared sleeves, glove cuffs, boot tops) |
 | Customisation | 110 |
 | Player animation clips | 192 (96 × 2 rigs) + 12 mount/rider |
-| Armor appearance sets | 23 sets → ≈ 550 region textures, 44 helm fits, 46 shoulder fits, 28 robe skirts |
+| Armor appearance sets | 23 sets → ≈ 550 region textures, 44 helm fits, 46 shoulder fits; robes use the region textures and the bodies' robe skirts |
 | Unique named armor pieces | 61 |
-| Cloaks, shirts, tabards | 36 + 5 + 4 + 46 masks + 6 |
+| Cloaks, shirts, tabards | 36 + 8 cloak textures + 4 shirts + 1 tabard base + 46 masks + 6 fixed tabards |
 | Weapon models (tier + unique) | 52 + 93 = 145 |
 | Weapon textures | 121 + 93 = 214 |
 | Mounts / vehicles | 9 |

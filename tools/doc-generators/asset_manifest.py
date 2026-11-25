@@ -336,12 +336,13 @@ KIND = OrderedDict([   # kind: (order, pipeline, technical target)
     ('Gathering node', (14, 'P12', 'Full and depleted states; readable at 30 m by its coloured feature')),
     ('Rig', (15, 'P14', 'Skeleton and skin weights; bone names per the rig contract')),
     ('Character model', (16, 'P13', 'Player body 4 to 6k triangles, 1024 px atlas; creature 1.5 to 5k; boss 8 to 12k and 2048 px')),
-    ('Hair', (17, 'P21', 'Hair cards with spring-bone chains; 300 to 900 triangles')),
-    ('Customisation', (18, 'P07', 'Texture layer or tint ramp on the shared body layout')),
+    ('Hair', (17, 'P21', 'Separate solid painted piece, attached to the head bone or skinned to the head and neck bones; nothing simulated; 300 to 900 triangles')),
+    ('Customisation', (18, 'P07', 'Tint, head variant or drawn feature on the body\'s own texture; no new body is generated')),
     ('Skin or outfit', (19, 'P07', '512 to 1024 px on the rig\'s shared layout; mesh variant only where noted')),
     ('Animation', (20, 'P15', 'One clip, on the named rig; loops where it is a loop; contact frames on gameplay timing')),
     ('Armor texture', (21, 'P06', 'One body region on the shared layout that all four bodies use')),
-    ('Armor piece', (22, 'P10', 'Helm, shoulders or robe skirt; 300 to 600 triangles; one fit per rig')),
+    ('Body geometry swap', (21.5, 'P13', 'Part built into a player body mesh and skinned to its rig; hidden until an item calls for it; no model of its own')),
+    ('Armor piece', (22, 'P10', 'Helm or shoulders, attached to a bone; 300 to 600 triangles; one fit per rig')),
     ('Weapon model', (23, 'P10', '300 to 800 triangles; 256 px')),
     ('Effect', (24, 'P08', 'Flipbook sheet up to 1024 px and a particle definition; 150 particles or fewer, 600 for boss effects')),
     ('Icon', (25, 'P02', '128 px source, 64 px shipped; readable at 32 px; no text')),
@@ -399,9 +400,12 @@ add('CHR-002', 'Rig', 'Dwarf rig', 'Skeleton for dwarf bodies with the same bone
     'Both dwarf bodies and every dwarf NPC', 'CORE', 0, 'CHR-002')
 for i, b in enumerate(BODIES):
     add(f'CHR-00{i + 3}', 'Character model', f'{b} body',
-        f'{b} player body, one mesh with swappable head, hair and facial-hair pieces and a layered skin texture. Stylised chunky proportions ({"6.5" if "Human" in b else "4.5"} heads tall), mitten hands. 4 to 6k triangles with a half-detail level.',
+        f'{b} player body: a generated model fitted to the {b.split()[0].lower()} rig, painted bald and clean-shaven in plain underclothes, on the texture layout all four bodies share. '
+        f'Hair, facial hair and features are separate pieces, faces are variants of its head, and skin and hair colour are tints. '
+        f'Its geometry swaps are built into the mesh and hidden until an item calls for them: lower-body variants (plain legs, short kilt, long robe skirt), cape shapes (short, long, wide), flared sleeves, glove cuffs and boot tops. '
+        f'Stylised chunky proportions ({"6.5" if "Human" in b else "4.5"} heads tall), mitten hands. 4 to 6k triangles, one 1024 px texture, one mesh at every distance.',
         'Player characters and NPCs on this body', 'CORE', 0, f'CHR-00{i + 3}')
-    add(f'CHR-007-{slug(b)}', 'Customisation', f'Underwear layer: {b}', f'Plain undyed linen underwear painted into the skin atlas of the {b.lower()} body.',
+    add(f'CHR-007-{slug(b)}', 'Customisation', f'Underwear layer: {b}', f'Plain undyed linen underclothes of the {b.lower()} body: part of the body mesh and painted in its texture; the skin tint leaves them alone.',
         'Character with no armor', 'CORE', 0, 'CHR-007')
     add(f'CHR-008-{slug(b)}', 'Character model', f'First-person arms: {b}', f'Forearms and hands of the {b.lower()} body for first-person view, shown only at full zoom-in.',
         'First-person camera', 'ANY', 1, 'CHR-008')
@@ -423,20 +427,20 @@ FACIAL = {'Human male': ['stubble', 'short beard', 'full beard', 'moustache', 'g
 for b in BODIES:
     race = b.split()[0]
     for i, t in enumerate(SKIN[race]):
-        add(f'CUS-01-{slug(b)}-{i + 1}', 'Customisation', f'Skin tone {i + 1} ({t}): {b}', f'Skin texture for the {b.lower()} body in a {t} tone; painted, with soft painted shading and no pores.',
+        add(f'CUS-01-{slug(b)}-{i + 1}', 'Customisation', f'Skin tone {i + 1} ({t}): {b}', f'Skin tone for the {b.lower()} body: a {t} tint of the skin region of the body\'s own texture, laid through the body\'s skin mask so that the eyes, the lips and the underclothes keep their colour; corrected by hand where the plain tint reads wrong.',
             'Character creation option', 'CORE', 0, 'CUS-01')
     for i, t in enumerate(FACE):
         add(f'CUS-02-{slug(b)}-{i + 1}', 'Customisation', f'Face {i + 1} ({t}): {b}', f'Head texture and small mesh morph for the {b.lower()} body: {t} face, painted eyes and brows, readable at game distance.',
             'Character creation option', 'CORE', 0, 'CUS-02')
     for i, t in enumerate(HAIRS[b]):
-        add(f'CUS-03-{slug(b)}-{i + 1}', 'Hair', f'Hair style {i + 1} ({t}): {b}', f'Hair mesh for the {b.lower()} head: {t}. Chunky painted clumps as hair cards, grey-scale so the colour ramps tint it; spring bones on any part longer than the neck.',
+        add(f'CUS-03-{slug(b)}-{i + 1}', 'Hair', f'Hair style {i + 1} ({t}): {b}', f'The bald style of the {b.lower()} body: the body with no hair piece.' if t == 'bald' else f'Hair piece for the bald {b.lower()} head: {t}. A separate solid painted piece of a few large clumps, grey so the hair colour ramps tint it; a short style is attached to the head bone, a long one is skinned to the head and neck bones. Nothing is simulated.',
             'Character creation option; NPCs', 'CORE', 0, 'CUS-03')
     for i, t in enumerate(FACIAL[b]):
         kind = 'Customisation' if any(w in t for w in ('freckles', 'scar')) else 'Hair' if any(w in t for w in ('beard', 'stubble', 'moustache', 'goatee', 'sideburn', 'plait', 'braid')) else 'Prop'
         add(f'CUS-05-{slug(b)}-{i + 1}', kind, f'Facial feature {i + 1} ({t}): {b}', f'Facial piece for the {b.lower()} head: {t}. Tinted by the hair colour ramp where it is hair.',
             'Character creation option; NPCs', 'CORE', 0, 'CUS-05')
 for i, t in enumerate(['black', 'dark brown', 'chestnut', 'auburn', 'red', 'blond', 'grey', 'white']):
-    add(f'CUS-04-{i + 1}', 'Customisation', f'Hair colour ramp: {t}', f'Four-step tint ramp (shadow, base, light, highlight) for {t} hair, applied to every hair and beard mesh.',
+    add(f'CUS-04-{i + 1}', 'Customisation', f'Hair colour ramp: {t}', f'Four-step tint ramp (shadow, base, light, highlight) for {t} hair, applied to every hair and facial-hair piece.',
         'Character creation option', 'CORE', 0, 'CUS-04')
 
 ANIM_LEVEL = {'ANM-01': 0, 'ANM-02': 1, 'ANM-03': 1, 'ANM-04': 1, 'ANM-05': 1, 'ANM-06': 1, 'ANM-07': 1, 'ANM-08': 30, 'ANM-09': 1}
@@ -483,15 +487,19 @@ for h1, h2, h3, c in table(L1):
             names = names if names and len(names) == n else (['base'] if n == 1 else [f'colourway {LETTERS[i]}' for i in range(n)])
             hz = {'crypt': ('GC', 13), 'slag': ('SW', 20), 'hollow': ('HK', 27)}
             ways = [(nm, hz.get(nm, (locate(usedby, ('ANY', lo))[0], lo))[0], hz.get(nm, (None, lo))[1]) for nm in names]
+        # A robe is not a model: the body's robe skirt (a geometry swap, GEO-01) is painted by the set's own region textures.
+        robe = sid == 'ARM-T1C' or ('✓' in c[8] and (sid != 'ARM-P1' or sid2 == 'ARM-P1D'))
+        skirt = 'tabard-skirt' if sid == 'ARM-T1C' else 'robe skirt'
         for wname, wz, wl in ways:
             pal = f' in the palette of {ZS[wz]} ({ZONES[wz][3]})' if wz not in ('ANY',) and ZONES[wz][3] else ''
             for r in REGIONS:
                 add(f'{sid2}-{slug(wname)}-{r}', 'Armor texture', f'{sname2}: {r}, {wname} colourway',
-                    f'{atype2} armor texture for the {r} region of the "{sname2}" appearance set, {wname} colourway{pal}. Painted on the shared body layout so it fits all four bodies; seams must be invisible.',
+                    f'{atype2} armor texture for the {r} region of the "{sname2}" appearance set, {wname} colourway{pal}. Painted on the shared body layout so it fits all four bodies; seams must be invisible.'
+                    + (f' The set is worn with a {skirt}: this region\'s painting carries onto the skirt built into each body, so it must read as one garment from the waist down.' if robe and r in ('chest', 'legs') else ''),
                     f'{usedby}', wz, wl, sid)
-        for col, part, fits in ((6, 'helm', ['Human fit', 'Dwarf fit']), (7, 'shoulders', ['Human fit', 'Dwarf fit']), (8, 'robe skirt', BODIES)):
+        for col, part, fits in ((6, 'helm', ['Human fit', 'Dwarf fit']), (7, 'shoulders', ['Human fit', 'Dwarf fit'])):
             cell = c[col]
-            if '✓' in cell or (sid == 'ARM-T1C' and col == 8):
+            if '✓' in cell:
                 note = clean(cell.replace('✓', '')).strip()
                 for fit in fits:
                     add(f'{sid2}-{slug(part)}-{slug(fit)}', 'Armor piece', f'{sname2}: {part} ({fit})',
@@ -502,12 +510,26 @@ for h1, h2, h3, c in table(L1):
             TIERSET[(atype.lower(), band)] = sname
 
 CLOAKS = ['plain', 'trimmed', 'fur-collared', 'patched', 'pelt', 'scale', 'tattered', 'embroidered', 'hooded-look', 'crested', 'winged-membrane', 'burial shroud']
-for rig in ('Human', 'Dwarf'):
-    add(f'CLK-01-{rig[0]}', 'Armor piece', f'Cloak cloth mesh ({rig} rig)', f'Cloak mesh for the {rig.lower()} rig with a cloth chain of spring bones from the shoulders; takes any cloak texture.',
-        'Every cloak', 'ANY', 1, 'CLK-01')
+# Geometry swaps (decided 2026-11-24): robe skirts and capes are parts of each player body mesh, not models of their own.
+# They are listed with the body they belong to (level 0), after its animations.
+SWAP = 'Built into the body mesh, skinned to the {rig} rig and hidden until an item calls for it.'
+LOWER = [('plain legs', 'the body\'s own legs as a switchable part, shown under trousers and leg armor and under a kilt, and hidden while the long robe skirt shows', 'Every item that shows the legs'),
+         ('short kilt', 'a short skirt from the waist, worn over the legs; painted by the worn item\'s lower-torso and leg region textures', 'Kilts and short skirts'),
+         ('long robe skirt', 'a long skirt from the waist to the ankles, which hides the legs under it; painted by the worn robe\'s region textures, whose lower-torso and leg regions carry onto the skirt', 'Robes')]
+CAPES = ['short', 'long', 'wide']
+for b in BODIES:
+    swap = SWAP.format(rig=b.split()[0].lower())
+    for v, d, use in LOWER:
+        add(f'GEO-01-{slug(b)}-{slug(v)}', 'Body geometry swap', f'Lower body, {v}: {b}', f'Lower-body variant of the {b.lower()} body: {d}. {swap}', use, 'CORE', 0, 'GEO-01')
+    for v in CAPES:
+        add(f'GEO-02-{slug(b)}-{v}-cape', 'Body geometry swap', f'Cape, {v}: {b}', f'Cape shape of the {b.lower()} body: a {v} cape hanging from the shoulders down the back. It has no texture of its own: it shows the worn cloak item\'s texture. {swap}', 'Cloaks', 'CORE', 0, 'GEO-02')
+    for gid, v, d, use in (('GEO-03', 'Flared sleeves', 'a flare at the wrist of each sleeve, painted by the arm regions of the worn chest piece', 'Robes and wide-sleeved chest pieces'),
+                           ('GEO-04', 'Glove cuffs', 'a cuff standing out from each lower arm, painted by the lower-arm region of the worn gloves', 'Gauntlets and cuffed gloves'),
+                           ('GEO-05', 'Boot tops', 'a top standing out from each lower leg, painted by the lower-leg region of the worn boots', 'Boots with a turned or flared top')):
+        add(f'{gid}-{slug(b)}', 'Body geometry swap', f'{v}: {b}', f'{v} of the {b.lower()} body: {d}. {swap}', use, 'CORE', 0, gid)
 for i, cdesign in enumerate(CLOAKS):
     for j, way in enumerate(['earth brown', 'forest green', 'slate blue']):
-        add(f'CLK-02-{slug(cdesign)}-{j + 1}', 'Armor texture', f'Cloak: {cdesign}, {way}', f'Cloak texture, {cdesign} design in {way}. Painted folds, worn hem; back view is what the player sees most.',
+        add(f'CLK-02-{slug(cdesign)}-{j + 1}', 'Armor texture', f'Cloak: {cdesign}, {way}', f'Cloak texture, {cdesign} design in {way}, shown on the cape shape built into each player body. Painted folds, worn hem; back view is what the player sees most.',
             'Cloaks of unnamed drops and vendor goods', 'ANY', 1 + 2 * i, 'CLK-02')
 for i, t in enumerate(['brown linen', 'red', 'white formal', 'class starting shirt']):
     add(f'SHT-01-{i + 1}', 'Armor texture', f'Shirt: {t}', f'Shirt texture on the chest and arm regions: {t}.', 'Shirt slot', 'ANY', 1, 'SHT-01')
@@ -1080,6 +1102,8 @@ UI_FIX = {'arrow ×4': 'arrow up, arrow down, arrow left, arrow right',
           ', faction crests ×5': '', 'Race buttons ×2 (+ locked silhouettes for future races)': 'race button frame, locked silhouette for future races',
           'class buttons ×3 with role tags': 'class button Fighter with role tags, class button Cleric with role tags, class button Druid with role tags',
           'class trees ×3': 'three class-tree tabs', 'Backdrop ×2': 'backdrop'}
+# Rows whose look was decided after the art list was written; the id stays the one the row gives.
+UI_SAY = {'UI-H12-20-segments': ('XP bar: 10 sections', 'The fill is divided into 10 equal sections ("bubbles") by thin dividers drawn over it; the bar sits directly on the top edge of the main action bar, the same width, and its text is centred inside the fill.')}
 LOADING = [(ZONES[z][0], z, ZONES[z][1]) for z in ('BM', 'EC', 'HF', 'RW', 'ST', 'SD', 'TM', 'IR', 'CF', 'RL', 'VM', 'SOL', 'HAM', 'GC', 'SW', 'HK', 'HT', 'CR', 'SEA')] \
     + [('generic A: a road at dawn', 'CORE', 0), ('generic B: a campfire at night', 'CORE', 0)]
 for h1, h2, h3, c in table(L5):
@@ -1159,7 +1183,10 @@ for h1, h2, h3, c in table(L5):
         els = [name]
     for e in els:
         nm = e if e == name else f'{name}: {e}'
-        add(f'{uid}-{slug(e)}', 'UI texture', nm, f'Interface art for "{nm}". {style}', name, zone, lv, uid)
+        say = UI_SAY.get(f'{uid}-{slug(e)}')
+        if say:
+            nm = say[0]
+        add(f'{uid}-{slug(e)}', 'UI texture', nm, f'Interface art for "{nm}". {say[1] + " " if say else ""}{style}', name, zone, lv, uid)
 
 ZHEAD = {v[0]: k for k, v in ZONES.items()}
 ZHEAD['The Dustpit'], ZHEAD['Crownfall'], ZHEAD['Gallowmere Crypts'] = 'DP', 'CR', 'GC'
@@ -1403,7 +1430,7 @@ for h1, h2, h3, c in table('docs/10-art/07-named-item-index.md'):
     elif art.startswith('Unique body texture'):
         add(f'{iid}-texture', 'Armor texture', name, f'Unique armor texture for the {slong} region, "{name}" ({where}), on the shared body layout. Stated as: {desc}. {zcue(z)}', used, z, lv, iid)
     elif art.startswith('Unique cloak'):
-        add(f'{iid}-texture', 'Armor texture', name, f'Unique cloak texture "{name}" ({where}). Stated as: {desc}. {zcue(z)}', used, z, lv, iid)
+        add(f'{iid}-texture', 'Armor texture', name, f'Unique cloak texture "{name}" ({where}), shown on the cape shape built into each player body. Stated as: {desc}. {zcue(z)}', used, z, lv, iid)
     elif art.startswith('Tier model'):
         binding = f' Shown in the world with the generic model "{TIERWPN.get((slot.lower().replace("off-hand", "held off-hand"), band), "tier model for its type")}" in a recolour.'
     elif art.startswith('Tier body') or art.startswith('Tier 3D'):

@@ -24,11 +24,11 @@ The complete list of art the game needs before code begins: every texture, UI el
 |---|---|---|
 | Character and creature **rigs** | 67 rig contracts (2 player, 62 creature and boss, the horse mount, and the ship and mine-cart, whose moving parts need bones) | Lists 1, 2 |
 | **Animation clips** | ≈ 850 (204 player and mount, 650 creature) | Lists 1, 2 |
-| **3D models** — characters and creatures | 4 player bodies, 110 customisation pieces, ≈ 350 creature and NPC skins/outfits | Lists 1, 2 |
-| **3D models** — armor pieces | 44 helm fits, 46 shoulder fits, 28 robe skirts, ≈ 14 unique named helms/shoulders | List 1 |
+| **3D models** — characters and creatures | 4 player bodies, each with 9 geometry swap parts built in (robe skirt and kilt, cape shapes, sleeves, cuffs, boot tops: 36 parts), 110 customisation pieces, ≈ 350 creature and NPC skins/outfits | Lists 1, 2 |
+| **3D models** — armor pieces | 44 helm fits, 46 shoulder fits, ≈ 14 unique named helms/shoulders. Robe skirts and cloaks are not models: they are geometry swaps of the bodies | List 1 |
 | **3D models** — weapons, shields, held items | 145 (52 tier, 93 unique) | List 1 |
 | **3D models** — environment | ≈ 700 kit pieces, ≈ 220 nature models, ≈ 175 props and world objects, 23 gathering nodes | List 3 |
-| **Textures** — armor regions | ≈ 550 colourway textures + ≈ 47 unique | List 1 |
+| **Textures** — armor regions | ≈ 550 colourway textures + ≈ 47 unique; 44 cloak textures (36 designs in colourways, 8 unique) | List 1 |
 | **Textures** — terrain | ≈ 80 tiling ground textures in 11 sets | List 3 |
 | **Skies / lighting presets** | ≈ 45 | List 3 |
 | **Particles and effects** | ≈ 725 | List 4 |
@@ -116,7 +116,7 @@ Ordered so that each block unlocks a build milestone in the [Roadmap](../08-tech
 
 Lists 7 and 8 are generated from the design documents; regenerate them whenever items or quests change. Lists 1–6 are hand-written against the design documents as of version 0.2 of the [Master Plan](../../MASTER_PLAN.md); when a zone, creature or ability changes, change its row here in the same edit.
 
-**The full list, one row per asset, is the [Asset Manifest](../15-asset-manifest/00-manifest-index.md)**, generated from these lists and the design data by `tools/doc-generators/asset_manifest.py`. Where a row here stands for several assets ("×7 schools", "40 pieces"), the manifest names each one, and its count (8,984 rows) replaces the estimates below. Regenerate the manifest after changing any list.
+**The full list, one row per asset, is the [Asset Manifest](../15-asset-manifest/00-manifest-index.md)**, generated from these lists and the design data by `tools/doc-generators/asset_manifest.py`. Where a row here stands for several assets ("×7 schools", "40 pieces"), the manifest names each one, and its count (8,978 rows) replaces the estimates below. Regenerate the manifest after changing any list.
 
 All counts are planning estimates meant for scoping and tracking. Counts given as exact (765 named items, 296 quests, 214 class icons, 145 weapon models) come from the documents; counts marked ≈ are sums of the ranges in each list.
 
