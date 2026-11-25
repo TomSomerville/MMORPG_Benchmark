@@ -45,10 +45,12 @@ Warden Hilda Stonebraid (start) · Battlemaster Kol Ironvow (Fighter) · Hearthp
 | Slagborn Lookout | 4 | Humanoid | Shoot (crossbow), calls allies | Linen, Branded Ingot |
 | Slagborn Firebrand | 5 | Humanoid (caster) | Slag Bolt (Fire), Soot Cloud (−10% hit) | Linen, Branded Ingot |
 
+Creatures of level 1 to 3 in this zone are not aggressive: they do not attack a player who comes near, they fight back when attacked, and they call for help as usual. Creatures of level 4 and above are aggressive ([NPC AI §2](../02-systems/npc-ai-and-world.md#2-ai-state-machine)). Decided 2026-11-25.
+
 **Rares:** *Whitepelt* (4 lynx, Tuskfall — *Whitepelt Wraps*, leather wrist) · *Grawl the Boulder-Eater* (5 elite Gravelkin, Warrens — quest target).
 **Mini-boss:** *Grolm Sootbeard* (5, Kiln Cave) — Slag Bolt, Kindle (self-enrage at 30%), 2 Lookout guards.
 
-Open: the Slagborn Firebrand's Slag Bolt does about 12 damage a second, where a creature of its level that fights by hand does about 5; the bolt is kept as written and the Firebrands outside Kiln Cave stand 30 m apart so that they are met one at a time, and whether to lower its damage, lengthen its cast or cut its mana instead is not decided.
+Decided 2026-11-25: the Slagborn Firebrand keeps its Slag Bolt as written (20–28 Fire every 2 s, about 12 damage a second, where a creature of its level that fights by hand does about 5). It is Embercrag Hollow's hard enemy by design, and it is met one at a time: the Firebrands outside Kiln Cave stand 30 m apart.
 
 ## Quests
 

@@ -4,9 +4,7 @@
 
 This page defines what the game looks like in rules a program can follow and check, and explains how roughly nine thousand separately generated assets are made to look like one game. It is the authority on style. The forge's style bible ([P01](../14-asset-pipeline/01-image-pipelines.md#p01--style-bible)) is generated *from* this page, not invented. The owner approves the style bible, and then the first results of each pipeline it governs, before anything is made in number.
 
-Open: the style bible is not yet approved, so §1 to §4 are the direction it is being made to and are not final.
-
-Open: the owner found the first style anchors, made without an image model, and the figures built from them unacceptable, and liked the image-model direction for buildings, weapons and environments; people and animals are to be redone as solid painted forms.
+Decided 2026-11-25: the owner approved the style bible **for buildings, props, weapons and environments**. It is the candidate made with the image model, and its anchors are the human cottage, the mountain dwarf hall, the hill dwarf steading, the sword, staff and shield, the forest clearing and the gothic ruin; the anchors made without an image model were refused. People and creatures (player bodies, NPCs and creatures) are not judged by the style bible: they are generated, fitted to their rig and approved batch by batch. Each pipeline the style bible governs still shows the owner a first batch before it makes its assets in number.
 
 ## 1. The look
 
