@@ -10,11 +10,13 @@ Two rigs (Human, Dwarf); male and female share a rig with different meshes. The 
 
 **How a body is made.** Each body is a generated model fitted to its rig's contract. A figure is painted in the game's style standing in an A-pose, an image-to-3D model makes a textured mesh of it, and the fitting step keeps that mesh: it is reduced to the triangle budget, given its own UV layout with its colour baked onto one 1024² texture, its joints are found from its outline, it is skinned, and it is carried to the contract's skeleton and rest pose so that every player clip plays on it. The result is **a single mesh with its own baked texture**.
 
+**All four bodies share one texture layout.** Each fitted body is then re-wrapped onto the shared region layout of the constructed template bodies: every region of its surface is laid into that region's rectangle of the layout, and its texture is baked across into the layout, so the body keeps its own painted look. The shared layout is what lets one armor texture fit every body (§4).
+
 **A player body is bald and clean-shaven.** Each of the four is painted with no hair on its head and none on its face, in plain underclothes, so the body carries nothing a player may choose. The underclothes are part of the mesh and its texture. Hair, facial hair and features are separate pieces that follow the head, faces are variants of the body's head, and skin and hair colour are tints (§2).
 
-The constructed body a fitted body replaces is kept beside it. A skin or outfit painted for the constructed body's layout fits that mesh and no other, so a character wearing one is drawn on the constructed body until the outfit has a dressed body of its own ([Creatures & NPCs §6](02-creatures-npcs.md#6-npc-outfits-on-player-rigs)).
+The constructed body a fitted body replaces is kept beside it. A skin or outfit painted for the constructed body's layout does not fit a fitted body that still has a layout of its own, so a character wearing one is drawn on the constructed body until the outfit has a dressed body of its own ([Creatures & NPCs §6](02-creatures-npcs.md#6-npc-outfits-on-player-rigs)).
 
-**Customisation on a fitted body: separate hair and faces.** A player's character is built from its bald body, one face, one hair style, its facial hair or features, a skin tone and a hair colour, each chosen freely of the others. The body is never generated again for a choice: every option of §2 is a piece, a head variant or a tint laid on the one body. This settles customisation only; what a fitted body wears over it is the armor question of §4.
+**Customisation on a fitted body: separate hair and faces.** A player's character is built from its bald body, one face, one hair style, its facial hair or features, a skin tone and a hair colour, each chosen freely of the others. The body is never generated again for a choice: every option of §2 is a piece, a head variant or a tint laid on the one body. What a fitted body wears over it is in §4.
 
 | ID | Done | Asset | Notes |
 |---|---|---|---|
@@ -72,14 +74,38 @@ One set per rig (authored on Human, retargeted and hand-corrected on Dwarf): **2
 
 ## 4. How armor is built (the permutation rules)
 
-Armor never needs a model per item. Each equipped piece contributes one or more of the layers below. The texture layers are painted on one UV layout shared by all four bodies, which is the layout of the constructed bodies.
+Armor never needs a model per item. Armor on player bodies is made by **region textures on one shared layout** (decided 2026-11-24): each equipped piece contributes one or more of the layers in the table below.
 
-Open: whether this shared-layout layered armor system, the palette lock and the repaint pass apply to fitted bodies is not decided; each fitted body has its own UV layout and its generator's colours, so the armor layers have no route onto it today.
+**One layout, fixed rectangles.** All four player bodies share one texture layout, the region layout of the constructed bodies, onto which each fitted body is re-wrapped (§1). The layout is divided into fixed rectangles, one for each body region: upper arm, lower arm, hand, upper torso, lower torso, upper leg, lower leg and foot, with the head and face, which customisation uses (§2).
+
+**Region textures.** An armor piece is textures painted for those rectangles, and only for the ones it covers:
+
+- a chest piece: the upper and lower torso and the arm regions it covers;
+- gloves: the hands, and a cuff on the lower arm;
+- boots: the feet and the lower legs;
+- trousers: the upper and lower legs;
+- a belt: a band at the waist;
+- bracers: the lower arm.
+
+The six regions counted for each set in §5 are these six pieces (chest, legs, feet, hands, wrist, waist); each paints one or more rectangles of the layout.
+
+**Layering.** When a player equips armor, its region textures are laid over the body's skin texture in a fixed order, the same for every character: the shirt, then the chest piece over it, then the tabard over the chest piece, and likewise wherever two pieces meet on one rectangle. Because every body uses the same rectangles, one armor texture fits both races and both sexes. A separate version for men or for women is painted only where a piece needs one.
+
+**Geometry swaps.** Shapes a texture cannot make (flared sleeves, boot tops, a robe skirt, glove cuffs, a tabard, a cloak) are parts built into the body mesh, hidden until an item calls for them. They may be made after the textures.
+
+**Attached models.** Helms, shoulders, weapons and shields are models of their own, attached to bones. A helm hides the hair and, as that race and that helm need, the ears or the beard. Each character has a "hide helm" option.
+
+**How the textures are made.** The region textures are made by pipeline P06 ([Image Pipelines](../14-asset-pipeline/01-image-pipelines.md#p06--armor-region-textures-and-colourways-about-550-textures)), painted in the game's style for the shared layout. Under the approval rule a first batch, the starting cloth set and one set each of leather and mail, is shown to the owner before the rest is made.
+
+The counts of §5 and §6 (robe skirts for each set and body, one cloak mesh for each rig) were written before this decision and are unchanged.
+
+Open: whether the palette lock and the repaint pass apply to fitted bodies is not decided; a fitted body keeps its generator's colours today.
 
 | Layer | Used by slots | Authored per | Fits |
 |---|---|---|---|
 | **Body texture region** painted over the skin atlas | Chest, Legs, Feet, Hands, Wrist, Waist, Shirt, Tabard | Appearance set × colourway | Painted once on a shared UV layout that all 4 bodies use |
-| **Geometry piece** attached to the rig | Head, Shoulders (pair), belt buckle (optional), robe skirt, boot cuff, glove flare | Appearance set | 2 fits (Human, Dwarf); male/female by scale offset |
+| **Attached model** on a bone | Head, Shoulders (pair), belt buckle (optional) | Appearance set | 2 fits (Human, Dwarf); male/female by scale offset |
+| **Geometry swap** built into the body mesh | Robe skirt, boot top, glove cuff, flared sleeve, tabard | Shape, shown when an item calls for it | Part of each of the 4 bodies |
 | **Cloak** | Back | Cloak design × colourway | One cloth mesh per rig (2) |
 | **Weapon / shield / held item** | Main hand, Off hand, Ranged | Model × colourway | Universal (hand sockets) |
 

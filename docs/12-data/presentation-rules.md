@@ -35,12 +35,13 @@ A player's character is not a dressed body. It is built from its appearance (ski
 
 | Part | Rule |
 |---|---|
-| Body | The fitted body of the character's race and sex (CHR-003 to CHR-006), which is bald and clean-shaven, in plain underclothes |
+| Body | The fitted body of the character's race and sex (CHR-003 to CHR-006), which is bald and clean-shaven, in plain underclothes, and is re-wrapped onto the one texture layout all player bodies share |
 | Face | The chosen face of that body (CUS-02): its head texture on the head region of the body's texture, with its small change of shape where it has one |
 | Hair | The chosen hair style's piece for that body (CUS-03), attached to the head bone or skinned to the head and neck bones. The style named bald adds no piece |
 | Facial hair and features | The chosen piece for that body (CUS-05): beards, moustaches, braids, sideburn-plaits, rings and earrings as pieces that follow the head; freckles and scars drawn on the face. "None" adds nothing |
 | Skin tone | The chosen tone (CUS-01), a tint of the skin region of the body's texture, the face included. Eyes, lips and clothes are not tinted |
 | Hair colour | The chosen ramp (CUS-04), a tint on the hair and facial-hair pieces only. Rings and earrings keep their own colours |
+| Armor | Each worn piece's region textures, laid over the skin texture in a fixed order (shirt, chest piece, tabard over the chest piece, and so on) on the shared layout's fixed rectangles (upper arm, lower arm, hand, upper torso, lower torso, upper leg, lower leg, foot); the body's geometry swaps (flared sleeves, boot tops, robe skirt, glove cuffs, tabard, cloak) where the item calls for them; helm and shoulders as models attached to bones (§4; [Characters, Armor & Weapons §4](../10-art/01-characters-armor-weapons.md#4-how-armor-is-built-the-permutation-rules)) |
 
 ## 3. Abilities
 
@@ -60,7 +61,8 @@ A player's character is not a dressed body. It is built from its appearance (ski
 |---|---|
 | Model and texture | As the [Named Item Index](../10-art/07-named-item-index.md) says: unique art, or the tier model for the slot, type and level band with the recolor for its zone or source |
 | Icon | Its own icon from the index. Random-suffix drops use the tier icon for slot, type and band |
-| What shows on the character | Head, shoulders, chest, hands, waist, legs, feet, wrists, back, tabard, shirt, both hands and the ranged slot. Necks, rings, trinkets and relics do not show. A "hide helm" and "hide cloak" option is per character |
+| What shows on the character | Head, shoulders, chest, hands, waist, legs, feet, wrists, back, tabard, shirt, both hands and the ranged slot. Necks, rings, trinkets and relics do not show. A "hide helm" and "hide cloak" option is per character. A helm that shows hides the hair and, as that race and that helm need, the ears or the beard |
+| How armor shows | Chest, legs, feet, hands, wrists, waist, shirt and tabard are region textures layered over the character's skin texture, one texture for every race and both sexes; shapes a texture cannot make are geometry swaps built into the body mesh; helms, shoulders, weapons and shields are attached models (§2a) |
 | Sheathing | One-handed weapons at the hips, two-handed and staves on the back, shields on the back, bows and guns on the back |
 | Sounds | Pick up and put down by material: cloth, leather, metal, wood, gem, paper, liquid, food, herb, ore |
 | Consumables, materials, quest items | Icon only; no world model unless it is a world object |

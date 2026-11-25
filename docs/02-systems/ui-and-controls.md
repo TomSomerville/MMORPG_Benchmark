@@ -18,7 +18,7 @@
 | Enter, / , R | Chat, command, reply |
 | Esc | Cancel cast / clear target / game menu |
 
-All bindings are rebindable. Click-to-move optional. Camera collides with terrain.
+All bindings are rebindable: every action has a primary and a secondary key, set in the Key Bindings window opened from the game menu. Click-to-move optional. Camera collides with terrain.
 
 ## 2. HUD elements
 
@@ -31,9 +31,10 @@ All bindings are rebindable. Click-to-move optional. Camera collides with terrai
 | Cast bar, swing timer, GCD sweep | |
 | Buff / debuff row | Durations, cancel on right-click |
 | Minimap | Zoom, tracking (herbs/ore/treasure/undead), quest and town icons, clock, mail and LFG indicators |
-| XP bar / rested notch, reputation bar option | |
+| XP bar / rested notch, reputation bar option | Sits directly on the top edge of the main action bar, the same width, touching it. Divided into 10 equal sections ("bubbles") by thin dividers over the fill; its text is centred inside the fill |
 | Chat window(s) + combat log | Tabs, filters, dockable |
-| Bag bar and micro-menu | The bag bar holds the backpack and 4 bags; any of its buttons opens the one bag window |
+| Bag bar and micro-menu | The bag bar holds the backpack and 4 bags; any of its buttons opens the one bag window. The tooltip of the micro-menu's system button shows the frame rate, the latency and the player's position; that read-out is hidden by default and is drawn on screen only while switched on with its key |
+| Placement at the bottom | The action bars, the bag bar, the micro-menu and the chat frame sit with their bottom edges on the bottom edge of the screen, with no gap |
 | Floating combat text | Damage, heals, misses, resource gains, procs |
 | Nameplates | Toggle friendly / enemy; cast bars on nameplates |
 | Error text, zone banner, loot toast, level-up fanfare | |
@@ -43,7 +44,7 @@ All bindings are rebindable. Click-to-move optional. Camera collides with terrai
 
 ## 3. Windows
 
-Character sheet (paper doll, stats, skills tab, reputation tab) · Spellbook & abilities (with ranks) · Talents (three trees, preview before commit) · Quest log (20) · World map (continent → zone, fog-of-war by explored sub-area, player and party pins) · Bags (one window for the backpack and every equipped bag, growing as bags are added; empty slots shown each in its place or combined into one slot with a count) / bank · Vendor (buy, sell, buyback, repair) · Trainer · Loot and group-roll frames · Trade · Mail · Auction house (browse, bids, auctions) · Professions (recipe list, reagents, craft N) · Social (friends, ignore, who, guild, raid) · Group-finder board · Eyrie map · Gossip / quest dialog · Duel / invite / resurrect / summon prompts · Battleground queue, scoreboard · Inspect · Macro editor (classic-style `/cast`, `/target`, `/use`) · Key bindings · Options (video, audio, interface, accessibility) · Help / GM ticket · Character select & create · Login / realm list.
+Character sheet (paper doll, stats, skills tab, reputation tab) · Spellbook & abilities (with ranks) · Talents (three trees, preview before commit) · Quest log (20) · World map (continent → zone, fog-of-war by explored sub-area, player and party pins) · Bags (one window for the backpack and every equipped bag, growing both upward and sideways as bags are added and keeping its chosen shape, Portrait or Landscape; anchored at its bottom-right corner above the bag bar and kept on screen; empty slots shown each in its place or combined into one slot with a count) / bank · Vendor (buy, sell, buyback, repair) · Trainer · Loot and group-roll frames · Trade · Mail · Auction house (browse, bids, auctions) · Professions (recipe list, reagents, craft N) · Social (friends, ignore, who, guild, raid) · Group-finder board · Eyrie map · Gossip / quest dialog · Duel / invite / resurrect / summon prompts · Battleground queue, scoreboard · Inspect · Macro editor (classic-style `/cast`, `/target`, `/use`) · Key bindings (a primary and a secondary key for every action) · Options (video, audio, interface, accessibility) · Help / GM ticket · Character select & create · Login / realm list.
 
 ## 4. Feedback and feel
 
@@ -58,7 +59,9 @@ Not at launch. The UI is built from data-described frames so a sandboxed add-on 
 
 ## 6. Accessibility and options
 
-Colour-blind palettes for quality colours and debuff types · UI scale · subtitle/speech bubbles · key-hold vs toggle options · screen-shake and flash reduction · show empty bag slots (on by default) · separate volume sliders (master, music, effects, ambience, voice).
+Colour-blind palettes for quality colours and debuff types · UI scale · subtitle/speech bubbles · key-hold vs toggle options · screen-shake and flash reduction · separate volume sliders (master, music, effects, ambience, voice).
+
+The Interface tab of the Options window holds at least: **Auto loot** (on by default; a Shift-click on a corpse does the opposite of the setting: with auto loot on it opens the loot window and takes nothing, with it off it takes everything) · **Show empty slots** in the bag window (on by default) · **Bag layout**, Portrait or Landscape (Portrait by default, taller than wide; Landscape is wider than tall; the columns are worked out from the slot count and the orientation). Settings are saved for the player and survive restarting the client. Sizes and positions are in the [UI Specification](../08-tech/ui-specification.md).
 
 ## 7. Art direction for UI
 

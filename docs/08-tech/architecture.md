@@ -167,7 +167,7 @@ Decided 2026-11-12: **there are no layers, shards or phases of the open world.**
 | Audio | Music by sub-area, ambience, combat and UI sounds |
 | Rules | The shared rules library (tooltips, predicted cooldowns, range checks) |
 
-**Character rendering:** one skeleton per race/sex; armor as swappable mesh pieces + texture layers; weapons as attachments. Because armor is per-skeleton, a new *class* needs no new character art.
+**Character rendering:** one skeleton per race/sex; all player bodies share one texture layout, and armor is region textures layered over the body's skin texture in a fixed order, with geometry swaps built into the body mesh for shapes a texture cannot make; helms, shoulders, weapons and shields are models attached to bones ([Characters, Armor & Weapons §4](../10-art/01-characters-armor-weapons.md#4-how-armor-is-built-the-permutation-rules)). Because armor is made for the shared layout and the skeletons, a new *class* needs no new character art.
 
 ## 7. Content pipeline and tools
 
