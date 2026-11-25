@@ -33,7 +33,7 @@ All bindings are rebindable. Click-to-move optional. Camera collides with terrai
 | Minimap | Zoom, tracking (herbs/ore/treasure/undead), quest and town icons, clock, mail and LFG indicators |
 | XP bar / rested notch, reputation bar option | |
 | Chat window(s) + combat log | Tabs, filters, dockable |
-| Bag bar and micro-menu | |
+| Bag bar and micro-menu | The bag bar holds the backpack and 4 bags; any of its buttons opens the one bag window |
 | Floating combat text | Damage, heals, misses, resource gains, procs |
 | Nameplates | Toggle friendly / enemy; cast bars on nameplates |
 | Error text, zone banner, loot toast, level-up fanfare | |
@@ -43,7 +43,7 @@ All bindings are rebindable. Click-to-move optional. Camera collides with terrai
 
 ## 3. Windows
 
-Character sheet (paper doll, stats, skills tab, reputation tab) · Spellbook & abilities (with ranks) · Talents (three trees, preview before commit) · Quest log (20) · World map (continent → zone, fog-of-war by explored sub-area, player and party pins) · Bags / bank · Vendor (buy, sell, buyback, repair) · Trainer · Loot and group-roll frames · Trade · Mail · Auction house (browse, bids, auctions) · Professions (recipe list, reagents, craft N) · Social (friends, ignore, who, guild, raid) · Group-finder board · Eyrie map · Gossip / quest dialog · Duel / invite / resurrect / summon prompts · Battleground queue, scoreboard · Inspect · Macro editor (classic-style `/cast`, `/target`, `/use`) · Key bindings · Options (video, audio, interface, accessibility) · Help / GM ticket · Character select & create · Login / realm list.
+Character sheet (paper doll, stats, skills tab, reputation tab) · Spellbook & abilities (with ranks) · Talents (three trees, preview before commit) · Quest log (20) · World map (continent → zone, fog-of-war by explored sub-area, player and party pins) · Bags (one window for the backpack and every equipped bag, growing as bags are added; empty slots shown each in its place or combined into one slot with a count) / bank · Vendor (buy, sell, buyback, repair) · Trainer · Loot and group-roll frames · Trade · Mail · Auction house (browse, bids, auctions) · Professions (recipe list, reagents, craft N) · Social (friends, ignore, who, guild, raid) · Group-finder board · Eyrie map · Gossip / quest dialog · Duel / invite / resurrect / summon prompts · Battleground queue, scoreboard · Inspect · Macro editor (classic-style `/cast`, `/target`, `/use`) · Key bindings · Options (video, audio, interface, accessibility) · Help / GM ticket · Character select & create · Login / realm list.
 
 ## 4. Feedback and feel
 
@@ -58,7 +58,7 @@ Not at launch. The UI is built from data-described frames so a sandboxed add-on 
 
 ## 6. Accessibility and options
 
-Colour-blind palettes for quality colours and debuff types · UI scale · subtitle/speech bubbles · key-hold vs toggle options · screen-shake and flash reduction · separate volume sliders (master, music, effects, ambience, voice).
+Colour-blind palettes for quality colours and debuff types · UI scale · subtitle/speech bubbles · key-hold vs toggle options · screen-shake and flash reduction · show empty bag slots (on by default) · separate volume sliders (master, music, effects, ambience, voice).
 
 ## 7. Art direction for UI
 

@@ -40,7 +40,7 @@ Layout, size and behaviour of every HUD element and window, the full default key
 | Pet bar | Above stance bar | Reserved; hidden at launch | |
 | XP bar | Bottom | Under the action bar, 24 px narrower than it; 16 px high, notched | Purple = XP, blue = rested; rested notch; hover shows numbers. At level cap it becomes the watched reputation bar |
 | Micro-menu | Bottom-right of centre | 8 buttons of 28 × 36 | Character, spellbook, talents, quest log, social, world map, main menu, help |
-| Bag bar | Bottom-right | 5 slots of 36 px | Backpack plus 4 bags; free-slot count on the backpack |
+| Bag bar | Bottom-right | 5 slots of 36 px | Backpack plus 4 bags; free-slot count on the backpack. A click on any of the five opens or closes the one bag window (§3); a bag is put into or taken out of a bag slot here, and the bag window grows or shrinks with it |
 | Cast bar | Bottom-centre | Above the main bar; 240 × 22 | Spell name, time; green flash on success, red on interrupt; a latency zone at the end |
 | Swing timer | Under the cast bar | 220 × 7 | Main hand; second thin bar for off hand |
 | Mirror bars | Top-centre | 200 × 18 | Breath, fatigue, feign reserved |
@@ -64,7 +64,7 @@ Sizes are the panel size. "L1" and "L2" mean the first and second left-side pane
 | Talents | N | L1; 384 × 560 | Three tabs, one per tree, with points spent; 7 tiers × 4 columns; arrows for prerequisites; **preview mode**: points placed are pending (green) until "Learn" is pressed, "Reset" clears pending; unreachable tiers 6–7 shown with a lock and "Requires level cap increase" |
 | Quest log | L | L1; 640 × 480 (wide) | Left: quests grouped by zone, coloured by difficulty, count "n / 20". Right: description, objectives with counts, rewards. Buttons: Abandon, Share, Track (max 5). Completed quests marked |
 | World map | M | Full screen overlay, 1024 × 768 centred | Continent view → click a zone; fog over undiscovered sub-areas; player arrow, party pins, corpse pin, discovered eyries; zone level range in the title; right-click zooms out. Stoneheart Deeps has three layer buttons (Upper, Great Cavern, Underworks) that follow the player's height |
-| Bags | B, Shift+B (all), F8–F12 each | Bottom-right, stacking leftward | Grid of 4 columns; slot count in the title; item quality border; cooldown sweep on usable items; right-click uses, equips, or sells at a vendor; shift-click splits a stack or links to chat |
+| Bags | B, Shift+B, F8–F12, or any bag-bar button: all open the same window | Bottom-right, above the bag bar; 8 columns wide, growing upward a row at a time | **One window for the backpack and every equipped bag together**; there is no window per bag. Its grid holds every slot of every container, the backpack's first and then each bag's in bag-bar order, so it has 16 slots with the backpack alone and grows as bags are put in the bag bar (up to 64 with four 12-slot bags) and shrinks when one is taken out. The window is a view: each item stays in its own container and slot, and the containers and their numbering are as in [Items §6](../02-systems/items-and-loot.md#6-bags-bank-inventory). Free and total slot counts in the title; item quality border; cooldown sweep on usable items; right-click uses, equips, or sells at a vendor; shift-click splits a stack or links to chat; items are moved, and placed on the action bar, by click-then-click (§1). **"Show empty slots"** tick box in the window, the same setting as in Options (Interface), on by default and saved with the player's interface settings: on, every empty slot is drawn in its place; off, only filled slots are drawn, followed by a single empty slot with the number of free slots on it, and an item put down on that slot goes into the first free slot |
 | Bank | at NPC | L1; 384 × 512 | 24 slots + 6 purchasable bag slots with prices; right-click moves between bank and bags |
 | Vendor | at NPC | L1; 384 × 512 | Tabs: Merchant (10 items per page, price, limited stock count, red if unusable), Buyback (12). Repair one, repair all with the cost, guild-bank repair when permitted. A right click on an item in the bags sells it |
 | Trainer | at NPC | L1; 384 × 512 | Filter: available, unavailable, known. Row: icon, name, rank, cost; detail pane with tooltip and requirements; Train button. Class trainers in capitals add "Reset talents" with the current price |
@@ -82,7 +82,7 @@ Sizes are the panel size. "L1" and "L2" mean the first and second left-side pane
 | Battleground | H | Centre; 500 × 400 | Queue (solo or group), bracket, status; in a match: scoreboard (team totals; rows: name, kills, deaths, damage, healing, hill time, crown time) |
 | Macros | `/macro` | L2; 300 × 420 | 18 slots, name, icon picker, 255-character body |
 | Key bindings | Game menu | Centre; 600 × 500 | Every action in §4, two keys each; reset to default; conflict warning |
-| Options | Esc | Centre; 600 × 500 | Tabs: Video (resolution, window mode, quality presets, view distance, shadows, effects density, frame cap, vertical sync) · Audio (master, music, effects, ambience, voice; sound in background) · Interface (extra bars, names and nameplates, combat text, auto-loot, self-cast key, camera style, click-to-move, tutorial tips, chat timestamps) · Accessibility (UI scale, colour-blind palettes, reduce flashes and shake, hold-versus-toggle, subtitles) |
+| Options | Esc | Centre; 600 × 500 | Tabs: Video (resolution, window mode, quality presets, view distance, shadows, effects density, frame cap, vertical sync) · Audio (master, music, effects, ambience, voice; sound in background) · Interface (extra bars, names and nameplates, combat text, auto-loot, self-cast key, camera style, click-to-move, tutorial tips, chat timestamps, show empty slots in the bag window) · Accessibility (UI scale, colour-blind palettes, reduce flashes and shake, hold-versus-toggle, subtitles) |
 | Help | Game menu | Centre; 500 × 400 | Tips, known issues, open a GM ticket: category (stuck, lost item, bug, harassment, account, other) and 500 characters of text; shows the state of the player's one open ticket (open, answered, closed) and the GM's reply ([Accounts and Live Service §4](accounts-and-live-service.md#4-support)) |
 | Report | Right-click a player, a chat name or a chat line | Centre; 360 × 280 | Reason (spam, abuse, name, cheating, botting), an optional 200-character note, Report and Cancel; a "Also ignore this player" tick box, on by default. Confirmation in the system channel ([Accounts and Live Service §3](accounts-and-live-service.md#3-conduct-and-moderation)) |
 | Penalty notice | At login, when a penalty applies | Centre; 420 × 240 | The penalty, its reason, when it ends, and how to appeal |
@@ -138,7 +138,8 @@ The Report, Penalty notice and Help windows use the standard dialog frame and co
 | | Quest log, world map | L, M |
 | | Social, skills and professions, reputation | O, K, U |
 | | Group finder, battleground | I, H |
-| | Backpack, all bags | B, Shift+B |
+| | Backpack, all bags (both open the one bag window) | B, Shift+B |
+| | Bag-bar slots 1–5 (each opens the one bag window) | F8–F12 |
 | | Game menu | Esc |
 | Chat | Open chat, start a command, reply to last whisper | Enter, /, R |
 | | Scroll chat up, down, to bottom | Page Up, Page Down, Shift+Page Down |
