@@ -101,8 +101,8 @@ Each zone needs: a **terrain set** (6–8 tiling ground textures), a **sky and l
 ### Stonewake Dale
 | ID | Done | Asset |
 |---|---|---|
-| Z-ST-01 | ☐ | Terrain set: pasture grass, terrace soil, young barley, dry-stone path, sinkhole rubble, dam masonry apron, quarry stone |
-| Z-ST-02 | ☐ | Sky: clear mountain-valley day with peaks on both sides, cool dusk, clear night; breeze, light rain |
+| Z-ST-01 | ☐ | Terrain set: pasture grass, terrace soil, young barley, dry-stone path, sinkhole rubble, dam masonry apron, quarry stone, worn yard earth, clover and flower meadow, mossy slope rock |
+| Z-ST-02 | ☐ | Sky: clear mountain-valley day with peaks on both sides, cool dusk, clear night, warm spring morning with gold valley haze; breeze, light rain |
 | Z-ST-03 | ☐ | Hopstead (KIT-05) with brewhouse green and *The Dry Boot* |
 | Z-ST-04 | ☐ | Barley terraces (stepped retaining walls), hop-yards (in new leaf; blighted variant) |
 | Z-ST-05 | ☐ | Ridgefold steading, bothies, sheep-folds |
@@ -112,6 +112,16 @@ Each zone needs: a **terrain set** (6–8 tiling ground textures), a **sky and l
 | Z-ST-09 | ☐ | Sunbank Steading (KIT-05): longhouse, sawpit, stone-sledge, lambing paddock; Greywall Quarry face; the Larch Hangers |
 | Z-ST-10 | ☐ | Daleside Adit (mine mouth to the Deeps), Dalegate (to Hammerdeep) |
 | Z-ST-11 | ☐ | Quest objects: stolen crate, Copper Fitting, hand-marked slag lump, herb basket, Stolen Whetstone (item), Peddler's Coin (item), Payroll-Slate (item) |
+| Z-ST-12 | ☐ | Sunbank bowl dressing: practice yard (dummy ring, weapon rack, benches), outdoor kitchen hearth, longhouse porch with banner pole, scarecrow, Sunbank gate (walled gap with gate piers), quarry derrick, cut-stone block stack, quarry spoil heap, sawyers' log slide |
+| Z-ST-13 | ☐ | The Sinks dressing: Gravelkin spoil heap ×2 (small, large), stolen-sack pile, rag warning pole |
+| Z-ST-14 | ☐ | Hopstead and the Hop-Yards dressing: hop-pole block with headland, picking basket and ladder, hop-string bundle, blighted bine corner |
+| Z-ST-15 | ☐ | Ridgefold and the High Pastures dressing: rustler tent ×2 (lean-to, ridge), stolen-sheep pen, the High Fold, ridge beacon cairn |
+| Z-ST-16 | ☐ | Old Brewery yard and the Daleside Adit's spoil banks: ooze puddle decal, burst vat, adit spoil bank, bear den with bones |
+| Z-ST-17 | ☐ | Stonewake Dam from afar and the Dale's passes: dam skyline model, dam face stair, hill-dwarf gate arch, ridge skyline shell |
+
+Rows Z-ST-12 to Z-ST-17, the last three textures of Z-ST-01 and the warm morning sky of Z-ST-02 were added on 2026-11-26 for the zone's overhaul ([World Layout](../13-world/03-stonewake-stoneheart.md#dressing-sets)): 34 assets. The overhaul also needs these rows, which were already listed, made as real art and not as placeholders: the Greywall Quarry face, the longhouse, the sawpit, the stone-sledge and the lambing paddock (Z-ST-09); the dam wall, sluice-houses, spillway and millrace channel (Z-ST-08), the dam as a real set piece 320 m wide and 70 m high; the hop-kiln, market stalls, sheep-fold, bothy and moot-stone (KIT-05); the fences, walls, dry-stone wall end, gate pier, field gate, stile, signpost, milestone and dwarf lamp post (KIT-20); the tents, campfire and bedroll of the camp kit (KIT-12), which the rustler camps use beside their own two tents; the Gravelkin candle clusters and junk piles (KIT-15); the meadow grass cards and flowers (NAT-10) and the meadow granite cliff pieces (NAT-12). Under the owner's rule each pipeline shows him one sample before any of this is made in number.
+
+How the terrain set is laid on the ground: the zone names ten ground textures and blends up to four in a cell ([World Construction §3](../13-world/10-world-construction.md#3-ground-textures)). Pasture grass is the base, with the clover and flower meadow in drifts over it and along lanes and walls; young barley is the terrace benches and terrace soil their margins and the hop-yards' rows; the dry-stone path is roads and Hopstead's green; worn yard earth lies round every door, yard, gate, trough and dressing set and under the rustlers' camps; sinkhole rubble is the sinks, the spoil heaps and the race's bed; quarry stone is the quarry floor, the gorges and every cliff, drawn triplanar; mossy slope rock is the gentler rock slopes and north faces; the dam masonry apron is the dam's foot and crest road. The forest floor under the larches and groves is Brightmead's, shared.
 
 ### Harrowfield
 | ID | Done | Asset |
@@ -288,6 +298,6 @@ How the terrain set is laid on the ground: the zone's eight ground slots are fil
 | Nature libraries | 13 libraries, ≈ 220 models |
 | Zone terrain sets | 11 sets, ≈ 80 tiling textures |
 | Sky / lighting presets | 11 zones × 3–5 states ≈ 45 |
-| Zone set pieces and layouts | 133 checklist rows |
+| Zone set pieces and layouts | 139 checklist rows |
 | Cities | 2 (17 districts) + sea route |
 | Instances | 5 (27 areas) |

@@ -40,7 +40,7 @@ Chatter list: "No glow on the snow this morning." · "My grandfather's grandfath
 | NPC-ST-01 | Dale-Reeve Garrik Stonewake | Dale-Reeve Stonewake | Dale-Reeve | Hopstead, moot-house | — | ST-11, ST-15, ST-16, ST-18 | ST-15, ST-16 | "The Moot voted me to do the worrying. I'm good at it." | M |
 | NPC-ST-02 | Hop-grower Thora Bine | Hop-grower Bine | Hop-grower | Hopstead, hop-yard gate | — | ST-10 | ST-10 | "No hops, no ale. No ale, no Dale." | F |
 | NPC-ST-03 | Ranger Odrin Fellhammer | Ranger Fellhammer | Dale Ranger | Ridgefold, ranger bothy | STK-FOOD 1 · Repair | — | — | "The ridge sees everything. Pity it can't talk." | M |
-| NPC-ST-04 | Cook Hroar Panhandle | Cook Panhandle | Cooking Trainer | Sunbank Steading, kitchen | STK-GEN · STK-FOOD 1 · TRN-CK (Apprentice) · Mild Spices | ST-05 | ST-05 | "Left over right. Never right over left." | M |
+| NPC-ST-04 | Cook Hroar Panhandle | Cook Panhandle | Cooking Trainer | Sunbank Steading, kitchen hearth | STK-GEN · STK-FOOD 1 · TRN-CK (Apprentice) · Mild Spices | ST-05 | ST-05 | "Left over right. Never right over left." | M |
 | NPC-ST-05 | Innkeeper Solveig Dryboot | Innkeeper Dryboot | Innkeeper | Hopstead, *The Dry Boot* | Inn (bind) · STK-FOOD 1 · + Hopstead Ale (when ST-13 done) | — | ST-08 | "Wipe your feet. That's how I got the name." | F |
 | NPC-ST-06 | Shepherdess Bruna Ramsbell | Shepherdess Ramsbell | Shepherdess | Ridgefold, sheep-fold | — | ST-12, ST-17 | ST-11, ST-12, ST-17 | "I know every thief in this valley by name. These aren't ours." | F |
 | NPC-ST-07 | Tinker Dagny Sparkwright | Tinker Sparkwright | Engineering Trainer | The Millrace, sluice hut | TRN-ENG (Apprentice) | — | — | "A mill wants water and water wants watching. Mind the sluice." | F |
@@ -59,7 +59,7 @@ Chatter list: "No glow on the snow this morning." · "My grandfather's grandfath
 | NPC-ST-20 | Hearth-mother Sigrid Emberkin | Hearth-mother Emberkin | Cleric Trainer | Sunbank Steading, hearth-nook | TRN-CLE | — | ST-03 | "Same flame as the mountain's. We just keep it in a smaller hearth." | F |
 | NPC-ST-21 | Stonesinger Arne Furrow | Stonesinger Furrow | Druid Trainer | Sunbank Steading, terrace wall | TRN-DRU | — | ST-03 | "A terrace is a song the hill agreed to." | M |
 | NPC-ST-22 | Dale Ranger ×6 and Dam Engineer ×4 | — | Guard | Sunbank, Hopstead, Ridgefold; the dam top | — | — | — | "All quiet." / "Don't lean on that." | M/F |
-| NPC-ST-23 | Steadwife Marit Sunbank | Steadwife Sunbank | Steadwife of Sunbank | Sunbank Steading, longhouse hearth | — | ST-02, ST-03, ST-07, ST-08 | ST-01, ST-02, ST-07 | "Sit. Eat first, we'll talk after." | F |
+| NPC-ST-23 | Steadwife Marit Sunbank | Steadwife Sunbank | Steadwife of Sunbank | Sunbank Steading, longhouse porch | — | ST-02, ST-03, ST-07, ST-08 | ST-01, ST-02, ST-07 | "Sit. Eat first, we'll talk after." | F |
 | NPC-ST-24 | Quarrier Odd Capstone | Quarrier Capstone | Quarrier and Waller | Sunbank Steading, stone-sledge | — | ST-04 | ST-04 | "A wall is only as good as its worst stone. Same as a steading." | M |
 | NPC-ST-25 | Sawyer Ketil Larchwood | Sawyer Larchwood | Sawyer | Sunbank Steading, sawpit | STK-ARM a · STK-WPN a · Repair | ST-06 | ST-06 | "Larch for posts, larch for rafters. Mind the pit." | M |
 

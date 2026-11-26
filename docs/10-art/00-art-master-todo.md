@@ -89,6 +89,8 @@ The complete list of art the game needs before code begins: every texture, UI el
 
 Nothing is made in number until the owner has approved the style guidelines that govern it and the first results of the pipeline that makes it (§8).
 
+**Stonewake Dale's overhaul (2026-11-26).** The owner played the zone, found it sparse and approved its overhaul: a compact, enclosed dale, densely dressed. The art it needs is 34 new assets and the making of rows that were listed but still placeholders. New in [Environments & Props](03-environments-props.md#stonewake-dale): rows Z-ST-12 to Z-ST-17 (30 set pieces and props: the practice yard, outdoor kitchen and porch of Sunbank, the Sunbank gate, a scarecrow, the quarry's derrick, cut stone and spoil heaps, the sawyers' log slide, Gravelkin spoil heaps and the farmers' warning poles, the hop-yards' blocks and picking gear, rustler tents and a stolen-sheep pen, the High Fold, a beacon cairn, ooze puddles and burst vats, the Adit's spoil banks and a bear den, the dam's stair and its skyline model, a hill-dwarf gate arch and the ridge skyline), three ground textures in Z-ST-01 (worn yard earth, clover and flower meadow, mossy slope rock) and a warm spring morning sky in Z-ST-02. To be made from rows already listed: the Greywall Quarry face and Sunbank's set pieces (Z-ST-09), the dam as a real set piece (Z-ST-08), the hop-kiln, market stalls, sheep-fold, bothy and moot-stone (KIT-05), the fences, gates, wall ends, signposts, milestones and lamp posts of KIT-20, the camp kit's tents and fires (KIT-12), the meadow grass cards and flowers (NAT-10). After the player bodies, this is the art made first. Each pipeline (P11 set pieces and kit pieces, P05 ground, P09 sky) shows the owner one sample before it makes the rest.
+
 Ordered so that each block unlocks a build milestone in the [Roadmap](../08-tech/roadmap.md) and the earliest blocks are the smallest.
 
 | Block | Art to finish | Unlocks milestone | Rough share of total |
@@ -116,7 +118,7 @@ Ordered so that each block unlocks a build milestone in the [Roadmap](../08-tech
 
 Lists 7 and 8 are generated from the design documents; regenerate them whenever items or quests change. Lists 1–6 are hand-written against the design documents as of version 0.2 of the [Master Plan](../../MASTER_PLAN.md); when a zone, creature or ability changes, change its row here in the same edit.
 
-**The full list, one row per asset, is the [Asset Manifest](../15-asset-manifest/00-manifest-index.md)**, generated from these lists and the design data by `tools/doc-generators/asset_manifest.py`. Where a row here stands for several assets ("×7 schools", "40 pieces"), the manifest names each one, and its count (8,994 rows) replaces the estimates below. Regenerate the manifest after changing any list.
+**The full list, one row per asset, is the [Asset Manifest](../15-asset-manifest/00-manifest-index.md)**, generated from these lists and the design data by `tools/doc-generators/asset_manifest.py`. Where a row here stands for several assets ("×7 schools", "40 pieces"), the manifest names each one, and its count (9,028 rows) replaces the estimates below. Regenerate the manifest after changing any list.
 
 All counts are planning estimates meant for scoping and tracking. Counts given as exact (765 named items, 296 quests, 214 class icons, 145 weapon models) come from the documents; counts marked ≈ are sums of the ranges in each list.
 
